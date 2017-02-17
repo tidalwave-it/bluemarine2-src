@@ -43,14 +43,13 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -106,11 +105,10 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
-         *
+         * The CDDB item.
          *
          **************************************************************************************************************/
         @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @Builder @ToString @EqualsAndHashCode
-        @Slf4j
         public static class Cddb
           {
             @Nonnull
@@ -121,6 +119,13 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
             private final int discLength;
 
+            /***********************************************************************************************************
+             *
+             * Returns the TOC (Table Of Contents) of this CDDB in string form (e.g. {@code 1+3+4506+150+3400+4000})
+             *
+             * @return  the TOC
+             *
+             **********************************************************************************************************/
             @Nonnull
             public String getToc()
               {
@@ -128,11 +133,28 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                                                    Arrays.toString(trackFrameOffsets).replace(", ", "+").replace("[", "").replace("]", ""));
               }
 
+            /***********************************************************************************************************
+             *
+             * Returns the number of tracks in the TOC
+             *
+             * @return  the number of tracks
+             *
+             **********************************************************************************************************/
+            @Nonnegative
             public int getTrackCount()
               {
                 return trackFrameOffsets.length;
               }
 
+            /***********************************************************************************************************
+             *
+             * Returns {@code true} if this object matches the other CDDB within a given threshold.
+             *
+             * @param   other       the other CDDB
+             * @param   threshold   the threshold of the comparison
+             * @return              {@code true} if this object matches
+             *
+             **********************************************************************************************************/
             public boolean matches (final @Nonnull Cddb other, final @Nonnegative int threshold)
               {
                 if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))
@@ -148,11 +170,27 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                 return this.computeDifference(other) <= threshold;
               }
 
+            /***********************************************************************************************************
+             *
+             * Returns {@code true} if this object contains the same number of tracks of the other CDDB
+             *
+             * @param   other       the other CDDB
+             * @return              {@code true} if the number of tracks matches
+             *
+             **********************************************************************************************************/
             public boolean sameTrackCountOf (final @Nonnull Cddb other)
               {
                 return this.trackFrameOffsets.length == other.trackFrameOffsets.length;
               }
 
+            /***********************************************************************************************************
+             *
+             * Computes the difference to another CDDB.
+             *
+             * @param   other       the other CDDB
+             * @return              the difference
+             *
+             **********************************************************************************************************/
             public int computeDifference (final @Nonnull Cddb other)
               {
                 final int delta = this.trackFrameOffsets[0] - other.trackFrameOffsets[0];
@@ -186,12 +224,26 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
             @Nonnull
             private final String cddbTrackNumber;
 
+            /***********************************************************************************************************
+             *
+             * Returns an unique track id out of the data in this object.
+             *
+             * @return              the track id
+             *
+             **********************************************************************************************************/
             @Nonnull
             public String getTrackId()
               {
                 return cddb1 + "/" + cddbTrackNumber;
               }
 
+            /***********************************************************************************************************
+             *
+             * Returns the same data in form of a CDDB.
+             *
+             * @return              the CDDB
+             *
+             **********************************************************************************************************/
             @Nonnull
             public Cddb getCddb()
               {
@@ -204,6 +256,14 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                                      .build();
               }
 
+            /***********************************************************************************************************
+             *
+             * Factory method extracting data from a {@link Metadata} instance.
+             *
+             * @param   metadata    the data source
+             * @return              the {@code ITunesComment}
+             *
+             **********************************************************************************************************/
             @Nonnull
             public static Optional<ITunesComment> from (final @Nonnull Metadata metadata)
               {
@@ -213,6 +273,14 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                                                         : Optional.empty());
               }
 
+            /***********************************************************************************************************
+             *
+             * Factory method extracting data from a string representation.
+             *
+             * @param   string      the string source
+             * @return              the {@code ITunesComment}
+             *
+             **********************************************************************************************************/
             @Nonnull
             public static ITunesComment fromToString (final @Nonnull String string)
               {
@@ -226,6 +294,14 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                 return new ITunesComment(matcher.group(1), matcher.group(2));
               }
 
+            /***********************************************************************************************************
+             *
+             * Factory method extracting data from a string representation as in the iTunes Comment MP3 tag.
+             *
+             * @param   comments    the source
+             * @return              the {@code ITunesComment}
+             *
+             **********************************************************************************************************/
             @Nonnull
             private static Optional<ITunesComment> from (final @Nonnull List <String> comments)
               {
@@ -237,7 +313,11 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
+         * Extracts a single metadata item associated to the given key.
          *
+         * @param       <T>     the type of the item
+         * @param       key     the key
+         * @return              the item
          *
          **************************************************************************************************************/
         @Nonnull
@@ -245,7 +325,11 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
+         * Extracts a metadata item (typically a collection) associated to the given key.
          *
+         * @param       <T>     the type of the item
+         * @param       key     the key
+         * @return              the item
          *
          **************************************************************************************************************/
         @Nonnull
@@ -253,14 +337,19 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
+         * Returns {@code true} if an item with the given key is present.
          *
+         * @param       key     the key
+         * @return              {@code true} if found
          *
          **************************************************************************************************************/
         public boolean containsKey (@Nonnull Key<?> key);
 
         /***************************************************************************************************************
          *
+         * Returns all the keys contained in this instance.
          *
+         * @return              all the keys
          *
          **************************************************************************************************************/
         @Nonnull
@@ -268,7 +357,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
+         * Returns all the entries (key -> value) contained in this instance.
          *
+         * @return              all the entries
          *
          **************************************************************************************************************/
         @Nonnull
@@ -276,9 +367,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
         /***************************************************************************************************************
          *
-         * Returns a clone of this object with an additional value.
+         * Returns a clone of this object with an additional item.
          *
-         * @para        <T>     the value type
+         * @param       <T>     the type of the item
          * @param       key     the key
          * @param       value   the value
          * @return              the clone
@@ -291,7 +382,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
          *
          * Returns a clone of this object with an additional optional value.
          *
-         * @para        <T>     the value type
+         * @param       <T>     the type of the item
          * @param       key     the key
          * @param       value   the value
          * @return              the clone
@@ -300,6 +391,15 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         @Nonnull
         public <T> Metadata with (@Nonnull Key<T> key, Optional<T> value);
 
+        /***************************************************************************************************************
+         *
+         * Returns a clone of this object with a fallback data source; when an item is searched and not found, before
+         * giving up it will be searched in the given fallback.
+         *
+         * @param       fallback    the fallback
+         * @return                  the clone
+         *
+         **************************************************************************************************************/
         @Nonnull
         public Metadata withFallback (@Nonnull Function<Key<?>, Metadata> fallback);
     }

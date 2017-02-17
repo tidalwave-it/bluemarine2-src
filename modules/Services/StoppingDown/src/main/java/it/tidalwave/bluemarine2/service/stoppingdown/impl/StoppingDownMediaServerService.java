@@ -36,8 +36,8 @@ import java.util.Collection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 
 /***********************************************************************************************************************

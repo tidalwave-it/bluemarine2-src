@@ -37,6 +37,8 @@ import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 
 /***********************************************************************************************************************
  *
+ * Represents a collection of media that can be queried in various ways.
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -49,7 +51,7 @@ public interface MediaCatalog
      *
      * Finds the {@link MusicArtist}s in this catalog.
      *
-     * @return  a {@link Finder} for the artists
+     * @return  a {@code Finder} for the artists
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -59,7 +61,7 @@ public interface MediaCatalog
      *
      * Finds the {@link Record}s in this catalog.
      *
-     * @return  a {@link Finder} for the records
+     * @return  a {@code Finder} for the records
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -69,7 +71,7 @@ public interface MediaCatalog
      *
      * Finds the {@link Track}s in this catalog.
      *
-     * @return  a {@link Finder} for the tracks
+     * @return  a {@code Finder} for the tracks
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -79,7 +81,7 @@ public interface MediaCatalog
      *
      * Finds the {@link Performance}s in this catalog.
      *
-     * @return  a {@link Finder} for the performances
+     * @return  a {@code Finder} for the performances
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -89,7 +91,7 @@ public interface MediaCatalog
      *
      * Finds the {@link AudioFile}s in this catalog.
      *
-     * @return  a {@link Finder} for the audio files
+     * @return  a {@code Finder} for the audio files
      *
      ******************************************************************************************************************/
     @Nonnull

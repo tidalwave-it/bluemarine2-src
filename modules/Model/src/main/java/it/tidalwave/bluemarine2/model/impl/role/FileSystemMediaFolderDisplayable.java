@@ -37,6 +37,10 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * The {@link Displayable} for {@link FileSystemMediaFolder}; it uses the folder name in the path.
+ *
+ * @stereotype  Role
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

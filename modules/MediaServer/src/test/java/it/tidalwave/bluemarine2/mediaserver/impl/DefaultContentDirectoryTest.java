@@ -30,7 +30,7 @@
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import java.util.List;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;

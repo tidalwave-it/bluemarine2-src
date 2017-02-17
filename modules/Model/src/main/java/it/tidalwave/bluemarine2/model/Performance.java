@@ -30,10 +30,14 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
+ *
+ * Represents a performance. Maps the homonymous concept from the Music Ontology.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
@@ -47,7 +51,7 @@ public interface Performance extends Entity, SourceAware, Identifiable
      *
      * Returns the performers of this performance.
      *
-     * @return  a {@link Finder} for the performers
+     * @return  a {@code Finder} for the performers
      *
      ******************************************************************************************************************/
     @Nonnull

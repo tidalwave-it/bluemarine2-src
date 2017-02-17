@@ -26,14 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.spi;
 
 import it.tidalwave.util.As8;
 import it.tidalwave.bluemarine2.util.Dumpable;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Role
+ * The generic supertype for all entities.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
