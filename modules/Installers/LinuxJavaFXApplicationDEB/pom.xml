@@ -48,7 +48,7 @@
     </description>
 
     <properties>
-        <tdt.deb.name>bluemarine2</tdt.deb.name>
+        <tft.deb.name>bluemarine2</tft.deb.name>
         <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux</tft.deb.sourceTarball.artifactId>
     </properties>
 
