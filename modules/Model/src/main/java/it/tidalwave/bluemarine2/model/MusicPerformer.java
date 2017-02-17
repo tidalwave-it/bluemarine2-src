@@ -35,6 +35,11 @@ import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
  *
+ * The association of a {@link MusicArtist} to a role (typically in a {@link Performance}. Roles are stuff such as
+ * "conductor", "violino player", "soprano", "engineer", and so on.
+ *
+ * @stereotype  Datum
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -45,11 +50,19 @@ public interface MusicPerformer extends Entity, Identifiable
 
     /*******************************************************************************************************************
      *
+     * Returns the {@link MusicArtist}.
+     *
+     * @return  the music artist
+     *
      ******************************************************************************************************************/
     @Nonnull
     public MusicArtist getMusicArtist();
 
     /*******************************************************************************************************************
+     *
+     * Returns the role.
+     *
+     * @return  the role
      *
      ******************************************************************************************************************/
     @Nonnull

@@ -36,6 +36,10 @@ import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *
+ * A support class for entities that have roles.
+ *
+ * @stereotype  Datum
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

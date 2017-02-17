@@ -33,7 +33,7 @@ import it.tidalwave.util.As8;
 
 /***********************************************************************************************************************
  *
- * A generic role which can supply an {@link Entity} that is the root of a hierarchy.
+ * A role which can supply an {@link Entity} that is the root of a hierarchy.
  *
  * @stereotype  Role
  *

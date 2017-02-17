@@ -39,9 +39,9 @@ import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite} role.
- * The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
+ * Represents a folder on a filesystem that contains media items. It is associated with the {@link SimpleComposite8}
+ * role. The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept
+ * is flexible and represents any composite collection of items.
  *
  * @stereotype  Datum
  *
@@ -53,7 +53,9 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
   {
     /*******************************************************************************************************************
      *
+     * Returns a {@link PathAwareFinder} for retrieving children.
      *
+     * @return  the {@code PathAwareFinder}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
@@ -61,7 +63,10 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
 
     /*******************************************************************************************************************
      *
+     * Decorates an existing {@link Finder8}{@code <PathAwareEntity>} with a {@link PathAwareFinder}.
      *
+     * @param   delegate    the {@code Finder} to decorate
+     * @return              the {@code PathAwareFinder}
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -72,7 +77,10 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
 
     /*******************************************************************************************************************
      *
+     * Creates a {@link PathAwareFinder} that operates on a collection of {@link PathAwareEntity} items.
      *
+     * @param   function    the provider of items
+     * @return              the {@code PathAwareFinder}
      *
      ******************************************************************************************************************/
     @Nonnull

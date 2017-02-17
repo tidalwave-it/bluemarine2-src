@@ -37,6 +37,10 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
+ * Represents a record made of audio tracks. Maps the homonymous concept from the Music Ontology.
+ *
+ * @stereotype  Datum
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -47,7 +51,9 @@ public interface Record extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * If this record is part of a multiple record release, return its disk number.
      *
+     * @return  the disk number
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -55,7 +61,9 @@ public interface Record extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * If this record is part of a multiple record release, return the count of disks in the release.
      *
+     * @return  the disk count
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -63,7 +71,13 @@ public interface Record extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * Returns the number of tracks in this record, if available. Note that this value is the number of tracks
+     * contained in the release, and might differ from {@code findTracks().count()} if only a subset of tracks is
+     * available in the catalog (for instance, if not all of them have been bought/imported).
      *
+     * @see #findTracks()
+     *
+     * @return  the track count
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -73,7 +87,9 @@ public interface Record extends Entity, SourceAware, Identifiable
      *
      * Finds the {@link Track}s in this record.
      *
-     * @return  the tracks
+     * @see #getTrackCount()
+     *
+     * @return  a {@code Finder} for the tracks
      *
      ******************************************************************************************************************/
     @Nonnull

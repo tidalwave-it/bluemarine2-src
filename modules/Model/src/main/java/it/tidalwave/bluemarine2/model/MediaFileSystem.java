@@ -36,7 +36,7 @@ import org.springframework.core.annotation.Order;
 
 /***********************************************************************************************************************
  *
- * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
+ * Represents a file system (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
  *
  * @stereotype  Datum
  *

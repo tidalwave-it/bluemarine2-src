@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.model.spi; // FIXME: move to it.tidalwave.bluemarine2.model
 
 import javax.annotation.Nonnull;
 import java.util.Collection;
@@ -43,6 +43,11 @@ import lombok.ToString;
 import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
+ *
+ * Represents a folder which doesn't have a physical counterpart in the repository. It can be used to created in-memory
+ * aggregations of media items.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$

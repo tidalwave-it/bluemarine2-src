@@ -36,10 +36,10 @@ import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
  *
- * The default {@link Presentable} for all instances of {@link Entity}.
- * 
+ * The default {@link Presentable} for all instances of {@link Entity} and {@link EntityBrowser}.
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -47,8 +47,8 @@ import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 @DciRole(datumType = { Entity.class, EntityBrowser.class } )
 public class EntityPresentable extends DefaultPresentable
   {
-    public EntityPresentable (final @Nonnull Object entity)
+    public EntityPresentable (final @Nonnull Object datum)
       {
-        super(entity);
+        super(datum);
       }
   }

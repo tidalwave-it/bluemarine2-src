@@ -39,6 +39,10 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
+ * Represents a music artist. Maps the homonymous concept from the Music Ontology.
+ *
+ * @stereotype  Datum
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -51,7 +55,7 @@ public interface MusicArtist extends Entity, Identifiable
      *
      * Finds the tracks made by this artist.
      *
-     * @return  the tracks
+     * @return  a {@code Finder} of the tracks
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -61,7 +65,7 @@ public interface MusicArtist extends Entity, Identifiable
      *
      * Finds the records made by this artist.
      *
-     * @return  the records
+     * @return  a {@code Finder} of the records
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -71,7 +75,7 @@ public interface MusicArtist extends Entity, Identifiable
      *
      * Finds the performances made by this artist.
      *
-     * @return  the performances
+     * @return  a {@code Finder} of the performances
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -79,6 +83,13 @@ public interface MusicArtist extends Entity, Identifiable
 
     public int getType(); // FIXME: use an enum
 
+    /*******************************************************************************************************************
+     *
+     * Returns the data source of this datum (typically {@code embedded}, {@code musicbrainz} or such).
+     *
+     * @return  the data source
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<Id> getSource();
   }

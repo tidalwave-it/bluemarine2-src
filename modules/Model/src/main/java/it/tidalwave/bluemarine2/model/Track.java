@@ -37,7 +37,11 @@ import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
  *
+ * Represents an audio track in a record. Maps the homonymous concept from the Music Ontology.
+ *
  * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -49,7 +53,11 @@ public interface Track extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskNumber()}.
      *
+     * @see Record#getDiskNumber()
+     *
+     * @return  the disk number
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -57,7 +65,11 @@ public interface Track extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskCount()}.
      *
+     * @see Record#getDiskCount()
+     *
+     * @return  the disk count
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -65,7 +77,9 @@ public interface Track extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * The position of this track in the containing record
      *
+     * @return  the track position
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -73,7 +87,9 @@ public interface Track extends Entity, SourceAware, Identifiable
 
     /*******************************************************************************************************************
      *
+     * The duration of this track
      *
+     * @return  the duration
      *
      ******************************************************************************************************************/
     @Nonnull
