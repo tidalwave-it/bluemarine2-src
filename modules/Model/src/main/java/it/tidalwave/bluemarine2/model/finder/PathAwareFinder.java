@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
@@ -48,8 +48,8 @@ public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity,
      *
      * Constrains the search to the entity with the given path.
      *
-     * @path        the path
-     * @return      the {@code Finder}
+     * @param       path    the path
+     * @return              the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -59,8 +59,8 @@ public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity,
      *
      * Constrains the search to the entity with the given path.
      *
-     * @path        the path
-     * @return      the {@code Finder}
+     * @param       path    the path
+     * @return              the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull

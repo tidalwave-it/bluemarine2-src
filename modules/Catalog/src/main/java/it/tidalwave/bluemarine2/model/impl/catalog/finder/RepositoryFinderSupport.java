@@ -74,7 +74,7 @@ import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 
 /***********************************************************************************************************************
  *
@@ -200,7 +200,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
         this.idName = idName;
         this.id = Optional.empty();
-        this.source = Optional.of(V_SOURCE_EMBEDDED); // FIXME: resets
+        this.source = Optional.of(O_SOURCE_EMBEDDED); // FIXME: resets
         this.sourceFallback = Optional.empty(); // FIXME: resets
       }
 

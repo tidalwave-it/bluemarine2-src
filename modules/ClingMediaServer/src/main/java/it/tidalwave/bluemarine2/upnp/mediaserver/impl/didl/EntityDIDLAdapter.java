@@ -34,7 +34,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;

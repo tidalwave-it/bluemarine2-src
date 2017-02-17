@@ -41,14 +41,14 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class Purl 
+public final class Purl
   {
-    private final static ValueFactory factory = SimpleValueFactory.getInstance();
-    
-    private static final String PREFIX_BIO          = "http://purl.org/vocab/bio/0.1/";
-    private static final String PREFIX_RELATIONSHIP = "http://purl.org/vocab/relationship/";
-    
-    public static final IRI EVENT              = factory.createIRI(PREFIX_BIO + "event");
-    
-    public static final IRI COLLABORATES_WITH  = factory.createIRI(PREFIX_RELATIONSHIP + "collaboratesWith");
+    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+
+    private static final String NS_BIO          = "http://purl.org/vocab/bio/0.1/";
+    private static final String NS_RELATIONSHIP = "http://purl.org/vocab/relationship/";
+
+    public static final IRI P_EVENT = FACTORY.createIRI(NS_BIO + "event");
+
+    public static final IRI P_COLLABORATES_WITH = FACTORY.createIRI(NS_RELATIONSHIP + "collaboratesWith");
 }

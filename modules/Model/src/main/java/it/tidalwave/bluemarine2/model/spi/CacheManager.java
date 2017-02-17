@@ -57,6 +57,10 @@ public interface CacheManager
 
     /*******************************************************************************************************************
      *
+     * Returns the cache associated to the given key (a new cache is eventually created).
+     *
+     * @param   cacheKey    the key
+     * @return              the cache
      *
      ******************************************************************************************************************/
     @Nonnull

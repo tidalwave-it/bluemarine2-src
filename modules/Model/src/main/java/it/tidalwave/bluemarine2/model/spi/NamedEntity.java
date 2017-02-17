@@ -33,6 +33,10 @@ import it.tidalwave.role.spi.DefaultDisplayable;
 
 /***********************************************************************************************************************
  *
+ * A support class for entities that have roles and a locally defined display name.
+ *
+ * @stereotype  Datum
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

@@ -37,6 +37,8 @@ import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
+ * A {@code Finder} for {@link Record}s.
+ *
  * @stereotype      Finder
  *
  * @author  Fabrizio Giudici

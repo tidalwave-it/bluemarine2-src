@@ -28,17 +28,15 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.nio.file.Paths;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.commons.test.TestUtilities;
 import org.testng.annotations.BeforeMethod;
 import static org.mockito.ArgumentMatchers.any;
