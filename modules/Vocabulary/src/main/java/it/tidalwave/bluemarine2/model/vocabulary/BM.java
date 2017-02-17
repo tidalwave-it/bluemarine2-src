@@ -374,10 +374,4 @@ public final class BM // FIXME: rename to BMMO
       {
         return FACTORY.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }
-
-    @Nonnull
-    public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull Id id)
-      {
-        return FACTORY.createIRI(String.format("urn:musicbrainz:%s:%s", resourceType, id.stringValue()));
-      }
   }
