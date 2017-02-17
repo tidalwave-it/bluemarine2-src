@@ -54,7 +54,7 @@ Still at the early stage of development, it can be used with some hack to reprod
 
     <issueManagement>
         <system>Jira</system>
-        <url>http://services.tidalwave.it/jira/browse/BM2</url>
+        <url>http://services.tidalwave.it/jira/browse/BMT</url>
     </issueManagement>
 
     <!-- Repeated because of http://jira.codehaus.org/browse/SCM-442 -->
