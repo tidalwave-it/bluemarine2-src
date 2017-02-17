@@ -30,13 +30,13 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import org.springframework.core.annotation.Order;
+import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
  *
- * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
+ * Represents a file system (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
  *
  * @stereotype  Datum
  *

@@ -45,13 +45,13 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.SupplierBasedFinder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
