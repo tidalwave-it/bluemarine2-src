@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi; // FIXME: move to it.tidalwave.bluemarine2.model
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.util.Collection;
@@ -37,10 +37,11 @@ import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 import lombok.ToString;
 import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 
 /***********************************************************************************************************************
  *

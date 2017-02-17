@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.spi;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

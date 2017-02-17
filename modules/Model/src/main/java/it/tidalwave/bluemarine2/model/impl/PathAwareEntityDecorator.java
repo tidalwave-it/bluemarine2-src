@@ -34,7 +34,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.Getter;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;

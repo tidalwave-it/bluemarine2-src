@@ -65,7 +65,7 @@ import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.role.PathAwareEntity.PathAwareEntity;
+import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity.PathAwareEntity;
 
 /***********************************************************************************************************************
  *

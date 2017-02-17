@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
