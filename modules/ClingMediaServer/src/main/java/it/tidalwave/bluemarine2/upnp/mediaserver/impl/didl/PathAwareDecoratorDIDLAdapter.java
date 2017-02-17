@@ -63,7 +63,7 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
       throws Exception
       {
         log.debug("toObject() - {}", datum);
-        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
+        final DIDLObject item = datum.getDelegate().as(DIDLAdapter).toObject();
 
         if (item instanceof Item)
           {
@@ -72,7 +72,6 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
 
         item.setId(externalized(datum.getPath().toString()));
         datum.getParent().ifPresent(parent -> item.setParentID(externalized(parent.getPath().toString())));
-        log.trace(">>>> delegate created {}", item);
         return item;
       }
   }

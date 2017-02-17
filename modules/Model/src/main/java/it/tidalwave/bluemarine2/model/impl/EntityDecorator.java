@@ -29,26 +29,22 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-import it.tidalwave.util.As;
-import it.tidalwave.util.AsException;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * This class decorates an existing {@link Entity} with additional roles.
+ * This class decorates an existing {@link Entity} with additional roles. Furthermore, roles annotated with
+ * {@code @DciRole} can be implicitly associated with the {@code EntityDecorator} itself, or its subclasses.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@ToString
+@ToString @Slf4j
 public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull
@@ -64,67 +60,7 @@ public class EntityDecorator extends EntityWithRoles
      ******************************************************************************************************************/
     public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Object... additionalRoles)
       {
-        super(additionalRoles);
+        super(delegate::asMany, additionalRoles);
         this.delegate = delegate;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type)
-      {
-        return as(type, As.Defaults.throwAsException(type));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> Collection<T> asMany (Class<T> type)
-      {
-        final List<T> result = new ArrayList<>(); // FIXME
-        asOptional(type).ifPresent(e -> result.add(e));
-        return result;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
-      {
-        return Optional.ofNullable(as(type, throwable -> null));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
-      {
-        try
-          {
-            return super.as(type);
-          }
-        catch (AsException e1)
-          {
-            try
-              {
-                return delegate.as(type);
-              }
-            catch (AsException e2)
-              {
-                return notFoundBehaviour.run(e2);
-              }
-          }
       }
   }

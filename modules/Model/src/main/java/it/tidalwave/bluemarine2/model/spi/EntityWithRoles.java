@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.experimental.Delegate;
 
@@ -43,14 +43,21 @@ import lombok.experimental.Delegate;
 public class EntityWithRoles implements Entity
   {
     @Delegate @Nonnull
-    private final AsSupport asSupport;
+    private final PriorityAsSupport asSupport;
 
-    @Nonnull
+    @Nonnull // for toString() only
     private final Object[] roles;
 
     public EntityWithRoles (final @Nonnull Object ... roles)
       {
-        this.asSupport = new AsSupport(this, roles);
+        this.asSupport = new PriorityAsSupport(this, roles);
+        this.roles = roles;
+      }
+
+    protected EntityWithRoles (final @Nonnull PriorityAsSupport.RoleProvider additionalRoleProvider,
+                               final @Nonnull Object ... roles)
+      {
+        this.asSupport = new PriorityAsSupport(this, additionalRoleProvider, roles);
         this.roles = roles;
       }
 
