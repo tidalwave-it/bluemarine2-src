@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Stopping bluemarine2-service... "
-systemctl stop bluemarine2-service
-systemctl disable bluemarine2-service
+echo "Stopping [[tft.deb.name]]... "
+systemctl stop [[tft.deb.name]]
+systemctl disable [[tft.deb.name]]
