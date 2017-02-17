@@ -60,13 +60,13 @@ import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
+import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
-import static it.tidalwave.util.test.FileComparisonUtils.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 import static org.testng.Assert.*;
 
 /***********************************************************************************************************************

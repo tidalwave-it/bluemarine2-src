@@ -44,7 +44,7 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class BM // FIXME: rename to BMMO
+public final class BMMO
   {
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
 

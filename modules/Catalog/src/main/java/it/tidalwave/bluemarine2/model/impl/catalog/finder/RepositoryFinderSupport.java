@@ -74,7 +74,7 @@ import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 
 /***********************************************************************************************************************
  *

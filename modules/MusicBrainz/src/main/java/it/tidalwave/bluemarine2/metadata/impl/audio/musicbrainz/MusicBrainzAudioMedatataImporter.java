@@ -111,7 +111,7 @@ public class MusicBrainzAudioMedatataImporter
 
     private static final Map<String, IRI> PERFORMER_MAP = new HashMap<>();
 
-    private static final IRI SOURCE_MUSICBRAINZ = FACTORY.createIRI(BM.PREFIX, "source#musicbrainz");
+    private static final IRI SOURCE_MUSICBRAINZ = FACTORY.createIRI(BMMO.PREFIX, "source#musicbrainz");
 
     @Nonnull
     private final CddbMetadataProvider cddbMetadataProvider;
@@ -145,140 +145,140 @@ public class MusicBrainzAudioMedatataImporter
      ******************************************************************************************************************/
     static
       {
-        PERFORMER_MAP.put("arranger",                           BM.P_ARRANGER);
-        PERFORMER_MAP.put("balance",                            BM.P_BALANCE);
-        PERFORMER_MAP.put("chorus master",                      BM.P_CHORUS_MASTER);
+        PERFORMER_MAP.put("arranger",                           BMMO.P_ARRANGER);
+        PERFORMER_MAP.put("balance",                            BMMO.P_BALANCE);
+        PERFORMER_MAP.put("chorus master",                      BMMO.P_CHORUS_MASTER);
         PERFORMER_MAP.put("conductor",                          MO.P_CONDUCTOR);
-        PERFORMER_MAP.put("editor",                             BM.P_EDITOR);
+        PERFORMER_MAP.put("editor",                             BMMO.P_EDITOR);
         PERFORMER_MAP.put("engineer",                           MO.P_ENGINEER);
-        PERFORMER_MAP.put("instrument arranger",                BM.P_ARRANGER);
-        PERFORMER_MAP.put("mastering",                          BM.P_MASTERING);
-        PERFORMER_MAP.put("mix",                                BM.P_MIX);
-        PERFORMER_MAP.put("orchestrator",                       BM.P_ORCHESTRATOR);
+        PERFORMER_MAP.put("instrument arranger",                BMMO.P_ARRANGER);
+        PERFORMER_MAP.put("mastering",                          BMMO.P_MASTERING);
+        PERFORMER_MAP.put("mix",                                BMMO.P_MIX);
+        PERFORMER_MAP.put("orchestrator",                       BMMO.P_ORCHESTRATOR);
         PERFORMER_MAP.put("performer",                          MO.P_PERFORMER);
-        PERFORMER_MAP.put("performing orchestra",               BM.P_ORCHESTRA);
+        PERFORMER_MAP.put("performing orchestra",               BMMO.P_ORCHESTRA);
         PERFORMER_MAP.put("producer",                           MO.P_PRODUCER);
-        PERFORMER_MAP.put("programming",                        BM.P_PROGRAMMING);
-        PERFORMER_MAP.put("recording",                          BM.P_RECORDING);
-        PERFORMER_MAP.put("remixer",                            BM.P_MIX);
+        PERFORMER_MAP.put("programming",                        BMMO.P_PROGRAMMING);
+        PERFORMER_MAP.put("recording",                          BMMO.P_RECORDING);
+        PERFORMER_MAP.put("remixer",                            BMMO.P_MIX);
         PERFORMER_MAP.put("sound",                              MO.P_ENGINEER);
 
         PERFORMER_MAP.put("vocal",                              MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/additional",                   BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/alto vocals",                  BM.P_ALTO);
-        PERFORMER_MAP.put("vocal/background vocals",            BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/baritone vocals",              BM.P_BARITONE);
-        PERFORMER_MAP.put("vocal/bass-baritone vocals",         BM.P_BASS_BARITONE);
-        PERFORMER_MAP.put("vocal/bass vocals",                  BM.P_BASS);
-        PERFORMER_MAP.put("vocal/choir vocals",                 BM.P_CHOIR);
-        PERFORMER_MAP.put("vocal/contralto vocals",             BM.P_CONTRALTO);
+        PERFORMER_MAP.put("vocal/additional",                   BMMO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/alto vocals",                  BMMO.P_ALTO);
+        PERFORMER_MAP.put("vocal/background vocals",            BMMO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/baritone vocals",              BMMO.P_BARITONE);
+        PERFORMER_MAP.put("vocal/bass-baritone vocals",         BMMO.P_BASS_BARITONE);
+        PERFORMER_MAP.put("vocal/bass vocals",                  BMMO.P_BASS);
+        PERFORMER_MAP.put("vocal/choir vocals",                 BMMO.P_CHOIR);
+        PERFORMER_MAP.put("vocal/contralto vocals",             BMMO.P_CONTRALTO);
         PERFORMER_MAP.put("vocal/guest",                        MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/lead vocals",                  BM.P_LEAD_SINGER);
-        PERFORMER_MAP.put("vocal/mezzo-soprano vocals",         BM.P_MEZZO_SOPRANO);
-        PERFORMER_MAP.put("vocal/other vocals",                 BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/solo",                         BM.P_LEAD_SINGER);
-        PERFORMER_MAP.put("vocal/soprano vocals",               BM.P_SOPRANO);
+        PERFORMER_MAP.put("vocal/lead vocals",                  BMMO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/mezzo-soprano vocals",         BMMO.P_MEZZO_SOPRANO);
+        PERFORMER_MAP.put("vocal/other vocals",                 BMMO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/solo",                         BMMO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/soprano vocals",               BMMO.P_SOPRANO);
         PERFORMER_MAP.put("vocal/spoken vocals",                MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/tenor vocals",                 BM.P_TENOR);
+        PERFORMER_MAP.put("vocal/tenor vocals",                 BMMO.P_TENOR);
 
         PERFORMER_MAP.put("instrument",                         MO.P_PERFORMER);
-        PERFORMER_MAP.put("instrument/accordion",               BM.P_PERFORMER_ACCORDION);
-        PERFORMER_MAP.put("instrument/acoustic guitar",         BM.P_PERFORMER_ACOUSTIC_GUITAR);
-        PERFORMER_MAP.put("instrument/acoustic bass guitar",    BM.P_PERFORMER_ACOUSTIC_BASS_GUITAR);
-        PERFORMER_MAP.put("instrument/agogô",                   BM.P_PERFORMER_AGOGO);
-        PERFORMER_MAP.put("instrument/alto saxophone",          BM.P_PERFORMER_ALTO_SAX);
-        PERFORMER_MAP.put("instrument/banjo",                   BM.P_PERFORMER_BANJO);
-        PERFORMER_MAP.put("instrument/baritone guitar",         BM.P_PERFORMER_BARITONE_GUITAR);
-        PERFORMER_MAP.put("instrument/baritone saxophone",      BM.P_PERFORMER_BARITONE_SAX);
-        PERFORMER_MAP.put("instrument/bass",                    BM.P_PERFORMER_BASS);
-        PERFORMER_MAP.put("instrument/bass clarinet",           BM.P_PERFORMER_BASS_CLARINET);
-        PERFORMER_MAP.put("instrument/bass drum",               BM.P_PERFORMER_BASS_DRUM);
-        PERFORMER_MAP.put("instrument/bass guitar",             BM.P_PERFORMER_BASS_GUITAR);
-        PERFORMER_MAP.put("instrument/bass trombone",           BM.P_PERFORMER_BASS_TROMBONE);
-        PERFORMER_MAP.put("instrument/bassoon",                 BM.P_PERFORMER_BASSOON);
-        PERFORMER_MAP.put("instrument/bells",                   BM.P_PERFORMER_BELLS);
-        PERFORMER_MAP.put("instrument/berimbau",                BM.P_PERFORMER_BERIMBAU);
-        PERFORMER_MAP.put("instrument/brass",                   BM.P_PERFORMER_BRASS);
-        PERFORMER_MAP.put("instrument/brushes",                 BM.P_PERFORMER_BRUSHES);
-        PERFORMER_MAP.put("instrument/cello",                   BM.P_PERFORMER_CELLO);
-        PERFORMER_MAP.put("instrument/clarinet",                BM.P_PERFORMER_CLARINET);
-        PERFORMER_MAP.put("instrument/classical guitar",        BM.P_PERFORMER_CLASSICAL_GUITAR);
-        PERFORMER_MAP.put("instrument/congas",                  BM.P_PERFORMER_CONGAS);
-        PERFORMER_MAP.put("instrument/cornet",                  BM.P_PERFORMER_CORNET);
-        PERFORMER_MAP.put("instrument/cymbals",                 BM.P_PERFORMER_CYMBALS);
-        PERFORMER_MAP.put("instrument/double bass",             BM.P_PERFORMER_DOUBLE_BASS);
-        PERFORMER_MAP.put("instrument/drums",                   BM.P_PERFORMER_DRUMS);
-        PERFORMER_MAP.put("instrument/drum machine",            BM.P_PERFORMER_DRUM_MACHINE);
-        PERFORMER_MAP.put("instrument/electric bass guitar",    BM.P_PERFORMER_ELECTRIC_BASS_GUITAR);
-        PERFORMER_MAP.put("instrument/electric guitar",         BM.P_PERFORMER_ELECTRIC_GUITAR);
-        PERFORMER_MAP.put("instrument/electric piano",          BM.P_PERFORMER_ELECTRIC_PIANO);
-        PERFORMER_MAP.put("instrument/electric sitar",          BM.P_PERFORMER_ELECTRIC_SITAR);
-        PERFORMER_MAP.put("instrument/electronic drum set",     BM.P_PERFORMER_ELECTRONIC_DRUM_SET);
-        PERFORMER_MAP.put("instrument/english horn",            BM.P_PERFORMER_ENGLISH_HORN);
-        PERFORMER_MAP.put("instrument/flugelhorn",              BM.P_PERFORMER_FLUGELHORN);
-        PERFORMER_MAP.put("instrument/flute",                   BM.P_PERFORMER_FLUTE);
-        PERFORMER_MAP.put("instrument/frame drum",              BM.P_PERFORMER_FRAME_DRUM);
-        PERFORMER_MAP.put("instrument/french horn",             BM.P_PERFORMER_FRENCH_HORN);
-        PERFORMER_MAP.put("instrument/glockenspiel",            BM.P_PERFORMER_GLOCKENSPIEL);
-        PERFORMER_MAP.put("instrument/grand piano",             BM.P_PERFORMER_GRAND_PIANO);
-        PERFORMER_MAP.put("instrument/guest",                   BM.P_PERFORMER_GUEST);
-        PERFORMER_MAP.put("instrument/guitar",                  BM.P_PERFORMER_GUITAR);
-        PERFORMER_MAP.put("instrument/guitar synthesizer",      BM.P_PERFORMER_GUITAR_SYNTHESIZER);
-        PERFORMER_MAP.put("instrument/guitars",                 BM.P_PERFORMER_GUITARS);
-        PERFORMER_MAP.put("instrument/handclaps",               BM.P_PERFORMER_HANDCLAPS);
-        PERFORMER_MAP.put("instrument/hammond organ",           BM.P_PERFORMER_HAMMOND_ORGAN);
-        PERFORMER_MAP.put("instrument/harmonica",               BM.P_PERFORMER_HARMONICA);
-        PERFORMER_MAP.put("instrument/harp",                    BM.P_PERFORMER_HARP);
-        PERFORMER_MAP.put("instrument/harpsichord",             BM.P_PERFORMER_HARPSICHORD);
-        PERFORMER_MAP.put("instrument/hi-hat",                  BM.P_PERFORMER_HIHAT);
-        PERFORMER_MAP.put("instrument/horn",                    BM.P_PERFORMER_HORN);
-        PERFORMER_MAP.put("instrument/keyboard",                BM.P_PERFORMER_KEYBOARD);
-        PERFORMER_MAP.put("instrument/koto",                    BM.P_PERFORMER_KOTO);
-        PERFORMER_MAP.put("instrument/lute",                    BM.P_PERFORMER_LUTE);
-        PERFORMER_MAP.put("instrument/maracas",                 BM.P_PERFORMER_MARACAS);
-        PERFORMER_MAP.put("instrument/marimba",                 BM.P_PERFORMER_MARIMBA);
-        PERFORMER_MAP.put("instrument/mellophone",              BM.P_PERFORMER_MELLOPHONE);
-        PERFORMER_MAP.put("instrument/melodica",                BM.P_PERFORMER_MELODICA);
-        PERFORMER_MAP.put("instrument/oboe",                    BM.P_PERFORMER_OBOE);
-        PERFORMER_MAP.put("instrument/organ",                   BM.P_PERFORMER_ORGAN);
-        PERFORMER_MAP.put("instrument/other instruments",       BM.P_PERFORMER_OTHER_INSTRUMENTS);
-        PERFORMER_MAP.put("instrument/percussion",              BM.P_PERFORMER_PERCUSSION);
-        PERFORMER_MAP.put("instrument/piano",                   BM.P_PERFORMER_PIANO);
-        PERFORMER_MAP.put("instrument/piccolo trumpet",         BM.P_PERFORMER_PICCOLO_TRUMPET);
-        PERFORMER_MAP.put("instrument/pipe organ",              BM.P_PERFORMER_PIPE_ORGAN);
-        PERFORMER_MAP.put("instrument/psaltery",                BM.P_PERFORMER_PSALTERY);
-        PERFORMER_MAP.put("instrument/recorder",                BM.P_PERFORMER_RECORDER);
-        PERFORMER_MAP.put("instrument/reeds",                   BM.P_PERFORMER_REEDS);
-        PERFORMER_MAP.put("instrument/rhodes piano",            BM.P_PERFORMER_RHODES_PIANO);
-        PERFORMER_MAP.put("instrument/santur",                  BM.P_PERFORMER_SANTUR);
-        PERFORMER_MAP.put("instrument/saxophone",               BM.P_PERFORMER_SAXOPHONE);
-        PERFORMER_MAP.put("instrument/shakers",                 BM.P_PERFORMER_SHAKERS);
-        PERFORMER_MAP.put("instrument/sitar",                   BM.P_PERFORMER_SITAR);
-        PERFORMER_MAP.put("instrument/slide guitar",            BM.P_PERFORMER_SLIDE_GUITAR);
-        PERFORMER_MAP.put("instrument/snare drum",              BM.P_PERFORMER_SNARE_DRUM);
-        PERFORMER_MAP.put("instrument/solo",                    BM.P_PERFORMER_SOLO);
-        PERFORMER_MAP.put("instrument/soprano saxophone",       BM.P_PERFORMER_SOPRANO_SAX);
-        PERFORMER_MAP.put("instrument/spanish acoustic guitar", BM.P_PERFORMER_SPANISH_ACOUSTIC_GUITAR);
-        PERFORMER_MAP.put("instrument/steel guitar",            BM.P_PERFORMER_STEEL_GUITAR);
-        PERFORMER_MAP.put("instrument/synclavier",              BM.P_PERFORMER_SYNCLAVIER);
-        PERFORMER_MAP.put("instrument/synthesizer",             BM.P_PERFORMER_SYNTHESIZER);
-        PERFORMER_MAP.put("instrument/tambourine",              BM.P_PERFORMER_TAMBOURINE);
-        PERFORMER_MAP.put("instrument/tenor saxophone",         BM.P_PERFORMER_TENOR_SAX);
-        PERFORMER_MAP.put("instrument/timbales",                BM.P_PERFORMER_TIMBALES);
-        PERFORMER_MAP.put("instrument/timpani",                 BM.P_PERFORMER_TIMPANI);
-        PERFORMER_MAP.put("instrument/tiple",                   BM.P_PERFORMER_TIPLE);
-        PERFORMER_MAP.put("instrument/trombone",                BM.P_PERFORMER_TROMBONE);
-        PERFORMER_MAP.put("instrument/trumpet",                 BM.P_PERFORMER_TRUMPET);
-        PERFORMER_MAP.put("instrument/tuba",                    BM.P_PERFORMER_TUBA);
-        PERFORMER_MAP.put("instrument/tubular bells",           BM.P_PERFORMER_TUBULAR_BELLS);
-        PERFORMER_MAP.put("instrument/tuned percussion",        BM.P_PERFORMER_TUNED_PERCUSSION);
-        PERFORMER_MAP.put("instrument/ukulele",                 BM.P_PERFORMER_UKULELE);
-        PERFORMER_MAP.put("instrument/vibraphone",              BM.P_PERFORMER_VIBRAPHONE);
-        PERFORMER_MAP.put("instrument/viola",                   BM.P_PERFORMER_VIOLA);
-        PERFORMER_MAP.put("instrument/viola da gamba",          BM.P_PERFORMER_VIOLA_DA_GAMBA);
-        PERFORMER_MAP.put("instrument/violin",                  BM.P_PERFORMER_VIOLIN);
-        PERFORMER_MAP.put("instrument/whistle",                 BM.P_PERFORMER_WHISTLE);
-        PERFORMER_MAP.put("instrument/xylophone",               BM.P_PERFORMER_XYLOPHONE);
+        PERFORMER_MAP.put("instrument/accordion",               BMMO.P_PERFORMER_ACCORDION);
+        PERFORMER_MAP.put("instrument/acoustic guitar",         BMMO.P_PERFORMER_ACOUSTIC_GUITAR);
+        PERFORMER_MAP.put("instrument/acoustic bass guitar",    BMMO.P_PERFORMER_ACOUSTIC_BASS_GUITAR);
+        PERFORMER_MAP.put("instrument/agogô",                   BMMO.P_PERFORMER_AGOGO);
+        PERFORMER_MAP.put("instrument/alto saxophone",          BMMO.P_PERFORMER_ALTO_SAX);
+        PERFORMER_MAP.put("instrument/banjo",                   BMMO.P_PERFORMER_BANJO);
+        PERFORMER_MAP.put("instrument/baritone guitar",         BMMO.P_PERFORMER_BARITONE_GUITAR);
+        PERFORMER_MAP.put("instrument/baritone saxophone",      BMMO.P_PERFORMER_BARITONE_SAX);
+        PERFORMER_MAP.put("instrument/bass",                    BMMO.P_PERFORMER_BASS);
+        PERFORMER_MAP.put("instrument/bass clarinet",           BMMO.P_PERFORMER_BASS_CLARINET);
+        PERFORMER_MAP.put("instrument/bass drum",               BMMO.P_PERFORMER_BASS_DRUM);
+        PERFORMER_MAP.put("instrument/bass guitar",             BMMO.P_PERFORMER_BASS_GUITAR);
+        PERFORMER_MAP.put("instrument/bass trombone",           BMMO.P_PERFORMER_BASS_TROMBONE);
+        PERFORMER_MAP.put("instrument/bassoon",                 BMMO.P_PERFORMER_BASSOON);
+        PERFORMER_MAP.put("instrument/bells",                   BMMO.P_PERFORMER_BELLS);
+        PERFORMER_MAP.put("instrument/berimbau",                BMMO.P_PERFORMER_BERIMBAU);
+        PERFORMER_MAP.put("instrument/brass",                   BMMO.P_PERFORMER_BRASS);
+        PERFORMER_MAP.put("instrument/brushes",                 BMMO.P_PERFORMER_BRUSHES);
+        PERFORMER_MAP.put("instrument/cello",                   BMMO.P_PERFORMER_CELLO);
+        PERFORMER_MAP.put("instrument/clarinet",                BMMO.P_PERFORMER_CLARINET);
+        PERFORMER_MAP.put("instrument/classical guitar",        BMMO.P_PERFORMER_CLASSICAL_GUITAR);
+        PERFORMER_MAP.put("instrument/congas",                  BMMO.P_PERFORMER_CONGAS);
+        PERFORMER_MAP.put("instrument/cornet",                  BMMO.P_PERFORMER_CORNET);
+        PERFORMER_MAP.put("instrument/cymbals",                 BMMO.P_PERFORMER_CYMBALS);
+        PERFORMER_MAP.put("instrument/double bass",             BMMO.P_PERFORMER_DOUBLE_BASS);
+        PERFORMER_MAP.put("instrument/drums",                   BMMO.P_PERFORMER_DRUMS);
+        PERFORMER_MAP.put("instrument/drum machine",            BMMO.P_PERFORMER_DRUM_MACHINE);
+        PERFORMER_MAP.put("instrument/electric bass guitar",    BMMO.P_PERFORMER_ELECTRIC_BASS_GUITAR);
+        PERFORMER_MAP.put("instrument/electric guitar",         BMMO.P_PERFORMER_ELECTRIC_GUITAR);
+        PERFORMER_MAP.put("instrument/electric piano",          BMMO.P_PERFORMER_ELECTRIC_PIANO);
+        PERFORMER_MAP.put("instrument/electric sitar",          BMMO.P_PERFORMER_ELECTRIC_SITAR);
+        PERFORMER_MAP.put("instrument/electronic drum set",     BMMO.P_PERFORMER_ELECTRONIC_DRUM_SET);
+        PERFORMER_MAP.put("instrument/english horn",            BMMO.P_PERFORMER_ENGLISH_HORN);
+        PERFORMER_MAP.put("instrument/flugelhorn",              BMMO.P_PERFORMER_FLUGELHORN);
+        PERFORMER_MAP.put("instrument/flute",                   BMMO.P_PERFORMER_FLUTE);
+        PERFORMER_MAP.put("instrument/frame drum",              BMMO.P_PERFORMER_FRAME_DRUM);
+        PERFORMER_MAP.put("instrument/french horn",             BMMO.P_PERFORMER_FRENCH_HORN);
+        PERFORMER_MAP.put("instrument/glockenspiel",            BMMO.P_PERFORMER_GLOCKENSPIEL);
+        PERFORMER_MAP.put("instrument/grand piano",             BMMO.P_PERFORMER_GRAND_PIANO);
+        PERFORMER_MAP.put("instrument/guest",                   BMMO.P_PERFORMER_GUEST);
+        PERFORMER_MAP.put("instrument/guitar",                  BMMO.P_PERFORMER_GUITAR);
+        PERFORMER_MAP.put("instrument/guitar synthesizer",      BMMO.P_PERFORMER_GUITAR_SYNTHESIZER);
+        PERFORMER_MAP.put("instrument/guitars",                 BMMO.P_PERFORMER_GUITARS);
+        PERFORMER_MAP.put("instrument/handclaps",               BMMO.P_PERFORMER_HANDCLAPS);
+        PERFORMER_MAP.put("instrument/hammond organ",           BMMO.P_PERFORMER_HAMMOND_ORGAN);
+        PERFORMER_MAP.put("instrument/harmonica",               BMMO.P_PERFORMER_HARMONICA);
+        PERFORMER_MAP.put("instrument/harp",                    BMMO.P_PERFORMER_HARP);
+        PERFORMER_MAP.put("instrument/harpsichord",             BMMO.P_PERFORMER_HARPSICHORD);
+        PERFORMER_MAP.put("instrument/hi-hat",                  BMMO.P_PERFORMER_HIHAT);
+        PERFORMER_MAP.put("instrument/horn",                    BMMO.P_PERFORMER_HORN);
+        PERFORMER_MAP.put("instrument/keyboard",                BMMO.P_PERFORMER_KEYBOARD);
+        PERFORMER_MAP.put("instrument/koto",                    BMMO.P_PERFORMER_KOTO);
+        PERFORMER_MAP.put("instrument/lute",                    BMMO.P_PERFORMER_LUTE);
+        PERFORMER_MAP.put("instrument/maracas",                 BMMO.P_PERFORMER_MARACAS);
+        PERFORMER_MAP.put("instrument/marimba",                 BMMO.P_PERFORMER_MARIMBA);
+        PERFORMER_MAP.put("instrument/mellophone",              BMMO.P_PERFORMER_MELLOPHONE);
+        PERFORMER_MAP.put("instrument/melodica",                BMMO.P_PERFORMER_MELODICA);
+        PERFORMER_MAP.put("instrument/oboe",                    BMMO.P_PERFORMER_OBOE);
+        PERFORMER_MAP.put("instrument/organ",                   BMMO.P_PERFORMER_ORGAN);
+        PERFORMER_MAP.put("instrument/other instruments",       BMMO.P_PERFORMER_OTHER_INSTRUMENTS);
+        PERFORMER_MAP.put("instrument/percussion",              BMMO.P_PERFORMER_PERCUSSION);
+        PERFORMER_MAP.put("instrument/piano",                   BMMO.P_PERFORMER_PIANO);
+        PERFORMER_MAP.put("instrument/piccolo trumpet",         BMMO.P_PERFORMER_PICCOLO_TRUMPET);
+        PERFORMER_MAP.put("instrument/pipe organ",              BMMO.P_PERFORMER_PIPE_ORGAN);
+        PERFORMER_MAP.put("instrument/psaltery",                BMMO.P_PERFORMER_PSALTERY);
+        PERFORMER_MAP.put("instrument/recorder",                BMMO.P_PERFORMER_RECORDER);
+        PERFORMER_MAP.put("instrument/reeds",                   BMMO.P_PERFORMER_REEDS);
+        PERFORMER_MAP.put("instrument/rhodes piano",            BMMO.P_PERFORMER_RHODES_PIANO);
+        PERFORMER_MAP.put("instrument/santur",                  BMMO.P_PERFORMER_SANTUR);
+        PERFORMER_MAP.put("instrument/saxophone",               BMMO.P_PERFORMER_SAXOPHONE);
+        PERFORMER_MAP.put("instrument/shakers",                 BMMO.P_PERFORMER_SHAKERS);
+        PERFORMER_MAP.put("instrument/sitar",                   BMMO.P_PERFORMER_SITAR);
+        PERFORMER_MAP.put("instrument/slide guitar",            BMMO.P_PERFORMER_SLIDE_GUITAR);
+        PERFORMER_MAP.put("instrument/snare drum",              BMMO.P_PERFORMER_SNARE_DRUM);
+        PERFORMER_MAP.put("instrument/solo",                    BMMO.P_PERFORMER_SOLO);
+        PERFORMER_MAP.put("instrument/soprano saxophone",       BMMO.P_PERFORMER_SOPRANO_SAX);
+        PERFORMER_MAP.put("instrument/spanish acoustic guitar", BMMO.P_PERFORMER_SPANISH_ACOUSTIC_GUITAR);
+        PERFORMER_MAP.put("instrument/steel guitar",            BMMO.P_PERFORMER_STEEL_GUITAR);
+        PERFORMER_MAP.put("instrument/synclavier",              BMMO.P_PERFORMER_SYNCLAVIER);
+        PERFORMER_MAP.put("instrument/synthesizer",             BMMO.P_PERFORMER_SYNTHESIZER);
+        PERFORMER_MAP.put("instrument/tambourine",              BMMO.P_PERFORMER_TAMBOURINE);
+        PERFORMER_MAP.put("instrument/tenor saxophone",         BMMO.P_PERFORMER_TENOR_SAX);
+        PERFORMER_MAP.put("instrument/timbales",                BMMO.P_PERFORMER_TIMBALES);
+        PERFORMER_MAP.put("instrument/timpani",                 BMMO.P_PERFORMER_TIMPANI);
+        PERFORMER_MAP.put("instrument/tiple",                   BMMO.P_PERFORMER_TIPLE);
+        PERFORMER_MAP.put("instrument/trombone",                BMMO.P_PERFORMER_TROMBONE);
+        PERFORMER_MAP.put("instrument/trumpet",                 BMMO.P_PERFORMER_TRUMPET);
+        PERFORMER_MAP.put("instrument/tuba",                    BMMO.P_PERFORMER_TUBA);
+        PERFORMER_MAP.put("instrument/tubular bells",           BMMO.P_PERFORMER_TUBULAR_BELLS);
+        PERFORMER_MAP.put("instrument/tuned percussion",        BMMO.P_PERFORMER_TUNED_PERCUSSION);
+        PERFORMER_MAP.put("instrument/ukulele",                 BMMO.P_PERFORMER_UKULELE);
+        PERFORMER_MAP.put("instrument/vibraphone",              BMMO.P_PERFORMER_VIBRAPHONE);
+        PERFORMER_MAP.put("instrument/viola",                   BMMO.P_PERFORMER_VIOLA);
+        PERFORMER_MAP.put("instrument/viola da gamba",          BMMO.P_PERFORMER_VIOLA_DA_GAMBA);
+        PERFORMER_MAP.put("instrument/violin",                  BMMO.P_PERFORMER_VIOLIN);
+        PERFORMER_MAP.put("instrument/whistle",                 BMMO.P_PERFORMER_WHISTLE);
+        PERFORMER_MAP.put("instrument/xylophone",               BMMO.P_PERFORMER_XYLOPHONE);
       }
 
     /*******************************************************************************************************************
@@ -718,15 +718,15 @@ public class MusicBrainzAudioMedatataImporter
         final Cddb cddb                  = metadata.get(CDDB).get();
         final String recordTitle         = rmd.pickTitle();
         final IRI embeddedRecordIri      = recordIriOf(metadata, embeddedRecordTitle);
-        final IRI recordIri              = BM.recordIriFor(rmd.computeId());
+        final IRI recordIri              = BMMO.recordIriFor(rmd.computeId());
         log.info("importing {} {} ...", recordTitle, (rmd.isAlternative() ? "(alternative)" : ""));
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,              MO.C_RECORD)
             .with(recordIri, RDFS.LABEL,            literalFor(recordTitle))
             .with(recordIri, DC.TITLE,              literalFor(recordTitle))
-            .with(recordIri, BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
-            .with(recordIri, BM.P_ALTERNATE_OF,     embeddedRecordIri)
+            .with(recordIri, BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
+            .with(recordIri, BMMO.P_ALTERNATE_OF,   embeddedRecordIri)
             .with(recordIri, MO.P_MEDIA_TYPE,       MO.C_CD)
             .with(recordIri, MO.P_TRACK_COUNT,      literalFor(tracks.size()))
             .with(recordIri, MO.P_MUSICBRAINZ_GUID, literalFor(releaseId))
@@ -740,7 +740,7 @@ public class MusicBrainzAudioMedatataImporter
 
         if (rmd.isAlternative())
           {
-            model = model.with(recordIri, BM.P_ALTERNATE_PICK_OF, embeddedRecordIri);
+            model = model.with(recordIri, BMMO.P_ALTERNATE_PICK_OF, embeddedRecordIri);
           }
 
         return model;
@@ -781,15 +781,15 @@ public class MusicBrainzAudioMedatataImporter
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,            trackIri)
-            .with(recordIri, BM.DISK_COUNT,         literalForInt(diskCount))
-            .with(recordIri, BM.DISK_NUMBER,        literalForInt(diskNumber))
+            .with(recordIri, BMMO.DISK_COUNT,       literalForInt(diskCount))
+            .with(recordIri, BMMO.DISK_NUMBER,      literalForInt(diskNumber))
 
             .with(signalIri, MO.P_PUBLISHED_AS,     trackIri)
 
             .with(trackIri,  RDF.TYPE,              MO.C_TRACK)
             .with(trackIri,  RDFS.LABEL,            literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,              literalFor(trackTitle))
-            .with(trackIri,  BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(trackIri,  BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
             .with(trackIri,  MO.P_TRACK_NUMBER,     literalFor(trackNumber))
             .with(trackIri,  MO.P_MUSICBRAINZ_GUID, literalFor(track.getId()))
             .with(trackIri,  MO.P_MUSICBRAINZ,      musicBrainzIriFor("track", track.getId()))
@@ -855,14 +855,14 @@ public class MusicBrainzAudioMedatataImporter
 
         final ModelBuilder model = createModelBuilder()
             .with(performanceIri,  RDF.TYPE,              MO.C_PERFORMANCE)
-            .with(performanceIri,  BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(performanceIri,  BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
             .with(performanceIri,  MO.P_MUSICBRAINZ_GUID, literalFor(recording.getId()))
             .with(performanceIri,  MO.P_RECORDED_AS,      signalIri)
 
             .with(artistIri,       RDF.TYPE,              MO.C_MUSIC_ARTIST)
             .with(artistIri,       RDFS.LABEL,            literalFor(artist.getName()))
             .with(artistIri,       FOAF.NAME,             literalFor(artist.getName()))
-            .with(artistIri,       BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(artistIri,       BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
             .with(artistIri,       MO.P_MUSICBRAINZ_GUID, literalFor(artist.getId()))
             .with(artistIri,       MO.P_MUSICBRAINZ,      musicBrainzIriFor("artist", artist.getId()))
 
@@ -1135,7 +1135,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private static IRI artistIriOf (final @Nonnull String id)
       {
-        return BM.artistIriFor(createSha1IdNew(musicBrainzIriFor("artist", id).stringValue()));
+        return BMMO.artistIriFor(createSha1IdNew(musicBrainzIriFor("artist", id).stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -1146,7 +1146,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private static IRI trackIriOf (final @Nonnull String id)
       {
-        return BM.trackIriFor(createSha1IdNew(musicBrainzIriFor("track", id).stringValue()));
+        return BMMO.trackIriFor(createSha1IdNew(musicBrainzIriFor("track", id).stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -1158,8 +1158,8 @@ public class MusicBrainzAudioMedatataImporter
     private static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
-        return BM.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
-                                                  : createSha1IdNew("RECORD:" + recordTitle));
+        return BMMO.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
+                                                    : createSha1IdNew("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -1169,7 +1169,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
       {
-        return BM.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
+        return BMMO.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
       }
 
     /*******************************************************************************************************************
@@ -1180,7 +1180,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private static IRI performanceIriFor (final @Nonnull String id)
       {
-        return BM.performanceIriFor(createSha1IdNew(musicBrainzIriFor("performance", id).stringValue()));
+        return BMMO.performanceIriFor(createSha1IdNew(musicBrainzIriFor("performance", id).stringValue()));
       }
 
     /*******************************************************************************************************************
