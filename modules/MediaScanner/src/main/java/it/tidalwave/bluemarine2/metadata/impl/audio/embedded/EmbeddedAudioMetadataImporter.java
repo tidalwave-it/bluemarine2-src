@@ -295,7 +295,7 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(newGroupIri,   BMMO.P_IMPORTED_FROM,        BMMO.O_SOURCE_EMBEDDED)
             .withOptional(newGroupIri,   RDFS.LABEL,                  literalFor(makerName))
             .withOptional(newGroupIri,   FOAF.NAME,                   literalFor(makerName))
-            .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,          literalFor((short)2))
+            .withOptional(newGroupIri,   DbTune.P_ARTIST_TYPE,        literalFor((short)2))
             .withOptional(newGroupIri,   Purl.P_COLLABORATES_WITH,    artists.stream().map(Pair::getIri))
             .toModel();
       }
