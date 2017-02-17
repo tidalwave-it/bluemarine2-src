@@ -78,7 +78,7 @@ public class DefaultAudioRendererPresentationControl
 
     private Duration duration = Duration.ZERO;
 
-    private PlayList playList = PlayList.EMPTY;
+    private PlayList<AudioFile> playList = PlayList.empty();
 
     // Discriminates a forced stop from media player just terminating
     private boolean stopped;
@@ -150,7 +150,7 @@ public class DefaultAudioRendererPresentationControl
       {
         stop();
         unbindMediaPlayer();
-        playList = PlayList.EMPTY;
+        playList = PlayList.empty();
         return OnDeactivate.Result.PROCEED;
       }
 

@@ -43,23 +43,19 @@ import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
- * FIXME: make it of MediaItem, not AudioFile
- *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PlayList
+public class PlayList<ENTITY>
   {
-    /** An empty playlist. */
-    public static final PlayList EMPTY = new PlayList();
+    @Getter @Nonnull
+    private Optional<ENTITY> currentItem;
 
-    @Getter
-    private Optional<AudioFile> currentItem;
+    @Nonnull
+    private final List<ENTITY> items;
 
-    private final List<AudioFile> items;
-
-    @Getter
+    @Getter @Nonnegative
     private int index;
 
     @Getter @Accessors(fluent = true)
@@ -79,18 +75,31 @@ public class PlayList
 
     /*******************************************************************************************************************
      *
-     * Creates a new instance out of a collection of {@link AudioFile}s, with the given current item.
+     * Creates a new instance out of a collection of items, with the given current item.
      *
      * @param   currentItem     the item designated to be current
-     * @param   items           all the items
+     * @param   items           all the items - if empty, a playlist with a single element will be created
      *
      ******************************************************************************************************************/
-    public PlayList (final @Nonnull AudioFile currentItem, final @Nonnull Collection<AudioFile> items)
+    public PlayList (final @Nonnull ENTITY currentItem, final @Nonnull Collection<ENTITY> items)
       {
         this.items = new ArrayList<>(items.isEmpty() ? Arrays.asList(currentItem) : items);
         this.currentItem = Optional.of(currentItem);
         this.index = this.items.indexOf(currentItem);
         update();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Returns an empty playlist.
+     *
+     * @return  an empty playlist
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static <T> PlayList<T> empty()
+      {
+        return new PlayList<>();
       }
 
     /*******************************************************************************************************************
@@ -125,7 +134,7 @@ public class PlayList
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> previous()
+    public Optional<ENTITY> previous()
       {
         currentItem = Optional.of(items.get(--index));
         update();
@@ -140,7 +149,7 @@ public class PlayList
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> next()
+    public Optional<ENTITY> next()
       {
         currentItem = Optional.of(items.get(++index));
         update();
@@ -155,7 +164,7 @@ public class PlayList
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> peekNext()
+    public Optional<ENTITY> peekNext()
       {
         return hasNext() ? Optional.of(items.get(index + 1)) : Optional.empty();
       }
