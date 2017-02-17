@@ -42,7 +42,7 @@ import org.springframework.core.io.Resource;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
@@ -201,7 +201,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     private Metadata metadata;
 
     @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
+    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
     public FileSystemAudioFile (final @Nonnull Path path,
                                 final @Nonnull PathAwareEntity parent,

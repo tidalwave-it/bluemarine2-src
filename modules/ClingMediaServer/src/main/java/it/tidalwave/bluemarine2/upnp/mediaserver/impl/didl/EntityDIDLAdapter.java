@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
+import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.ToString;
@@ -40,35 +41,28 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * A fallback {@link DIDLAdapter} for any {@link Entity}, used if no more specialised roles are found.
+ *
  * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Slf4j @ToString //@DciRole(datumType = Entity.class)
+@Immutable @Slf4j @ToString @DciRole(datumType = Entity.class)
 public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    public EntityDIDLAdapter (final @Nonnull Entity datum , final @Nonnull ResourceServer server)
+    public EntityDIDLAdapter (final @Nonnull Entity datum, final @Nonnull ResourceServer server)
       {
         super(datum, server);
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public DIDLObject toObject()
       {
-        log.trace("toObject() - {}", datum);
+        log.debug("toObject() - {}", datum);
         final Container container = setCommonFields(new Container());
         container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
-        container.setParentID("parentId"); // FIXME
         return container;
       }
   }

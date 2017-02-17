@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.experimental.Delegate;
@@ -44,10 +44,10 @@ import lombok.experimental.Delegate;
 public class RepositoryMusicPerformerRole implements Entity
   {
     @Delegate
-    private final AsSupport asSupport;
+    private final PriorityAsSupport asSupport;
 
     public RepositoryMusicPerformerRole (final @Nonnull String s)
       {
-        asSupport = new AsSupport(this, new DefaultDisplayable(s));
+        asSupport = new PriorityAsSupport(this, new DefaultDisplayable(s));
       }
   }

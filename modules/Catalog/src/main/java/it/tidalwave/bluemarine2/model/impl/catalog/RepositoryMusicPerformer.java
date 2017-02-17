@@ -58,7 +58,7 @@ public class RepositoryMusicPerformer implements MusicPerformer
     private final Optional<Entity> role;
 
 //    @Delegate
-//    private final AsSupport asSupport = new AsSupport(this);
+//    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
     public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
