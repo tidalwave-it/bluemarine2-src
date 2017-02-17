@@ -64,7 +64,7 @@ public class RepositoryMusicPerformer implements MusicPerformer
       {
         this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
         final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue()
-                                                .replaceAll(BMMO.PREFIX + "performer_", ""));
+                                                .replaceAll(BMMO.NS + "performer_", ""));
         this.role = r.map(RepositoryMusicPerformerRole::new);
       }
 

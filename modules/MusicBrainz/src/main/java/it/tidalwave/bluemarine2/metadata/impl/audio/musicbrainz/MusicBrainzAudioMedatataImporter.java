@@ -111,7 +111,7 @@ public class MusicBrainzAudioMedatataImporter
 
     private static final Map<String, IRI> PERFORMER_MAP = new HashMap<>();
 
-    private static final IRI SOURCE_MUSICBRAINZ = FACTORY.createIRI(BMMO.PREFIX, "source#musicbrainz");
+    private static final IRI SOURCE_MUSICBRAINZ = FACTORY.createIRI(BMMO.NS, "source#musicbrainz");
 
     @Nonnull
     private final CddbMetadataProvider cddbMetadataProvider;
@@ -725,7 +725,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(recordIri, RDF.TYPE,              MO.C_RECORD)
             .with(recordIri, RDFS.LABEL,            literalFor(recordTitle))
             .with(recordIri, DC.TITLE,              literalFor(recordTitle))
-            .with(recordIri, BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
+            .with(recordIri, BMMO.P_IMPORTED_FROM,  BMMO.O_SOURCE_MUSICBRAINZ)
             .with(recordIri, BMMO.P_ALTERNATE_OF,   embeddedRecordIri)
             .with(recordIri, MO.P_MEDIA_TYPE,       MO.C_CD)
             .with(recordIri, MO.P_TRACK_COUNT,      literalFor(tracks.size()))
@@ -781,15 +781,15 @@ public class MusicBrainzAudioMedatataImporter
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,            trackIri)
-            .with(recordIri, BMMO.DISK_COUNT,       literalForInt(diskCount))
-            .with(recordIri, BMMO.DISK_NUMBER,      literalForInt(diskNumber))
+            .with(recordIri, BMMO.P_DISK_COUNT,     literalForInt(diskCount))
+            .with(recordIri, BMMO.P_DISK_NUMBER,    literalForInt(diskNumber))
 
             .with(signalIri, MO.P_PUBLISHED_AS,     trackIri)
 
             .with(trackIri,  RDF.TYPE,              MO.C_TRACK)
             .with(trackIri,  RDFS.LABEL,            literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,              literalFor(trackTitle))
-            .with(trackIri,  BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
+            .with(trackIri,  BMMO.P_IMPORTED_FROM,  BMMO.O_SOURCE_MUSICBRAINZ)
             .with(trackIri,  MO.P_TRACK_NUMBER,     literalFor(trackNumber))
             .with(trackIri,  MO.P_MUSICBRAINZ_GUID, literalFor(track.getId()))
             .with(trackIri,  MO.P_MUSICBRAINZ,      musicBrainzIriFor("track", track.getId()))
@@ -855,14 +855,14 @@ public class MusicBrainzAudioMedatataImporter
 
         final ModelBuilder model = createModelBuilder()
             .with(performanceIri,  RDF.TYPE,              MO.C_PERFORMANCE)
-            .with(performanceIri,  BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
+            .with(performanceIri,  BMMO.P_IMPORTED_FROM,  BMMO.O_SOURCE_MUSICBRAINZ)
             .with(performanceIri,  MO.P_MUSICBRAINZ_GUID, literalFor(recording.getId()))
             .with(performanceIri,  MO.P_RECORDED_AS,      signalIri)
 
             .with(artistIri,       RDF.TYPE,              MO.C_MUSIC_ARTIST)
             .with(artistIri,       RDFS.LABEL,            literalFor(artist.getName()))
             .with(artistIri,       FOAF.NAME,             literalFor(artist.getName()))
-            .with(artistIri,       BMMO.P_IMPORTED_FROM,  BMMO.V_SOURCE_MUSICBRAINZ)
+            .with(artistIri,       BMMO.P_IMPORTED_FROM,  BMMO.O_SOURCE_MUSICBRAINZ)
             .with(artistIri,       MO.P_MUSICBRAINZ_GUID, literalFor(artist.getId()))
             .with(artistIri,       MO.P_MUSICBRAINZ,      musicBrainzIriFor("artist", artist.getId()))
 
