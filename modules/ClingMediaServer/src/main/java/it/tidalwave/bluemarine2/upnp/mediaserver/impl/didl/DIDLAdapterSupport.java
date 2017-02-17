@@ -60,7 +60,7 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
      *
      *
      ******************************************************************************************************************/
-    protected <X extends DIDLObject> X setCommonFields (final @Nonnull X didlObject)
+    protected <D extends DIDLObject> D setCommonFields (final @Nonnull D didlObject)
       {
         didlObject.setRestricted(false);
         didlObject.setCreator("blueMarine II"); // FIXME
@@ -73,11 +73,6 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
             datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
             container.setItems(Collections.emptyList());
           }
-
-//        if (datum instanceof PathAwareEntity)
-//          {
-//            didlObject.setParentID(((PathAwareEntity)datum).getParent().map(p -> p.getPath().toString()).orElse(ID_NONE));
-//          }
 
         return didlObject;
       }

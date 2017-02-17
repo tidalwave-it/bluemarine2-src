@@ -39,7 +39,7 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.Binding;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
@@ -85,7 +85,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     protected final Optional<Id> fallback;
 
     @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
+    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
     /*******************************************************************************************************************
      *

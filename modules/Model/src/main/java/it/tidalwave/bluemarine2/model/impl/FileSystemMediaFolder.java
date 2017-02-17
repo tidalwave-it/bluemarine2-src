@@ -33,7 +33,7 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.AllArgsConstructor;
@@ -64,7 +64,7 @@ public class FileSystemMediaFolder implements MediaFolder
     private final Path basePath;
 
     @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
+    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
     @Override @Nonnull
     public Optional<PathAwareEntity> getParent()
