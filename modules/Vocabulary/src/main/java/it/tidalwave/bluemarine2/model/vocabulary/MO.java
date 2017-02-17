@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.PREFIX;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
