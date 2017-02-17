@@ -38,6 +38,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction8;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.AudioFile;
@@ -53,7 +54,6 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 
 /***********************************************************************************************************************
  *
@@ -134,7 +134,7 @@ public class DefaultAudioRendererPresentationControl
         log.info("onRenderAudioFileRequest({})", request);
 
         playList = request.getPlayList();
-        setAudioFile(playList.getCurrentFile().get());
+        setAudioFile(playList.getCurrentItem().get());
         bindMediaPlayer();
         presentation.showUp(this);
         presentation.focusOnPlayButton();
