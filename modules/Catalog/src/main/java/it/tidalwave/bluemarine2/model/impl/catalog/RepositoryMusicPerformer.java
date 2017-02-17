@@ -34,7 +34,7 @@ import java.util.Optional;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.vocabulary.BMMO;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

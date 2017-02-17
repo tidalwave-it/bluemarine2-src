@@ -33,7 +33,7 @@ import java.time.Duration;
 import java.util.Optional;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *

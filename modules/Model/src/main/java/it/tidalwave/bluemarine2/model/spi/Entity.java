@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role; // FIXME: move to it.tidalwave.bluemarine2.model.spi
+package it.tidalwave.bluemarine2.model.spi;
 
 import it.tidalwave.util.As8;
 import it.tidalwave.bluemarine2.util.Dumpable;

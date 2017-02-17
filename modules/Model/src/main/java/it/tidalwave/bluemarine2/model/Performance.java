@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
  *

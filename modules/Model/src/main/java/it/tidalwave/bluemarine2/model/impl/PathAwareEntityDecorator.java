@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 import static it.tidalwave.role.Identifiable.Identifiable;

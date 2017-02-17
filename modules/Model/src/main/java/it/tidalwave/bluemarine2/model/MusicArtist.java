@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;

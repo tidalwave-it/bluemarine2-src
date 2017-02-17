@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.model.spi;
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 import it.tidalwave.util.spi.PriorityAsSupport;
-import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************

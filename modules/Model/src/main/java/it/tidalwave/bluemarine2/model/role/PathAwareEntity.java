@@ -26,17 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.role; // FIXME: move to it.tidalwave.bluemarine2.model.spi
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *
  * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
  *
- * @stereotype  Role
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$

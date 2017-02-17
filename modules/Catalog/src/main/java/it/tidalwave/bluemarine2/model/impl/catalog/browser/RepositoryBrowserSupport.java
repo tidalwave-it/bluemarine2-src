@@ -34,9 +34,9 @@ import java.util.function.Function;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
-import it.tidalwave.bluemarine2.model.role.EntityBrowser;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
