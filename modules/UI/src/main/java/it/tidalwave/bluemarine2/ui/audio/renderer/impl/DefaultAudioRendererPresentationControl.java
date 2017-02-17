@@ -85,17 +85,17 @@ public class DefaultAudioRendererPresentationControl
 
     private final UserAction8 prevAction = new UserActionSupport8(() -> changeTrack(playList.previous().get()));
 
+    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
+
     private final UserAction8 rewindAction = new UserActionSupport8(() -> mediaPlayer.rewind());
-
-    private final UserAction8 stopAction = new UserActionSupport8(() -> stop());
-
-    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
-
-    private final UserAction8 playAction = new UserActionSupport8(() -> play());
 
     private final UserAction8 fastForwardAction = new UserActionSupport8(() -> mediaPlayer.fastForward());
 
-    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
+    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
+
+    private final UserAction8 playAction = new UserActionSupport8(this::play);
+
+    private final UserAction8 stopAction = new UserActionSupport8(this::stop);
 
     // FIXME: use expression binding
     // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
