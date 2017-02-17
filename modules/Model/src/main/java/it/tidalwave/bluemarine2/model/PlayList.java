@@ -28,99 +28,166 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javax.annotation.Nonnegative;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
- * FIXME: make it of MediaItem, not AudioFile
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PlayList
+public class PlayList<ENTITY>
   {
-    public static final PlayList EMPTY = new PlayList();
-    
-    @Getter
-    private Optional<AudioFile> currentFile;
-    
-    private final List<AudioFile> list;
+    @Getter @Nonnull
+    private Optional<ENTITY> currentItem;
 
-    @Getter
+    @Nonnull
+    private final List<ENTITY> items;
+
+    @Getter @Nonnegative
     private int index;
-    
+
     @Getter @Accessors(fluent = true)
     private final BooleanProperty hasPreviousProperty = new SimpleBooleanProperty();
-    
+
     @Getter @Accessors(fluent = true)
     private final BooleanProperty hasNextProperty = new SimpleBooleanProperty();
-    
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     private PlayList()
       {
-        currentFile = Optional.empty(); 
-        list = Collections.emptyList();
+        currentItem = Optional.empty();
+        items = Collections.emptyList();
       }
-    
-    public PlayList (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list) 
+
+    /*******************************************************************************************************************
+     *
+     * Creates a new instance out of a collection of items, with the given current item.
+     *
+     * @param   currentItem     the item designated to be current
+     * @param   items           all the items - if empty, a playlist with a single element will be created
+     *
+     ******************************************************************************************************************/
+    public PlayList (final @Nonnull ENTITY currentItem, final @Nonnull Collection<ENTITY> items)
       {
-        this.list = new ArrayList<>(list.isEmpty() ? Arrays.asList(audioFile) : list);
-        index = this.list.indexOf(audioFile);
-        this.currentFile = Optional.of(audioFile);
+        this.items = new ArrayList<>(items.isEmpty() ? Arrays.asList(currentItem) : items);
+        this.currentItem = Optional.of(currentItem);
+        this.index = this.items.indexOf(currentItem);
         update();
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     * Returns an empty playlist.
+     *
+     * @return  an empty playlist
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static <T> PlayList<T> empty()
+      {
+        return new PlayList<>();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Returns {@code true} if there is a previous item.
+     *
+     * @return  {@code true} if there is a previous item
+     *
+     ******************************************************************************************************************/
     public boolean hasPrevious()
       {
         return hasPreviousProperty.get();
       }
 
+    /*******************************************************************************************************************
+     *
+     * Returns {@code true} if there is a next item.
+     *
+     * @return  {@code true} if there is a next item
+     *
+     ******************************************************************************************************************/
     public boolean hasNext()
       {
         return hasNextProperty.get();
       }
 
+    /*******************************************************************************************************************
+     *
+     * Moves back to the previous item, if present, and returns it.
+     *
+     * @return  the previous item
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> previous() 
+    public Optional<ENTITY> previous()
       {
-        currentFile = Optional.of(list.get(--index));
+        currentItem = Optional.of(items.get(--index));
         update();
-        return currentFile;
+        return currentItem;
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     * Moves forward to the next item, if present, and returns it.
+     *
+     * @return  the next item
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> next() 
+    public Optional<ENTITY> next()
       {
-        currentFile = Optional.of(list.get(++index));
+        currentItem = Optional.of(items.get(++index));
         update();
-        return currentFile;
+        return currentItem;
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     * Returns the next item, if present, without making it the current one.
+     *
+     * @return  the next item
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public Optional<AudioFile> peekNext() 
+    public Optional<ENTITY> peekNext()
       {
-        return hasNext() ? Optional.of(list.get(index + 1)) : Optional.empty();
+        return hasNext() ? Optional.of(items.get(index + 1)) : Optional.empty();
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     * Return the number of items in this play list.
+     *
+     * @return  the number of items
+     *
+     ******************************************************************************************************************/
     @Nonnegative
     public int getSize()
       {
-        return list.size();
+        return items.size();
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     private void update()
       {
         hasPreviousProperty.set(index > 0);
-        hasNextProperty.set(index < list.size() - 1);
+        hasNextProperty.set(index < items.size() - 1);
       }
   }

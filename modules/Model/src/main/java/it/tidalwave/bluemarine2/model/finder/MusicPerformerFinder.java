@@ -36,6 +36,8 @@ import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
+ * A {@code Finder} for {@link MusicPerformer}s.
+ *
  * @stereotype      Finder
  *
  * @author  Fabrizio Giudici

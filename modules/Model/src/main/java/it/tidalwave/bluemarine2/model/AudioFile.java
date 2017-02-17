@@ -32,7 +32,6 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.io.IOException;
-import java.nio.file.Path;
 import org.springframework.core.io.Resource;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
@@ -49,17 +48,6 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
  **********************************************************************************************************************/
 public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem should not be statically Parentable
   {
-    @Nonnull
-    public Path getPath(); // FIXME: rename to getRelativePath?
-
-    @Nonnegative
-    public long getSize()
-      throws IOException;
-
-    @Nonnull
-    public Optional<Resource> getContent()
-      throws IOException;
-
     /*******************************************************************************************************************
      *
      * Returns the makers of this audio file.
@@ -95,4 +83,30 @@ public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem s
      ******************************************************************************************************************/
     @Nonnull
     public Optional<Record> getRecord();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the size of this file.
+     *
+     * @return                  the size
+     * @throws  IOException     if there was an I/O problem
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public long getSize()
+      throws IOException;
+
+    /*******************************************************************************************************************
+     *
+     * Returns the a {@link Resource} representing this file's contents, if available.
+     *
+     * FIXME: not good to use Spring Resource...
+     *
+     * @return                  the contents
+     * @throws  IOException     if there was an I/O problem
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Resource> getContent()
+      throws IOException;
   }

@@ -33,6 +33,8 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 
 /***********************************************************************************************************************
  *
+ * A {@code Finder} for {@link AudioFile}s.
+ *
  * @stereotype      Finder
  *
  * @author  Fabrizio Giudici

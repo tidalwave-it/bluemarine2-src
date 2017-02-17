@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.PREFIX;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
@@ -48,16 +47,16 @@ public final class MO
   {
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
-    private static final String PREFIX = "http://purl.org/ontology/mo/";
+    private static final String NS = "http://purl.org/ontology/mo/";
 
     // Classes
-    public static final String S_C_AUDIO_FILE       = PREFIX + "AudioFile";
-    public static final String S_C_CD               = PREFIX + "CD";
-    public static final String S_C_DIGITAL_SIGNAL   = PREFIX + "DigitalSignal";
-    public static final String S_C_MUSIC_ARTIST     = PREFIX + "MusicArtist";
-    public static final String S_C_PERFORMANCE      = PREFIX + "Performance";
-    public static final String S_C_RECORD           = PREFIX + "Record";
-    public static final String S_C_TRACK            = PREFIX + "Track";
+    public static final String S_C_AUDIO_FILE       = NS + "AudioFile";
+    public static final String S_C_CD               = NS + "CD";
+    public static final String S_C_DIGITAL_SIGNAL   = NS + "DigitalSignal";
+    public static final String S_C_MUSIC_ARTIST     = NS + "MusicArtist";
+    public static final String S_C_PERFORMANCE      = NS + "Performance";
+    public static final String S_C_RECORD           = NS + "Record";
+    public static final String S_C_TRACK            = NS + "Track";
 
     public static final IRI C_AUDIO_FILE            = FACTORY.createIRI(S_C_AUDIO_FILE);
     public static final IRI C_CD                    = FACTORY.createIRI(S_C_CD);
@@ -68,26 +67,26 @@ public final class MO
     public static final IRI C_TRACK                 = FACTORY.createIRI(S_C_TRACK);
 
     // Predicates
-    public static final String S_P_AMAZON_ASIN      = PREFIX + "amazon_asin";
-    public static final String S_P_BITS_PER_SAMPLE  = PREFIX + "bitsPerSample";
-    public static final String S_P_DURATION         = PREFIX + "duration";
-    public static final String S_P_ENCODES          = PREFIX + "encodes";
-    public static final String S_P_GTIN             = PREFIX + "gtin";
-    public static final String S_P_TRACK            = PREFIX + "track";
-    public static final String S_P_MEDIA_TYPE       = PREFIX + "media_type";
-    public static final String S_P_MUSICBRAINZ      = PREFIX + "musicbrainz";
-    public static final String S_P_MUSICBRAINZ_GUID = PREFIX + "musicbrainz_guid";
-    public static final String S_P_PUBLISHED_AS     = PREFIX + "published_as";
-    public static final String S_P_SAMPLE_RATE      = PREFIX + "sampleRate";
-    public static final String S_P_TRACK_COUNT      = PREFIX + "track_count";
-    public static final String S_P_TRACK_NUMBER     = PREFIX + "track_number";
+    public static final String S_P_AMAZON_ASIN      = NS + "amazon_asin";
+    public static final String S_P_BITS_PER_SAMPLE  = NS + "bitsPerSample";
+    public static final String S_P_DURATION         = NS + "duration";
+    public static final String S_P_ENCODES          = NS + "encodes";
+    public static final String S_P_GTIN             = NS + "gtin";
+    public static final String S_P_TRACK            = NS + "track";
+    public static final String S_P_MEDIA_TYPE       = NS + "media_type";
+    public static final String S_P_MUSICBRAINZ      = NS + "musicbrainz";
+    public static final String S_P_MUSICBRAINZ_GUID = NS + "musicbrainz_guid";
+    public static final String S_P_PUBLISHED_AS     = NS + "published_as";
+    public static final String S_P_SAMPLE_RATE      = NS + "sampleRate";
+    public static final String S_P_TRACK_COUNT      = NS + "track_count";
+    public static final String S_P_TRACK_NUMBER     = NS + "track_number";
 
-    public static final String S_P_CONDUCTOR        = PREFIX + "conductor";
-    public static final String S_P_ENGINEER         = PREFIX + "engineer";
-    public static final String S_P_PERFORMER        = PREFIX + "performer";
-    public static final String S_P_PRODUCER         = PREFIX + "producer";
-    public static final String S_P_RECORDED_AS      = PREFIX + "recorded_as";
-    public static final String S_P_SINGER           = PREFIX + "singer";
+    public static final String S_P_CONDUCTOR        = NS + "conductor";
+    public static final String S_P_ENGINEER         = NS + "engineer";
+    public static final String S_P_PERFORMER        = NS + "performer";
+    public static final String S_P_PRODUCER         = NS + "producer";
+    public static final String S_P_RECORDED_AS      = NS + "recorded_as";
+    public static final String S_P_SINGER           = NS + "singer";
 
     public static final IRI P_AMAZON_ASIN           = FACTORY.createIRI(S_P_AMAZON_ASIN);
     public static final IRI P_BITS_PER_SAMPLE       = FACTORY.createIRI(S_P_BITS_PER_SAMPLE);

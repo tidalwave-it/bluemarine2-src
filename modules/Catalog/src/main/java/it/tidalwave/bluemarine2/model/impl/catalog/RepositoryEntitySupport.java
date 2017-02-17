@@ -41,7 +41,7 @@ import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;

@@ -34,12 +34,23 @@ import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
+ * A role for entities that are associated to a data source.
+ *
+ * @stereotype  Role
+ *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id $
  *
  **********************************************************************************************************************/
 public interface SourceAware
   {
+    /*******************************************************************************************************************
+     *
+     * Returns the data source of this object, if available.
+     *
+     * @return  the data source
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<Id> getSource();
   }

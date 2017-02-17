@@ -26,9 +26,8 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.model;
 
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -38,20 +37,21 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.toTestNGDataProvider;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -174,9 +174,6 @@ public class VirtualMediaFolderTest extends SpringTestSupport
     @DataProvider
     private static Object[][] pathsProvider()
       {
-        return new TestCaseBuilder().getPaths().stream()
-                                               .map(p -> new Object[] { p })
-                                               .collect(Collectors.toList())
-                                               .toArray(new Object[0][0]);
+        return new TestCaseBuilder().getPaths().stream().collect(toTestNGDataProvider());
       }
   }
