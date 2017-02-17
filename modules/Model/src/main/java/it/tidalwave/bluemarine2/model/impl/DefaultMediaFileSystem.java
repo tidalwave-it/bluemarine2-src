@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.concurrent.CountDownLatch;
 import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
@@ -59,7 +59,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     private Path rootPath;
 
     @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
+    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
     /*******************************************************************************************************************
      *
