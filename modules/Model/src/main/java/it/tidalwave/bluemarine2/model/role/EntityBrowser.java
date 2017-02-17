@@ -30,10 +30,11 @@ package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.As8;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *
- * A generic role which can supply an {@link Entity} that is the root of a hierarchy.
+ * A role which can supply an {@link Entity} that is the root of a hierarchy.
  *
  * @stereotype  Role
  *

@@ -37,6 +37,10 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.TITLE;
 
 /***********************************************************************************************************************
  *
+ * The {@link Displayable} for {@link FileSystemAudioFile}; it uses the metadata title.
+ *
+ * @stereotype  Role
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

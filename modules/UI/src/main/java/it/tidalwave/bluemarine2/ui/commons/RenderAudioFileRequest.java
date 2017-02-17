@@ -39,37 +39,37 @@ import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render an {@link AudioFile}.
- * 
+ * A message that requests to render an {@link AudioFile} in a {@link Playlist}.
+ *
  * @stereotype  Message
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Immutable @ToString
-public class RenderAudioFileRequest 
+public class RenderAudioFileRequest
   {
     @Nonnull
     private final AudioFile audioFile;
-    
+
     @Nonnull
     private final List<AudioFile> list;
-    
+
     public RenderAudioFileRequest (final @Nonnull AudioFile audioFile)
       {
         this(audioFile, emptyList());
       }
-    
+
     public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
       {
         this.audioFile = audioFile;
         this.list = unmodifiableList(new ArrayList<>(list));
       }
-    
+
     @Nonnull
-    public PlayList getPlayList()
+    public PlayList<AudioFile> getPlayList()
       {
-        return new PlayList(audioFile, list);  
+        return new PlayList(audioFile, list);
       }
   }
