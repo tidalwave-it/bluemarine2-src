@@ -2,8 +2,8 @@
 Description=blueMarine II headless service
 
 [Service]
-ExecStart=/opt/bluemarine2-service/bin/bluemarine2-service.sh
-User=bluemarine2
+ExecStart=${tft.deb.binaryDirectory}/${tft.deb.name}/bin/${tft.deb.name}.sh
+User=${tft.deb.user}
 
 [Install]
 WantedBy=multi-user.target

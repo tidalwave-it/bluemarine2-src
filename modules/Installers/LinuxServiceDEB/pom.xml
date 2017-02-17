@@ -56,7 +56,7 @@
     </description>
 
     <properties>
-        <tdt.deb.name>bluemarine2-service</tdt.deb.name>
+        <tft.deb.name>bluemarine2-service</tft.deb.name>
         <tft.deb.sourceTarball.artifactId>bluemarine2-service</tft.deb.sourceTarball.artifactId>
         <tft.deb.user>bluemarine2</tft.deb.user>
         <tft.deb.group>nogroup</tft.deb.group>
