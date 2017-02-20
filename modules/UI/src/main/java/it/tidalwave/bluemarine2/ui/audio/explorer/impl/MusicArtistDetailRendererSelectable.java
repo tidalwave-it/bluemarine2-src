@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 
 /***********************************************************************************************************************
  *

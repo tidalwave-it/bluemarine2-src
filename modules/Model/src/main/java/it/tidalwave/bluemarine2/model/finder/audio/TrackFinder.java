@@ -26,64 +26,76 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id $
+ * A {@code Finder} for {@link Track}s.
+ * 
+ * @stereotype      Finder
+ *
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface TrackFinder extends SourceAwareFinder<Track, TrackFinder>,
+                                     ExtendedFinder8Support<Track, TrackFinder>
   {
-    @Nonnull
-    public FINDER withId (final @Nonnull Id id);
-
     /*******************************************************************************************************************
      *
-     * Specifies the data source of this finder.
+     * Constrains the search to tracks made by the given artist.
      *
-     * @param   source  the source
-     * @return          the {@code Finder}, in fluent fashion
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
-
-    /*******************************************************************************************************************
-     *
-     * Specifies the data source of this finder.
-     *
-     * @param   optionalSource  the source
+     * @param       artistId    the artist id
      * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+    public TrackFinder madeBy (@Nonnull Id artistId);
 
     /*******************************************************************************************************************
      *
-     * Specifies the fallback data source of this finder.
+     * Constrains the search to tracks made by the given artist.
      *
-     * @param   fallback        the fallback source
+     * @param       artist      the artist
      * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER withFallback (final @Nonnull Id fallback);
+    public default TrackFinder madeBy (final @Nonnull MusicArtist artist)
+      {
+        return madeBy(artist.getId());
+      }
 
     /*******************************************************************************************************************
      *
-     * Specifies the fallback data source of this finder.
+     * Constrains the search to tracks contained in the given record.
      *
-     * @param   optionalFallback  the fallback source
-     * @return                    the {@code Finder}, in fluent fashion
+     * @param       recordId    the record id
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
+    public TrackFinder inRecord (@Nonnull Id recordId);
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to tracks contained in the given record.
+     *
+     * @param       record      the record
+     * @return                  the {@code Finder}, in fluent fashion
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default TrackFinder inRecord (final @Nonnull Record record)
+      {
+        return inRecord(record.getId());
+      }
   }

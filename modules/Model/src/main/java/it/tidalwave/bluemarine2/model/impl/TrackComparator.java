@@ -34,7 +34,7 @@ import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.audio.Track;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 

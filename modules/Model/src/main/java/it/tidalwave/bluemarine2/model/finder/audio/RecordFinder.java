@@ -26,102 +26,76 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.net.URL;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a record made of audio tracks. Maps the homonymous concept from the Music Ontology.
+ * A {@code Finder} for {@link Record}s.
  *
- * @stereotype  Datum
+ * @stereotype      Finder
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Record extends Entity, SourceAware, Identifiable
+public interface RecordFinder extends SourceAwareFinder<Record, RecordFinder>,
+                                      ExtendedFinder8Support<Record, RecordFinder>
   {
-    public static final Class<Record> Record = Record.class;
-
     /*******************************************************************************************************************
      *
-     * If this record is part of a multiple record release, return its disk number.
+     * Constrains the search to records made by the given artist.
      *
-     * @return  the disk number
+     * @param       artistId    the artist id
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getDiskNumber();
+    public RecordFinder madeBy (@Nonnull Id artistId);
 
     /*******************************************************************************************************************
      *
-     * If this record is part of a multiple record release, return the count of disks in the release.
+     * Constrains the search to records made by the given artist.
      *
-     * @return  the disk count
+     * @param       artist      the artist
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getDiskCount();
+    public default RecordFinder madeBy (final @Nonnull MusicArtist artist)
+      {
+        return madeBy(artist.getId());
+      }
 
     /*******************************************************************************************************************
      *
-     * Returns the number of tracks in this record, if available. Note that this value is the number of tracks
-     * contained in the release, and might differ from {@code findTracks().count()} if only a subset of tracks is
-     * available in the catalog (for instance, if not all of them have been bought/imported).
+     * Constrains the search to records containing the given track.
      *
-     * @see #findTracks()
-     *
-     * @return  the track count
+     * @param       trackId     the id of the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getTrackCount();
+    public RecordFinder containingTrack (@Nonnull Id trackId);
 
     /*******************************************************************************************************************
      *
-     * Finds the {@link Track}s in this record.
+     * Constrains the search to records containing the given track.
      *
-     * @see #getTrackCount()
-     *
-     * @return  a {@code Finder} for the tracks
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public TrackFinder findTracks();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the Amazon ASIN of this record.
-     *
-     * @return  the Amazon ASIN
+     * @param       track       the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<String> getAsin();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the bar code of this record.
-     *
-     * @return  the bar code
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<String> getGtin();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the cover image URL of this record.
-     *
-     * @return  the cover image URL
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<URL> getImageUrl();
+    public default RecordFinder containingTrack (final @Nonnull Track track)
+      {
+        return RecordFinder.this.containingTrack(track.getId());
+      }
   }

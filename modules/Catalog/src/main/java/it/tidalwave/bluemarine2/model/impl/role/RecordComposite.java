@@ -31,9 +31,9 @@ package it.tidalwave.bluemarine2.model.impl.role;
 import javax.annotation.Nonnull;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.Track;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************

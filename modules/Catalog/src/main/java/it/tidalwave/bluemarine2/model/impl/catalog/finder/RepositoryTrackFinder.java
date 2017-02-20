@@ -32,8 +32,8 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Track;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import lombok.ToString;
 
 /***********************************************************************************************************************
