@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-20-SNAPSHOT</version>
+        <version>1.0-ALPHA-20</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-20-SNAPSHOT</version>
+    <version>1.0-ALPHA-20</version>
     <name>blueMarine II - Commons</name>
 
     <dependencies>
