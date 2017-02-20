@@ -33,7 +33,6 @@ import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -44,7 +43,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@ToString @Slf4j
+@ToString
 public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull
