@@ -34,13 +34,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-20-SNAPSHOT</version>
+        <version>1.0-ALPHA-21-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux</artifactId>
-    <version>1.0-ALPHA-20-SNAPSHOT</version>
+    <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux</name>
     <description>
