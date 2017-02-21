@@ -32,19 +32,19 @@ import javax.annotation.Nonnull;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenRecord;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
  * A role that makes a {@link MusicArtist} act as a {@link Composite} of {@link Record}s. It is only injected in the
  * {@link RepositoryBrowserByArtistThenRecord} context.
- * 
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -55,9 +55,9 @@ public class MusicArtistCompositeOfRecords implements SimpleComposite8<Record>
   {
     @Nonnull
     private final MusicArtist artist;
-    
+
     @Override @Nonnull
-    public RecordFinder findChildren() 
+    public RecordFinder findChildren()
       {
         return artist.findRecords();
       }

@@ -32,8 +32,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.ArrayList;
 import java.util.List;
-import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.PlayList;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import lombok.ToString;
 import static java.util.Collections.*;
 

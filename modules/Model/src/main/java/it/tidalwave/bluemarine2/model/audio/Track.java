@@ -26,19 +26,21 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.audio;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
+import java.time.Duration;
 import java.util.Optional;
-import java.io.IOException;
-import org.springframework.core.io.Resource;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.bluemarine2.model.spi.SourceAware;
 
 /***********************************************************************************************************************
  *
- * Represents an audio file. Maps the homonymous concept from the Music Ontology.
+ * Represents an audio track in a record. Maps the homonymous concept from the Music Ontology.
+ *
+ * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
  *
  * @stereotype  Datum
  *
@@ -46,39 +48,69 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem should not be statically Parentable
+public interface Track extends Entity, SourceAware, Identifiable
   {
-    /*******************************************************************************************************************
-     *
-     * Returns the makers of this audio file.
-     *
-     * FIXME: shouldn't be here - should be in getTrack().findMakers().
-     *
-     * @return  the makers
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public MusicArtistFinder findMakers();
+    public static final Class<Track> Track = Track.class;
 
     /*******************************************************************************************************************
      *
-     * Returns the composers of the musical expression related to this audio file.
+     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskNumber()}.
      *
-     * FIXME: shouldn't be here - should be in getSignal().findMakers() or such
+     * @see Record#getDiskNumber()
      *
-     * @return  the composer
+     * @return  the disk number
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicArtistFinder findComposers();
+    public Optional<Integer> getDiskNumber();
 
     /*******************************************************************************************************************
      *
-     * Returns the record related to this audio file.
+     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskCount()}.
      *
-     * FIXME: shouldn't be here - should be in getTrack().getRecord() or such
+     * @see Record#getDiskCount()
      *
-     * @return  the composer
+     * @return  the disk count
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Integer> getDiskCount();
+
+    /*******************************************************************************************************************
+     *
+     * The position of this track in the containing record
+     *
+     * @return  the track position
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Integer> getTrackNumber();
+
+    /*******************************************************************************************************************
+     *
+     * The duration of this track
+     *
+     * @return  the duration
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Duration> getDuration();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Metadata}.
+     *
+     * @return  the metadata
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Metadata getMetadata();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Record} that contains this track
+     *
+     * @return  the record
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -86,27 +118,11 @@ public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem s
 
     /*******************************************************************************************************************
      *
-     * Returns the size of this file.
+     * Returns the {@link Performance} that this track is a recording of.
      *
-     * @return                  the size
-     * @throws  IOException     if there was an I/O problem
-     *
-     ******************************************************************************************************************/
-    @Nonnegative
-    public long getSize()
-      throws IOException;
-
-    /*******************************************************************************************************************
-     *
-     * Returns the a {@link Resource} representing this file's contents, if available.
-     *
-     * FIXME: not good to use Spring Resource...
-     *
-     * @return                  the contents
-     * @throws  IOException     if there was an I/O problem
+     * @return  the performance
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Resource> getContent()
-      throws IOException;
+    public Optional<Performance> getPerformance();
   }

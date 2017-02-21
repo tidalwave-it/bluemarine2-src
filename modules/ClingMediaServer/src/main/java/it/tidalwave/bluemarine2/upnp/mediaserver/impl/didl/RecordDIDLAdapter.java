@@ -33,7 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.MusicAlbum;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;

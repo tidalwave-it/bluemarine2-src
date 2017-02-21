@@ -26,46 +26,70 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.audio;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import java.util.Optional;
+import it.tidalwave.util.Id;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *
- * @stereotype      Finder
+ * Represents a music artist. Maps the homonymous concept from the Music Ontology.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity, PathAwareFinder>
+public interface MusicArtist extends Entity, Identifiable
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to the entity with the given path.
-     *
-     * @param       path    the path
-     * @return              the {@code Finder}
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public PathAwareFinder withPath (@Nonnull Path path);
+    public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to the entity with the given path.
+     * Finds the tracks made by this artist.
      *
-     * @param       path    the path
-     * @return              the {@code Finder}
+     * @return  a {@code Finder} of the tracks
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder withPath (@Nonnull String path)
-      {
-        return withPath(Paths.get(path));
-      }
+    public TrackFinder findTracks();
+
+    /*******************************************************************************************************************
+     *
+     * Finds the records made by this artist.
+     *
+     * @return  a {@code Finder} of the records
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public RecordFinder findRecords();
+
+    /*******************************************************************************************************************
+     *
+     * Finds the performances made by this artist.
+     *
+     * @return  a {@code Finder} of the performances
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public PerformanceFinder findPerformances();
+
+    public int getType(); // FIXME: use an enum
+
+    /*******************************************************************************************************************
+     *
+     * Returns the data source of this datum (typically {@code embedded}, {@code musicbrainz} or such).
+     *
+     * @return  the data source
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Id> getSource();
   }

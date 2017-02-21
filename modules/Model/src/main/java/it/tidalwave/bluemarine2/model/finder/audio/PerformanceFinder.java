@@ -26,70 +26,76 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import it.tidalwave.util.Id;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.Performance;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a music artist. Maps the homonymous concept from the Music Ontology.
+ * A {@code Finder} for {@link Performance}s.
  *
- * @stereotype  Datum
+ * @stereotype      Finder
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtist extends Entity, Identifiable
+public interface PerformanceFinder extends SourceAwareFinder<Performance, PerformanceFinder>,
+                                           ExtendedFinder8Support<Performance, PerformanceFinder>
   {
-    public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
-
     /*******************************************************************************************************************
      *
-     * Finds the tracks made by this artist.
+     * Constrains the search to performances of the given track.
      *
-     * @return  a {@code Finder} of the tracks
+     * @param       trackId     the id of the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public TrackFinder findTracks();
+    public PerformanceFinder ofTrack (@Nonnull Id trackId);
 
     /*******************************************************************************************************************
      *
-     * Finds the records made by this artist.
+     * Constrains the search to performances of the given track.
      *
-     * @return  a {@code Finder} of the records
+     * @param       track       the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RecordFinder findRecords();
+    public default PerformanceFinder ofTrack (final @Nonnull Track track)
+      {
+        return ofTrack(track.getId());
+      }
 
     /*******************************************************************************************************************
      *
-     * Finds the performances made by this artist.
+     * Constrains the search to performances of the given performer.
      *
-     * @return  a {@code Finder} of the performances
+     * @param       performerId the id of the performer
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public PerformanceFinder findPerformances();
-
-    public int getType(); // FIXME: use an enum
+    public PerformanceFinder performedBy (@Nonnull Id performerId);
 
     /*******************************************************************************************************************
      *
-     * Returns the data source of this datum (typically {@code embedded}, {@code musicbrainz} or such).
+     * Constrains the search to performances of the given performer.
      *
-     * @return  the data source
+     * @param       performer   the id of the performer
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Id> getSource();
+    public default PerformanceFinder performedBy (final @Nonnull MusicArtist performer)
+      {
+        return performedBy(performer.getId());
+      }
   }

@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.audio.Record;
 import lombok.Getter;
 
 /***********************************************************************************************************************
