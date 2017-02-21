@@ -32,10 +32,10 @@ import javax.annotation.Nonnull;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.Track;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenTrack;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************

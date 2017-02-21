@@ -36,12 +36,11 @@ import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.Getter;
-import lombok.ToString;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
+import lombok.Getter;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *

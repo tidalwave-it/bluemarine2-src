@@ -33,7 +33,7 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.audio.Record;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
 

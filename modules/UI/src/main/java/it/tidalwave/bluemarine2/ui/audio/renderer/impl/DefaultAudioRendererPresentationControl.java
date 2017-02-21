@@ -41,7 +41,7 @@ import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.PlayList;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;

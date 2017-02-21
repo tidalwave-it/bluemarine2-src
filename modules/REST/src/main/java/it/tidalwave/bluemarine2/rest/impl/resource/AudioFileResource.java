@@ -34,7 +34,7 @@ import java.time.Duration;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;

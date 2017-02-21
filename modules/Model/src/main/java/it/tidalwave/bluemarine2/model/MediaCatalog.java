@@ -29,11 +29,11 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.AudioFileFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 
 /***********************************************************************************************************************
  *
