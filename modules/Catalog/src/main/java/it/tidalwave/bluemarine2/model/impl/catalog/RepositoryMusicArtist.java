@@ -32,10 +32,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import lombok.Getter;
 
 /***********************************************************************************************************************

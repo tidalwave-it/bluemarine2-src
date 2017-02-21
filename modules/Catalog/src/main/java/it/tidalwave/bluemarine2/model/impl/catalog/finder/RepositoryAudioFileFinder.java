@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
+import it.tidalwave.bluemarine2.model.finder.audio.AudioFileFinder;
 import lombok.ToString;
 
 /***********************************************************************************************************************

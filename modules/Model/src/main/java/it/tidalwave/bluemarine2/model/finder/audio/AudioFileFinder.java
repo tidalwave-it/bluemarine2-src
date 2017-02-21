@@ -26,10 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *

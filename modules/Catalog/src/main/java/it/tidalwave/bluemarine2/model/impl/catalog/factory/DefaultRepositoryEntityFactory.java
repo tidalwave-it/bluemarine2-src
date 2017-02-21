@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
-import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -36,11 +35,12 @@ import java.util.Map;
 import java.net.URL;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.Performance;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.MusicPerformer;
+import it.tidalwave.bluemarine2.model.audio.Performance;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.audio.Track;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryAudioFile;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicPerformer;
