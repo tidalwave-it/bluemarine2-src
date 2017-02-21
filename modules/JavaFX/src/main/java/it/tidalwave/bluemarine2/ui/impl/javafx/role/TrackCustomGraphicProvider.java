@@ -33,7 +33,7 @@ import javafx.scene.Node;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.audio.Track;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;

@@ -32,8 +32,8 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
+import it.tidalwave.bluemarine2.model.audio.MusicPerformer;
+import it.tidalwave.bluemarine2.model.finder.audio.MusicPerformerFinder;
 import lombok.ToString;
 
 /***********************************************************************************************************************

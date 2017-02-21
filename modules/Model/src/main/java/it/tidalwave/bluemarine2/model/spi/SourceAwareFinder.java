@@ -26,102 +26,64 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
-import java.time.Duration;
 import java.util.Optional;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
- * Represents an audio track in a record. Maps the homonymous concept from the Music Ontology.
- *
- * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
- *
- * @stereotype  Datum
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, SourceAware, Identifiable
+public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
-    public static final Class<Track> Track = Track.class;
+    @Nonnull
+    public FINDER withId (final @Nonnull Id id);
 
     /*******************************************************************************************************************
      *
-     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskNumber()}.
+     * Specifies the data source of this finder.
      *
-     * @see Record#getDiskNumber()
-     *
-     * @return  the disk number
+     * @param   source  the source
+     * @return          the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getDiskNumber();
+    public FINDER importedFrom (final @Nonnull Id source);
 
     /*******************************************************************************************************************
      *
-     * A {@link Record} property that it's handy to have here. See {@link Record#getDiskCount()}.
+     * Specifies the data source of this finder.
      *
-     * @see Record#getDiskCount()
-     *
-     * @return  the disk count
+     * @param   optionalSource  the source
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getDiskCount();
+    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
 
     /*******************************************************************************************************************
      *
-     * The position of this track in the containing record
+     * Specifies the fallback data source of this finder.
      *
-     * @return  the track position
+     * @param   fallback        the fallback source
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Integer> getTrackNumber();
+    public FINDER withFallback (final @Nonnull Id fallback);
 
     /*******************************************************************************************************************
      *
-     * The duration of this track
+     * Specifies the fallback data source of this finder.
      *
-     * @return  the duration
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Duration> getDuration();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Metadata}.
-     *
-     * @return  the metadata
+     * @param   optionalFallback  the fallback source
+     * @return                    the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Metadata getMetadata();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Record} that contains this track
-     *
-     * @return  the record
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Record> getRecord();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Performance} that this track is a recording of.
-     *
-     * @return  the performance
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Performance> getPerformance();
+    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
   }

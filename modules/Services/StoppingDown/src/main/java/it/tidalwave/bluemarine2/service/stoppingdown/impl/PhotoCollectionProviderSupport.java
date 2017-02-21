@@ -49,7 +49,7 @@ import org.xml.sax.SAXException;
 import org.springframework.scheduling.annotation.Scheduled;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

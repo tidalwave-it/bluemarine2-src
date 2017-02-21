@@ -26,17 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.MusicPerformer;
+import it.tidalwave.bluemarine2.model.audio.Performance;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
- * A {@code Finder} for {@link MusicArtist}s.
+ * A {@code Finder} for {@link MusicPerformer}s.
  *
  * @stereotype      Finder
  *
@@ -44,31 +45,31 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends SourceAwareFinder<MusicArtist, MusicArtistFinder>,
-                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
+public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, MusicPerformerFinder>,
+                                              ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
   {
     /*******************************************************************************************************************
      *
-     * Constrains the search to artists who are makers of the given entity.
+     * Constrains the search to artists who are performers of the given entity.
      *
-     * @param       entityId    the id of the entity
-     * @return                  the {@code Finder}, in fluent fashion
+     * @param       performanceId   the id of the performance
+     * @return                      the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicArtistFinder makerOf (@Nonnull Id entityId);
+    public MusicPerformerFinder performerOf (@Nonnull Id performanceId);
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to artists who are makers of the given entity.
+     * Constrains the search to artists who are performers of the given entity.
      *
-     * @param       entity      the entity
-     * @return                  the {@code Finder}, in fluent fashion
+     * @param       performance     the  performance
+     * @return                      the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default MusicArtistFinder makerOf (final @Nonnull Identifiable entity)
+    public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
       {
-        return makerOf(entity.getId());
+        return performerOf(performance.getId());
       }
   }

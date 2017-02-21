@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import javafx.scene.Node;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;

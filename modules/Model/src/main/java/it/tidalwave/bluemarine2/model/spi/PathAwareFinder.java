@@ -26,31 +26,45 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.util.Id;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 
 /***********************************************************************************************************************
  *
- * A role for entities that are associated to a data source.
+ * @stereotype      Finder
  *
- * @stereotype  Role
- *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id $
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-public interface SourceAware
+public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity, PathAwareFinder>
   {
     /*******************************************************************************************************************
      *
-     * Returns the data source of this object, if available.
+     * Constrains the search to the entity with the given path.
      *
-     * @return  the data source
+     * @param       path    the path
+     * @return              the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Id> getSource();
+    public PathAwareFinder withPath (@Nonnull Path path);
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to the entity with the given path.
+     *
+     * @param       path    the path
+     * @return              the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default PathAwareFinder withPath (@Nonnull String path)
+      {
+        return withPath(Paths.get(path));
+      }
   }

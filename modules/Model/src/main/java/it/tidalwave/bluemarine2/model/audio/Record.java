@@ -26,75 +26,103 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.audio;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Performance;
-import it.tidalwave.bluemarine2.model.Track;
+import java.util.Optional;
+import java.net.URL;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
+import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.bluemarine2.model.spi.SourceAware;
 
 /***********************************************************************************************************************
  *
- * A {@code Finder} for {@link Performance}s.
+ * Represents a record made of audio tracks. Maps the homonymous concept from the Music Ontology.
  *
- * @stereotype      Finder
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface PerformanceFinder extends SourceAwareFinder<Performance, PerformanceFinder>,
-                                           ExtendedFinder8Support<Performance, PerformanceFinder>
+public interface Record extends Entity, SourceAware, Identifiable
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to performances of the given track.
-     *
-     * @param       trackId     the id of the track
-     * @return                  the {@code Finder}, in fluent fashion
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public PerformanceFinder ofTrack (@Nonnull Id trackId);
+    public static final Class<Record> Record = Record.class;
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to performances of the given track.
+     * If this record is part of a multiple record release, return its disk number.
      *
-     * @param       track       the track
-     * @return                  the {@code Finder}, in fluent fashion
+     * @return  the disk number
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PerformanceFinder ofTrack (final @Nonnull Track track)
-      {
-        return ofTrack(track.getId());
-      }
+    public Optional<Integer> getDiskNumber();
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to performances of the given performer.
+     * If this record is part of a multiple record release, return the count of disks in the release.
      *
-     * @param       performerId the id of the performer
-     * @return                  the {@code Finder}, in fluent fashion
+     * @return  the disk count
      *
      ******************************************************************************************************************/
     @Nonnull
-    public PerformanceFinder performedBy (@Nonnull Id performerId);
+    public Optional<Integer> getDiskCount();
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to performances of the given performer.
+     * Returns the number of tracks in this record, if available. Note that this value is the number of tracks
+     * contained in the release, and might differ from {@code findTracks().count()} if only a subset of tracks is
+     * available in the catalog (for instance, if not all of them have been bought/imported).
      *
-     * @param       performer   the id of the performer
-     * @return                  the {@code Finder}, in fluent fashion
+     * @see #findTracks()
+     *
+     * @return  the track count
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PerformanceFinder performedBy (final @Nonnull MusicArtist performer)
-      {
-        return performedBy(performer.getId());
-      }
+    public Optional<Integer> getTrackCount();
+
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link Track}s in this record.
+     *
+     * @see #getTrackCount()
+     *
+     * @return  a {@code Finder} for the tracks
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public TrackFinder findTracks();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the Amazon ASIN of this record.
+     *
+     * @return  the Amazon ASIN
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<String> getAsin();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the bar code of this record.
+     *
+     * @return  the bar code
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<String> getGtin();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the cover image URL of this record.
+     *
+     * @return  the cover image URL
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<URL> getImageUrl();
   }

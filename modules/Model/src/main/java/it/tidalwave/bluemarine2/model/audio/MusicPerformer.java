@@ -26,34 +26,45 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.audio;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a performance. Maps the homonymous concept from the Music Ontology.
+ * The association of a {@link MusicArtist} to a role (typically in a {@link Performance}. Roles are stuff such as
+ * "conductor", "violin player", "soprano", "engineer", and so on.
  *
  * @stereotype  Datum
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Performance extends Entity, SourceAware, Identifiable
+public interface MusicPerformer extends Entity, Identifiable
   {
-    public static final Class<Performance> Performance = Performance.class;
+    public static final Class<MusicPerformer> MusicPerformer = MusicPerformer.class;
 
     /*******************************************************************************************************************
      *
-     * Returns the performers of this performance.
+     * Returns the {@link MusicArtist}.
      *
-     * @return  a {@code Finder} for the performers
+     * @return  the music artist
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicPerformerFinder findPerformers();
+    public MusicArtist getMusicArtist();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the role.
+     *
+     * @return  the role
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Entity> getRole();
   }

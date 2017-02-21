@@ -33,8 +33,8 @@ import javax.xml.xpath.XPathExpression;
 import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *

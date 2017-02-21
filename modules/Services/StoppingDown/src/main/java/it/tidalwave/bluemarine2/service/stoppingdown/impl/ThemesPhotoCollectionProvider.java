@@ -50,11 +50,11 @@ import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
