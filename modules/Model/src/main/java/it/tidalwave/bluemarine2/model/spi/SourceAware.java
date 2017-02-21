@@ -26,49 +26,31 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
- * A {@code Finder} for {@link MusicPerformer}s.
+ * A role for entities that are associated to a data source.
  *
- * @stereotype      Finder
+ * @stereotype  Role
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, MusicPerformerFinder>,
-                                              ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
+public interface SourceAware
   {
     /*******************************************************************************************************************
      *
-     * Constrains the search to artists who are performers of the given entity.
+     * Returns the data source of this object, if available.
      *
-     * @param       performanceId   the id of the performance
-     * @return                      the {@code Finder}, in fluent fashion
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public MusicPerformerFinder performerOf (@Nonnull Id performanceId);
-
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to artists who are performers of the given entity.
-     *
-     * @param       performance     the  performance
-     * @return                      the {@code Finder}, in fluent fashion
+     * @return  the data source
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
-      {
-        return performerOf(performance.getId());
-      }
+    public Optional<Id> getSource();
   }

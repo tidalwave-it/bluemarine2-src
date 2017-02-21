@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 
 /***********************************************************************************************************************
  *
