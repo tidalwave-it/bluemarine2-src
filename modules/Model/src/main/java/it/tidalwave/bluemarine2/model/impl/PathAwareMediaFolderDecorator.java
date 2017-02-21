@@ -36,7 +36,7 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 
 /***********************************************************************************************************************
  *

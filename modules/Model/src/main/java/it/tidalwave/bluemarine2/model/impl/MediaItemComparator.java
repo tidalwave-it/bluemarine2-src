@@ -30,12 +30,12 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
-import it.tidalwave.util.As;
+import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -43,11 +43,11 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class MediaItemComparator extends DefaultFilterSortCriterion<As>
+public class MediaItemComparator extends DefaultFilterSortCriterion<As8>
   {
     private static final long serialVersionUID = 3413093735254009245L;
-    
-    private final static Comparator<As> COMPARATOR = (o1, o2) ->
+
+    private final static Comparator<As8> COMPARATOR = (o1, o2) ->
       {
         try
           {
@@ -71,11 +71,11 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As>
                 return t1 - t2;
               }
           }
-        catch (AsException e)
+        catch (AsException e) // FIXME: useless?
           {
           }
 
-        return displayName(o1).compareTo(displayName(o2));
+        return displayNameOf(o1).compareTo(displayNameOf(o2));
       };
 
     public MediaItemComparator()
@@ -84,15 +84,8 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As>
       }
 
     @Nonnull
-    private static String displayName (final @Nonnull As object)
+    private static String displayNameOf (final @Nonnull As8 object)
       {
-        try
-          {
-            return object.as(Displayable).getDisplayName();
-          }
-        catch (AsException e)
-          {
-            return "???";
-          }
+        return object.asOptional(Displayable).map(d -> d.getDisplayName()).orElse("???");
       }
   }

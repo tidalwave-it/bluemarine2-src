@@ -46,7 +46,7 @@ import it.tidalwave.util.SupplierBasedFinder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;

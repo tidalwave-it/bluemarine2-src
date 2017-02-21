@@ -34,7 +34,7 @@ import java.util.function.Function;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
 
 /***********************************************************************************************************************

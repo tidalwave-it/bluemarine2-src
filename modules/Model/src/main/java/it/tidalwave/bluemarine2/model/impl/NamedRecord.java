@@ -32,8 +32,8 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.audio.Record;
+import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 
 /***********************************************************************************************************************

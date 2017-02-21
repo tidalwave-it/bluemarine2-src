@@ -30,9 +30,9 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
+import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;

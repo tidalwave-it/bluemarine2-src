@@ -26,18 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.audio.MusicArtist;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
- * A {@code Finder} for {@link Record}s.
+ * A {@code Finder} for {@link MusicArtist}s.
  *
  * @stereotype      Finder
  *
@@ -45,56 +45,31 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends SourceAwareFinder<Record, RecordFinder>,
-                                      ExtendedFinder8Support<Record, RecordFinder>
+public interface MusicArtistFinder extends SourceAwareFinder<MusicArtist, MusicArtistFinder>,
+                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
   {
     /*******************************************************************************************************************
      *
-     * Constrains the search to records made by the given artist.
+     * Constrains the search to artists who are makers of the given entity.
      *
-     * @param       artistId    the artist id
+     * @param       entityId    the id of the entity
      * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RecordFinder madeBy (@Nonnull Id artistId);
+    public MusicArtistFinder makerOf (@Nonnull Id entityId);
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to records made by the given artist.
+     * Constrains the search to artists who are makers of the given entity.
      *
-     * @param       artist      the artist
+     * @param       entity      the entity
      * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default RecordFinder madeBy (final @Nonnull MusicArtist artist)
+    public default MusicArtistFinder makerOf (final @Nonnull Identifiable entity)
       {
-        return madeBy(artist.getId());
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to records containing the given track.
-     *
-     * @param       trackId     the id of the track
-     * @return                  the {@code Finder}, in fluent fashion
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public RecordFinder containingTrack (@Nonnull Id trackId);
-
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to records containing the given track.
-     *
-     * @param       track       the track
-     * @return                  the {@code Finder}, in fluent fashion
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public default RecordFinder containingTrack (final @Nonnull Track track)
-      {
-        return RecordFinder.this.containingTrack(track.getId());
+        return makerOf(entity.getId());
       }
   }

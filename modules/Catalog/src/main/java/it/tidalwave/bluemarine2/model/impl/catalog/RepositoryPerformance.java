@@ -31,8 +31,8 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.bluemarine2.model.Performance;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
+import it.tidalwave.bluemarine2.model.audio.Performance;
+import it.tidalwave.bluemarine2.model.finder.audio.MusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
