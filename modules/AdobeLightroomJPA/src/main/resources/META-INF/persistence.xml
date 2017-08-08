@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ADOBE_LIGHTROOM_PU" transaction-type="RESOURCE_LOCAL">
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgHarvestedDNGMetadata</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryImageChangeCounter</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFolderStackImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobevariablesTable</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFile</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionContent</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobelibraryImageFaceProcessHistory</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgFolderContent</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFaceData</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobeAdditionalMetadata</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryImageSearchData</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryImportImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryPublishedCollection</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedExifLens</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeywordSynonym</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcLocation</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobeimageProofSettings</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcCountry</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryOzFeedbackInfo</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcIsoCountryCode</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryPublishedCollectionImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.Adobeimages</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFace</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeywordCooccurrence</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcState</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedExifCameraModel</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFolder</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobeimageDevelopSettings</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgHarvestedExifMetadata</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionStackImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgRemotePhoto</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgSourceColorProfileConstants</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryIPTC</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgTempImages</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcCity</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryUpdatedImages</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgPhotoPropertySpec</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgHarvestedIptcMetadata</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionChangeCounter</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFileAssetMetadata</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeyword</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgPhotoComment</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobelibraryImageDevelopSnapshot</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgDNGProxyInfoUpdater</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionCoverImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.Adobevariables</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgSpecialSourceContent</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryRootFolder</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgSearchablePhotoProperty</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionImageOzSortOrder</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionImageChangeCounter</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgOutputImageAsset</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobelibraryImageDevelopHistoryStep</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeywordImage</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgMetadataSearchIndex</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLastCatalogExport</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryPublishedCollectionContent</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedExifCameraSN</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgPhotoProperty</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryImport</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgPhotoPropertyArrayElement</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobeimageProperties</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgVideoInfo</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgPublishListenerWorklist</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcCreator</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollectionStack</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFolderStack</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeywordFace</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgSearchablePhotoPropertyArrayElement</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgUnsupportedOzAssets</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryKeywordPopularity</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgMRULists</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryFaceCluster</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgDNGProxyInfo</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryCollection</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.LrMobileSyncChangeCounter</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgHarvestedMetadataWorklist</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobefaceProperties</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobeimageDevelopBeforeSettings</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AdobenamedIdentityPlate</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgInternedIptcJobIdentifier</class>
+    <class>it.tidalwave.bluemarine2.importing.impl.adobe.lightroom6.jpa.AgLibraryImageXMPUpdater</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      <property name="javax.persistence.jdbc.user" value=""/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.SQLiteDialect"/>
+    </properties>
+  </persistence-unit>
+</persistence>
