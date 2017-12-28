@@ -204,6 +204,7 @@
     </dependencies>
 
     <modules>
+        <module>CaptureOneAppleScript</module>
         <module>Catalog</module>
         <module>CECNavigationAdapter</module>
         <module>CECWrapper</module>
