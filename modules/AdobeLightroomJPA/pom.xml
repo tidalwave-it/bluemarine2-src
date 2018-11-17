@@ -58,7 +58,7 @@
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
                                     <artifactId>adobe-ligthroom6-database-fabriziogiudici</artifactId>
-                                    <version>20170808</version>
+                                    <version>20170808-1</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}/target</outputDirectory>
