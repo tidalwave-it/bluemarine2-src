@@ -72,5 +72,5 @@ Additional Resources
 --------------------
 
 * [Tidalwave Homepage](http://tidalwave.it)
-* [Project Issue Tracker (Jira)](http://services.tidalwave.it/jira/browse/BM2)
+* [Project Issue Tracker (Jira)](http://services.tidalwave.it/jira/browse/BMT)
 * [Project Continuous Integration (Jenkins)](http://services.tidalwave.it/ci/view/blueMarine2)
