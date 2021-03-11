@@ -12,3 +12,5 @@ release.properties
 *.iml
 *.idea
 .DS_Store
+*.iml
+Maven__*.xml
