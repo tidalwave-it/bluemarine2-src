@@ -48,7 +48,7 @@ import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class AppleScriptCaptureOneDaoTest
@@ -116,21 +116,6 @@ public class AppleScriptCaptureOneDaoTest
       }
 
     // TODO: test getDocument (dependsOnMethods = {"must_properly_retrieve_document", "must_properly_parse_document"})
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Test
-    public void myTest()
-      throws Exception
-      {
-        // given
-        final AppleScriptCaptureOneDao underTest = new AppleScriptCaptureOneDao();
-        // when
-        final String s = underTest.getTestAsXml();
-        // then
-        assertThat(s, is("foobar"));
-      }
 
     /*******************************************************************************************************************
      *

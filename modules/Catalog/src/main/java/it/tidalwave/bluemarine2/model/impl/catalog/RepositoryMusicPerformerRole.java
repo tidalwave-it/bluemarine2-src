@@ -36,7 +36,7 @@ import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class RepositoryMusicPerformerRole implements Entity

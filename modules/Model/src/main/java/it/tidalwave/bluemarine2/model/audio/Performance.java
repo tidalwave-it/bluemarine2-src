@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.model.spi.SourceAware;
  *
  * @stereotype  Datum
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface Performance extends Entity, SourceAware, Identifiable

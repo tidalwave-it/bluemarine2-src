@@ -46,7 +46,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  * FIXME: could be seen as a replacement to {@code AsSupport}?
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Slf4j

@@ -32,7 +32,7 @@ import java.util.Optional;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface TypeSafeMap8 extends TypeSafeMap

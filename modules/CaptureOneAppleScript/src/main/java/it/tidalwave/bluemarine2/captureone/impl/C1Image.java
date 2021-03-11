@@ -39,7 +39,9 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * An image in Capture One. It is described by a name, a path and an id.
+ *
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @XmlRootElement(name = "photo")

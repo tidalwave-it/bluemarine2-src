@@ -34,7 +34,7 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface CddbMetadataProvider
