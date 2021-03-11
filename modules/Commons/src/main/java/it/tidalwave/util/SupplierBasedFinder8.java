@@ -39,7 +39,7 @@ import it.tidalwave.util.spi.SimpleFinder8Support;
  *
  * A {@link Finder} which retrieve results from a {@link Supplier}.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Immutable

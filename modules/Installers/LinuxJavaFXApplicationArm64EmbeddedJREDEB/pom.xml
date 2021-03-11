@@ -33,24 +33,35 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>bluemarine2-modules</artifactId>
+        <artifactId>bluemarine2-installers</artifactId>
         <version>1.0-ALPHA-21-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-application-javafx-macosx-embedded-jre</artifactId>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Mac OS X, embedded JRE</name>
-    <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>
+    <!-- ===============================================================================================================
 
-    <dependencies>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-        </dependency>
-    </dependencies>
+
+
+
+    ================================================================================================================ -->
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>bluemarine2-application-javafx-linux-aarch64-embedded-jre-deb</artifactId>
+    <version>1.0-ALPHA-21-SNAPSHOT</version>
+    <packaging>deb</packaging>
+    <name>blueMarine II - Installers - JavaFX Application, Linux ARM 64, embedded JRE DEB</name>
+    <description>
+        This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux ARM 64, embedded JRE' and
+        produces a .deb package containing also stuff for installing it as a service.
+    </description>
+
+    <properties>
+        <tft.deb.name>bluemarine2</tft.deb.name>
+        <tft.deb.directory>bluemarine2-mediacenter</tft.deb.directory>
+        <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux-aarch64-embedded-jre</tft.deb.sourceTarball.artifactId>
+        <tft.deb.user>bluemarine2</tft.deb.user>
+        <tft.deb.group>nogroup</tft.deb.group>
+    </properties>
 
     <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 

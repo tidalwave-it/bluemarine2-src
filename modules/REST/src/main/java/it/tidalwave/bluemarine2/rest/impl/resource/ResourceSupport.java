@@ -36,7 +36,7 @@ import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Configurable(preConstruction = true)

@@ -42,7 +42,7 @@ import org.eclipse.rdf4j.query.TupleQueryResult;
 
 /***********************************************************************************************************************
  *
- * @author Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @NotThreadSafe
