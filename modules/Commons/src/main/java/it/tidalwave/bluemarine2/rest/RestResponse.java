@@ -39,7 +39,7 @@ import static lombok.AccessLevel.*;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @AllArgsConstructor(access = PROTECTED) @Slf4j

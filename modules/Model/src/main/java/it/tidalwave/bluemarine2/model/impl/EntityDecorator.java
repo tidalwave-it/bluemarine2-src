@@ -38,7 +38,7 @@ import lombok.ToString;
  * This class decorates an existing {@link Entity} with additional roles. Furthermore, roles annotated with
  * {@code @DciRole} can be implicitly associated with the {@code EntityDecorator} itself, or its subclasses.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @ToString

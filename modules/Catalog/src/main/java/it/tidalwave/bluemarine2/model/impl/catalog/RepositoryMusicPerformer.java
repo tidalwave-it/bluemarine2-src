@@ -43,7 +43,7 @@ import org.eclipse.rdf4j.repository.Repository;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Getter @EqualsAndHashCode @ToString

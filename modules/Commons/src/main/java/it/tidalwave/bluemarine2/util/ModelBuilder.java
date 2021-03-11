@@ -43,7 +43,7 @@ import org.eclipse.rdf4j.model.impl.TreeModel;
  *
  * Unlike the similar class in RDF4J, this is thread-safe and can merge to similar objects.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @ThreadSafe

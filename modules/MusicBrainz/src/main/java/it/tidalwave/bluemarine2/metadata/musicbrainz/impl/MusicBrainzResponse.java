@@ -44,7 +44,7 @@ import lombok.extern.slf4j.Slf4j;
  * This class encapsulates a response from the MusicBrainz API, including the requested datum - if available - and some
  * status codes.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Slf4j

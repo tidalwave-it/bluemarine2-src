@@ -1,10 +1,11 @@
-# You can specify a custom docker image from Docker Hub as your build environment.
-image: maven:3.3.9-jdk-8
+image: maven:3.6.3-openjdk-11
 
 pipelines:
   default:
     - step:
-        script: # Modify the commands below to build your repository.
+        caches:
+          - maven
+        script:
           - apt-get update
-          - apt-get install -y openjfx genisoimage
+          - apt-get install -y genisoimage
           - mvn -B -DskipTests -Pinstallers,it.tidalwave-ci-v1,generate-revision-id

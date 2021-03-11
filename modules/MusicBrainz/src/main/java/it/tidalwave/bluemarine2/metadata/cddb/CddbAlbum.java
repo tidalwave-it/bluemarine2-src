@@ -45,7 +45,7 @@ import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Immutable @Getter @EqualsAndHashCode @ToString @Builder
