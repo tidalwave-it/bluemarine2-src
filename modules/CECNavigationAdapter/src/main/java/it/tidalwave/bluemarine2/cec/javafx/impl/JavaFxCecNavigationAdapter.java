@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -21,7 +21,6 @@
  *
  * *********************************************************************************************************************
  *
- * $Id$
  *
  * *********************************************************************************************************************
  * #L%
@@ -34,8 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
-import com.sun.javafx.robot.FXRobot;
-import com.sun.javafx.robot.FXRobotFactory;
+import javafx.scene.robot.Robot;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
@@ -48,7 +46,6 @@ import static it.tidalwave.cec.CecUserControlEvent.UserControlCode.*;
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
- * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
@@ -98,14 +95,14 @@ public class JavaFxCecNavigationAdapter
     private void keyPress (final @Nonnull KeyCode code)
       {
         log.debug("keyPress({})", code);
-        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        final Robot robot = new Robot();
         robot.keyPress(code);              
       }
     
     private void keyRelease (final @Nonnull KeyCode code)
       {
         log.debug("keyRelease({})", code);
-        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        final Robot robot = new Robot();
         robot.keyRelease(code);              
       }
   }
