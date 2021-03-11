@@ -33,9 +33,9 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>bluemarine2-modules</artifactId>
+        <artifactId>bluemarine2-installers</artifactId>
         <version>1.0-ALPHA-21-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
@@ -44,6 +44,12 @@
     <packaging>pom</packaging>
     <name>blueMarine II - Installers - JavaFX Application, macOS</name>
     <description>This module creates a macOS application bundle.</description>
+
+    <properties>
+        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
+        <tft.mainPackage>it-tidalwave-bluemarine2-application-javafx-${project.version}.jar</tft.mainPackage>
+        <tft.appbundle.modules>javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media</tft.appbundle.modules>
+    </properties>
 
     <dependencies>
         <dependency>
