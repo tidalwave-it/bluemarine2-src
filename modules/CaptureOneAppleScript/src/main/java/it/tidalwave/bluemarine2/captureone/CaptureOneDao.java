@@ -33,6 +33,9 @@ import it.tidalwave.bluemarine2.captureone.impl.C1Document;
 
 /***********************************************************************************************************************
  *
+ * A DAO for accessing data in a Capture One catalog.
+ *
+ * @stereotype DAO
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/

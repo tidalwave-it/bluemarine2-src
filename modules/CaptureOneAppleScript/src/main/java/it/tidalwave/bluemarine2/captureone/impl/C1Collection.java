@@ -42,6 +42,8 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * A collection in Capture One. It has got a name and it can contains images or sub-collections.
+ *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/

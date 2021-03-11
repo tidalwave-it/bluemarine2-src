@@ -47,6 +47,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
+ * An implementation of {@link CaptureOneDao} based on Applescript.
+ *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
