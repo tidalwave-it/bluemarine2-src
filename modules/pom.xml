@@ -19,23 +19,25 @@
     <description>blueMarine2 (modules)</description>
 
     <properties>
+        <activation.version>1.1.1</activation.version>
         <aquafx.version>0.2</aquafx.version>
         <cling.version>2.1.1</cling.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <httpclient.version>4.4</httpclient.version>
-        <tft.lombok.version>1.16.12</tft.lombok.version>
         <jaudiotagger.version>2.2.3</jaudiotagger.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
+        <jaxb.version>2.2.11</jaxb.version>
         <jackson.version>2.8.5</jackson.version>
         <jetty.version>8.1.8.v20121106</jetty.version>
         <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
         <mp3agic.version>0.8.3</mp3agic.version>
         <rdf4j.version>2.1.4</rdf4j.version>
-        <steelblue.version>1.0-ALPHA-15</steelblue.version>
-        <thesefoolishthings.version>3.1-ALPHA-2</thesefoolishthings.version>
+        <steelblue.version>1.0-ALPHA-16</steelblue.version>
+        <thesefoolishthings.version>3.1-ALPHA-7</thesefoolishthings.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
+        <tft.spring.version>5.3.1</tft.spring.version>
 
         <tft.test.vmOptions>-Xss512m -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
         <tft.test.maxMemory>2048M</tft.test.maxMemory>
@@ -74,10 +76,33 @@
                 <artifactId>jaudiotagger</artifactId>
                 <version>${jaudiotagger.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.aquafx-project</groupId>
                 <artifactId>aquafx</artifactId>
                 <version>${aquafx.version}</version>
+            </dependency>
+
+            <!-- Should activate by itself with JDK 11+, but it fails with Jenkins Maven integration. -->
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <version>${tft.javafx.version}</version>
             </dependency>
 
             <dependency>
@@ -130,6 +155,27 @@
             </dependency>
 
             <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-core</artifactId>
+                <version>${jaxb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>${activation.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-server</artifactId>
                 <version>${jetty.version}</version>
@@ -144,10 +190,10 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>annotations</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
@@ -204,6 +250,7 @@
     </dependencies>
 
     <modules>
+        <module>CaptureOneAppleScript</module>
         <module>Catalog</module>
         <module>CECNavigationAdapter</module>
         <module>CECWrapper</module>
