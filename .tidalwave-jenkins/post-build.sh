@@ -7,6 +7,6 @@ if [ -z ${WORKSPACE+x} ]; then
     echo "WORKSPACE is not set."
     exit 1
 else 
-    find "$WORKSPACE" -name "Music" -exec rm -rfv {} \;
+    find "$WORKSPACE" -name "Music" -exec rm -rfv {} \; || true
     exit 0
 fi
