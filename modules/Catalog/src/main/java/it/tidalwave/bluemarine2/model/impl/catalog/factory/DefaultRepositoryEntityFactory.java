@@ -49,7 +49,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryTrack;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory

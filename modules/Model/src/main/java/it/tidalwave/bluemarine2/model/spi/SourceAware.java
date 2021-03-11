@@ -37,7 +37,7 @@ import it.tidalwave.util.Id;
  *
  * @stereotype  Role
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface SourceAware

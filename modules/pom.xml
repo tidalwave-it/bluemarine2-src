@@ -25,7 +25,7 @@
         <commons-lang3.version>3.5</commons-lang3.version>
         <hibernate.version>5.2.10.Final</hibernate.version>
         <httpclient.version>4.4</httpclient.version>
-        <jaudiotagger.version>2.2.3</jaudiotagger.version>
+        <jaudiotagger.version>2.2.5</jaudiotagger.version>
         <javax-persistence.version>2.1</javax-persistence.version>
         <tft.javafx.version>11.0.1</tft.javafx.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
@@ -41,7 +41,7 @@
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
-        <tft.spring.version>5.3.1</tft.spring.version>
+        <tft.spring.version>4.3.30.RELEASE</tft.spring.version> <!-- 5.3.1 breaks some tests. -->
 
         <tft.test.vmOptions>-Xss512m -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
         <tft.test.maxMemory>2048M</tft.test.maxMemory>
@@ -54,6 +54,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${tft.spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>it.tidalwave.thesefoolishthings</groupId>
                 <artifactId>thesefoolishthings</artifactId>

@@ -33,7 +33,7 @@ import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>

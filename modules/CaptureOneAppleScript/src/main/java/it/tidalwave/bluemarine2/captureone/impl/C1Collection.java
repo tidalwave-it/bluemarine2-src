@@ -42,7 +42,9 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * A collection in Capture One. It has got a name and it can contains images or sub-collections.
+ *
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @XmlRootElement(name = "collection")

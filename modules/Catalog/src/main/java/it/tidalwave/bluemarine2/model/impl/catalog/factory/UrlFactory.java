@@ -36,7 +36,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFacto
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class UrlFactory implements EntityFactoryFunction<URL>
