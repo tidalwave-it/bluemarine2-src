@@ -26,13 +26,26 @@
         <tft.embedded-jdk.version>11.0.10_9</tft.embedded-jdk.version>
     </properties>
 
+    <!-- DEB signing disabled since GPG changed keyring format and it looks like the plugin can't read it. -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.vafer</groupId>
+                <artifactId>jdeb</artifactId>
+                <configuration>
+                    <signPackage>false</signPackage>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <modules>
         <module>Service</module> <!-- The order is important -->
-        <!-- module>LinuxServiceDEB</module -->
+        <module>LinuxServiceDEB</module>
         <module>LinuxJavaFXApplication</module>
-        <!-- module>LinuxJavaFXApplicationDEB</module -->
+        <module>LinuxJavaFXApplicationDEB</module>
         <module>LinuxJavaFXApplicationArmV6EmbeddedJRE</module>
-        <!-- module>LinuxJavaFXApplicationArmV6EmbeddedJREDEB</module -->
+        <module>LinuxJavaFXApplicationArmV6EmbeddedJREDEB</module>
         <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
     </modules>
 
