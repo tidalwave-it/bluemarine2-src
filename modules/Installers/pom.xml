@@ -44,9 +44,9 @@
         <module>LinuxServiceDEB</module>
         <module>LinuxJavaFXApplication</module>
         <module>LinuxJavaFXApplicationDEB</module>
-        <module>LinuxJavaFXApplicationArmV6EmbeddedJRE</module>
-        <module>LinuxJavaFXApplicationArmV6EmbeddedJREDEB</module>
-        <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
+        <module>LinuxJavaFXApplicationArm64EmbeddedJRE</module>
+        <module>LinuxJavaFXApplicationArm64EmbeddedJREDEB</module>
+        <module>macOSJavaFXApplication</module>
     </modules>
 
 </project>
