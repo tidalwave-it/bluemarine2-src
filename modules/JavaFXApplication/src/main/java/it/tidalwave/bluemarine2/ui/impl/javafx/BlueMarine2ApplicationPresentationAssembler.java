@@ -35,7 +35,7 @@ import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlow
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class BlueMarine2ApplicationPresentationAssembler

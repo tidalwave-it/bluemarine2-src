@@ -78,7 +78,7 @@ import static it.tidalwave.bluemarine2.rest.impl.DlnaHeaders.*;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @RestController @SimpleMessageSubscriber @Slf4j
