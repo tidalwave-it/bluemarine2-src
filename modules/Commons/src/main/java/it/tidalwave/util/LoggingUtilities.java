@@ -33,7 +33,7 @@ import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = PRIVATE)

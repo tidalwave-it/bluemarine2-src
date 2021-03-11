@@ -42,7 +42,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  * @stereotype  Adapter
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Getter

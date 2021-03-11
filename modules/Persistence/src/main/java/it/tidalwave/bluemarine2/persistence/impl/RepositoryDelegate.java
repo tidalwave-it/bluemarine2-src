@@ -37,7 +37,7 @@ import it.tidalwave.bluemarine2.persistence.Persistence;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class RepositoryDelegate implements Repository

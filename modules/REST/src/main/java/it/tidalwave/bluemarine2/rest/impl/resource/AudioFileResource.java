@@ -45,7 +45,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  * @stereotype  Adapter
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Getter
