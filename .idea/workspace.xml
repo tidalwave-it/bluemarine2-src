@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95340d6f-7c2f-4ece-98d6-bacfd54b2787" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="95340d6f-7c2f-4ece-98d6-bacfd54b2787" name="Default Changelist" comment="Removed bogus test.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/test/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/test/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJRE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJRE/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJRE/src/main/assembly/tar.gz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJRE/src/main/assembly/tar.gz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/config/activate-it.tidalwave-deb-service-v1-profile" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/config/activate-it.tidalwave-deb-service-v1-profile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/config/activate-it.tidalwave-deb-v1-profile" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/config/activate-it.tidalwave-deb-v1-profile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/deb/control/control" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/deb/control/control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/deb/control/postinst" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/deb/control/postinst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/deb/control/postrm" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/deb/control/postrm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/deb/control/preinst" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/deb/control/preinst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/deb/control/prerm" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/deb/control/prerm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/main/resources/bluemarine2.service" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/main/resources/bluemarine2.service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArmV6EmbeddedJREDEB/src/main/resources/config/logback-override.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/LinuxJavaFXApplicationArm64EmbeddedJREDEB/src/main/resources/config/logback-override.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/MacOSXJavaFXApplicationEmbeddedJRE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/macOSJavaFXApplication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/MacOSXJavaFXApplicationEmbeddedJRE/src/config/activate-it.tidalwave-javafx-appbundle-embedded-v2-profile" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/macOSJavaFXApplication/src/config/activate-it.tidalwave-javafx-appbundle-embedded-v2-profile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/MacOSXJavaFXApplicationEmbeddedJRE/src/main/app-resources/blueMarine2.icns" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/macOSJavaFXApplication/src/main/app-resources/blueMarine2.icns" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Installers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Installers/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Model/src/test/java/it/tidalwave/bluemarine2/model/VirtualMediaFolderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Model/src/test/java/it/tidalwave/bluemarine2/model/VirtualMediaFolderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +48,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.37241378" />
   </component>
   <component name="RunManager" selected="TestNG.VirtualMediaFolderTest">
     <configuration name="Capture One.scpt" type="AppleScriptRunType" factoryName="Run AppleScript" temporary="true" scriptUrl="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" logEvents="false">
@@ -89,7 +101,70 @@
       <option name="project" value="LOCAL" />
       <updated>1615475173202</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix for BMT-156.">
+      <created>1615477009640</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615477009640</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Idea files.">
+      <created>1615479812796</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615479812796</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Idea files.">
+      <created>1615479831453</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615479831453</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Idea files.">
+      <created>1615479849176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615479849176</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Removed bogus test.">
+      <created>1615479942403</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615479942403</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fox for BMT-156.">
+      <created>1615485177806</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615485177806</updated>
+    </task>
+    <task id="LOCAL-00009" summary="POM clean up.">
+      <created>1615488497320</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615488497320</updated>
+    </task>
+    <task id="LOCAL-00010" summary="POM clean up.">
+      <created>1615488719948</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615488719948</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Disabled DEB signing.">
+      <created>1615488898562</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615488898562</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +181,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed CR/LF." />
     <MESSAGE value="Fixed abuse of Java API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed abuse of Java API." />
+    <MESSAGE value="Fix for BMT-156." />
+    <MESSAGE value="Added Idea files." />
+    <MESSAGE value="Removed bogus test." />
+    <MESSAGE value="Fox for BMT-156." />
+    <MESSAGE value="POM clean up." />
+    <MESSAGE value="Disabled DEB signing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Disabled DEB signing." />
   </component>
 </project>
