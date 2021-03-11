@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95340d6f-7c2f-4ece-98d6-bacfd54b2787" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/test/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/test/java/it/tidalwave/bluemarine2/captureone/impl/applescript/AppleScriptCaptureOneDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pc5gGWnFv3N12ONtO6fgUg9dN2" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="TestNG.VirtualMediaFolderTest">
+    <configuration name="Capture One.scpt" type="AppleScriptRunType" factoryName="Run AppleScript" temporary="true" scriptUrl="$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources/it/tidalwave/bluemarine2/captureone/impl/applescript/Capture One.scpt" logEvents="false">
+      <method v="2" />
+    </configuration>
+    <configuration name="VirtualMediaFolderTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="it-tidalwave-bluemarine2-model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.tidalwave.bluemarine2.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.tidalwave.bluemarine2.model" />
+      <option name="MAIN_CLASS_NAME" value="it.tidalwave.bluemarine2.model.VirtualMediaFolderTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.VirtualMediaFolderTest" />
+        <item itemvalue="Run AppleScript.Capture One.scpt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95340d6f-7c2f-4ece-98d6-bacfd54b2787" name="Default Changelist" comment="" />
+      <created>1615469649360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615469649360</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Fixed CR/LF.">
+      <created>1615470914016</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615470914016</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed abuse of Java API.">
+      <created>1615475173202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615475173202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed CR/LF." />
+    <MESSAGE value="Fixed abuse of Java API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed abuse of Java API." />
+  </component>
+</project>

@@ -3,6 +3,31 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bluemarine2.iml" filepath="$PROJECT_DIR$/bluemarine2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/bluemarine2-modules.iml" filepath="$PROJECT_DIR$/modules/bluemarine2-modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Plugins/bluemarine2-plugins-modules.iml" filepath="$PROJECT_DIR$/modules/Plugins/bluemarine2-plugins-modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Services/bluemarine2-services-modules.iml" filepath="$PROJECT_DIR$/modules/Services/bluemarine2-services-modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/JavaFXApplication/it-tidalwave-bluemarine2-application-javafx.iml" filepath="$PROJECT_DIR$/modules/JavaFXApplication/it-tidalwave-bluemarine2-application-javafx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Catalog/it-tidalwave-bluemarine2-catalog.iml" filepath="$PROJECT_DIR$/modules/Catalog/it-tidalwave-bluemarine2-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/CECNavigationAdapter/it-tidalwave-bluemarine2-cecnavigationadapter.iml" filepath="$PROJECT_DIR$/modules/CECNavigationAdapter/it-tidalwave-bluemarine2-cecnavigationadapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Commons/it-tidalwave-bluemarine2-commons.iml" filepath="$PROJECT_DIR$/modules/Commons/it-tidalwave-bluemarine2-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/TestCommons/it-tidalwave-bluemarine2-commons-test.iml" filepath="$PROJECT_DIR$/modules/TestCommons/it-tidalwave-bluemarine2-commons-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Downloader/it-tidalwave-bluemarine2-downloader.iml" filepath="$PROJECT_DIR$/modules/Downloader/it-tidalwave-bluemarine2-downloader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/HeadlessService/it-tidalwave-bluemarine2-headlessservice.iml" filepath="$PROJECT_DIR$/modules/HeadlessService/it-tidalwave-bluemarine2-headlessservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Initializer/it-tidalwave-bluemarine2-initializer.iml" filepath="$PROJECT_DIR$/modules/Initializer/it-tidalwave-bluemarine2-initializer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/MediaScanner/it-tidalwave-bluemarine2-mediascanner.iml" filepath="$PROJECT_DIR$/modules/MediaScanner/it-tidalwave-bluemarine2-mediascanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/MediaServer/it-tidalwave-bluemarine2-mediaserver.iml" filepath="$PROJECT_DIR$/modules/MediaServer/it-tidalwave-bluemarine2-mediaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/MusicBrainz/it-tidalwave-bluemarine2-metadata-musicbrainz.iml" filepath="$PROJECT_DIR$/modules/MusicBrainz/it-tidalwave-bluemarine2-metadata-musicbrainz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Model/it-tidalwave-bluemarine2-model.iml" filepath="$PROJECT_DIR$/modules/Model/it-tidalwave-bluemarine2-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/MusicBrainzDataModel/it-tidalwave-bluemarine2-musicbrainz-datamodel.iml" filepath="$PROJECT_DIR$/modules/MusicBrainzDataModel/it-tidalwave-bluemarine2-musicbrainz-datamodel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Persistence/it-tidalwave-bluemarine2-persistence.iml" filepath="$PROJECT_DIR$/modules/Persistence/it-tidalwave-bluemarine2-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/CaptureOneAppleScript/it-tidalwave-bluemarine2-phaseone-captureone11-applescript.iml" filepath="$PROJECT_DIR$/modules/CaptureOneAppleScript/it-tidalwave-bluemarine2-phaseone-captureone11-applescript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/REST/it-tidalwave-bluemarine2-rest.iml" filepath="$PROJECT_DIR$/modules/REST/it-tidalwave-bluemarine2-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Services/StoppingDown/it-tidalwave-bluemarine2-services-stoppingdown.iml" filepath="$PROJECT_DIR$/modules/Services/StoppingDown/it-tidalwave-bluemarine2-services-stoppingdown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/UI/it-tidalwave-bluemarine2-ui.iml" filepath="$PROJECT_DIR$/modules/UI/it-tidalwave-bluemarine2-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/JavaFX/it-tidalwave-bluemarine2-ui-javafx.iml" filepath="$PROJECT_DIR$/modules/JavaFX/it-tidalwave-bluemarine2-ui-javafx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/ClingMediaServer/it-tidalwave-bluemarine2-upnp-mediaserver.iml" filepath="$PROJECT_DIR$/modules/ClingMediaServer/it-tidalwave-bluemarine2-upnp-mediaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/Vocabulary/it-tidalwave-bluemarine2-vocabulary.iml" filepath="$PROJECT_DIR$/modules/Vocabulary/it-tidalwave-bluemarine2-vocabulary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/CECWrapper/it-tidalwave-cec.iml" filepath="$PROJECT_DIR$/modules/CECWrapper/it-tidalwave-cec.iml" />
     </modules>
   </component>
 </project>

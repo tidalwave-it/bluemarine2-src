@@ -1,77 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/AdobeLightroom/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/AdobeLightroom/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/AdobeLightroomJPA/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/AdobeLightroomJPA/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/CECNavigationAdapter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CECNavigationAdapter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CECNavigationAdapter/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/CECWrapper" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CECWrapper/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CECWrapper/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/CaptureOneAppleScript" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/CaptureOneAppleScript/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Catalog" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Catalog/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Catalog/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/ClingMediaServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/ClingMediaServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/ClingMediaServer/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Commons/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Commons/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Downloader" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Downloader/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Downloader/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/HeadlessService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/HeadlessService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/HeadlessService/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Initializer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Initializer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Initializer/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/JavaFX" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/JavaFX/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/JavaFX/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/JavaFXApplication" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/JavaFXApplication/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/JavaFXApplication/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/MediaScanner" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/MediaScanner/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/MediaScanner/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/MediaServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/MediaServer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/MediaServer/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Model/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Model/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/MusicBrainz" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/MusicBrainz/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/MusicBrainz/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/MusicBrainzDataModel" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Persistence" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Persistence/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Persistence/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Plugins" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/REST" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/REST/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/REST/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/REST/src/main/webapp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Services" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Services/StoppingDown" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Services/StoppingDown/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Services/StoppingDown/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/TestCommons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/TestCommons/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/TestCommons/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/UI" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/UI/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/UI/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/modules/Vocabulary" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Vocabulary/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/Vocabulary/src/main/resources" charset="UTF-8" />
   </component>

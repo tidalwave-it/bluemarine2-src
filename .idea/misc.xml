@@ -6,37 +6,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/modules/CECNavigationAdapter/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/CECWrapper/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/CaptureOneAppleScript/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Catalog/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/ClingMediaServer/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Commons/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Downloader/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/HeadlessService/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Initializer/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/JavaFX/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/JavaFXApplication/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/MediaScanner/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/MediaServer/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Model/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/MusicBrainz/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/MusicBrainzDataModel/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Persistence/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Plugins/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/REST/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Services/StoppingDown/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Services/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/TestCommons/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/UI/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/Vocabulary/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="adopt-openjdk-11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/classes" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="adopt-openjdk-11" project-jdk-type="JavaSDK" />
 </project>
