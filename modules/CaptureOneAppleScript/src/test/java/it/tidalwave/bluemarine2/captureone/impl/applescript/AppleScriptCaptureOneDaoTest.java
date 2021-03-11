@@ -120,21 +120,6 @@ public class AppleScriptCaptureOneDaoTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test
-    public void myTest()
-      throws Exception
-      {
-        // given
-        final AppleScriptCaptureOneDao underTest = new AppleScriptCaptureOneDao();
-        // when
-        final String s = underTest.getTestAsXml();
-        // then
-        assertThat(s, is("foobar"));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
     public static void dump (final @Nonnull Path path, final @Nonnull C1Document document)
       throws IOException
       {
