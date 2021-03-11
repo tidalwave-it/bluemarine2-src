@@ -33,9 +33,9 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>bluemarine2-modules</artifactId>
+        <artifactId>bluemarine2-installers</artifactId>
         <version>1.0-ALPHA-21-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <!-- ===============================================================================================================
@@ -46,19 +46,16 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</artifactId>
+    <artifactId>bluemarine2-application-javafx-linux-aarch64-embedded-jre</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE</name>
+    <name>blueMarine II - Installers - JavaFX Application, Linux ARM 64, embedded JRE</name>
     <description>
-        This module creates a Linux ARM v6 application bundle with an embedded JRE, because JavaFX is not part of the
-        Oracle JRE distribution for ARM.
+        This module creates a Linux ARM 64 application bundle with an embedded JRE.
     </description>
 
     <properties>
-        <tft.embedded-jdk-name>jre1.8.0_33</tft.embedded-jdk-name>
-        <tft.embedded-jdk-version>1.8.0_33-1</tft.embedded-jdk-version>
-        <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
+        <tft.embedded-jdk.classifier>linux-aarch64-hotspot</tft.embedded-jdk.classifier>
     </properties>
 
     <build>
@@ -85,11 +82,11 @@
                                     <outputDirectory>${project.build.directory}/tmpdist</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>${tft.embedded-jdk-groupId}</groupId>
-                                    <artifactId>${tft.embedded-jdk-artifactId}</artifactId>
-                                    <version>${tft.embedded-jdk-version}</version>
+                                    <groupId>${tft.embedded-jdk.groupId}</groupId>
+                                    <artifactId>${tft.embedded-jdk.artifactId}</artifactId>
+                                    <version>${tft.embedded-jdk.version}</version>
                                     <type>tgz</type>
-                                    <classifier>${tft.embedded-jdk-classifier}</classifier>
+                                    <classifier>${tft.embedded-jdk.classifier}</classifier>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}/dist</outputDirectory>
                                 </artifactItem>

@@ -39,11 +39,11 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-application-javafx-macosx-embedded-jre</artifactId>
+    <artifactId>bluemarine2-application-javafx-macos</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Mac OS X, embedded JRE</name>
-    <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>
+    <name>blueMarine II - Installers - JavaFX Application, macOS</name>
+    <description>This module creates a macOS application bundle.</description>
 
     <dependencies>
         <dependency>

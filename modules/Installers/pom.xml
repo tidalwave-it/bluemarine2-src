@@ -18,13 +18,21 @@
     <name>blueMarine II - Installers (modules)</name>
     <description>blueMarine II - Installers (modules)</description>
 
+    <properties>
+        <tft.embedded-jdk.artifactId>adoptopenjdk-jre</tft.embedded-jdk.artifactId>
+        <tft.embedded-jdk.groupId>it.tidalwave.jdk</tft.embedded-jdk.groupId>
+        <tft.embedded-jdk.name>11.0.10_9</tft.embedded-jdk.name>
+        <tft.embedded-jdk.prefix>jdk-11.0.10+9-jre</tft.embedded-jdk.prefix>
+        <tft.embedded-jdk.version>11.0.10_9</tft.embedded-jdk.version>
+    </properties>
+
     <modules>
         <module>Service</module> <!-- The order is important -->
-        <module>LinuxServiceDEB</module>
+        <!-- module>LinuxServiceDEB</module -->
         <module>LinuxJavaFXApplication</module>
-        <module>LinuxJavaFXApplicationDEB</module>
+        <!-- module>LinuxJavaFXApplicationDEB</module -->
         <module>LinuxJavaFXApplicationArmV6EmbeddedJRE</module>
-        <module>LinuxJavaFXApplicationArmV6EmbeddedJREDEB</module>
+        <!-- module>LinuxJavaFXApplicationArmV6EmbeddedJREDEB</module -->
         <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
     </modules>
 
