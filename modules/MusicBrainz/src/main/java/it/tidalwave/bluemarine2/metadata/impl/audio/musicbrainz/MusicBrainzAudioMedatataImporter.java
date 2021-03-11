@@ -78,7 +78,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.Wither;
+import lombok.With;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
@@ -294,10 +294,10 @@ public class MusicBrainzAudioMedatataImporter
         @Nonnull
         private final Medium medium;
 
-        @Wither
+        @With
         private Disc disc;
 
-        @Wither
+        @With
         private boolean alternative;
 
         private String embeddedTitle;

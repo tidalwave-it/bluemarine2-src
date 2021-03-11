@@ -7,6 +7,11 @@
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="maven2-release-repository.tidalwave.it" />
+      <option name="name" value="Tidalwave Release Repository" />
+      <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="4thline-repo" />
       <option name="name" value="4thline-repo" />
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
