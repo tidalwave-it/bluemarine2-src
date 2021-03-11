@@ -1,4 +1,4 @@
-blueMarine2 - lightweight Media Center
+blueMarine2 - Semantic Media Center
 ======================================
 
 Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)

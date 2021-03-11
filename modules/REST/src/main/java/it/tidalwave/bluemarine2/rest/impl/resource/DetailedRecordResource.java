@@ -41,7 +41,7 @@ import lombok.Getter;
  *
  * @stereotype  Adapter
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Getter

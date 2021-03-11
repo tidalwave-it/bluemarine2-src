@@ -33,7 +33,7 @@ import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class Memoize<T>

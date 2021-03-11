@@ -38,7 +38,7 @@ import org.eclipse.rdf4j.repository.Repository;
  *
  * @stereotype  Factory
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface RepositoryEntityFactory

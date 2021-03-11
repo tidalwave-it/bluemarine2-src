@@ -35,7 +35,7 @@ import it.tidalwave.bluemarine2.model.finder.audio.MusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class RepositoryPerformance extends RepositoryEntitySupport implements Performance

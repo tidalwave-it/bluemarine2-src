@@ -33,7 +33,7 @@ import it.tidalwave.bluemarine2.model.spi.CacheManager;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class MockCacheManager implements CacheManager

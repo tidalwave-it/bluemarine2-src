@@ -9,8 +9,6 @@ release.properties
 .orig
 .chg.*
 .rej
-*.iml
-*.idea
 .DS_Store
 *.iml
 Maven__*.xml

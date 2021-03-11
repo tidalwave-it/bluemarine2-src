@@ -46,7 +46,7 @@ import static lombok.AccessLevel.PRIVATE;
  *
  * This class represents a file from a test set. It contains the test set name and the file path.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @AllArgsConstructor(access = PRIVATE) @Getter @Slf4j

@@ -38,6 +38,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.ConcurrentHashMap;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
@@ -103,7 +104,8 @@ public class VirtualMediaFolderTest extends SpringTestSupport
         @Nonnull
         private VirtualMediaFolder findOrCreateFolder (final @Nonnull Path path)
           {
-            return folderMap.computeIfAbsent(path, k1 ->
+            //return folderMap.computeIfAbsent(path, k1 ->
+            if (!folderMap.containsKey(path))
               {
                 paths.add(path);
                 final Optional<Path> parentPath = Optional.ofNullable(path.getParent());
@@ -114,7 +116,11 @@ public class VirtualMediaFolderTest extends SpringTestSupport
                 parentPath.ifPresent(pp -> childrenMap.computeIfAbsent(pp, k2 -> new ArrayList<>()).add(folder));
 
                 return folder;
-              });
+              }
+            else
+              {
+                return folderMap.get(path);
+              }
           }
       }
 

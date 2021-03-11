@@ -41,7 +41,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * FIXME: partially copied from JavaFXSpringApplication.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class SpringContextHelper

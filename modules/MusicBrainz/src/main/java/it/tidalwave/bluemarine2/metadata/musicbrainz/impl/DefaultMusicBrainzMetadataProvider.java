@@ -46,7 +46,7 @@ import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Slf4j
