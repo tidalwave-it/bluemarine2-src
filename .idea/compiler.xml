@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bluemarine2" target="1.5" />
+      <module name="bluemarine2-modules" target="1.8" />
+      <module name="bluemarine2-plugins-modules" target="1.8" />
+      <module name="bluemarine2-services-modules" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-adobe-lightroom6" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-adobe-lightroom6-jpa" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-application-javafx" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-catalog" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-cecnavigationadapter" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-commons" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-commons-test" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-downloader" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-headlessservice" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-initializer" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-mediascanner" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-mediaserver" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-metadata-musicbrainz" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-model" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-musicbrainz-datamodel" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-persistence" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-phaseone-captureone11-applescript" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-rest" target="1.5" />
+      <module name="it-tidalwave-bluemarine2-services-stoppingdown" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-ui" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-ui-javafx" target="1.5" />
+      <module name="it-tidalwave-bluemarine2-upnp-mediaserver" target="1.8" />
+      <module name="it-tidalwave-bluemarine2-vocabulary" target="1.8" />
+      <module name="it-tidalwave-cec" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bluemarine2" options="" />
+      <module name="bluemarine2-modules" options="" />
+      <module name="bluemarine2-plugins-modules" options="" />
+      <module name="bluemarine2-services-modules" options="" />
+      <module name="it-tidalwave-bluemarine2-adobe-lightroom6" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-adobe-lightroom6-jpa" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-application-javafx" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-catalog" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-cecnavigationadapter" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-commons" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-commons-test" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-downloader" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-headlessservice" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-initializer" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-mediascanner" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-mediaserver" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-metadata-musicbrainz" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-model" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-persistence" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-phaseone-captureone11-applescript" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-rest" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-services-stoppingdown" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-ui" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-ui-javafx" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-upnp-mediaserver" options="-Xlint:all" />
+      <module name="it-tidalwave-bluemarine2-vocabulary" options="-Xlint:all" />
+      <module name="it-tidalwave-cec" options="-Xlint:all" />
+    </option>
+  </component>
+</project>
