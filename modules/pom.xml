@@ -108,6 +108,11 @@
                 <artifactId>javafx-fxml</artifactId>
                 <version>${tft.javafx.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-media</artifactId>
+                <version>${tft.javafx.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.fourthline.cling</groupId>
