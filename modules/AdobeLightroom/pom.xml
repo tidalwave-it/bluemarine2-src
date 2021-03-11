@@ -41,13 +41,6 @@
             <artifactId>hibernate-core</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- FIXME: this is not in Maven Central -->
-        <dependency>
-            <groupId>org.hibernate.dialect</groupId>
-            <artifactId>sqlite-dialect</artifactId>
-            <version>0.1.0</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>

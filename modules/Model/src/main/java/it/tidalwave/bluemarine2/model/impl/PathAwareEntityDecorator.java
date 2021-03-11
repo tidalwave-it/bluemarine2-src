@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -21,7 +21,6 @@
  *
  * *********************************************************************************************************************
  *
- * $Id$
  *
  * *********************************************************************************************************************
  * #L%
@@ -45,7 +44,6 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
  * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
  *
  * @author  Fabrizio Giudici
- * @version $Id$
  *
  **********************************************************************************************************************/
 public class PathAwareEntityDecorator extends EntityDecorator implements PathAwareEntity

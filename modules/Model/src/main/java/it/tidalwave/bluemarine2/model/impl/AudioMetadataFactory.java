@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -21,7 +21,6 @@
  *
  * *********************************************************************************************************************
  *
- * $Id$
  *
  * *********************************************************************************************************************
  * #L%
@@ -63,7 +62,6 @@ import org.jaudiotagger.tag.images.Artwork;
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
- * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j @NoArgsConstructor(access = PRIVATE)
@@ -123,7 +121,7 @@ public final class AudioMetadataFactory
               {
                 if (!MAPPED_TAGS.contains(fieldKey))
                   {
-                    final Key<Object> key = new Key<>("tag." + fieldKey.name());
+                    final Key<Object> key = new Key<Object>("tag." + fieldKey.name()) {};
                     final List<String> values = tag.getAll(fieldKey);
 
                     if (!values.isEmpty())
