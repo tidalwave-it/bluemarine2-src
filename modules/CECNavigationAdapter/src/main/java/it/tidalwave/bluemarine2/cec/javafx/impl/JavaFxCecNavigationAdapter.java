@@ -33,8 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
-import com.sun.javafx.robot.FXRobot;
-import com.sun.javafx.robot.FXRobotFactory;
+import javafx.scene.robot.Robot;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
@@ -96,14 +95,14 @@ public class JavaFxCecNavigationAdapter
     private void keyPress (final @Nonnull KeyCode code)
       {
         log.debug("keyPress({})", code);
-        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        final Robot robot = new Robot();
         robot.keyPress(code);              
       }
     
     private void keyRelease (final @Nonnull KeyCode code)
       {
         log.debug("keyRelease({})", code);
-        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        final Robot robot = new Robot();
         robot.keyRelease(code);              
       }
   }

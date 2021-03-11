@@ -121,7 +121,7 @@ public final class AudioMetadataFactory
               {
                 if (!MAPPED_TAGS.contains(fieldKey))
                   {
-                    final Key<Object> key = new Key<>("tag." + fieldKey.name());
+                    final Key<Object> key = new Key<Object>("tag." + fieldKey.name()) {};
                     final List<String> values = tag.getAll(fieldKey);
 
                     if (!values.isEmpty())

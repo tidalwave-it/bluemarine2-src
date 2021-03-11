@@ -69,37 +69,37 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
      ******************************************************************************************************************/
     public interface Metadata
       {
-        public static final Key<Long> FILE_SIZE = new Key<>("file.size");
+        public static final Key<Long> FILE_SIZE = new Key<Long>("file.size") {};
 
-        public static final Key<Duration> DURATION = new Key<>("mp3.duration");
-        public static final Key<Integer> BIT_RATE = new Key<>("mp3.bitRate");
-        public static final Key<Integer> SAMPLE_RATE = new Key<>("mp3.sampleRate");
-        public static final Key<String> ARTIST = new Key<>("mp3.artist");
-        public static final Key<String> COMPOSER = new Key<>("mp3.composer");
-        public static final Key<String> PUBLISHER = new Key<>("mp3.publisher");
-        public static final Key<String> TITLE = new Key<>("mp3.title");
-        public static final Key<Integer> YEAR = new Key<>("mp3.year");
-        public static final Key<String> ALBUM = new Key<>("mp3.album");
-        public static final Key<Integer> TRACK_NUMBER = new Key<>("mp3.trackNumber");
-        public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
-        public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
-        public static final Key<List<String>> COMMENT = new Key<>("mp3.comment");
-        public static final Key<Integer> BITS_PER_SAMPLE = new Key<>("mp3.bitsPerSample");
-        public static final Key<String> FORMAT = new Key<>("mp3.format");
-        public static final Key<String> ENCODING_TYPE = new Key<>("mp3.encodingType");
-        public static final Key<Integer> CHANNELS = new Key<>("mp3.channels");
+        public static final Key<Duration> DURATION = new Key<Duration>("mp3.duration") {};
+        public static final Key<Integer> BIT_RATE = new Key<Integer>("mp3.bitRate") {};
+        public static final Key<Integer> SAMPLE_RATE = new Key<Integer>("mp3.sampleRate") {};
+        public static final Key<String> ARTIST = new Key<String>("mp3.artist") {};
+        public static final Key<String> COMPOSER = new Key<String>("mp3.composer") {};
+        public static final Key<String> PUBLISHER = new Key<String>("mp3.publisher") {};
+        public static final Key<String> TITLE = new Key<String>("mp3.title") {};
+        public static final Key<Integer> YEAR = new Key<Integer>("mp3.year") {};
+        public static final Key<String> ALBUM = new Key<String>("mp3.album") {};
+        public static final Key<Integer> TRACK_NUMBER = new Key<Integer>("mp3.trackNumber") {};
+        public static final Key<Integer> DISK_NUMBER = new Key<Integer>("mp3.diskNumber") {};
+        public static final Key<Integer> DISK_COUNT = new Key<Integer>("mp3.diskCount") {};
+        public static final Key<List<String>> COMMENT = new Key<List<String>>("mp3.comment") {};
+        public static final Key<Integer> BITS_PER_SAMPLE = new Key<Integer>("mp3.bitsPerSample") {};
+        public static final Key<String> FORMAT = new Key<String>("mp3.format") {};
+        public static final Key<String> ENCODING_TYPE = new Key<String>("mp3.encodingType") {};
+        public static final Key<Integer> CHANNELS = new Key<Integer>("mp3.channels") {};
 
-        public static final Key<List<byte[]>> ARTWORK = new Key<>("mp3.artwork");
+        public static final Key<List<byte[]>> ARTWORK = new Key<List<byte[]>>("mp3.artwork") {};
 
-        public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
-        public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
-        public static final Key<Id> MBZ_DISC_ID = new Key<>("mbz.discId");
-        public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<>("mbz.artistId");
+        public static final Key<Id> MBZ_TRACK_ID = new Key<Id>("mbz.trackId") {};
+        public static final Key<Id> MBZ_WORK_ID = new Key<Id>("mbz.workId") {};
+        public static final Key<Id> MBZ_DISC_ID = new Key<Id>("mbz.discId") {};
+        public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<List<Id>>("mbz.artistId") {};
 
-        public final Key<List<String>> ENCODER = new Key<>("tag.ENCODER"); // FIXME: key name
+        public final Key<List<String>> ENCODER = new Key<List<String>>("tag.ENCODER") {}; // FIXME: key name
 
-        public static final Key<ITunesComment> ITUNES_COMMENT = new Key<>("iTunes.comment");
-        public static final Key<Cddb> CDDB = new Key<>("cddb");
+        public static final Key<ITunesComment> ITUNES_COMMENT = new Key<ITunesComment>("iTunes.comment") {};
+        public static final Key<Cddb> CDDB = new Key<Cddb>("cddb") {};
 
         /***************************************************************************************************************
          *
