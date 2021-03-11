@@ -33,7 +33,7 @@ import it.tidalwave.bluemarine2.captureone.impl.C1Document;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public interface CaptureOneDao

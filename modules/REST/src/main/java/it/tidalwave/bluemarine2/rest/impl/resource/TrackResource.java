@@ -45,7 +45,7 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
  *
  * @stereotype  Adapter
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Getter

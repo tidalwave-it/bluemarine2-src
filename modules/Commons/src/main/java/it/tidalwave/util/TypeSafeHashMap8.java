@@ -32,7 +32,7 @@ import java.util.Map;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class TypeSafeHashMap8 extends TypeSafeHashMap implements TypeSafeMap8

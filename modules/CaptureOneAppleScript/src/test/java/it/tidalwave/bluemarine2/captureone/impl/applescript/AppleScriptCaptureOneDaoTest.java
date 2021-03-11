@@ -48,7 +48,7 @@ import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 public class AppleScriptCaptureOneDaoTest
