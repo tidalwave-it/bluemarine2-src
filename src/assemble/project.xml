@@ -11,7 +11,7 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
                 <exclude>**/target/**</exclude>
-                <exclude>.hg/**</exclude>
+                <exclude>.git/**</exclude>
             </excludes>
         </fileSet>
     </fileSets>

@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -21,7 +21,6 @@
  *
  * *********************************************************************************************************************
  *
- * $Id$
  *
  * *********************************************************************************************************************
  * #L%
@@ -36,7 +35,6 @@ import lombok.NoArgsConstructor;
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
- * @version $Id$
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -44,5 +42,5 @@ public final class ModelPropertyNames
   {
     private static final String PREFIX = ModelPropertyNames.class.getPackage().getName();
     
-    public static final Key<Path> ROOT_PATH = new Key<>(PREFIX + ".rootPath");
+    public static final Key<Path> ROOT_PATH = new Key<Path>(PREFIX + ".rootPath") {};
   }
