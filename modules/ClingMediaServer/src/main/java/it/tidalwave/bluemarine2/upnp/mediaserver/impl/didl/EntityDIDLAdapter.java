@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -21,7 +21,6 @@
  *
  * *********************************************************************************************************************
  *
- * $Id$
  *
  * *********************************************************************************************************************
  * #L%
@@ -46,7 +45,6 @@ import lombok.extern.slf4j.Slf4j;
  * @stereotype Role
  *
  * @author  Fabrizio Giudici
- * @version $Id$
  *
  **********************************************************************************************************************/
 @Immutable @Slf4j @ToString @DciRole(datumType = Entity.class)
