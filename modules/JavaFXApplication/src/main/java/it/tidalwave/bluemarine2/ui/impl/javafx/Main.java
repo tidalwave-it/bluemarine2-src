@@ -33,6 +33,7 @@ import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
+import it.tidalwave.util.PreferencesHandler;
 
 /***********************************************************************************************************************
  *
@@ -58,6 +59,7 @@ public class Main extends JavaFXSpringApplication
       {
         try
           {
+            System.setProperty(PreferencesHandler.PROP_APP_NAME, "blueMarine2");
             SystemConfigurer.setupSlf4jBridgeHandler();
             SystemConfigurer.setSystemProperties();
             Platform.setImplicitExit(true);
