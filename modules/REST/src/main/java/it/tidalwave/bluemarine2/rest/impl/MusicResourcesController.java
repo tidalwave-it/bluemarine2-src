@@ -48,7 +48,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -65,8 +65,8 @@ import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
@@ -319,7 +319,7 @@ public class MusicResourcesController
       {
         final FINDER f = finder.importedFrom(new Id(source))
                                 .withFallback(new Id(fallback));
-        return ((Finder8<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder8
+        return ((Finder<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder
                      .stream()
                      .map(mapper)
                      .collect(toList());

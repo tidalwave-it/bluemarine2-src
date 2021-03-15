@@ -33,7 +33,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import it.tidalwave.util.As;
-import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.dci.annotation.DciRole;
 import lombok.extern.slf4j.Slf4j;
@@ -50,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class PriorityAsSupport extends AsSupport implements As8
+public class PriorityAsSupport extends AsSupport implements As
   {
     @FunctionalInterface
     public static interface RoleProvider

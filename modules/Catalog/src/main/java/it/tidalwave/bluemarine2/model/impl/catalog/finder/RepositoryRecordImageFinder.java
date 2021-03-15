@@ -31,7 +31,7 @@ import javax.annotation.Nonnull;
 import java.net.URL;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.audio.Record;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder;
 import lombok.ToString;
 
 /***********************************************************************************************************************
@@ -40,7 +40,7 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @ToString
-public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Finder8<URL>>
+public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Finder<URL>>
 //                                         implements TrackFinder
   {
     private static final long serialVersionUID = -9049698559834098380L;

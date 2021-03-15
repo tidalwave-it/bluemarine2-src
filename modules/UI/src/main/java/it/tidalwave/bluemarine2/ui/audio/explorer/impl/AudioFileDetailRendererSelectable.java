@@ -34,7 +34,7 @@ import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;

@@ -31,8 +31,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Map;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.TypeSafeHashMap8;
-import it.tidalwave.util.TypeSafeMap8;
+import it.tidalwave.util.TypeSafeHashMap;
+import it.tidalwave.util.TypeSafeMap;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -49,10 +49,10 @@ import lombok.ToString;
 public final class PowerOnNotification
   {
     @Getter @Nonnull
-    private final TypeSafeMap8 properties;
+    private final TypeSafeMap properties;
 
     public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
       {
-        this.properties = new TypeSafeHashMap8(properties);
+        this.properties = new TypeSafeHashMap(properties);
       }
   }

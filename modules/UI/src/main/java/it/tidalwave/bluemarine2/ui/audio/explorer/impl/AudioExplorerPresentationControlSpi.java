@@ -87,9 +87,9 @@ public interface AudioExplorerPresentationControlSpi
      *
      * Returns the list of media items in the current folder.
      *
-     * FIXME: should be List<MediaItems>
+     * FIXME: should be List<MediaItem>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public List<AudioFileSupplier> getMediaItems();
+    public List<Entity> getMediaItems();
   }

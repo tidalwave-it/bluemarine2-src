@@ -52,7 +52,7 @@ import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.n3.N3Writer;
-import it.tidalwave.util.TypeSafeMap8;
+import it.tidalwave.util.TypeSafeMap;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -102,7 +102,7 @@ public class DefaultPersistence implements Persistence
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOnNotification({})", notification);
-        final TypeSafeMap8 properties = notification.getProperties();
+        final TypeSafeMap properties = notification.getProperties();
 
         final Optional<Path> importFile = properties.getOptional(IMPORT_FILE);
         final Optional<Path> storageFolder = properties.getOptional(STORAGE_FOLDER);

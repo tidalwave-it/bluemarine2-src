@@ -38,7 +38,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
-import it.tidalwave.util.Finder8Support;
+import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
@@ -55,7 +55,7 @@ import static java.util.stream.Collectors.*;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-public class FileSystemMediaFolderFinder extends Finder8Support<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
+public class FileSystemMediaFolderFinder extends FinderSupport<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
   {
     private static final long serialVersionUID = 7656309392185783930L;
 

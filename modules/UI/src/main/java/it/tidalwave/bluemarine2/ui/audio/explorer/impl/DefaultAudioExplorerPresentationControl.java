@@ -38,15 +38,12 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
 import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
+import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
@@ -61,8 +58,8 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
 import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity.PathAwareEntity;
 
@@ -103,12 +100,12 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
 
-    private final UserAction8 navigateUpAction = new UserActionSupport8(() -> navigateUp());
+    private final UserAction navigateUpAction = UserAction.of(() -> navigateUp());
 
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
 
     @Getter
-    private final List<AudioFileSupplier> mediaItems = new ArrayList<>();
+    private final List<Entity> mediaItems = new ArrayList<>();
 
     /*******************************************************************************************************************
      *
@@ -295,16 +292,15 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         log.debug("populateItems({})", folderAndMemento);
         this.currentFolder = folderAndMemento.getFolder();
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
+        Platform.runLater(() -> navigateUpAction.enabled().set(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
-        final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
-        final Finder8<? extends Entity> finder = composite.findChildren().withContext(this);
+        final Finder<? extends Entity> finder = currentFolder.as(SimpleComposite).findChildren().withContext(this);
         mediaItems.clear();
-//        mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList()));
-        mediaItems.addAll(finder.stream().filter(i -> i instanceof AudioFileSupplier)
-                                         .map(i -> ((AudioFileSupplier)i).getAudioFile())
-                                         .collect(toList()));
-        final PresentationModel pm = toCompositePresentationModel(finder);
+        // mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList
+        // ()));
+        mediaItems.addAll(finder.results());
+        // Needs the cast for overloading ambiguity in the method signature
+        final PresentationModel pm = toCompositePresentationModel((Iterable<Entity>)mediaItems);
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
 

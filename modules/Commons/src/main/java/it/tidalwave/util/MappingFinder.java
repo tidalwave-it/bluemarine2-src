@@ -36,20 +36,20 @@ import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} which retrieve results from a {@link Supplier}.
+ * A {@link Finder} which retrieve results from another instance applying a {@link Function}.
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Immutable
-public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
+public class MappingFinder<TYPE> extends SupplierBasedFinder<TYPE>
   {
     private static final long serialVersionUID = -6359683808082070089L;
 
     @Nonnull
     private final transient Function<TYPE, TYPE> mapper;
 
-    public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public MappingFinder (final @Nonnull Finder<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
       {
         super(delegate::results);
         this.mapper = mapper;

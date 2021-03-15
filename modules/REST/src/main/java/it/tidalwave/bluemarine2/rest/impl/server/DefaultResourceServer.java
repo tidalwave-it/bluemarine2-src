@@ -58,7 +58,7 @@ import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 
 /***********************************************************************************************************************
  *

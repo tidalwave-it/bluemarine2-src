@@ -34,7 +34,7 @@ import java.util.function.Function;
 import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
@@ -111,7 +111,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
                                 final @Nonnull Optional<EntityFinderFactory> finderFactory)
       {
         super((Identifiable)() -> new Id(absolutePath(optionalParent, pathSegment).toString()),
-              new DefaultDisplayable(displayName));
+              Displayable.of(displayName));
         this.path = absolutePath(optionalParent, pathSegment);
         this.optionalParent = optionalParent;
         this.finderFactory = finderFactory.orElse(mediaFolder -> mediaFolder.finderOf(childrenSupplier.get()));

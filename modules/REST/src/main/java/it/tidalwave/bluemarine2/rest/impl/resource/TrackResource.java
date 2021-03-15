@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.audio.Track;
 import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
 /***********************************************************************************************************************

@@ -36,7 +36,7 @@ import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.Getter;
 import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 
 /***********************************************************************************************************************
  *
@@ -129,7 +129,7 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
           }
 
         final Path pathSegment = idToPathSegment(entity);
-        return entity.asOptional(SimpleComposite8).isPresent()
+        return entity.asOptional(SimpleComposite).isPresent()
                 ? new PathAwareMediaFolderDecorator(entity, parent, pathSegment)
                 : new PathAwareEntityDecorator(entity, parent, pathSegment);
       }

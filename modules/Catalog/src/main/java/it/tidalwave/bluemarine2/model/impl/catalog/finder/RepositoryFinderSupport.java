@@ -53,11 +53,10 @@ import org.springframework.util.StreamUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.LoggingUtilities;
+import it.tidalwave.util.ReflectionUtils;
 import it.tidalwave.util.Task;
-import it.tidalwave.util.spi.ReflectionUtils;
+import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.util.ImmutableTupleQueryResult;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
@@ -88,8 +87,8 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
  *
  **********************************************************************************************************************/
 @Configurable @Slf4j
-public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
-        extends Finder8Support<ENTITY, FINDER>
+public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
+        extends FinderSupport<ENTITY, FINDER>
         implements SourceAwareFinder<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";

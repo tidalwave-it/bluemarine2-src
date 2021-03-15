@@ -60,7 +60,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
@@ -237,7 +237,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         log.info("QUERYING ALL AUDIO TRACKS...");
         final AudioFileFinder allAudioFileFinder = catalog.findAudioFiles();
         pw.printf("%n%n%nALL AUDIO FILES (%d):%n%n", allAudioFileFinder.count());
-        allAudioFileFinder.forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
+        allAudioFileFinder.results().forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
+        // FIXME: allAudioFileFinder.forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));

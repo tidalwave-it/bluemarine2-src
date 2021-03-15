@@ -38,8 +38,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import it.tidalwave.util.Finder8Support;
-import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.FinderSupport;import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
@@ -56,7 +55,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -125,7 +124,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor
-    static class ArtistFallbackFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
+    static class ArtistFallbackFinder extends FinderSupport<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
       {
         private static final long serialVersionUID = 7969726066626602758L;
 

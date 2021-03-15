@@ -36,7 +36,7 @@ import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *

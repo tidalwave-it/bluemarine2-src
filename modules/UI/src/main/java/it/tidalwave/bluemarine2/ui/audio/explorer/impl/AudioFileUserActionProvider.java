@@ -31,7 +31,6 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
@@ -65,11 +64,11 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
     @Override @Nonnull
     public UserAction getDefaultAction()
       {
-        return new UserActionSupport8(() ->
+        return UserAction.of(() ->
           {
             final List<AudioFile> audioFiles = control.getMediaItems().stream()
                     .filter(i -> i instanceof AudioFileSupplier)
-                    .map(i -> i.getAudioFile())
+                    .map(i -> ((AudioFileSupplier)i).getAudioFile())
                     .collect(toList());
 
             messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile(), audioFiles));

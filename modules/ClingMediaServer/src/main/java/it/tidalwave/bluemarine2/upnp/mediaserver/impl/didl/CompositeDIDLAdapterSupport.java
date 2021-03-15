@@ -32,13 +32,13 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
-import it.tidalwave.util.As8;
+import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 
 /***********************************************************************************************************************
  *
@@ -48,7 +48,7 @@ import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
  *
  **********************************************************************************************************************/
 @Immutable @Slf4j
-public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAdapterSupport<T>
+public abstract class CompositeDIDLAdapterSupport<T extends As> extends DIDLAdapterSupport<T>
   {
     public CompositeDIDLAdapterSupport (final @Nonnull T datum, final @Nonnull ResourceServer server)
       {
@@ -78,7 +78,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
                 break;
 
             case DIRECT_CHILDREN:
-                final Finder<Entity> finder = datum.as(SimpleComposite8).findChildren();
+                final Finder<Entity> finder = datum.as(SimpleComposite).findChildren();
                 totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)

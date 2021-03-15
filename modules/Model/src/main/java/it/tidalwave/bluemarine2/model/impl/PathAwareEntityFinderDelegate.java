@@ -39,17 +39,16 @@ import java.util.function.Function;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Finder8Support;
-import it.tidalwave.util.SupplierBasedFinder8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.spi.FinderSupport;
+import it.tidalwave.util.SupplierBasedFinder;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -66,7 +65,7 @@ import static lombok.AccessLevel.PRIVATE;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
-public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
+public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -74,7 +73,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Finder8<PathAwareEntity> delegate;
+    private final Finder<PathAwareEntity> delegate;
 
     @Nonnull
     private final Optional<Path> optionalPath;
@@ -90,7 +89,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      *
      ******************************************************************************************************************/
     public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
-                                          final @Nonnull Finder8<PathAwareEntity> delegate)
+                                          final @Nonnull Finder<PathAwareEntity> delegate)
       {
         this(mediaFolder, delegate, Optional.empty());
       }
@@ -103,9 +102,9 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      * optimise a query in function of search parameters, nor optimise the count of results - when a
      * {@code PathAwareEntityFinderDelegate} is created in this way all operations will be performed in memory. If one
      * can provide data from a native store and enjoy optimised queries, instead of this constructor use
-     * {@link #PathAwareEntityFinderDelegate(it.tidalwave.bluemarine2.model.MediaFolder, it.tidalwave.util.Finder8)}
+     * {@link #PathAwareEntityFinderDelegate(it.tidalwave.bluemarine2.model.MediaFolder, it.tidalwave.util.Finder)}
      *
-     * @see #PathAwareEntityFinderDelegate(it.tidalwave.bluemarine2.model.MediaFolder, it.tidalwave.util.Finder8)
+     * @see #PathAwareEntityFinderDelegate(it.tidalwave.bluemarine2.model.MediaFolder, it.tidalwave.util.Finder)
      *
      * @param   mediaFolder     the folder associated to this finder
      * @param   function        the function that provides children
@@ -114,7 +113,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
                                           final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
-        this(mediaFolder, new SupplierBasedFinder8<>(() -> function.apply(mediaFolder)), Optional.empty());
+        this(mediaFolder, new SupplierBasedFinder<>(() -> function.apply(mediaFolder)), Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -230,9 +229,9 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      *
      ******************************************************************************************************************/
     @Nonnull // FIXME: this should be normally done by as()
-    private static SimpleComposite8 asSimpleComposite (final @Nonnull As object)
+    private static SimpleComposite asSimpleComposite (final @Nonnull As object)
       {
-        return (object instanceof SimpleComposite8) ? (SimpleComposite8)object : object.as(SimpleComposite8);
+        return (object instanceof SimpleComposite) ? (SimpleComposite)object : object.as(SimpleComposite);
       }
 
     /*******************************************************************************************************************

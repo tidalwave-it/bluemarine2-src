@@ -29,23 +29,23 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
-import it.tidalwave.util.As8;
+import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public class MediaItemComparator extends DefaultFilterSortCriterion<As8>
+public class MediaItemComparator extends DefaultFilterSortCriterion<As>
   {
     private static final long serialVersionUID = 3413093735254009245L;
 
-    private final static Comparator<As8> COMPARATOR = (o1, o2) ->
+    private final static Comparator<As> COMPARATOR = (o1, o2) ->
       {
         try
           {
@@ -82,7 +82,7 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As8>
       }
 
     @Nonnull
-    private static String displayNameOf (final @Nonnull As8 object)
+    private static String displayNameOf (final @Nonnull As object)
       {
         return object.asOptional(Displayable).map(d -> d.getDisplayName()).orElse("???");
       }

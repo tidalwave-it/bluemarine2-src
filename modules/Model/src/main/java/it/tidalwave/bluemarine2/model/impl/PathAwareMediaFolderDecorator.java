@@ -29,9 +29,9 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.util.MappingFinder;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
@@ -70,7 +70,7 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
     @Override @Nonnull
     public PathAwareFinder findChildren()
       {
-        final SimpleComposite8<Entity> composite = delegate.as(SimpleComposite8.class);
+        final SimpleComposite<Entity> composite = delegate.as(SimpleComposite.class);
         return wrappedFinder(this, composite.findChildren());
       }
 
@@ -96,7 +96,7 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      ******************************************************************************************************************/
     @Nonnull
     private static PathAwareFinder wrappedFinder (final @Nonnull MediaFolder parent,
-                                               final @Nonnull Finder8<? extends Entity> finder)
+                                               final @Nonnull Finder<? extends Entity> finder)
       {
         if (finder instanceof PathAwareEntityFinderDelegate)
           {
@@ -104,7 +104,7 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
           }
 
         return new PathAwareEntityFinderDelegate(parent,
-                                                 (Finder8)new MappingFinder<>((Finder8)finder,
+                                                 (Finder)new MappingFinder<>((Finder)finder,
                                                                               child -> wrappedEntity(parent, (Entity)child)));
       }
   }

@@ -41,7 +41,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers._c;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************

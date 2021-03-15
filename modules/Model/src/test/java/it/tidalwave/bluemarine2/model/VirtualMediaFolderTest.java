@@ -38,9 +38,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.ConcurrentHashMap;
 import it.tidalwave.util.spi.AsDelegateProvider;
-import it.tidalwave.util.spi.EmptyAsDelegateProvider;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeMethod;
@@ -48,7 +46,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.toTestNGDataProvider;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -140,7 +138,7 @@ public class VirtualMediaFolderTest extends SpringTestSupport
     @BeforeMethod
     public void setup()
       {
-        AsDelegateProvider.Locator.set(new EmptyAsDelegateProvider());
+        AsDelegateProvider.Locator.set(AsDelegateProvider.empty());
         underTest = new TestCaseBuilder().getFolderMap().get(Paths.get("/"));
       }
 
