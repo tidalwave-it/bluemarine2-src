@@ -34,9 +34,9 @@ import org.fourthline.cling.support.model.container.Container;
 import it.tidalwave.util.As;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
@@ -62,13 +62,13 @@ public abstract class DIDLAdapterSupport<T extends As> implements DIDLAdapter
       {
         didlObject.setRestricted(false);
         didlObject.setCreator("blueMarine II"); // FIXME
-        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(externalized(identifiable.getId().stringValue())));
-        datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
+        datum.maybeAs(_Identifiable_).ifPresent(identifiable -> didlObject.setId(externalized(identifiable.getId().stringValue())));
+        datum.maybeAs(_Displayable_).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
 
         if (didlObject instanceof Container)
           {
             final Container container = (Container)didlObject;
-            datum.asOptional(SimpleComposite).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+            datum.maybeAs(_SimpleComposite_).ifPresent(c -> container.setChildCount(c.findChildren().count()));
             container.setItems(Collections.emptyList());
           }
 

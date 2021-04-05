@@ -36,8 +36,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.audio.Track;
 import lombok.Getter;
-import static it.tidalwave.role.ui.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
 
 /***********************************************************************************************************************
  *
@@ -74,13 +74,13 @@ public class TrackResource extends ResourceSupport
     public TrackResource (final @Nonnull Track track)
       {
         this.id          = track.getId().stringValue();
-        this.displayName = track.as(Displayable).getDisplayName();
+        this.displayName = track.as(_Displayable_).getDisplayName();
         this.record      = track.getRecord().map(r -> resourceUri("record", r));
         this.diskCount   = track.getDiskCount();
         this.diskNumber  = track.getDiskNumber();
         this.trackNumber = track.getTrackNumber();
         this.duration    = track.getDuration().map(Duration::toString);
         this.source      = track.getSource().map(Id::toString);
-        this.audioFile   = track.asOptional(AudioFileSupplier).map(afs -> resourceUri("audiofile", afs.getAudioFile()));
+        this.audioFile   = track.maybeAs(_AudioFileSupplier_).map(afs -> resourceUri("audiofile", afs.getAudioFile()));
       }
   }

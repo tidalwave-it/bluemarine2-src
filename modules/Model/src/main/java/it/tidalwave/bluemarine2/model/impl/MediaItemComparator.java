@@ -29,19 +29,21 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
+import java.util.List;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
-import it.tidalwave.util.DefaultFilterSortCriterion;
+import it.tidalwave.util.Finder.SortDirection;
+import it.tidalwave.util.Finder.InMemorySortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public class MediaItemComparator extends DefaultFilterSortCriterion<As>
+public class MediaItemComparator implements InMemorySortCriterion<As>
   {
     private static final long serialVersionUID = 3413093735254009245L;
 
@@ -76,14 +78,23 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As>
         return displayNameOf(o1).compareTo(displayNameOf(o2));
       };
 
-    public MediaItemComparator()
-      {
-        super(COMPARATOR, "MediaItemComparator");
-      }
+    private final static InMemorySortCriterion<As> DELEGATE = InMemorySortCriterion.of(COMPARATOR);
 
     @Nonnull
     private static String displayNameOf (final @Nonnull As object)
       {
-        return object.asOptional(Displayable).map(d -> d.getDisplayName()).orElse("???");
+        return object.maybeAs(_Displayable_).map(d -> d.getDisplayName()).orElse("???");
+      }
+
+    @Override
+    public void sort (@Nonnull List<? extends As> results, @Nonnull SortDirection sortDirection)
+      {
+        DELEGATE.sort(results, sortDirection);
+      }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return "MediaItemComparator";
       }
   }

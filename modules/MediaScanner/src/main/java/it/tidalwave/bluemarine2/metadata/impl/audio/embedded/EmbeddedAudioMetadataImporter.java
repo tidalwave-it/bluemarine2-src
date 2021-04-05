@@ -47,7 +47,7 @@ import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.RDFS;
 import it.tidalwave.util.ConcurrentHashMapWithOptionals;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.InstantProvider;
+import it.tidalwave.util.TimeProvider;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.ModelBuilder;
@@ -158,7 +158,7 @@ public class EmbeddedAudioMetadataImporter
     private StatementManager statementManager;
 
     @Inject
-    private InstantProvider timestampProvider;
+    private TimeProvider timeProvider;
 
     @Inject
     private ProgressHandler progress;
@@ -312,7 +312,7 @@ public class EmbeddedAudioMetadataImporter
         catch (IOException e) // should never happen
           {
             log.warn("Cannot get last modified time for {}: assuming now", path);
-            return timestampProvider.getInstant();
+            return timeProvider.currentInstant();
           }
       }
 

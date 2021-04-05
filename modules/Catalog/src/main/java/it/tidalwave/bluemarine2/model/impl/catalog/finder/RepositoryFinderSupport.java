@@ -273,7 +273,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
     @Override @Nonnull
     public FINDER withId (final @Nonnull Id id)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  Optional.of(id),
@@ -300,7 +300,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
     @Override @Nonnull
     public FINDER importedFrom (final @Nonnull Id source)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  id,
@@ -327,7 +327,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
     @Override @Nonnull
     public FINDER withFallback (final @Nonnull Id sourceFallback)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  id,

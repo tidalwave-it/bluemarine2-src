@@ -48,7 +48,7 @@ import org.fourthline.cling.support.model.DIDLObject;
  **********************************************************************************************************************/
 public interface DIDLAdapter
   {
-    public static final Class<DIDLAdapter> DIDLAdapter = DIDLAdapter.class;
+    public static final Class<DIDLAdapter> _DIDLAdapter_ = DIDLAdapter.class;
 
     /*******************************************************************************************************************
      *

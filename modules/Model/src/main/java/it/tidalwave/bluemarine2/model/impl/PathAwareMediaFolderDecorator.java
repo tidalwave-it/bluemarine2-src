@@ -29,6 +29,8 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
+import java.util.Collection;
+import java.util.Collections;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.MappingFinder;
 import it.tidalwave.role.SimpleComposite;
@@ -57,9 +59,16 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
     public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
                                           final @Nonnull PathAwareEntity parent,
                                           final @Nonnull Path pathSegment,
-                                          final @Nonnull Object ... additionalRoles)
+                                          final @Nonnull Collection<Object> additionalRoles)
       {
         super(delegate, parent, pathSegment, additionalRoles);
+      }
+
+    public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
+                                          final @Nonnull PathAwareEntity parent,
+                                          final @Nonnull Path pathSegment)
+      {
+        this(delegate, parent, pathSegment, Collections.emptyList());
       }
 
     /*******************************************************************************************************************
@@ -96,7 +105,7 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      ******************************************************************************************************************/
     @Nonnull
     private static PathAwareFinder wrappedFinder (final @Nonnull MediaFolder parent,
-                                               final @Nonnull Finder<? extends Entity> finder)
+                                                  final @Nonnull Finder<? extends Entity> finder)
       {
         if (finder instanceof PathAwareEntityFinderDelegate)
           {

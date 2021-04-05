@@ -121,11 +121,15 @@ public final class AudioMetadataFactory
               {
                 if (!MAPPED_TAGS.contains(fieldKey))
                   {
-                    final Key<Object> key = new Key<Object>("tag." + fieldKey.name()) {};
+                    final String keyName = "tag." + fieldKey.name();
                     final List<String> values = tag.getAll(fieldKey);
 
                     if (!values.isEmpty())
                       {
+                        final Key<Object> key = (Key<Object>)Key.allKeys().stream()
+                                                                .filter(k -> k.getName().equals(keyName))
+                                                                .findFirst()
+                                                                .orElseGet(() -> Key.of(keyName, List.class));
                         metadata = metadata.with(key, values);
                       }
                   }

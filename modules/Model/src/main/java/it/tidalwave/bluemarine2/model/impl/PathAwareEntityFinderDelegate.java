@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -139,7 +139,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
     @Override @Nonnull
     public PathAwareFinder withPath (final @Nonnull Path path)
       {
-        return clone(new PathAwareEntityFinderDelegate(mediaFolder, delegate, Optional.of(path)));
+        return clonedWith(new PathAwareEntityFinderDelegate(mediaFolder, delegate, Optional.of(path)));
       }
 
     /*******************************************************************************************************************
@@ -231,7 +231,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
     @Nonnull // FIXME: this should be normally done by as()
     private static SimpleComposite asSimpleComposite (final @Nonnull As object)
       {
-        return (object instanceof SimpleComposite) ? (SimpleComposite)object : object.as(SimpleComposite);
+        return (object instanceof SimpleComposite) ? (SimpleComposite)object : object.as(_SimpleComposite_);
       }
 
     /*******************************************************************************************************************

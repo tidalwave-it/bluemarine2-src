@@ -33,8 +33,8 @@
         <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
         <mp3agic.version>0.8.3</mp3agic.version>
         <rdf4j.version>2.1.4</rdf4j.version>
-        <steelblue.version>1.0-ALPHA-17</steelblue.version>
-        <thesefoolishthings.version>3.2-ALPHA-1</thesefoolishthings.version>
+        <steelblue.version>1.1-ALPHA-2</steelblue.version>
+        <thesefoolishthings.version>3.2-ALPHA-11</thesefoolishthings.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
@@ -401,6 +401,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <blueMarine2.musicTestSets.path>${blueMarine2.musicTestSets.path}</blueMarine2.musicTestSets.path>
+                        <it.tidalwave.util.test.FileComparisonUtils.tabularOutput>true</it.tidalwave.util.test.FileComparisonUtils.tabularOutput>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

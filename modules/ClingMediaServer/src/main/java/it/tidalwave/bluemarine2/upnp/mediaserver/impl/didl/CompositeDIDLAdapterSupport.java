@@ -37,7 +37,7 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 
 /***********************************************************************************************************************
@@ -78,13 +78,13 @@ public abstract class CompositeDIDLAdapterSupport<T extends As> extends DIDLAdap
                 break;
 
             case DIRECT_CHILDREN:
-                final Finder<Entity> finder = datum.as(SimpleComposite).findChildren();
+                final Finder<Entity> finder = datum.as(_SimpleComposite_).findChildren();
                 totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)
                       .results()
                       .stream()
-                      .forEach(_c(child -> content.addObject(child.as(DIDLAdapter).toObject())));
+                      .forEach(_c(child -> content.addObject(child.as(_DIDLAdapter_).toObject())));
                 numberReturned = (int)content.getCount();
                 break;
 

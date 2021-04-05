@@ -65,10 +65,10 @@ import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
 
 /***********************************************************************************************************************
  *
@@ -168,7 +168,7 @@ public class MusicResourcesController
         checkStatus();
         return catalog.findTracks().inRecord(new Id(id))
                                    .stream()
-                                   .flatMap(track -> track.asMany(AudioFileSupplier).stream())
+                                   .flatMap(track -> track.asMany(_AudioFileSupplier_).stream())
                                    .map(afs -> afs.getAudioFile())
                                    .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
                                    .findAny()
@@ -346,7 +346,7 @@ public class MusicResourcesController
         final Range fullRange = Range.full(length);
         final Range range = ranges.stream().findFirst().orElse(fullRange).subrange(maxSize);
 
-        final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
+        final String displayName = file.as(_Displayable_).getDisplayName(); // FIXME: getRdfsLabel()
         final HttpStatus status = range.equals(fullRange) ? OK : PARTIAL_CONTENT;
         return file.getContent().map(resource -> ResponseEntity.status(status)
                                                             .contentType(new MediaType("audio", "mpeg"))

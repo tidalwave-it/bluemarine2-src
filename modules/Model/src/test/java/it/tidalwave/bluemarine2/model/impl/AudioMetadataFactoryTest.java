@@ -81,9 +81,10 @@ public class AudioMetadataFactoryTest
                                                   // FIXME: this should be removed, and the expected results updated
                                                   .filter(entry -> !entry.getKey().equals(CDDB))
                                                   .sorted(comparing(e -> e.getKey()))
-                                                  .map(e -> String.format("%s.%s = %s", normalize(relativePath, NFC),
-                                                                                        e.getKey(),
-                                                                                        e.getValue()))
+                                                  .map(e -> String.format("%s.Key[%s] = %s",
+                                                                          normalize(relativePath, NFC),
+                                                                          e.getKey().getName(),
+                                                                          e.getValue()))
                                                   .collect(toList());
 
         metadata.get(ARTWORK).ifPresent(artworks ->
@@ -91,9 +92,9 @@ public class AudioMetadataFactoryTest
             final AtomicInteger n = new AtomicInteger();
             artworks.forEach(artwork ->
               {
-                metadataDump.add(String.format("%s.%s[%s] = %s",
+                metadataDump.add(String.format("%s.Key[%s][%s] = %s",
                         normalize(relativePath, NFC),
-                        ARTWORK,
+                        ARTWORK.getName(),
                         n,
                         Base64.getEncoder().encodeToString(artwork)));
                 n.incrementAndGet();

@@ -28,6 +28,8 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -35,8 +37,8 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.Getter;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 
 /***********************************************************************************************************************
  *
@@ -60,11 +62,18 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
     protected PathAwareEntityDecorator (final @Nonnull Entity delegate,
                                         final @Nonnull PathAwareEntity parent,
                                         final @Nonnull Path pathSegment,
-                                        final @Nonnull Object ... roles)
+                                        final @Nonnull Collection<Object> roles)
       {
         super(delegate, roles);
         this.pathSegment = pathSegment;
         this.parent = parent;
+      }
+
+    protected PathAwareEntityDecorator (final @Nonnull Entity delegate,
+                                        final @Nonnull PathAwareEntity parent,
+                                        final @Nonnull Path pathSegment)
+      {
+        this(delegate, parent, pathSegment, Collections.emptyList());
       }
 
     /*******************************************************************************************************************
@@ -129,7 +138,7 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
           }
 
         final Path pathSegment = idToPathSegment(entity);
-        return entity.asOptional(SimpleComposite).isPresent()
+        return entity.maybeAs(_SimpleComposite_).isPresent()
                 ? new PathAwareMediaFolderDecorator(entity, parent, pathSegment)
                 : new PathAwareEntityDecorator(entity, parent, pathSegment);
       }
@@ -140,6 +149,6 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
     @Nonnull
     private static Path idToPathSegment (final @Nonnull Entity entity)
       {
-        return Paths.get(entity.as(Identifiable).getId().stringValue().replace('/', '_'));
+        return Paths.get(entity.as(_Identifiable_).getId().stringValue().replace('/', '_'));
       }
   }

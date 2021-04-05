@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
@@ -169,15 +169,15 @@ public class DefaultAudioRendererPresentationControl
           {
             properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
             properties.artistProperty().setValue(audioFile.findMakers().stream()
-                    .map(maker -> maker.as(Displayable).getDisplayName())
+                    .map(maker -> maker.as(_Displayable_).getDisplayName())
                     .collect(Collectors.joining(", ")));
             properties.composerProperty().setValue(audioFile.findComposers().stream()
-                    .map(composer -> composer.as(Displayable).getDisplayName())
+                    .map(composer -> composer.as(_Displayable_).getDisplayName())
                     .collect(Collectors.joining(", ")));
             duration = metadata.get(DURATION).orElse(Duration.ZERO);
             properties.durationProperty().setValue(format(duration));
             properties.folderNameProperty().setValue(
-                    audioFile.getRecord().map(record -> record.as(Displayable).getDisplayName()).orElse(""));
+                    audioFile.getRecord().map(record -> record.as(_Displayable_).getDisplayName()).orElse(""));
             properties.nextTrackProperty().setValue(
                     ((playList.getSize() == 1) ? "" : String.format("%d / %d", playList.getIndex() + 1, playList.getSize()) +
                     playList.peekNext().map(t -> " - Next track: " + t.getMetadata().get(TITLE).orElse("")).orElse("")));

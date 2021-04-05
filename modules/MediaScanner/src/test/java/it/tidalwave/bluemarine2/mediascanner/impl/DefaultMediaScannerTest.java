@@ -38,7 +38,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.spi.MockInstantProvider;
+import it.tidalwave.util.test.MockTimeProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
@@ -112,7 +112,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         fileSystem = context.getBean(MediaFileSystem.class);
         persistence = context.getBean(Persistence.class);
 
-        context.getBean(MockInstantProvider.class).setInstant(MOCK_TIMESTAMP);
+        context.getBean(MockTimeProvider.class).setInstant(MOCK_TIMESTAMP);
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
 

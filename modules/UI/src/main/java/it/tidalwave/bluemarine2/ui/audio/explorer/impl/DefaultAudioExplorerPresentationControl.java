@@ -58,10 +58,10 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
-import static it.tidalwave.role.ui.Displayable.Displayable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity.PathAwareEntity;
+import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity._PathAwareEntity_;
 
 /***********************************************************************************************************************
  *
@@ -267,7 +267,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //            public Void run()
 //              {
 //                final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
-//                                                     .map(o -> o.as(Presentable).createPresentationModel())
+//                                                     .map(o -> o.as(_Presentable_).createPresentationModel())
 //                                                     .collect(toCompositePresentationModel());
 //                presentation.populateBrowsers(pm);
 //                selectBrowser(browsers.get(0));
@@ -294,7 +294,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> navigateUpAction.enabled().set(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
-        final Finder<? extends Entity> finder = currentFolder.as(SimpleComposite).findChildren().withContext(this);
+        final Finder<? extends Entity> finder = currentFolder.as(_SimpleComposite_).findChildren().withContext(this);
         mediaItems.clear();
         // mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList
         // ()));
@@ -313,9 +313,9 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     private String getCurrentPathLabel()
       {
         return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> i.asOptional(PathAwareEntity).map(p -> p.getParent().isPresent()).orElse(true))
-                .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
-                .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
+                .filter(i -> i.maybeAs(_PathAwareEntity_).map(p -> p.getParent().isPresent()).orElse(true))
+                .filter(i -> i.maybeAs(_Displayable_).map(d -> true).orElse(false))
+                .map(i -> i.maybeAs(_Displayable_).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));
       }
   }

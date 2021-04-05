@@ -33,7 +33,7 @@ import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
@@ -52,6 +52,6 @@ public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
       {
         return hBox("cell-container",
                     label((artist.getType() == 1) ? "artist-icon" : "artist-group-icon", ""),
-                    label("artist-label", artist.as(Displayable).getDisplayName()));
+                    label("artist-label", artist.as(_Displayable_).getDisplayName()));
       }
   }

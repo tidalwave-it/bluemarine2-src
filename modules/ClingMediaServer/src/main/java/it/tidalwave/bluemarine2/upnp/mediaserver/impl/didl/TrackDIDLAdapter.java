@@ -45,8 +45,8 @@ import it.tidalwave.bluemarine2.model.audio.Track;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *
@@ -73,12 +73,12 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         log.debug("toObject() - {}", datum);
         // parentID not set here
         final MusicTrack item = setCommonFields(new MusicTrack());
-        final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
+        final AudioFile audioFile = datum.as(_AudioFileSupplier_).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
         item.addResource(audioResourceOf(audioFile));
         trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
 
-        datum.getRecord().flatMap(record -> record.asOptional(Displayable))
+        datum.getRecord().flatMap(record -> record.maybeAs(_Displayable_))
                          .map(d -> d.getDisplayName())
                          .ifPresent(item::setAlbum);
 

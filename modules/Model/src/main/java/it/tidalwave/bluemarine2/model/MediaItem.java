@@ -69,37 +69,37 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
      ******************************************************************************************************************/
     public interface Metadata
       {
-        public static final Key<Long> FILE_SIZE = new Key<Long>("file.size") {};
+        public static final Key<Long> FILE_SIZE = Key.of("file.size", Long.class);
 
-        public static final Key<Duration> DURATION = new Key<Duration>("mp3.duration") {};
-        public static final Key<Integer> BIT_RATE = new Key<Integer>("mp3.bitRate") {};
-        public static final Key<Integer> SAMPLE_RATE = new Key<Integer>("mp3.sampleRate") {};
-        public static final Key<String> ARTIST = new Key<String>("mp3.artist") {};
-        public static final Key<String> COMPOSER = new Key<String>("mp3.composer") {};
-        public static final Key<String> PUBLISHER = new Key<String>("mp3.publisher") {};
-        public static final Key<String> TITLE = new Key<String>("mp3.title") {};
-        public static final Key<Integer> YEAR = new Key<Integer>("mp3.year") {};
-        public static final Key<String> ALBUM = new Key<String>("mp3.album") {};
-        public static final Key<Integer> TRACK_NUMBER = new Key<Integer>("mp3.trackNumber") {};
-        public static final Key<Integer> DISK_NUMBER = new Key<Integer>("mp3.diskNumber") {};
-        public static final Key<Integer> DISK_COUNT = new Key<Integer>("mp3.diskCount") {};
+        public static final Key<Duration> DURATION = Key.of("mp3.duration", Duration.class);
+        public static final Key<Integer> BIT_RATE = Key.of("mp3.bitRate", Integer.class);
+        public static final Key<Integer> SAMPLE_RATE = Key.of("mp3.sampleRate", Integer.class);
+        public static final Key<String> ARTIST = Key.of("mp3.artist", String.class);
+        public static final Key<String> COMPOSER = Key.of("mp3.composer", String.class);
+        public static final Key<String> PUBLISHER = Key.of("mp3.publisher", String.class);
+        public static final Key<String> TITLE = Key.of("mp3.title", String.class);
+        public static final Key<Integer> YEAR = Key.of("mp3.year", Integer.class);
+        public static final Key<String> ALBUM = Key.of("mp3.album", String.class);
+        public static final Key<Integer> TRACK_NUMBER = Key.of("mp3.trackNumber", Integer.class);
+        public static final Key<Integer> DISK_NUMBER = Key.of("mp3.diskNumber", Integer.class);
+        public static final Key<Integer> DISK_COUNT = Key.of("mp3.diskCount", Integer.class);
         public static final Key<List<String>> COMMENT = new Key<List<String>>("mp3.comment") {};
-        public static final Key<Integer> BITS_PER_SAMPLE = new Key<Integer>("mp3.bitsPerSample") {};
-        public static final Key<String> FORMAT = new Key<String>("mp3.format") {};
-        public static final Key<String> ENCODING_TYPE = new Key<String>("mp3.encodingType") {};
-        public static final Key<Integer> CHANNELS = new Key<Integer>("mp3.channels") {};
+        public static final Key<Integer> BITS_PER_SAMPLE = Key.of("mp3.bitsPerSample", Integer.class);
+        public static final Key<String> FORMAT = Key.of("mp3.format", String.class);
+        public static final Key<String> ENCODING_TYPE = Key.of("mp3.encodingType", String.class);
+        public static final Key<Integer> CHANNELS = Key.of("mp3.channels", Integer.class);
 
         public static final Key<List<byte[]>> ARTWORK = new Key<List<byte[]>>("mp3.artwork") {};
 
-        public static final Key<Id> MBZ_TRACK_ID = new Key<Id>("mbz.trackId") {};
-        public static final Key<Id> MBZ_WORK_ID = new Key<Id>("mbz.workId") {};
-        public static final Key<Id> MBZ_DISC_ID = new Key<Id>("mbz.discId") {};
+        public static final Key<Id> MBZ_TRACK_ID = Key.of("mbz.trackId", Id.class);
+        public static final Key<Id> MBZ_WORK_ID = Key.of("mbz.workId", Id.class);
+        public static final Key<Id> MBZ_DISC_ID = Key.of("mbz.discId", Id.class);
         public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<List<Id>>("mbz.artistId") {};
 
         public final Key<List<String>> ENCODER = new Key<List<String>>("tag.ENCODER") {}; // FIXME: key name
 
-        public static final Key<ITunesComment> ITUNES_COMMENT = new Key<ITunesComment>("iTunes.comment") {};
-        public static final Key<Cddb> CDDB = new Key<Cddb>("cddb") {};
+        public static final Key<ITunesComment> ITUNES_COMMENT = Key.of("iTunes.comment", ITunesComment.class);
+        public static final Key<Cddb> CDDB = Key.of("cddb", Cddb.class);
 
         /***************************************************************************************************************
          *

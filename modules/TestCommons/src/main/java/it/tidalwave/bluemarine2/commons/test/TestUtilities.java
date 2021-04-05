@@ -47,7 +47,7 @@ import it.tidalwave.bluemarine2.util.Dumpable;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -80,7 +80,7 @@ public class TestUtilities
       {
         final List<String> result = new ArrayList<>();
         result.add((entity instanceof Dumpable) ? ((Dumpable)entity).toDumpString() : entity.toString());
-        final Optional<SimpleComposite> composite = entity.asOptional(SimpleComposite);
+        final Optional<SimpleComposite> composite = entity.maybeAs(_SimpleComposite_);
         composite.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As)child))));
 
         return result;

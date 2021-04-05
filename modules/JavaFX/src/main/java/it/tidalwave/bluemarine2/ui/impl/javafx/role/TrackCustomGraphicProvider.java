@@ -34,7 +34,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.audio.Track;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
@@ -57,7 +57,7 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
         return hBox("cell-container",
                     label("track-icon", ""),
                     label("track-index", trackLabel(metadata)),
-                    label("track-label", track.as(Displayable).getDisplayName()),
+                    label("track-label", track.as(_Displayable_).getDisplayName()),
                     label("track-duration", format(metadata.get(DURATION).get())));
       }
 

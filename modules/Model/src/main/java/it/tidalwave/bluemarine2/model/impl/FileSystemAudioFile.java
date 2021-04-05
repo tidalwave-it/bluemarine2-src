@@ -55,7 +55,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *
@@ -271,7 +271,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     public Optional<Record> getRecord()
       {
             // FIXME: check - parent should be always present - correct?
-        return getParent().map(parent -> new NamedRecord(parent.as(Displayable).getDisplayName()));
+        return getParent().map(parent -> new NamedRecord(parent.as(_Displayable_).getDisplayName()));
       }
 
     @Override @Nonnull

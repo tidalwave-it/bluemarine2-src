@@ -46,7 +46,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.ui.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.toTestNGDataProvider;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -152,8 +152,8 @@ public class VirtualMediaFolderTest extends SpringTestSupport
         final List<? extends PathAwareEntity> children = underTest.findChildren().results();
         // then
         assertThat(children.size(), is(2));
-        assertThat(children.get(0).as(Displayable).getDisplayName(), is("/music"));
-        assertThat(children.get(1).as(Displayable).getDisplayName(), is("/photos"));
+        assertThat(children.get(0).as(_Displayable_).getDisplayName(), is("/music"));
+        assertThat(children.get(1).as(_Displayable_).getDisplayName(), is("/photos"));
       }
 
     /*******************************************************************************************************************
@@ -167,7 +167,7 @@ public class VirtualMediaFolderTest extends SpringTestSupport
         // then
         log.debug("findChildren().withPath({}).results() = {}", path, children);
         assertThat(children.size(), is(1));
-        assertThat(children.get(0).as(Displayable).getDisplayName(), is(path.toString()));
+        assertThat(children.get(0).as(_Displayable_).getDisplayName(), is(path.toString()));
       }
 
     /*******************************************************************************************************************

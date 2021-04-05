@@ -30,6 +30,7 @@ package it.tidalwave.util.spi;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import it.tidalwave.util.As;
@@ -64,7 +65,12 @@ public class PriorityAsSupport extends AsSupport implements As
     @Nonnull
     private final Optional<RoleProvider> additionalRoleProvider;
 
-    public PriorityAsSupport (final Object owner, final @Nonnull Object ... rolesOrFactories)
+    public PriorityAsSupport (final Object owner)
+      {
+        this(owner, Collections.emptyList());
+      }
+
+    public PriorityAsSupport (final Object owner, final @Nonnull Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
@@ -73,7 +79,7 @@ public class PriorityAsSupport extends AsSupport implements As
 
     public PriorityAsSupport (final Object owner,
                               final @Nonnull RoleProvider additionalRoleProvider,
-                              final @Nonnull Object ... rolesOrFactories)
+                              final @Nonnull Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
@@ -109,7 +115,7 @@ public class PriorityAsSupport extends AsSupport implements As
     @Override @Nonnull
     public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
       {
-        return asOptional(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
+        return maybeAs(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
       }
 
     /*******************************************************************************************************************
@@ -123,7 +129,7 @@ public class PriorityAsSupport extends AsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
+    public <T> Optional<T> maybeAs (final @Nonnull Class<T> type)
       {
         return asMany(type).stream().findFirst();
       }

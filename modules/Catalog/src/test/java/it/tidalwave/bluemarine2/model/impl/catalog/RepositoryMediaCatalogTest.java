@@ -60,8 +60,8 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
-import static it.tidalwave.role.ui.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.role.Identifiable._Identifiable_;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
@@ -79,7 +79,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
     private static final Comparator<Entity> BY_DISPLAY_NAME =
-            (e1, e2) -> e1.as(Displayable).getDisplayName().compareTo(e2.as(Displayable).getDisplayName());
+            (e1, e2) -> e1.as(_Displayable_).getDisplayName().compareTo(e2.as(_Displayable_).getDisplayName());
 
     private static int latestQueryCount;
 
@@ -271,7 +271,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         final MusicArtist artist = musicPerformer.getMusicArtist();
         final Optional<Entity> role = musicPerformer.getRole();
-        final String performer = role.get().as(Displayable).getDisplayName().replaceAll("^performer_", "").replace('_', ' ');
+        final String performer = role.get().as(_Displayable_).getDisplayName().replaceAll("^performer_", "").replace('_', ' ');
         return String.format("%-20s %s", performer, displayNameOf(artist));
       }
 
@@ -281,7 +281,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     @Nonnull
     private String displayNameOf (final @Nonnull Entity entity)
       {
-        return String.format("%s (%s)", entity.as(Displayable).getDisplayName(), entity.as(Identifiable).getId());
+        return String.format("%s (%s)", entity.as(_Displayable_).getDisplayName(), entity.as(_Identifiable_).getId());
       }
 
     /*******************************************************************************************************************

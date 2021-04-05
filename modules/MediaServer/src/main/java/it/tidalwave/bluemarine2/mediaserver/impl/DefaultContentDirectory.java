@@ -49,7 +49,8 @@ import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.util.Parameters.r;
 
 /***********************************************************************************************************************
  *
@@ -126,9 +127,9 @@ public class DefaultContentDirectory implements ContentDirectory
                                                   final @Nonnull EntityBrowser browser)
       {
         final String fallBack = browser.getClass().getSimpleName();
-        final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(fallBack);
-        final Displayable displayable = browser.asOptional(Displayable.class).orElse(Displayable.of(fallBack));
+        final String pathSegment = browser.maybeAs(_Identifiable_).map(i -> i.getId().stringValue()).orElse(fallBack);
+        final Displayable displayable = browser.maybeAs(Displayable.class).orElse(Displayable.of(fallBack));
         log.trace("createMediaFolder({}, {}) - path: {} displayable: {}", parent, browser, pathSegment, displayable);
-        return new PathAwareMediaFolderDecorator(browser.getRoot(), parent, Paths.get(pathSegment), displayable);
+        return new PathAwareMediaFolderDecorator(browser.getRoot(), parent, Paths.get(pathSegment), r(displayable));
       }
   }
