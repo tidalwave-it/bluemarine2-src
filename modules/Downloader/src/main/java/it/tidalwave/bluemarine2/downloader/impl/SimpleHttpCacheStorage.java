@@ -161,7 +161,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
     public void removeEntry (final @Nonnull String key) 
       throws IOException
       {
-        log.debug("removeEntry({})");
+        log.debug("removeEntry({})", key);
         // FIXME
       }
 

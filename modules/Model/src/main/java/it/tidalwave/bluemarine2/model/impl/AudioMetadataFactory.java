@@ -174,7 +174,7 @@ public final class AudioMetadataFactory
         // e.g. for wav files
         catch (UnsupportedOperationException e)
           {
-            log.error("Unsupported tag in " + audioFile, e.toString());
+            log.error("Unsupported tag in {} {}", audioFile, e.toString());
           }
         catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
 //        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)

@@ -259,7 +259,7 @@ public class JavaFxFlowController implements FlowController
                                                final @Nonnull Class<? extends Annotation> annotationClass)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
-        log.debug("findAnnotatedMethod({})", object, annotationClass);
+        log.debug("findAnnotatedMethod({}, {})", object, annotationClass);
         
         if (object != null)
           {

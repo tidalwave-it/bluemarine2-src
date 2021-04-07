@@ -139,7 +139,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
               }
             catch (AssertionError | IOException e)
               {
-                log.warn("While printing stats", e.toString());
+                log.warn("While printing stats: {}", e.toString());
               }
           });
       }
