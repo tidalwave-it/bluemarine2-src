@@ -32,32 +32,32 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bluemarine2" target="1.5" />
-      <module name="bluemarine2-modules" target="1.8" />
-      <module name="bluemarine2-plugins-modules" target="1.8" />
-      <module name="bluemarine2-services-modules" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-application-javafx" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-catalog" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-cecnavigationadapter" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-commons" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-commons-test" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-downloader" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-headlessservice" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-initializer" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-mediascanner" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-mediaserver" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-metadata-musicbrainz" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-model" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-musicbrainz-datamodel" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-persistence" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-phaseone-captureone11-applescript" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-rest" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-services-stoppingdown" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-ui" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-ui-javafx" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-upnp-mediaserver" target="1.8" />
-      <module name="it-tidalwave-bluemarine2-vocabulary" target="1.8" />
-      <module name="it-tidalwave-cec" target="1.8" />
+      <module name="bluemarine2" target="11" />
+      <module name="bluemarine2-modules" target="11" />
+      <module name="bluemarine2-plugins-modules" target="11" />
+      <module name="bluemarine2-services-modules" target="11" />
+      <module name="it-tidalwave-bluemarine2-application-javafx" target="11" />
+      <module name="it-tidalwave-bluemarine2-catalog" target="11" />
+      <module name="it-tidalwave-bluemarine2-cecnavigationadapter" target="11" />
+      <module name="it-tidalwave-bluemarine2-commons" target="11" />
+      <module name="it-tidalwave-bluemarine2-commons-test" target="11" />
+      <module name="it-tidalwave-bluemarine2-downloader" target="11" />
+      <module name="it-tidalwave-bluemarine2-headlessservice" target="11" />
+      <module name="it-tidalwave-bluemarine2-initializer" target="11" />
+      <module name="it-tidalwave-bluemarine2-mediascanner" target="11" />
+      <module name="it-tidalwave-bluemarine2-mediaserver" target="11" />
+      <module name="it-tidalwave-bluemarine2-metadata-musicbrainz" target="11" />
+      <module name="it-tidalwave-bluemarine2-model" target="11" />
+      <module name="it-tidalwave-bluemarine2-musicbrainz-datamodel" target="11" />
+      <module name="it-tidalwave-bluemarine2-persistence" target="11" />
+      <module name="it-tidalwave-bluemarine2-phaseone-captureone11-applescript" target="11" />
+      <module name="it-tidalwave-bluemarine2-rest" target="11" />
+      <module name="it-tidalwave-bluemarine2-services-stoppingdown" target="11" />
+      <module name="it-tidalwave-bluemarine2-ui" target="11" />
+      <module name="it-tidalwave-bluemarine2-ui-javafx" target="11" />
+      <module name="it-tidalwave-bluemarine2-upnp-mediaserver" target="11" />
+      <module name="it-tidalwave-bluemarine2-vocabulary" target="11" />
+      <module name="it-tidalwave-cec" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

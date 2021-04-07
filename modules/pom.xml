@@ -19,8 +19,9 @@
     <description>blueMarine2 (modules)</description>
 
     <properties>
-        <tft.javac.source>1.8</tft.javac.source>
-        <tft.javac.target>1.8</tft.javac.target>
+        <tft.javac.source>11</tft.javac.source>
+        <tft.javac.target>11</tft.javac.target>
+        <tft.javac.release>11</tft.javac.release>
 
         <activation.version>1.1.1</activation.version>
         <cling.version>2.1.1</cling.version>
