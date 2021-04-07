@@ -132,7 +132,17 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
         stats.values().stream().flatMap(s -> s.withoutCddb.stream()).collect(toSet())
                 .stream().forEachOrdered(path -> log.info("STATS: without CDDB:        {}", path));
-        modelBuilders.entrySet().forEach(_c(entry -> verifyGlobalModel(entry.getValue().toModel(), entry.getKey())));
+        modelBuilders.entrySet().forEach(entry ->
+          {
+            try
+              {
+                verifyGlobalModel(entry.getValue().toModel(), entry.getKey());
+              }
+            catch (AssertionError | IOException e)
+              {
+                log.warn("While printing stats", e.toString());
+              }
+          });
       }
 
     /*******************************************************************************************************************
