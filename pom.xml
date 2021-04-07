@@ -25,31 +25,18 @@ Still at the early stage of development, it can be used with some hack to reprod
     </description>
 
     <properties>
-        <scm.repo.url>git@bitbucket.org:tidalwave/bluemarine2-src.git</scm.repo.url>
-        <scm.repo.readonly.url>https://bitbucket.org/tidalwave/bluemarine2-src.git</scm.repo.readonly.url>
-        <scm.repo.browse.url>https://bitbucket.org/tidalwave/bluemarine2-src/src</scm.repo.browse.url>
-
-        <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
-        <tidalwave.issues>BM2</tidalwave.issues>
-
         <tft.maven.requiredJdk>[11,12)</tft.maven.requiredJdk>
-        <tft.javac.source>1.8</tft.javac.source>
-        <tft.javac.target>1.8</tft.javac.target>
-
-        <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
-        <netbeans.compile.on.save>all</netbeans.compile.on.save>
-
-        <tft.appbundle.name>blueMarine2</tft.appbundle.name>
-        <tft.appbundle.signature>TDLW</tft.appbundle.signature>
-
-        <tft.clirr.skip>true</tft.clirr.skip> <!-- Clirr is not compatible with JDK 8 -->
+        <scm.repo.url>ssh://git@bitbucket.org:tidalwave/bluemarine2-src.git</scm.repo.url>
+        <scm.repo.readonly.url>https://bitbucket.org/tidalwave/bluemarine2-src</scm.repo.readonly.url>
+        <scm.repo.browse.url>https://bitbucket.org/tidalwave/bluemarine2-src/src</scm.repo.browse.url>
+        <tidalwave.project.url>http://tidalwave.it/projects/thesefoolishthings</tidalwave.project.url>
+        <tidalwave.slogan>blueMarine2: Semantic Media Centre</tidalwave.slogan>
+        <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
+        <tidalwave.issues>BMT</tidalwave.issues>
+        <tidalwave.github.readonly.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.readonly.url>
+        <tidalwave.github.browse.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.browse.url>
         <release.profiles>release,installers</release.profiles>
     </properties>
-
-    <issueManagement>
-        <system>Jira</system>
-        <url>http://services.tidalwave.it/jira/browse/BMT</url>
-    </issueManagement>
 
     <!-- Repeated because of http://jira.codehaus.org/browse/SCM-442 -->
     <scm>
