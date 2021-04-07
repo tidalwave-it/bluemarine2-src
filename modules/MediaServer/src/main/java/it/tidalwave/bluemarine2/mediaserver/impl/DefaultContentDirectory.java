@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -100,10 +99,10 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
-                             new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
-                             new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
-                             new VirtualMediaFolder(parent, PATH_SERVICES, "Services", this::servicesFactory));
+        return List.of(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
+                       new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
+                       new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
+                       new VirtualMediaFolder(parent, PATH_SERVICES, "Services", this::servicesFactory));
       }
 
     @Nonnull

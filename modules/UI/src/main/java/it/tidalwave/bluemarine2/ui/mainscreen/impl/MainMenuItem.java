@@ -57,7 +57,7 @@ public class MainMenuItem
 
     public MainMenuItem (final @Nonnull String displayNameKey,
                          final @Nonnull String requestClassName,
-                         final @Nonnull int priority)
+                         final int priority)
       throws ClassNotFoundException
       {
         this.priority = priority;

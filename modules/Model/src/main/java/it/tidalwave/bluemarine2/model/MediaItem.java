@@ -83,20 +83,20 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         public static final Key<Integer> TRACK_NUMBER = Key.of("mp3.trackNumber", Integer.class);
         public static final Key<Integer> DISK_NUMBER = Key.of("mp3.diskNumber", Integer.class);
         public static final Key<Integer> DISK_COUNT = Key.of("mp3.diskCount", Integer.class);
-        public static final Key<List<String>> COMMENT = new Key<List<String>>("mp3.comment") {};
+        public static final Key<List<String>> COMMENT = new Key<>("mp3.comment") {};
         public static final Key<Integer> BITS_PER_SAMPLE = Key.of("mp3.bitsPerSample", Integer.class);
         public static final Key<String> FORMAT = Key.of("mp3.format", String.class);
         public static final Key<String> ENCODING_TYPE = Key.of("mp3.encodingType", String.class);
         public static final Key<Integer> CHANNELS = Key.of("mp3.channels", Integer.class);
 
-        public static final Key<List<byte[]>> ARTWORK = new Key<List<byte[]>>("mp3.artwork") {};
+        public static final Key<List<byte[]>> ARTWORK = new Key<>("mp3.artwork") {};
 
         public static final Key<Id> MBZ_TRACK_ID = Key.of("mbz.trackId", Id.class);
         public static final Key<Id> MBZ_WORK_ID = Key.of("mbz.workId", Id.class);
         public static final Key<Id> MBZ_DISC_ID = Key.of("mbz.discId", Id.class);
-        public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<List<Id>>("mbz.artistId") {};
+        public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<>("mbz.artistId") {};
 
-        public final Key<List<String>> ENCODER = new Key<List<String>>("tag.ENCODER") {}; // FIXME: key name
+        public final Key<List<String>> ENCODER = new Key<>("tag.ENCODER") {}; // FIXME: key name
 
         public static final Key<ITunesComment> ITUNES_COMMENT = Key.of("iTunes.comment", ITunesComment.class);
         public static final Key<Cddb> CDDB = Key.of("cddb", Cddb.class);
@@ -267,7 +267,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
               {
                 return metadata.get(ENCODER).flatMap(
                         encoders -> encoders.stream().anyMatch(encoder -> encoder.startsWith("iTunes"))
-                                                        ? metadata.get(COMMENT).flatMap(comments -> from(comments))
+                                                        ? metadata.get(COMMENT).flatMap(ITunesComment::from)
                                                         : Optional.empty());
               }
 

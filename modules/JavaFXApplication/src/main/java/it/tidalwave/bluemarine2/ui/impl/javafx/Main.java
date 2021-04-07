@@ -34,7 +34,6 @@ import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
 import it.tidalwave.util.PreferencesHandler;
-import static it.tidalwave.util.PreferencesHandler.KEY_INITIAL_SIZE;
 
 /***********************************************************************************************************************
  *

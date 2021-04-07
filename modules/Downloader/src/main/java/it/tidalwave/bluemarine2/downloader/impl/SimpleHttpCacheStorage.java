@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.downloader.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -76,8 +75,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
     private static final String PATH_CONTENT = "content";
     private static final String PATH_HEADERS = "headers";
 
-    private static final Collection<String> NEVER_EXPIRING_HEADERS = 
-            Arrays.asList("Cache-Control", "Expires", "Pragma");
+    private static final Collection<String> NEVER_EXPIRING_HEADERS = List.of("Cache-Control", "Expires", "Pragma");
     
     @Getter @Setter
     private Path folderPath = Paths.get(System.getProperty("java.io.tmpdir"));
@@ -265,7 +263,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
 //                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
         final Resource resource =  exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
         
-        List<Header> headers = new ArrayList<>(Arrays.asList(response.getAllHeaders()));
+        List<Header> headers = new ArrayList<>(List.of(response.getAllHeaders()));
         
         if (neverExpiring)
           {

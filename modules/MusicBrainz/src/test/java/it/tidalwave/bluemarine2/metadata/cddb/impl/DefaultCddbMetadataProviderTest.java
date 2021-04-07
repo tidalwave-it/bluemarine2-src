@@ -34,7 +34,6 @@ import java.nio.file.Files;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;

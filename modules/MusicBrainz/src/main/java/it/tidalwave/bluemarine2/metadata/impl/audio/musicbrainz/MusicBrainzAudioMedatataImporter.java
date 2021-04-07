@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.math.BigInteger;
@@ -51,6 +51,7 @@ import org.musicbrainz.ns.mmd_2.DefTrackData;
 import org.musicbrainz.ns.mmd_2.Disc;
 import org.musicbrainz.ns.mmd_2.Medium;
 import org.musicbrainz.ns.mmd_2.MediumList;
+import org.musicbrainz.ns.mmd_2.Offset;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Relation;
 import org.musicbrainz.ns.mmd_2.Relation.AttributeList.Attribute;
@@ -68,7 +69,6 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.util.ModelBuilder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import it.tidalwave.bluemarine2.model.vocabulary.*;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
@@ -390,8 +390,8 @@ public class MusicBrainzAudioMedatataImporter
                     .discId("") // FIXME
                     .trackFrameOffsets(disc.getOffsetList().getOffset()
                             .stream()
-                            .map(offset -> offset.getValue())
-                            .mapToInt(x -> x.intValue())
+                            .map(Offset::getValue)
+                            .mapToInt(BigInteger::intValue)
                             .toArray())
                     .build();
           }
@@ -409,7 +409,7 @@ public class MusicBrainzAudioMedatataImporter
          *
          **************************************************************************************************************/
         @Override
-        public boolean equals (final @CheckForNull Object other)
+        public boolean equals (final @Nullable Object other)
           {
             if (this == other)
               {
@@ -580,17 +580,20 @@ public class MusicBrainzAudioMedatataImporter
             return inRmds;
           }
 
-        List<ReleaseMediumDisk> rmds = new ArrayList<>(inRmds.stream()
-                                                             .map(rmd -> rmd.withEmbeddedTitle(embeddedTitle))
-                                                             .collect(toSet()));
+        List<ReleaseMediumDisk> rmds = inRmds.stream()
+                                             .map(rmd -> rmd.withEmbeddedTitle(embeddedTitle))
+                                             .distinct()
+                                             .collect(toList());
         rmds = discourageCollections ? markedAlternativeIfNotLeastCollection(rmds) :rmds;
         rmds = markedAlternativeByTitleAffinity(rmds);
 
-        final boolean asinPresent = rmds.stream().filter(rmd -> !rmd.isAlternative() && rmd.getAsin().isPresent()).findAny().isPresent();
-        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(asinPresent && !rmd.getAsin().isPresent())).collect(toList());
+        final boolean asinPresent =
+                rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getAsin().isPresent());
+        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(asinPresent && rmd.getAsin().isEmpty())).collect(toList());
 
-        final boolean barcodePresent = rmds.stream().filter(rmd -> !rmd.isAlternative() && rmd.getBarcode().isPresent()).findAny().isPresent();
-        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(barcodePresent && !rmd.getBarcode().isPresent())).collect(toList());
+        final boolean barcodePresent =
+                rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getBarcode().isPresent());
+        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(barcodePresent && rmd.getBarcode().isEmpty())).collect(toList());
 
         if (asinPresent && (countOfNotAlternative(rmds) > 1))
           {
@@ -615,7 +618,7 @@ public class MusicBrainzAudioMedatataImporter
         synchronized (log) // keep log lines together
           {
             log.info("MULTIPLE RESULTS");
-            rmds.stream().forEach(rmd -> log.info(">>> MULTIPLE RESULTS: {}", rmd.toString()));
+            rmds.forEach(rmd -> log.info(">>> MULTIPLE RESULTS: {}", rmd.toString()));
           }
 
         final int count = countOfNotAlternative(rmds);
@@ -930,7 +933,7 @@ public class MusicBrainzAudioMedatataImporter
                             .parallel()
                             .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
                             .peek(this::logArtists)
-                            .map(releaseGroup -> releaseGroup.getReleaseList())
+                            .map(ReleaseGroup::getReleaseList)
                             .flatMap(releaseList -> findReleases(releaseList, cddb, validation).stream())
                             .collect(toList());
       }
@@ -959,8 +962,8 @@ public class MusicBrainzAudioMedatataImporter
                             .getMediumList().getMedium()
                             .stream()
                             .map(medium -> new ReleaseMediumDisk(release, medium))))
-            .filter(rmd -> matchesFormat(rmd))
-            .flatMap(rmd -> rmd.getMedium().getDiscList().getDisc().stream().map(disc -> rmd.withDisc(disc)))
+            .filter(MusicBrainzAudioMedatataImporter::matchesFormat)
+            .flatMap(rmd -> rmd.getMedium().getDiscList().getDisc().stream().map(rmd::withDisc))
             .filter(rmd -> matchesTrackOffsets(rmd, cddb, validation))
             .peek(rmd -> log.info(">>>>>>>> FOUND {} - with score {}", rmd.getMediumAndDiscString(), 0 /* scoreOf(releaseGroup) FIXME */))
             .collect(toMap(rmd -> rmd.getRelease().getId(), rmd -> rmd, (u, v) -> v, TreeMap::new))
@@ -1156,8 +1159,8 @@ public class MusicBrainzAudioMedatataImporter
     private static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
-        return BMMO.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
-                                                    : createSha1IdNew("RECORD:" + recordTitle));
+        return BMMO.recordIriFor(cddb.map(value -> createSha1IdNew(value.getToc()))
+                                     .orElseGet(() -> createSha1IdNew("RECORD:" + recordTitle)));
       }
 
     /*******************************************************************************************************************

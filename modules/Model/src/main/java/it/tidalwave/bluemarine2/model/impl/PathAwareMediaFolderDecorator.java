@@ -113,7 +113,6 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
           }
 
         return new PathAwareEntityFinderDelegate(parent,
-                                                 (Finder)new MappingFinder<>((Finder)finder,
-                                                                              child -> wrappedEntity(parent, (Entity)child)));
+                             new MappingFinder<>((Finder)finder, child -> wrappedEntity(parent, (Entity)child)));
       }
   }

@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.downloader.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -152,7 +152,7 @@ public class DefaultDownloaderTest extends SpringTestSupport
             assertSameContents(expectedResult, actualResult);
           }
 
-        if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
+        if (!List.of(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
           {
             assertThat("Cache updated?", cacheStorage.isCachedResourcePresent(urlAsString), is(true));
           }

@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -77,14 +77,14 @@ public class MusicResourcesControllerTest extends SpringTestSupport
     private static final ResponseErrorHandler IGNORE_HTTP_ERRORS = new ResponseErrorHandler()
       {
         @Override
-        public boolean hasError (final ClientHttpResponse response)
+        public boolean hasError (@Nonnull final ClientHttpResponse response)
           throws IOException
           {
             return false;
           }
 
         @Override
-        public void handleError (final ClientHttpResponse response)
+        public void handleError (@Nonnull final ClientHttpResponse response)
           throws IOException
           {
           }
@@ -144,7 +144,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // then
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
-        ResponseEntityIo.store(actualPath, response, Arrays.asList("Last-Modified"), postProcessor);
+        ResponseEntityIo.store(actualPath, response, List.of("Last-Modified"), postProcessor);
         assertSameContents(expectedPath, actualPath);
       }
 

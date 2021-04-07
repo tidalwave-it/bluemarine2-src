@@ -83,7 +83,6 @@ public abstract class CompositeDIDLAdapterSupport<T extends As> extends DIDLAdap
                 finder.from(from)
                       .max(maxResults)
                       .results()
-                      .stream()
                       .forEach(_c(child -> content.addObject(child.as(_DIDLAdapter_).toObject())));
                 numberReturned = (int)content.getCount();
                 break;

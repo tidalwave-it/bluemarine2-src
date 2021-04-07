@@ -93,7 +93,6 @@ public class VirtualMediaFolderTest extends SpringTestSupport
 //            log.info("children: {}", childrenMap);
           }
 
-        @Nonnull
         private void createFolder (final @Nonnull String pathAsString)
           {
             findOrCreateFolder(Paths.get(pathAsString));

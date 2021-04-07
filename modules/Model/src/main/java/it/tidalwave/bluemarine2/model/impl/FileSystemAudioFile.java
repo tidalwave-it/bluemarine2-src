@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -53,7 +53,6 @@ import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
 
@@ -99,7 +98,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
-        @Override @Nonnull
+        @Override
         public int getType()
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
@@ -111,7 +110,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
-        @Override
+        @Override @Nonnull
         public Optional<Id> getSource()
           {
             return Optional.of(new Id("embedded")); // FIXME
@@ -145,7 +144,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
         @Override @Nonnull
         protected List<? extends MusicArtist> computeNeededResults()
           {
-            return metadata.get(metadataKey).map(artistName -> asList(new ArtistFallback(artistName))).orElse(emptyList());
+            return metadata.get(metadataKey).map(artistName -> List.of(new ArtistFallback(artistName))).orElse(emptyList());
           }
 
         @Override @Nonnull
@@ -194,7 +193,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     @Nonnull
     private final PathAwareEntity parent;
 
-    @CheckForNull
+    @Nullable
     private Metadata metadata;
 
     @Delegate

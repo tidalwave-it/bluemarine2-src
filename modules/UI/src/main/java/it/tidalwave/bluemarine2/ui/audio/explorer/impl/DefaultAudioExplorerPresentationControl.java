@@ -36,6 +36,7 @@ import java.util.Optional;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
+import it.tidalwave.role.ui.Displayable;
 import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
 import it.tidalwave.util.Finder;
@@ -100,7 +101,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
 
-    private final UserAction navigateUpAction = UserAction.of(() -> navigateUp());
+    private final UserAction navigateUpAction = UserAction.of(this::navigateUp);
 
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
 
@@ -275,7 +276,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //              }
 //           });
 
-        final PresentationModel pm = toCompositePresentationModel(browsers, o -> new EntityBrowserUserActionProvider(o));
+        final PresentationModel pm = toCompositePresentationModel(browsers, EntityBrowserUserActionProvider::new);
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
       }
@@ -300,7 +301,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         // ()));
         mediaItems.addAll(finder.results());
         // Needs the cast for overloading ambiguity in the method signature
-        final PresentationModel pm = toCompositePresentationModel((Iterable<Entity>)mediaItems);
+        final PresentationModel pm = toCompositePresentationModel(mediaItems);
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
 
@@ -312,10 +313,10 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     @Nonnull
     private String getCurrentPathLabel()
       {
-        return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
+        return concat(navigationStack.stream().map(FolderAndMemento::getFolder), of(currentFolder))
                 .filter(i -> i.maybeAs(_PathAwareEntity_).map(p -> p.getParent().isPresent()).orElse(true))
-                .filter(i -> i.maybeAs(_Displayable_).map(d -> true).orElse(false))
-                .map(i -> i.maybeAs(_Displayable_).map(o -> o.getDisplayName()).orElse("???"))
+                .filter(i -> i.maybeAs(_Displayable_).isPresent())
+                .map(i -> i.maybeAs(_Displayable_).map(Displayable::getDisplayName).orElse("???"))
                 .collect(joining(" / "));
       }
   }

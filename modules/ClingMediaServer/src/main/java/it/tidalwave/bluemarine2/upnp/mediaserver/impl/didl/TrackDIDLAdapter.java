@@ -31,6 +31,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
 import java.io.IOException;
+import it.tidalwave.role.ui.Displayable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
@@ -79,7 +80,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
 
         datum.getRecord().flatMap(record -> record.maybeAs(_Displayable_))
-                         .map(d -> d.getDisplayName())
+                         .map(Displayable::getDisplayName)
                          .ifPresent(item::setAlbum);
 
 //        trackMetadata.get(DISK_COUNT);

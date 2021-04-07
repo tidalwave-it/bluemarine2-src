@@ -87,7 +87,7 @@ public class DefaultMainScreenPresentationControl
                                                                    .values()
                                                                    .stream()
                                                                    .sorted(comparing(MainMenuItem::getPriority))
-                                                                   .map(menuItem -> menuItem.getAction())
+                                                                   .map(MainMenuItem::getAction)
                                                                    .collect(toList());
         presentation.bind(mainMenuActions, powerOffAction);
       }

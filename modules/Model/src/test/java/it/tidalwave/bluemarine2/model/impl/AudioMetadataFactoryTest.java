@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -80,7 +81,7 @@ public class AudioMetadataFactoryTest
                                                   .filter(entry -> !entry.getKey().equals(ARTWORK))
                                                   // FIXME: this should be removed, and the expected results updated
                                                   .filter(entry -> !entry.getKey().equals(CDDB))
-                                                  .sorted(comparing(e -> e.getKey()))
+                                                  .sorted(comparing(Map.Entry::getKey))
                                                   .map(e -> String.format("%s.Key[%s] = %s",
                                                                           normalize(relativePath, NFC),
                                                                           e.getKey().getName(),

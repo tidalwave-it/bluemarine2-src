@@ -127,7 +127,7 @@ public class DefaultMediaScanner
     /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
-        if (!request.getSha1().isPresent())
+        if (request.getSha1().isEmpty())
           {
             final byte[] sha1 = sha1Of(request.getMediaItem().getPath());
             messageBus.publish(new MediaItemImportRequest(request.getMediaItem(), Optional.of(sha1)));

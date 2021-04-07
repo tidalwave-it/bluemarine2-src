@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.List;
@@ -35,8 +35,8 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -61,6 +61,7 @@ import it.tidalwave.bluemarine2.rest.impl.resource.RecordResource;
 import it.tidalwave.bluemarine2.rest.impl.resource.DetailedRecordResource;
 import it.tidalwave.bluemarine2.rest.impl.resource.AudioFileResource;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
@@ -169,7 +170,7 @@ public class MusicResourcesController
         return catalog.findTracks().inRecord(new Id(id))
                                    .stream()
                                    .flatMap(track -> track.asMany(_AudioFileSupplier_).stream())
-                                   .map(afs -> afs.getAudioFile())
+                                   .map(AudioFileSupplier::getAudioFile)
                                    .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
                                    .findAny()
                                    .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
@@ -330,7 +331,7 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @Nonnull
     private ResponseEntity<ResourceRegion> audioFileContentResponse (final @Nonnull AudioFile file,
-                                                                     final @CheckForNull String rangeHeader)
+                                                                     final @Nullable String rangeHeader)
       throws IOException
       {
         final long length = file.getSize();
@@ -377,15 +378,8 @@ public class MusicResourcesController
     @Nonnull
     private static String contentDisposition (final @Nonnull String string)
       {
-        try
-          {
-            // See https://tools.ietf.org/html/rfc6266#section-5
-            return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, "UTF-8"));
-          }
-        catch (UnsupportedEncodingException e)
-          {
-            throw new RuntimeException(e);
-          }
+        // See https://tools.ietf.org/html/rfc6266#section-5
+        return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, UTF_8));
       }
 
     /*******************************************************************************************************************

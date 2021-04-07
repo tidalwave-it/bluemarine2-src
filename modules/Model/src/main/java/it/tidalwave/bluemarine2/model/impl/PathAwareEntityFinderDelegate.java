@@ -27,7 +27,6 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -240,10 +239,10 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      * relativized, that is it doesn't start with the finder path, returns null.
      *
      ******************************************************************************************************************/
-    @CheckForNull
+    @Nullable
     private Path relative (final @Nonnull Path path)
       {
-        return !mediaFolder.getParent().isPresent() ? path :
+        return mediaFolder.getParent().isEmpty() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
                                                        : null;
       }

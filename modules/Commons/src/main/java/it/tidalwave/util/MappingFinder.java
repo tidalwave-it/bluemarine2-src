@@ -30,7 +30,6 @@ package it.tidalwave.util;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
-import java.util.function.Supplier;
 import java.util.function.Function;
 import static java.util.stream.Collectors.toList;
 
@@ -62,7 +61,7 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder<TYPE>
         this.mapper = source.mapper;
       }
 
-    @Override
+    @Override @Nonnull
     protected List<? extends TYPE> computeResults()
       {
         return super.computeResults().stream().map(mapper).collect(toList());

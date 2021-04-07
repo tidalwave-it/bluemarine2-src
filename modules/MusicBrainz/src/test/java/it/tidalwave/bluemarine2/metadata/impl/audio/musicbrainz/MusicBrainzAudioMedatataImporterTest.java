@@ -53,7 +53,6 @@ import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMeta
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
-import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
@@ -132,11 +131,11 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
         stats.values().stream().flatMap(s -> s.withoutCddb.stream()).collect(toSet())
                 .stream().forEachOrdered(path -> log.info("STATS: without CDDB:        {}", path));
-        modelBuilders.entrySet().forEach(entry ->
+        modelBuilders.forEach((key, value) ->
           {
             try
               {
-                verifyGlobalModel(entry.getValue().toModel(), entry.getKey());
+                verifyGlobalModel(value.toModel(), key);
               }
             catch (AssertionError | IOException e)
               {
@@ -218,7 +217,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
 
             exportToFile(model, actualResult);
             assertSameContents(expectedResult, actualResult);
-          };
+          }
       }
 
     /*******************************************************************************************************************
@@ -227,7 +226,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     @DataProvider
     protected static Object[][] trackResourcesProvider2()
       {
-        return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
+        return streamOfTestSetTriples(TestSetLocator.allTestSets(), METADATA::resolve)
                 // Files there apparendly don't have CDDB offsets
                 .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
                 .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))

@@ -27,7 +27,6 @@
  */
 package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.lang.reflect.InvocationTargetException;
@@ -73,7 +72,7 @@ public class JavaFxFlowController implements FlowController
         @Nonnull
         private final Node node;
         
-        @CheckForNull
+        @Nullable
         private final Object control;
       }
     
@@ -174,7 +173,7 @@ public class JavaFxFlowController implements FlowController
         
         try 
           {
-             canDeactivate(presentationStack.peek().getControl(), () -> dismissCurrentPresentation());
+             canDeactivate(presentationStack.peek().getControl(), this::dismissCurrentPresentation);
           } 
         catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
           {
@@ -202,7 +201,7 @@ public class JavaFxFlowController implements FlowController
      * 
      * 
      ******************************************************************************************************************/
-    private void notifyActivated (final @CheckForNull Object control)
+    private void notifyActivated (final @Nullable Object control)
       {
         try 
           {
@@ -230,8 +229,7 @@ public class JavaFxFlowController implements FlowController
      * @param   control     the Presentation Control
      *
      ******************************************************************************************************************/
-    @Nonnull
-    private void canDeactivate (final @CheckForNull Object control, final @Nonnull Runnable runnable)
+    private void canDeactivate (final @Nullable Object control, final @Nonnull Runnable runnable)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
         log.debug("canDeactivate({})", control);
@@ -244,7 +242,7 @@ public class JavaFxFlowController implements FlowController
         else
           {
             // FIXME: should run in a background process
-            if (((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED))
+            if (method.invoke(control).equals(OnDeactivate.Result.PROCEED))
               {
                 runnable.run();
               }
@@ -256,8 +254,8 @@ public class JavaFxFlowController implements FlowController
      * 
      * 
      ******************************************************************************************************************/
-    @CheckForNull
-    private static Method findAnnotatedMethod (final @CheckForNull Object object, 
+    @Nullable
+    private static Method findAnnotatedMethod (final @Nullable Object object,
                                                final @Nonnull Class<? extends Annotation> annotationClass)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {

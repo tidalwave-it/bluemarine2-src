@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************

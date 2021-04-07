@@ -65,7 +65,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
@@ -230,7 +229,7 @@ public class EmbeddedAudioMetadataImporter
         final IRI recordIri                = recordIriOf(metadata, recordTitle);
         final Optional<IRI> newRecordIri   = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
-        final List<IRI> makerUris = makerName.map(name -> asList(artistIriOf(name))).orElse(emptyList());
+        final List<IRI> makerUris = makerName.map(name -> List.of(artistIriOf(name))).orElse(emptyList());
         final List<Pair> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
                            .map(name -> new Pair(artistIriOf(name), name))
                            .collect(toList());
@@ -264,7 +263,7 @@ public class EmbeddedAudioMetadataImporter
             .with(        trackIri,      RDF.TYPE,                    MO.C_TRACK)
             .with(        trackIri,      BMMO.P_IMPORTED_FROM,        BMMO.O_SOURCE_EMBEDDED)
             .withOptional(trackIri,      BMMO.P_ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                       .map(c -> c.getTrackId())))
+                                                                                       .map(ITunesComment::getTrackId)))
             .withOptional(trackIri,      MO.P_TRACK_NUMBER,           literalForInt(metadata.get(TRACK_NUMBER)))
             .withOptional(trackIri,      RDFS.LABEL,                  literalFor(trackTitle))
             .withOptional(trackIri,      DC.TITLE,                    literalFor(trackTitle))
@@ -276,11 +275,11 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(newRecordIri,  RDFS.LABEL,                  literalFor(recordTitle))
             .withOptional(newRecordIri,  DC.TITLE,                    literalFor(recordTitle))
             .withOptional(newRecordIri,  MO.P_TRACK_COUNT,            literalForInt(metadata.get(CDDB)
-                                                                                            .map(cddb -> cddb.getTrackCount())))
+                                                                                            .map(Cddb::getTrackCount)))
             .withOptional(newRecordIri,  BMMO.P_DISK_NUMBER,          literalForInt(diskNumber))
             .withOptional(newRecordIri,  BMMO.P_DISK_COUNT,           literalForInt(diskCount))
             .withOptional(newRecordIri,  BMMO.P_ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                         .map(c -> c.getCddb1())))
+                                                                                         .map(ITunesComment::getCddb1)))
             .with(        recordIri,     MO.P_TRACK,                  trackIri)
             .with(        recordIri,     FOAF.MAKER,                  makerUris.stream())
 
@@ -324,8 +323,8 @@ public class EmbeddedAudioMetadataImporter
     public static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
-        return BMMO.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
-                                                    : createSha1IdNew("RECORD:" + recordTitle));
+        return BMMO.recordIriFor(cddb.map(value -> createSha1IdNew(value.getToc()))
+                                     .orElseGet(() -> createSha1IdNew("RECORD:" + recordTitle)));
       }
 
     /*******************************************************************************************************************

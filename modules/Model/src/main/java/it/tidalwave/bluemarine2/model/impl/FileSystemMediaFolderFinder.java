@@ -79,7 +79,7 @@ public class FileSystemMediaFolderFinder extends FinderSupport<PathAwareEntity, 
     @Override @Nonnegative
     public int count()
       {
-        return evaluateDirectoryStream(stream -> stream.filter(fileFilter).collect(counting())).intValue();
+        return evaluateDirectoryStream(stream -> stream.filter(fileFilter).count()).intValue();
       }
 
     @Override @Nonnull

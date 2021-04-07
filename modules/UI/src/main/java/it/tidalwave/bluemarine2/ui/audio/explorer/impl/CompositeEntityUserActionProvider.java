@@ -69,7 +69,7 @@ public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
       {
         // test for the Composite role
         // FIXME: Composite doesn't work. Introduce Composite8?
-        mediaFolder.maybeAs(_SimpleComposite_).orElseThrow(() -> new NotFoundException());
+        mediaFolder.maybeAs(_SimpleComposite_).orElseThrow(NotFoundException::new);
         return UserAction.of(() -> control.navigateTo(mediaFolder));
       }
   }

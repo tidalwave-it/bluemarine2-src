@@ -29,7 +29,7 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -59,6 +59,7 @@ import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.role.Identifiable._Identifiable_;
@@ -99,7 +100,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
     public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
-                                                                       final @CheckForNull String otherTestSetName,
+                                                                       final @Nullable String otherTestSetName,
                                                                        final @Nonnull Id source,
                                                                        final @Nonnull Id fallbackSource)
       throws Exception
@@ -134,7 +135,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         createDirectories(PATH_TEST_RESULTS);
         RepositoryFinderSupport.resetQueryCount();
         latestQueryCount = 0;
-        final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
+        final PrintWriter pw = new PrintWriter(dumpPath.toFile(), UTF_8);
 
         final MusicArtistFinder allArtistsFinder = catalog.findArtists();
         final RecordFinder allRecordsFinder = catalog.findRecords();

@@ -167,7 +167,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
         @Nonnull
         public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Value value)
           {
-            parameters.addAll(Arrays.asList(name, value));
+            parameters.addAll(List.of(name, value));
             return this;
           }
 
@@ -465,7 +465,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Value literalFor (final @Nonnull boolean b)
+    protected Value literalFor (final boolean b)
       {
         return FACTORY.createLiteral(b);
       }
@@ -512,14 +512,14 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
                                         final @Nonnull Class<E> entityClass,
                                         final @Nonnull TupleQueryResult queryResult)
       {
-        return contextManager.runWithContexts(getContexts(), new Task<List<E>, RuntimeException>()
+        return contextManager.runWithContexts(getContexts(), new Task<>()
           {
             @Override @Nonnull
             public List<E> run()
               {
                 return streamOf(queryResult)
-                            .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
-                            .collect(toList());
+                        .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
+                        .collect(toList());
               }
           });
         // TODO: requires TheseFoolishThings 3.1-ALPHA-3

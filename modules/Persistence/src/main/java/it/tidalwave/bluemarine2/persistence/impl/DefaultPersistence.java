@@ -107,7 +107,7 @@ public class DefaultPersistence implements Persistence
         final Optional<Path> importFile = properties.getOptional(IMPORT_FILE);
         final Optional<Path> storageFolder = properties.getOptional(STORAGE_FOLDER);
 
-        if (!storageFolder.isPresent())
+        if (storageFolder.isEmpty())
           {
             log.warn("No storage path: working in memory");
             sail = new MemoryStore();

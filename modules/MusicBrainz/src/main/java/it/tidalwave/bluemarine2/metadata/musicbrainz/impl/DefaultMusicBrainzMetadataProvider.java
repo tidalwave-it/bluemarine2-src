@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
@@ -69,7 +69,7 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
     public DefaultMusicBrainzMetadataProvider()
       {
         // sometimes MusicBrainz returns HTTP 500, but it's usually transitory
-        setRetryStatusCodes(Arrays.asList(500, 503));
+        setRetryStatusCodes(List.of(500, 503));
         setMaxRetry(10);
         setThrottleLimit(1500);
       }

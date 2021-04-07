@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Comparator;
 import java.util.List;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder.SortDirection;
@@ -83,7 +84,7 @@ public class MediaItemComparator implements InMemorySortCriterion<As>
     @Nonnull
     private static String displayNameOf (final @Nonnull As object)
       {
-        return object.maybeAs(_Displayable_).map(d -> d.getDisplayName()).orElse("???");
+        return object.maybeAs(_Displayable_).map(Displayable::getDisplayName).orElse("???");
       }
 
     @Override

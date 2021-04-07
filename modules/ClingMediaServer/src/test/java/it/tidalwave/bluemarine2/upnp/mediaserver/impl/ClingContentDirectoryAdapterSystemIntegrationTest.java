@@ -50,7 +50,6 @@ import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
-import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -202,7 +201,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                                              params.getObjectId(),
                                              BrowseFlag.valueOrNullOf(params.getBrowseFlag()),
                                              null,
-                                             (long)params.getFirstResult(),
+                                             params.getFirstResult(),
                                              (long)params.getMaxResult())
               {
                 @Override

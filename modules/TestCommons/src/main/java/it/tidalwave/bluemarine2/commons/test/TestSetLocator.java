@@ -35,7 +35,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -101,9 +100,9 @@ public final class TestSetLocator
             return Collections.singletonList(testSet);
           }
 
-        final List<String> result = new ArrayList<>(Arrays.asList(
+        final List<String> result = new ArrayList<>(List.of(
                 "iTunes-fg-20160504-2"));
-        final List<String> longTestSets = Arrays.asList(
+        final List<String> longTestSets = List.of(
                 "iTunes-fg-20161210-1",
                 "amazon-autorip-fg-20170131-1",
                 "iTunes-aac-fg-20170131-1");

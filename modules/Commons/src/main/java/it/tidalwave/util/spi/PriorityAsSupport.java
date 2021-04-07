@@ -70,14 +70,14 @@ public class PriorityAsSupport extends AsSupport implements As
         this(owner, Collections.emptyList());
       }
 
-    public PriorityAsSupport (final Object owner, final @Nonnull Collection<Object> rolesOrFactories)
+    public PriorityAsSupport (@Nonnull final Object owner, final @Nonnull Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
         this.additionalRoleProvider = Optional.empty();
       }
 
-    public PriorityAsSupport (final Object owner,
+    public PriorityAsSupport (@Nonnull final Object owner,
                               final @Nonnull RoleProvider additionalRoleProvider,
                               final @Nonnull Collection<Object> rolesOrFactories)
       {
@@ -174,7 +174,7 @@ public class PriorityAsSupport extends AsSupport implements As
       {
         log.trace(">>>> add in order {} into {}", item, list);
         final Optional<T> firstAncestor = list.stream().filter(i -> isDatumAncestor(i, item)).findFirst();
-        final int index = firstAncestor.map(i -> list.indexOf(i)).orElse(list.size());
+        final int index = firstAncestor.map(list::indexOf).orElse(list.size());
         list.add(index, item);
         log.trace(">>>>>>>> add in order {} ", list);
       }
