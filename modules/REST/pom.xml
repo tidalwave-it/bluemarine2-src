@@ -15,10 +15,6 @@
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <name>blueMarine II - REST</name>
 
-    <properties>
-        <tft.jetty-maven-plugin.version>9.2.8.v20150217</tft.jetty-maven-plugin.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

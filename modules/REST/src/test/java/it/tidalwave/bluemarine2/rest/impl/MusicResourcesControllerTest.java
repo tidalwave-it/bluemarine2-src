@@ -144,7 +144,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // then
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
-        ResponseEntityIo.store(actualPath, response, List.of("Last-Modified"), postProcessor);
+        ResponseEntityIo.store(actualPath, response, List.of("Last-Modified", "Date"), postProcessor);
         assertSameContents(expectedPath, actualPath);
       }
 

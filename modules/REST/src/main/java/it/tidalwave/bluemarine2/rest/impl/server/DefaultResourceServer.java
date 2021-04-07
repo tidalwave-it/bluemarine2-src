@@ -42,6 +42,7 @@ import javax.servlet.DispatcherType;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -109,8 +110,7 @@ public class DefaultResourceServer implements ResourceServer
         server.setHandler(servletContext);
 
         server.start();
-        port = server.getConnectors()[0].getLocalPort(); // jetty 8
-//        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
+        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort();
         log.info(">>>> resource server jetty started at {}:{} ", ipAddress, port);
       }
 

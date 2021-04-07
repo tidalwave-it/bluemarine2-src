@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Server: Jetty(8.1.8.v20121106)
+Server: Jetty(10.0.1)
 Transfer-Encoding: chunked
 
 {
