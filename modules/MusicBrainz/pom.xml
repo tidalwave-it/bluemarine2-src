@@ -79,7 +79,7 @@
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
         <expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20210408_2135</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
@@ -128,8 +128,6 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${metadata.folder}</outputDirectory>
                                 </artifactItem>
-
-
 
                                 <!-- REST caches -->
                                 <artifactItem>

@@ -42,6 +42,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.xml.namespace.QName;
 import java.io.IOException;
@@ -81,6 +83,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.With;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
@@ -439,12 +442,16 @@ public class MusicBrainzAudioMedatataImporter
         @Override @Nonnull
         public String toString()
           {
-            return String.format("ALT: %-5s ASIN: %-10s BARCODE: %-13s SCORE: %4d #: %3s/%3s PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
-                        alternative,
-                        release.getAsin(), release.getBarcode(),
-                        getScore(),
-                        getDiskNumber().map(n -> "" + n).orElse(""), getDiskCount().map(n -> "" + n).orElse(""),
-                        pickTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
+            return String.format("ALT: %-5s %s ASIN: %-10s BARCODE: %-13s SCORE: %4d #: %3s/%3s " +
+                                 "TITLES: PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
+                                  alternative,
+                                  release.getId(),
+                                  release.getAsin(),
+                                  release.getBarcode(),
+                                  getScore(),
+                                  getDiskNumber().map(Number::toString).orElse(""),
+                                  getDiskCount().map(Number::toString).orElse(""),
+                                  pickTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
           }
       }
 
@@ -527,9 +534,9 @@ public class MusicBrainzAudioMedatataImporter
               }
 
             model.with(markedAlternative(rmds, albumTitle).stream()
-                                                             .parallel()
-                                                             .map(_f(rmd -> handleRelease(metadata, rmd)))
-                                                             .collect(toList()));
+                                                          .parallel()
+                                                          .map(_f(rmd -> handleRelease(metadata, rmd)))
+                                                          .collect(toList()));
           }
 
         return Optional.of(model.toModel());
@@ -550,15 +557,14 @@ public class MusicBrainzAudioMedatataImporter
      * <li>Eventual duplicates are collapsed.</li>
      * <li>If required, in case of members of collections, collections that are larger than the least are marked as
      *     alternative.</li>
-     * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respected
-     *     to the title in the embedded metadata.</li>
-     * <li>Elements that don't reach the maximum score are marked as alternative.</li>
-     * <li>If at least one element has got the ASIN, other elements that don't bear it are marked as alternative.</li>
-     * <li>If at least one element has got the barcode, other elements that don't bear it are marked as alternative.
+     * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respect
+     *     to the title in the embedded metadata: elements that don't reach the maximum score are marked as alternative.
      * </li>
-     * <li>If the pick is not unique yet, an ASIN is picked as the first in lexicoraphic order and elements not
+     * <li>If at least one element has got an ASIN, other elements that don't bear it are marked as alternative.</li>
+     * <li>If at least one element has got a barcode, other elements that don't bear it are marked as alternative.</li>
+     * <li>If the pick is not unique yet, an ASIN is picked as the first in lexicographic order and elements not
      *     bearing it are marked as alternative.</li>
-     * <li>If the pick is not unique yet, a barcode is picked as the first in lexicoraphic order and elements not
+     * <li>If the pick is not unique yet, a barcode is picked as the first in lexicographic order and elements not
      *     bearing it are marked as alternative.</li>
      * <li>If the pick is not unique yet, elements other than the first one are marked as alternative.</i>
      * </ol>
@@ -568,7 +574,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * @param   inRmds          the incoming {@code ReleaseAndMedium}s
      * @param   embeddedTitle   the album title found in the file
-     * @return                  the outcoming {@code ReleaseAndMedium}s
+     * @return                  the processed {@code ReleaseAndMedium}s
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -584,45 +590,50 @@ public class MusicBrainzAudioMedatataImporter
                                              .map(rmd -> rmd.withEmbeddedTitle(embeddedTitle))
                                              .distinct()
                                              .collect(toList());
-        rmds = discourageCollections ? markedAlternativeIfNotLeastCollection(rmds) :rmds;
+        rmds = discourageCollections ? markedAlternativeIfNotLeastCollection(rmds) : rmds;
         rmds = markedAlternativeByTitleAffinity(rmds);
-
-        final boolean asinPresent =
-                rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getAsin().isPresent());
-        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(asinPresent && rmd.getAsin().isEmpty())).collect(toList());
-
-        final boolean barcodePresent =
-                rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getBarcode().isPresent());
-        rmds = rmds.stream().map(rmd -> rmd.alternativeIf(barcodePresent && rmd.getBarcode().isEmpty())).collect(toList());
-
-        if (asinPresent && (countOfNotAlternative(rmds) > 1))
-          {
-            final Optional<String> asin = rmds.stream().filter(rmd -> !rmd.isAlternative())
-                                                       .map(rmd -> rmd.getAsin().get())
-                                                       .sorted()
-                                                       .findFirst();
-            rmds = rmds.stream().map(rmd -> rmd.alternativeIf(!rmd.getAsin().equals(asin))).collect(toList());
-          }
-
-        if (barcodePresent && (countOfNotAlternative(rmds) > 1))
-          {
-            final Optional<String> barcode = rmds.stream().filter(rmd -> !rmd.isAlternative())
-                                                          .map(rmd -> rmd.getBarcode().get())
-                                                          .sorted()
-                                                          .findFirst();
-            rmds = rmds.stream().map(rmd -> rmd.alternativeIf(!rmd.getBarcode().equals(barcode))).collect(toList());
-          }
-
-        rmds = excessKeepersMarkedAlternative(rmds);
+        rmds = markedAlternativeByAsinOrBarcode(rmds);
+        rmds = markedAlternativeButTheFirstNotAlternative(rmds);
 
         synchronized (log) // keep log lines together
           {
             log.info("MULTIPLE RESULTS");
-            rmds.forEach(rmd -> log.info(">>> MULTIPLE RESULTS: {}", rmd.toString()));
+            rmds.forEach(rmd -> log.info(">>> MULTIPLE RESULTS: {}", rmd));
           }
 
         final int count = countOfNotAlternative(rmds);
         assert count == 1 : "Still too many items not alternative: " + count;
+
+        return rmds;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * @param   rmds    the incoming {@code ReleaseMediumDisk}
+     * @return          the processed {@code ReleaseMediumDisk}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<ReleaseMediumDisk> markedAlternativeByAsinOrBarcode (@Nonnull List<ReleaseMediumDisk> rmds)
+      {
+        final boolean asinPresent = rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getAsin().isPresent());
+        rmds = markedAlternative(rmds, rmd -> asinPresent && rmd.getAsin().isEmpty());
+
+        final boolean barcodePresent =
+                rmds.stream().anyMatch(rmd -> !rmd.isAlternative() && rmd.getBarcode().isPresent());
+        rmds = markedAlternative(rmds, rmd -> barcodePresent && rmd.getBarcode().isEmpty());
+
+        if (asinPresent && (countOfNotAlternative(rmds) > 1))
+          {
+            final Optional<String> asin = findFirstNotInAlternative(rmds, rmd -> rmd.getAsin());
+            rmds = markedAlternative(rmds, rmd -> !rmd.getAsin().equals(asin));
+          }
+
+        if (barcodePresent && (countOfNotAlternative(rmds) > 1))
+          {
+            final Optional<String> barcode = findFirstNotInAlternative(rmds, rmd -> rmd.getBarcode());
+            rmds = markedAlternative(rmds, rmd -> !rmd.getBarcode().equals(barcode));
+          }
 
         return rmds;
       }
@@ -636,20 +647,19 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> excessKeepersMarkedAlternative (final @Nonnull List<ReleaseMediumDisk> rmds)
+    private static List<ReleaseMediumDisk> markedAlternativeButTheFirstNotAlternative (final @Nonnull List<ReleaseMediumDisk> rmds)
       {
-        if (countOfNotAlternative(rmds) > 1)
+        if (countOfNotAlternative(rmds) <= 1)
           {
-            boolean foundGoodOne = false;
-            // FIXME: should be sorted for test consistency
-            for (int i = 0; i < rmds.size(); i++)
-              {
-                rmds.set(i, rmds.get(i).alternativeIf(foundGoodOne));
-                foundGoodOne |= !rmds.get(i).isAlternative();
-              }
+            return rmds;
           }
 
-        return rmds;
+        final ReleaseMediumDisk pick = rmds.stream()
+                                           .filter(rmd -> !rmd.isAlternative())
+                                           .sorted(comparing(rmd -> rmd.getRelease().getId())) // Fix for BMT-166
+                                           .findFirst()
+                                           .get();
+        return markedAlternative(rmds, rmd -> rmd != pick);
       }
 
     /*******************************************************************************************************************
@@ -657,8 +667,8 @@ public class MusicBrainzAudioMedatataImporter
      * Sweeps the given {@link ReleaseMediumDisk}s and marks as alternative all the items which are not part of the
      * disk collections with the minimum size.
      *
-     * @param   rmds    the incoming {@code ReleaseMediumDisk}
-     * @return          the processed {@code ReleaseMediumDisk}
+     * @param   rmds    the incoming {@code ReleaseMediumDisk}s
+     * @return          the processed {@code ReleaseMediumDisk}s
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -667,7 +677,7 @@ public class MusicBrainzAudioMedatataImporter
         final int leastSize = rmds.stream().filter(rmd -> !rmd.isAlternative())
                                            .mapToInt(rmd -> rmd.getDiskCount().orElse(1))
                                            .min().getAsInt();
-        return rmds.stream().map(rmd -> rmd.alternativeIf(rmd.getDiskCount().orElse(1) > leastSize)).collect(toList());
+        return markedAlternative(rmds, rmd -> rmd.getDiskCount().orElse(1) > leastSize);
       }
 
     /*******************************************************************************************************************
@@ -684,7 +694,45 @@ public class MusicBrainzAudioMedatataImporter
         final int bestScore = rmds.stream().filter(rmd -> !rmd.isAlternative())
                                            .mapToInt(ReleaseMediumDisk::getScore)
                                            .max().getAsInt();
-        return rmds.stream().map(rmd -> rmd.alternativeIf(rmd.getScore() < bestScore)).collect(toList());
+        return markedAlternative(rmds, rmd -> rmd.getScore() < bestScore);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Creates a copy of the collection where items have been marked alternative if the given predicate applies.
+     *
+     * @param rmds          the source
+     * @param predicate     the predicate to decide whether an item must be marked as alternative
+     * @return              the processed collection
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<ReleaseMediumDisk> markedAlternative (final @Nonnull List<ReleaseMediumDisk> rmds,
+                                                              final @Nonnull Predicate<ReleaseMediumDisk> predicate)
+      {
+        return rmds.stream().map(rmd -> rmd.alternativeIf(predicate.test(rmd))).collect(toList());
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Finds the first attribute specified by an extractor among items not already marked as alternatives.
+     *
+     * @param   rmds        the collection to search into
+     * @param   extractor   the extractor
+     * @return              the searched object
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static <T extends Comparable<?>> Optional<T> findFirstNotInAlternative (
+            final @Nonnull List<ReleaseMediumDisk> rmds,
+            final @Nonnull Function<ReleaseMediumDisk, Optional<T>> extractor)
+      {
+        return rmds.stream()
+                   .filter(rmd -> !rmd.isAlternative())
+                   .map(extractor)
+                   .flatMap(Optional::stream)
+                   .sorted()
+                   .findFirst();
       }
 
     /*******************************************************************************************************************
@@ -1002,9 +1050,9 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Returns {@code true} if the given {@link Medium} is of a meaningful type (that is, a CD) or it's not set.
+     * Returns {@code true} if the given {@link ReleaseMediumDisk} is of a meaningful type (that is, a CD) or it's not set.
      *
-     * @param   medium  the {@code Medium}
+     * @param   rmd     the {@code ReleaseMediumDisk}
      * @return          {@code true} if there is a match
      *
      ******************************************************************************************************************/
