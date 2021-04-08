@@ -52,7 +52,7 @@ import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
 import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMetadataProvider;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;

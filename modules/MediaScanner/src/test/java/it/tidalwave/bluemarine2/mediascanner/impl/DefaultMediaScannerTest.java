@@ -33,7 +33,6 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Stream;
 import java.time.Instant;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -54,7 +53,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static org.testng.AssertJUnit.*;
@@ -178,11 +177,9 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         scanCompleted.await();
         // then
         final String modelName = "model-" + testSetName + ".n3";
-        final File actualFile = new File("target/test-results/" + modelName);
-        final File expectedFile = new File("src/test/resources/expected-results/" + modelName);
-        persistence.exportToFile(actualFile.toPath());
-
-        // FIXME: likely OOM in case of mismatch
+        final Path actualFile = Path.of("target/test-results/" + modelName);
+        final Path expectedFile = Path.of("src/test/resources/expected-results/" + modelName);
+        persistence.exportToFile(actualFile);
         assertSameContents(expectedFile, actualFile);
       }
 

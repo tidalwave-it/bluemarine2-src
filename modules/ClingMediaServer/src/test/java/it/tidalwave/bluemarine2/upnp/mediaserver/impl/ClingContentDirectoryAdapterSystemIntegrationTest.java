@@ -60,8 +60,7 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
@@ -227,7 +226,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(baseUrl, "http://<server>/");
                         final String queries = String.format("QUERY COUNT: %d", RepositoryTrackFinder.getQueryCount());
                         Files.write(actualFile, (header + "\n" + result + "\n" + queries).getBytes(UTF_8));
-                        assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
+                        assertSameContents(expectedFile, actualFile);
                       }
                     catch (Throwable e)
                       {

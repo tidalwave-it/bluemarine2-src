@@ -39,26 +39,9 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class FileComparisonUtils8
+public class FileComparisonUtilsWithPathNormalizer
   {
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
     public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
-      throws IOException
-      {
-        FileComparisonUtils.assertSameContents(toFileBMT46(expectedPath), toFileBMT46(actualPath));
-//        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    public static void assertSameContents2 (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
       throws IOException
       {
         FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),

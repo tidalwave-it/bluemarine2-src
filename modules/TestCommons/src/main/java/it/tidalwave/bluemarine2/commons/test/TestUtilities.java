@@ -46,7 +46,7 @@ import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.util.Dumpable;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -69,7 +69,7 @@ public class TestUtilities
         Files.createDirectories(actualResult.getParent());
         final Stream<String> stream = data.stream().map(Object::toString);
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        assertSameContents(expectedResult, actualResult);
       }
 
     /*******************************************************************************************************************

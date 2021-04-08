@@ -60,10 +60,9 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.util.test.FileComparisonUtils.*;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.role.Identifiable._Identifiable_;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
@@ -122,7 +121,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         // when
         queryAndDump(underTest, actualResult);
         // then
-        assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
+        assertSameContents(expectedResult, actualResult);
       }
 
     /*******************************************************************************************************************
