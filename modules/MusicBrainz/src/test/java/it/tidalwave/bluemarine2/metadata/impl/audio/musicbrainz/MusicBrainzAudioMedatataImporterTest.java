@@ -137,6 +137,8 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
               {
                 verifyGlobalModel(value.toModel(), key);
               }
+            // An error here is likely to have been already detected in a previous failed test; OTOH it would cause
+            // *all* the tests in this class to fail as "CONFIGURATION FAILED".
             catch (AssertionError | IOException e)
               {
                 log.warn("While printing stats: {}", e.toString());
@@ -227,7 +229,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     protected static Object[][] trackResourcesProvider2()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), METADATA::resolve)
-                // Files there apparendly don't have CDDB offsets
+                // Files there apparently don't have CDDB offsets
                 .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
                 .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))
                 .collect(toTestNGDataProvider());
