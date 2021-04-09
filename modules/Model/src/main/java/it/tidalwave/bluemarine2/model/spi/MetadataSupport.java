@@ -168,7 +168,7 @@ public class MetadataSupport implements MediaItem.Metadata
     @Override @Nonnull
     public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull Optional<T> value)
       {
-        return !value.isPresent() ? this : with(key, value.get()); // FIXME: use lambda
+        return value.map(t -> with(key, t)).orElse(this);
       }
 
     /*******************************************************************************************************************

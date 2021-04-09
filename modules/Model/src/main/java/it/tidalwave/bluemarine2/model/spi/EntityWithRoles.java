@@ -28,7 +28,8 @@
 package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import lombok.experimental.Delegate;
 
@@ -47,16 +48,21 @@ public class EntityWithRoles implements Entity
     private final PriorityAsSupport asSupport;
 
     @Nonnull // for toString() only
-    private final Object[] roles;
+    private final Collection<Object> roles;
 
-    public EntityWithRoles (final @Nonnull Object ... roles)
+    public EntityWithRoles()
+      {
+        this(Collections.emptyList());
+      }
+
+    public EntityWithRoles (final @Nonnull Collection<Object> roles)
       {
         this.asSupport = new PriorityAsSupport(this, roles);
         this.roles = roles;
       }
 
     protected EntityWithRoles (final @Nonnull PriorityAsSupport.RoleProvider additionalRoleProvider,
-                               final @Nonnull Object ... roles)
+                               final @Nonnull Collection<Object> roles)
       {
         this.asSupport = new PriorityAsSupport(this, additionalRoleProvider, roles);
         this.roles = roles;
@@ -65,6 +71,6 @@ public class EntityWithRoles implements Entity
     @Override @Nonnull
     public String toString()
       {
-        return String.format("%s(%s)", getClass().getSimpleName(), Arrays.toString(roles));
+        return String.format("%s(%s)", getClass().getSimpleName(), roles);
       }
   }

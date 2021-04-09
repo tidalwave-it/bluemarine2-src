@@ -56,7 +56,7 @@ public class DefaultCacheManager implements CacheManager
         @Nonnull
         private final String name;
         // TODO: use Spring ConcurrentReferenceHashMap?
-        private final Map<Object, SoftReference<? extends Object>> objectMap = new ConcurrentHashMap<>();
+        private final Map<Object, SoftReference<?>> objectMap = new ConcurrentHashMap<>();
 
         @Override @Nonnull
         public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
@@ -81,7 +81,7 @@ public class DefaultCacheManager implements CacheManager
           }
       }
 
-    @Override
+    @Override @Nonnull
     public Cache getCache (final @Nonnull Object cacheKey)
       {
         return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache(cacheKey.toString()));

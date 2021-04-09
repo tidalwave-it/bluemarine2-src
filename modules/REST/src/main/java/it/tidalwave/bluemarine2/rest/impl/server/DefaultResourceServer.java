@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.List;
 import java.util.stream.Stream;
 import java.util.Enumeration;
 import java.util.EnumSet;
@@ -43,6 +42,7 @@ import javax.servlet.DispatcherType;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -57,8 +57,7 @@ import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.toList;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 
 /***********************************************************************************************************************
  *
@@ -111,8 +110,7 @@ public class DefaultResourceServer implements ResourceServer
         server.setHandler(servletContext);
 
         server.start();
-        port = server.getConnectors()[0].getLocalPort(); // jetty 8
-//        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
+        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort();
         log.info(">>>> resource server jetty started at {}:{} ", ipAddress, port);
       }
 
@@ -169,9 +167,8 @@ public class DefaultResourceServer implements ResourceServer
       {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         final ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classLoader);
-        final List<Resource> resources = Stream.of(resolver.getResources("classpath*:/webapp"))
-                                               .map(_f(x -> Resource.newResource(x.getURI())))
-                                               .collect(toList());
-        return resources.toArray(new Resource[0]);
+        return Stream.of(resolver.getResources("classpath*:/webapp"))
+                     .map(_f(x -> Resource.newResource(x.getURI())))
+                     .toArray(Resource[]::new);
       }
   }

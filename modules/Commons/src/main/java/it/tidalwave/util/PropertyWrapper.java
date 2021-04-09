@@ -28,23 +28,34 @@
 package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import java.util.Map;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import it.tidalwave.role.ui.BoundProperty;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public class TypeSafeHashMap8 extends TypeSafeHashMap implements TypeSafeMap8
+public class PropertyWrapper
   {
-    private static final long serialVersionUID = 2877980290140651775L;
-
     /*******************************************************************************************************************
      *
+     * Returns a JavaFX wrapping property which is kept in sync with the given {@link BoundProperty}.
+     * FIXME: this is temporary until we fix the JavaFX property issue: either they are supported by UserAction or
+     * everything is replaced by BoundProperty.
+     * FIXME: this is for sure prone to leaks, as listeners are not weak.
      *
      ******************************************************************************************************************/
-    public TypeSafeHashMap8 (final @Nonnull Map<Key<?>, Object> map)
+    @Nonnull
+    public static BooleanProperty wrap (final @Nonnull BoundProperty<Boolean> property)
       {
-        super(map);
+        final BooleanProperty jfxProperty = new SimpleBooleanProperty(property.get());
+        property.addPropertyChangeListener(event ->
+           {
+             if (!jfxProperty.isBound()) jfxProperty.setValue((Boolean)event.getNewValue());
+           });
+        jfxProperty.addListener((observable, oldValue, newValue) -> property.set(newValue));
+        return jfxProperty;
       }
   }

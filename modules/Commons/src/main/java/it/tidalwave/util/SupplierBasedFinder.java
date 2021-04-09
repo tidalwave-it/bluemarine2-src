@@ -28,29 +28,43 @@
 package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
+import javax.annotation.concurrent.Immutable;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
+import it.tidalwave.util.spi.SimpleFinderSupport;
 
 /***********************************************************************************************************************
+ *
+ * A {@link Finder} which retrieve results from a {@link Supplier}.
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface TypeSafeMap8 extends TypeSafeMap
+@Immutable
+public class SupplierBasedFinder<T> extends SimpleFinderSupport<T>
   {
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
+    private static final long serialVersionUID = 1344191036948400804L;
+
     @Nonnull
-    public default <T> Optional<T> getOptional (@Nonnull Key<T> key)
+    private final Supplier<Collection<? extends T>> supplier;
+
+    public SupplierBasedFinder (final @Nonnull Supplier<Collection<? extends T>> supplier)
       {
-        try
-          {
-            return Optional.of(get(key));
-          }
-        catch (NotFoundException ex)
-          {
-            return Optional.empty();
-          }
+        this.supplier = supplier;
+      }
+
+    public SupplierBasedFinder (final @Nonnull SupplierBasedFinder<T> other, @Nonnull Object override)
+      {
+        super(other, override);
+        final SupplierBasedFinder<T> source = getSource(SupplierBasedFinder.class, other, override);
+        this.supplier = source.supplier;
+      }
+
+    @Override @Nonnull
+    protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
+      {
+        return new CopyOnWriteArrayList<>(supplier.get());
       }
   }

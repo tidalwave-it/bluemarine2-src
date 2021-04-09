@@ -7,15 +7,18 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - MusicBrainz Data Model</name>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <name>blueMarine II :: MusicBrainz :: Data Model</name>
+    <description>
+        The data model for MusicBrainz. This module contains code auto-generated from MusicBrainz XSD.
+    </description>
 
     <properties>
         <!-- This module contains only automatically-generated code, so there's no meaning for running tests or QA -->

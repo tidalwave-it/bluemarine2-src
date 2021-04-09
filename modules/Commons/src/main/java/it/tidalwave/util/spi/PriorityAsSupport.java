@@ -30,10 +30,10 @@ package it.tidalwave.util.spi;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import it.tidalwave.util.As;
-import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.dci.annotation.DciRole;
 import lombok.extern.slf4j.Slf4j;
@@ -50,7 +50,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class PriorityAsSupport extends AsSupport implements As8
+public class PriorityAsSupport extends AsSupport implements As
   {
     @FunctionalInterface
     public static interface RoleProvider
@@ -65,16 +65,21 @@ public class PriorityAsSupport extends AsSupport implements As8
     @Nonnull
     private final Optional<RoleProvider> additionalRoleProvider;
 
-    public PriorityAsSupport (final Object owner, final @Nonnull Object ... rolesOrFactories)
+    public PriorityAsSupport (final Object owner)
+      {
+        this(owner, Collections.emptyList());
+      }
+
+    public PriorityAsSupport (@Nonnull final Object owner, final @Nonnull Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
         this.additionalRoleProvider = Optional.empty();
       }
 
-    public PriorityAsSupport (final Object owner,
+    public PriorityAsSupport (@Nonnull final Object owner,
                               final @Nonnull RoleProvider additionalRoleProvider,
-                              final @Nonnull Object ... rolesOrFactories)
+                              final @Nonnull Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
@@ -110,7 +115,7 @@ public class PriorityAsSupport extends AsSupport implements As8
     @Override @Nonnull
     public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
       {
-        return asOptional(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
+        return maybeAs(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
       }
 
     /*******************************************************************************************************************
@@ -124,7 +129,7 @@ public class PriorityAsSupport extends AsSupport implements As8
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
+    public <T> Optional<T> maybeAs (final @Nonnull Class<T> type)
       {
         return asMany(type).stream().findFirst();
       }
@@ -169,7 +174,7 @@ public class PriorityAsSupport extends AsSupport implements As8
       {
         log.trace(">>>> add in order {} into {}", item, list);
         final Optional<T> firstAncestor = list.stream().filter(i -> isDatumAncestor(i, item)).findFirst();
-        final int index = firstAncestor.map(i -> list.indexOf(i)).orElse(list.size());
+        final int index = firstAncestor.map(list::indexOf).orElse(list.size());
         list.add(index, item);
         log.trace(">>>>>>>> add in order {} ", list);
       }

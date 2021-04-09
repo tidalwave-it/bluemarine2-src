@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Displayable;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.impl.FileSystemAudioFile;
 import lombok.RequiredArgsConstructor;

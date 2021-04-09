@@ -1,38 +1,11 @@
 HTTP/1.1 404 NOT_FOUND
 Cache-Control: must-revalidate,no-cache,no-store
-Content-Length: 1319
-Content-Type: text/html;charset=ISO-8859-1
-Server: Jetty(8.1.8.v20121106)
+Content-Length: 131
+Content-Type: text/plain;charset=iso-8859-1
+Server: Jetty(10.0.1)
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
-<title>Error 404 Not Found</title>
-</head>
-<body>
-<h2>HTTP ERROR: 404</h2>
-<p>Problem accessing /rest/audiofile/urn:bluemarine:audiofile:not_existing. Reason:
-<pre>    Not Found</pre></p>
-<hr /><i><small>Powered by Jetty://</small></i>
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-</body>
-</html>
+HTTP ERROR 404 Not Found
+URI: /rest/audiofile/urn:bluemarine:audiofile:not_existing
+STATUS: 404
+MESSAGE: Not Found
+SERVLET: spring

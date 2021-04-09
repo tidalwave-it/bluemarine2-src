@@ -130,22 +130,20 @@ public final class RdfUtilities
     @Nonnull
     private static <T, X extends RuntimeException> Iterator<T> iteratorOf (final @Nonnull Iteration<T, X> iteration)
       {
-        final Iterator<T> iterator = new Iterator<T>()
+        return new Iterator<>()
           {
             @Override
-            public boolean hasNext()
+            public boolean hasNext ()
               {
                 return iteration.hasNext();
               }
 
             @Override
-            public T next()
+            public T next ()
               {
                 return iteration.next();
               }
           };
-
-        return iterator;
       }
 
     /*******************************************************************************************************************
@@ -175,7 +173,7 @@ public final class RdfUtilities
     @Nonnull
     public static Optional<Value> literalFor (final Optional<String> optionalString)
       {
-        return optionalString.map(s -> literalFor(s));
+        return optionalString.map(RdfUtilities::literalFor);
       }
 
     /*******************************************************************************************************************
@@ -205,7 +203,7 @@ public final class RdfUtilities
     @Nonnull
     public static Optional<Value> literalForInt (final Optional<Integer> optionalInteger)
       {
-        return optionalInteger.map(i -> literalFor(i));
+        return optionalInteger.map(RdfUtilities::literalFor);
       }
 
     /*******************************************************************************************************************
@@ -225,7 +223,7 @@ public final class RdfUtilities
     @Nonnull
     public static Optional<Value> literalForLong (final Optional<Long> optionalLong)
       {
-        return optionalLong.map(l -> literalFor(l));
+        return optionalLong.map(RdfUtilities::literalFor);
       }
 
     /*******************************************************************************************************************
@@ -255,7 +253,7 @@ public final class RdfUtilities
     @Nonnull
     public static Optional<Value> literalForFloat (final Optional<Float> optionalFloat)
       {
-        return optionalFloat.map(f -> literalFor(f));
+        return optionalFloat.map(RdfUtilities::literalFor);
       }
 
     /*******************************************************************************************************************

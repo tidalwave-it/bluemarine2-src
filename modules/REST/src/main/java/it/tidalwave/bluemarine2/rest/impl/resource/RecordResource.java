@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.audio.Record;
 import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *
@@ -71,7 +71,7 @@ public class RecordResource extends ResourceSupport
     public RecordResource (final @Nonnull Record record)
       {
         this.id          = record.getId().stringValue();
-        this.displayName = record.as(Displayable).getDisplayName();
+        this.displayName = record.as(_Displayable_).getDisplayName();
         this.diskCount   = record.getDiskCount();
         this.diskNumber  = record.getDiskNumber();
         this.trackCount  = record.getTrackCount();

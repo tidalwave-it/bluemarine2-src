@@ -35,8 +35,7 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 
 /***********************************************************************************************************************
  *
@@ -70,7 +69,7 @@ public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
       {
         // test for the Composite role
         // FIXME: Composite doesn't work. Introduce Composite8?
-        mediaFolder.asOptional(SimpleComposite8).orElseThrow(() -> new NotFoundException());
-        return new UserActionSupport8(() -> control.navigateTo(mediaFolder));
+        mediaFolder.maybeAs(_SimpleComposite_).orElseThrow(NotFoundException::new);
+        return UserAction.of(() -> control.navigateTo(mediaFolder));
       }
   }

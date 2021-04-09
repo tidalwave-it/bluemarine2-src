@@ -7,15 +7,18 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Commons for Tests</name>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <name>blueMarine II :: Commons for Tests</name>
+    <description>
+        Utility code that is common to many tests through the project.
+    </description>
 
     <dependencies>
         <dependency>
@@ -23,16 +26,6 @@
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-util-java8supplement</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjweaver</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util</artifactId>
@@ -60,12 +53,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>

@@ -33,7 +33,7 @@ import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
@@ -52,6 +52,6 @@ public class FolderCustomGraphicProvider implements CustomGraphicProvider
       {
         return hBox("cell-container",
                     label("folder-icon", ""),
-                    label("folder-label", folder.as(Displayable).getDisplayName()));
+                    label("folder-label", folder.as(_Displayable_).getDisplayName()));
       }
   }

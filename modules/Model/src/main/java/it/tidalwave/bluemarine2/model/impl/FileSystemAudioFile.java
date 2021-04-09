@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -38,8 +38,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import it.tidalwave.util.Finder8Support;
-import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.FinderSupport;import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
@@ -54,9 +53,8 @@ import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *
@@ -100,7 +98,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
-        @Override @Nonnull
+        @Override
         public int getType()
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
@@ -112,7 +110,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
-        @Override
+        @Override @Nonnull
         public Optional<Id> getSource()
           {
             return Optional.of(new Id("embedded")); // FIXME
@@ -125,7 +123,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor
-    static class ArtistFallbackFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
+    static class ArtistFallbackFinder extends FinderSupport<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
       {
         private static final long serialVersionUID = 7969726066626602758L;
 
@@ -146,7 +144,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
         @Override @Nonnull
         protected List<? extends MusicArtist> computeNeededResults()
           {
-            return metadata.get(metadataKey).map(artistName -> asList(new ArtistFallback(artistName))).orElse(emptyList());
+            return metadata.get(metadataKey).map(artistName -> List.of(new ArtistFallback(artistName))).orElse(emptyList());
           }
 
         @Override @Nonnull
@@ -195,7 +193,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     @Nonnull
     private final PathAwareEntity parent;
 
-    @CheckForNull
+    @Nullable
     private Metadata metadata;
 
     @Delegate
@@ -272,7 +270,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     public Optional<Record> getRecord()
       {
             // FIXME: check - parent should be always present - correct?
-        return getParent().map(parent -> new NamedRecord(parent.as(Displayable).getDisplayName()));
+        return getParent().map(parent -> new NamedRecord(parent.as(_Displayable_).getDisplayName()));
       }
 
     @Override @Nonnull

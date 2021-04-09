@@ -29,7 +29,7 @@ package it.tidalwave.bluemarine2.model.finder.audio;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.util.spi.ExtendedFinderSupport;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import it.tidalwave.bluemarine2.model.audio.Performance;
 import it.tidalwave.bluemarine2.model.audio.Track;
@@ -45,7 +45,7 @@ import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
  *
  **********************************************************************************************************************/
 public interface PerformanceFinder extends SourceAwareFinder<Performance, PerformanceFinder>,
-                                           ExtendedFinder8Support<Performance, PerformanceFinder>
+                                           ExtendedFinderSupport<Performance, PerformanceFinder>
   {
     /*******************************************************************************************************************
      *

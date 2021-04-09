@@ -32,8 +32,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
 import org.springframework.beans.factory.ListableBeanFactory;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
@@ -42,7 +42,6 @@ import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable8.displayableFromBundle;
 
 /***********************************************************************************************************************
  *
@@ -70,14 +69,11 @@ public class DefaultMainScreenPresentationControl
      * The action that powers off the application.
      *
      ******************************************************************************************************************/
-    private final UserAction powerOffAction = new UserActionSupport(displayableFromBundle(getClass(), "powerOff"))
-      {
-        @Override
-        public void actionPerformed()
-          {
-            flowController.powerOff();
-          }
-      };
+    // FIXME: this fails because flowController is not injected yet.
+//    private final UserAction powerOffAction = UserAction.of(flowController::powerOff,
+//                                                            LocalizedDisplayable.fromBundle(getClass(), "powerOff"));
+    private final UserAction powerOffAction = UserAction.of(() -> flowController.powerOff(),
+                                                            Displayable.fromBundle(getClass(), "powerOff"));
 
     /*******************************************************************************************************************
      *
@@ -91,7 +87,7 @@ public class DefaultMainScreenPresentationControl
                                                                    .values()
                                                                    .stream()
                                                                    .sorted(comparing(MainMenuItem::getPriority))
-                                                                   .map(menuItem -> menuItem.getAction())
+                                                                   .map(MainMenuItem::getAction)
                                                                    .collect(toList());
         presentation.bind(mainMenuActions, powerOffAction);
       }

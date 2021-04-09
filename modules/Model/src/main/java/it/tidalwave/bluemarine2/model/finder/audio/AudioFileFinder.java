@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.model.finder.audio;
 
-import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.util.spi.ExtendedFinderSupport;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 
@@ -41,6 +41,6 @@ import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
  *
  **********************************************************************************************************************/
 public interface AudioFileFinder extends SourceAwareFinder<AudioFile, AudioFileFinder>,
-        ExtendedFinder8Support<AudioFile, AudioFileFinder>
+        ExtendedFinderSupport<AudioFile, AudioFileFinder>
   {
   }

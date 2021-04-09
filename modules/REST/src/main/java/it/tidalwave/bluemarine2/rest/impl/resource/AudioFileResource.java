@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -70,7 +70,7 @@ public class AudioFileResource extends ResourceSupport
     public AudioFileResource (final @Nonnull AudioFile audioFile)
       {
         this.id          = audioFile.getId().stringValue();
-        this.displayName = audioFile.as(Displayable).getDisplayName();
+        this.displayName = audioFile.as(_Displayable_).getDisplayName();
         this.path        = audioFile.getPath().toString();
 
         final Metadata metadata = audioFile.getMetadata();

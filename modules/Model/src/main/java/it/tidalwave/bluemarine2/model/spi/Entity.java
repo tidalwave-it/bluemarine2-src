@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.model.spi;
 
-import it.tidalwave.util.As8;
+import it.tidalwave.util.As;
 import it.tidalwave.bluemarine2.util.Dumpable;
 
 /***********************************************************************************************************************
@@ -39,6 +39,6 @@ import it.tidalwave.bluemarine2.util.Dumpable;
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface Entity extends As8, Dumpable
+public interface Entity extends As, Dumpable
   {
   }

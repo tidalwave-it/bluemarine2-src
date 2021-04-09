@@ -32,6 +32,7 @@ import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.ToString;
+import java.util.Collection;
 
 /***********************************************************************************************************************
  *
@@ -55,7 +56,7 @@ public class EntityDecorator extends EntityWithRoles
      * @param   additionalRoles     the additional roles
      *
      ******************************************************************************************************************/
-    public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Object... additionalRoles)
+    public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Collection<Object> additionalRoles)
       {
         super(delegate::asMany, additionalRoles);
         this.delegate = delegate;

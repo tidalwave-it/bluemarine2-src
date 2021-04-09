@@ -27,10 +27,10 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
+import it.tidalwave.util.Finder.SortCriterion;
+import it.tidalwave.util.Finder.InMemorySortCriterion;
+import it.tidalwave.role.ui.Displayable;
 import org.springframework.core.annotation.Order;
-import it.tidalwave.util.As;
-import it.tidalwave.util.DefaultFilterSortCriterion;
-import it.tidalwave.text.AsDisplayableComparator;
 
 /***********************************************************************************************************************
  *
@@ -40,18 +40,10 @@ import it.tidalwave.text.AsDisplayableComparator;
 @Order(40)
 public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
   {
-    static class ByTrackName extends DefaultFilterSortCriterion<As>
-      {
-        private static final long serialVersionUID = -4197094807679806523L;
-
-        public ByTrackName()
-          {
-            super(new AsDisplayableComparator(), "---");
-          }
-      }
+    private final static SortCriterion BY_TRACK_NAME = InMemorySortCriterion.of(Displayable.asComparing());
 
     public RepositoryBrowserByTrack()
       {
-        super(catalog -> catalog.findTracks().sort(new ByTrackName()));
+        super(catalog -> catalog.findTracks().sort( BY_TRACK_NAME));
       }
   }

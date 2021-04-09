@@ -70,6 +70,6 @@ public class RepositoryOptimizedTrackFinder extends RepositoryTrackFinder
     public int count()
       {
         // in case other parameters are added, remember to check for them
-        return (recordId.isPresent() && !makerId.isPresent()) ? trackCount.orElseGet(super::count) : super.count();
+        return (recordId.isPresent() && makerId.isEmpty()) ? trackCount.orElseGet(super::count) : super.count();
       }
   }

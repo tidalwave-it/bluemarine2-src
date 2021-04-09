@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.rest;
 import java.io.ByteArrayOutputStream;
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.io.IOException;
@@ -58,7 +59,6 @@ public class ResponseEntityIo
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
     public static void store (final @Nonnull Path path,
                               final @Nonnull ResponseEntity<?> response,
                               final @Nonnull List<String> ignoredHeaders)
@@ -70,7 +70,6 @@ public class ResponseEntityIo
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
     public static void store (final @Nonnull Path path,
                               final @Nonnull ResponseEntity<?> response,
                               final @Nonnull List<String> ignoredHeaders,
@@ -88,7 +87,7 @@ public class ResponseEntityIo
                 pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
                 response.getHeaders().entrySet().stream()
                         .filter(e -> !ignoredHeaders.contains(e.getKey()))
-                        .sorted(comparing(e -> e.getKey()))
+                        .sorted(comparing(Map.Entry::getKey))
                         .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
                 pw.println();
                 pw.flush();
