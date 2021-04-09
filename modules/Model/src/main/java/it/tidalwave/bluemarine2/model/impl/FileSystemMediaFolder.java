@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import java.util.Optional;
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
@@ -55,8 +55,8 @@ public class FileSystemMediaFolder implements MediaFolder
     @Getter @Nonnull
     private final Path path;
 
-    @CheckForNull
-    private MediaFolder parent;
+    @Nullable
+    private final MediaFolder parent;
 
     @Getter @Nonnull
     private final Path basePath;

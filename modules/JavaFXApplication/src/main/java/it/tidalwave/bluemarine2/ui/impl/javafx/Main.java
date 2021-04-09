@@ -33,6 +33,7 @@ import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
+import it.tidalwave.util.PreferencesHandler;
 
 /***********************************************************************************************************************
  *
@@ -47,6 +48,7 @@ public class Main extends JavaFXSpringApplication
       {
 //        setMaximized(true);
 
+        // FIXME: use KEY_FULL_SCREEN and KEY_FULL_SCREEN_SIZE with PreferencesHandler in main()
         if ("arm".equals(System.getProperty("os.arch")))
           {
             setFullScreen(true);
@@ -58,6 +60,8 @@ public class Main extends JavaFXSpringApplication
       {
         try
           {
+            PreferencesHandler.setAppName("blueMarine2");
+//            preferenceHandler.setDefaultProperty(KEY_INITIAL_SIZE, 0.8);
             SystemConfigurer.setupSlf4jBridgeHandler();
             SystemConfigurer.setSystemProperties();
             Platform.setImplicitExit(true);

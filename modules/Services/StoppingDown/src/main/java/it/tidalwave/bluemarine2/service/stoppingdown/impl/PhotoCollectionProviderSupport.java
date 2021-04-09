@@ -112,7 +112,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Scheduled(fixedDelay = 14_400_000) // 12 hours TODO: yes, can use properties here
-    private final void clearCaches()
+    private void clearCaches()
       {
         log.info("clearCaches()");
         clearCachesImpl();

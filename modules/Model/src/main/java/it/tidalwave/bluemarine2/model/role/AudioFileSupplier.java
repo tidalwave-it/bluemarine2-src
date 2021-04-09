@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.model.audio.AudioFile;
  **********************************************************************************************************************/
 public interface AudioFileSupplier
   {
-    public static final Class<AudioFileSupplier> AudioFileSupplier = AudioFileSupplier.class;
+    public static final Class<AudioFileSupplier> _AudioFileSupplier_ = AudioFileSupplier.class;
     
     @Nonnull
     public AudioFile getAudioFile();

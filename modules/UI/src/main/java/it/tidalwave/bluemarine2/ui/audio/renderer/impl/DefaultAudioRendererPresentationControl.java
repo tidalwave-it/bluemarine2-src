@@ -36,8 +36,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
-import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
+import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
@@ -49,10 +48,11 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.util.PropertyWrapper.wrap;
 
 /***********************************************************************************************************************
  *
@@ -81,19 +81,19 @@ public class DefaultAudioRendererPresentationControl
     // Discriminates a forced stop from media player just terminating
     private boolean stopped;
 
-    private final UserAction8 prevAction = new UserActionSupport8(() -> changeTrack(playList.previous().get()));
+    private final UserAction prevAction = UserAction.of(() -> changeTrack(playList.previous().get()));
 
-    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
+    private final UserAction nextAction = UserAction.of(() -> changeTrack(playList.next().get()));
 
-    private final UserAction8 rewindAction = new UserActionSupport8(() -> mediaPlayer.rewind());
+    private final UserAction rewindAction = UserAction.of(() -> mediaPlayer.rewind());
 
-    private final UserAction8 fastForwardAction = new UserActionSupport8(() -> mediaPlayer.fastForward());
+    private final UserAction fastForwardAction = UserAction.of(() -> mediaPlayer.fastForward());
 
-    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
+    private final UserAction pauseAction = UserAction.of(() -> mediaPlayer.pause());
 
-    private final UserAction8 playAction = new UserActionSupport8(this::play);
+    private final UserAction playAction = UserAction.of(this::play);
 
-    private final UserAction8 stopAction = new UserActionSupport8(this::stop);
+    private final UserAction stopAction = UserAction.of(this::stop);
 
     // FIXME: use expression binding
     // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
@@ -169,15 +169,15 @@ public class DefaultAudioRendererPresentationControl
           {
             properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
             properties.artistProperty().setValue(audioFile.findMakers().stream()
-                    .map(maker -> maker.as(Displayable).getDisplayName())
+                    .map(maker -> maker.as(_Displayable_).getDisplayName())
                     .collect(Collectors.joining(", ")));
             properties.composerProperty().setValue(audioFile.findComposers().stream()
-                    .map(composer -> composer.as(Displayable).getDisplayName())
+                    .map(composer -> composer.as(_Displayable_).getDisplayName())
                     .collect(Collectors.joining(", ")));
             duration = metadata.get(DURATION).orElse(Duration.ZERO);
             properties.durationProperty().setValue(format(duration));
             properties.folderNameProperty().setValue(
-                    audioFile.getRecord().map(record -> record.as(Displayable).getDisplayName()).orElse(""));
+                    audioFile.getRecord().map(record -> record.as(_Displayable_).getDisplayName()).orElse(""));
             properties.nextTrackProperty().setValue(
                     ((playList.getSize() == 1) ? "" : String.format("%d / %d", playList.getIndex() + 1, playList.getSize()) +
                     playList.peekNext().map(t -> " - Next track: " + t.getMetadata().get(TITLE).orElse("")).orElse("")));
@@ -282,11 +282,11 @@ public class DefaultAudioRendererPresentationControl
       {
         log.debug("bindMediaPlayer()");
         final ObjectProperty<Status> status = mediaPlayer.statusProperty();
-        stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
-        pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
-        playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
-        prevAction.enabledProperty().bind(playList.hasPreviousProperty());
-        nextAction.enabledProperty().bind(playList.hasNextProperty());
+        wrap(stopAction.enabled()).bind(status.isEqualTo(PLAYING));
+        wrap(pauseAction.enabled()).bind(status.isEqualTo(PLAYING));
+        wrap(playAction.enabled()).bind(status.isNotEqualTo(PLAYING));
+        wrap(prevAction.enabled()).bind(playList.hasPreviousProperty());
+        wrap(nextAction.enabled()).bind(playList.hasNextProperty());
         mediaPlayer.playTimeProperty().addListener(l);
 
         status.addListener((observable, oldValue, newValue) ->
@@ -312,11 +312,11 @@ public class DefaultAudioRendererPresentationControl
     /* VisibleForTesting */ void unbindMediaPlayer()
       {
         log.debug("unbindMediaPlayer()");
-        stopAction.enabledProperty().unbind();
-        pauseAction.enabledProperty().unbind();
-        playAction.enabledProperty().unbind();
-        prevAction.enabledProperty().unbind();
-        nextAction.enabledProperty().unbind();
+        wrap(stopAction.enabled()).unbind();
+        wrap(pauseAction.enabled()).unbind();
+        wrap(playAction.enabled()).unbind();
+        wrap(prevAction.enabled()).unbind();
+        wrap(nextAction.enabled()).unbind();
         mediaPlayer.playTimeProperty().removeListener(l);
       }
   }

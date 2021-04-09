@@ -29,7 +29,7 @@ package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import it.tidalwave.bluemarine2.model.audio.Record;
@@ -49,7 +49,7 @@ import lombok.RequiredArgsConstructor;
  **********************************************************************************************************************/
 @DciRole(datumType = MusicArtist.class, context = RepositoryBrowserByArtistThenRecord.class)
 @RequiredArgsConstructor
-public class MusicArtistCompositeOfRecords implements SimpleComposite8<Record>
+public class MusicArtistCompositeOfRecords implements SimpleComposite<Record>
   {
     @Nonnull
     private final MusicArtist artist;

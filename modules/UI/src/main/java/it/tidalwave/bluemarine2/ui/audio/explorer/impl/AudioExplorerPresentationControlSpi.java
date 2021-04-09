@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
@@ -87,9 +86,9 @@ public interface AudioExplorerPresentationControlSpi
      *
      * Returns the list of media items in the current folder.
      *
-     * FIXME: should be List<MediaItems>
+     * FIXME: should be List<MediaItem>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public List<AudioFileSupplier> getMediaItems();
+    public List<Entity> getMediaItems();
   }

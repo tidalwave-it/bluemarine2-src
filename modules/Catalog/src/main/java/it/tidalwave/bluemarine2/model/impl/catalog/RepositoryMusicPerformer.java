@@ -66,27 +66,27 @@ public class RepositoryMusicPerformer implements MusicPerformer
         this.role = r.map(RepositoryMusicPerformerRole::new);
       }
 
-    @Override
+    @Override @Nonnull
     public Id getId()
       {
         return musicArtist.getId();
       }
 
     // FIXME: should delegate first to its own AsDelegate and only as a fallaback to MusicArtist
-    @Override
-    public <T> T as(Class<T> type)
+    @Override @Nonnull
+    public <T> T as(@Nonnull Class<T> type)
       {
         return musicArtist.as(type);
       }
 
-    @Override
-    public <T> T as(Class<T> type, NotFoundBehaviour<T> notFoundBehaviour)
+    @Override @Nonnull
+    public <T> T as(@Nonnull Class<T> type, @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
       {
         return musicArtist.as(type, notFoundBehaviour);
       }
 
-    @Override
-    public <T> Collection<T> asMany(Class<T> type)
+    @Override @Nonnull
+    public <T> Collection<T> asMany(@Nonnull Class<T> type)
       {
         return musicArtist.asMany(type);
       }

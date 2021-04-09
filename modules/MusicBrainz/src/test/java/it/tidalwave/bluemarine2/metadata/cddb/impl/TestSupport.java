@@ -36,7 +36,6 @@ import java.nio.file.Paths;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
@@ -108,7 +107,7 @@ public class TestSupport
     @DataProvider
     protected static Object[][] trackResourcesProvider()
       {
-        return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
+        return streamOfTestSetTriples(TestSetLocator.allTestSets(), METADATA::resolve)
                 // Files there apparendly don't have CDDB offsets
                 .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
                 .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))

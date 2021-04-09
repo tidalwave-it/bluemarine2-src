@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.List;
@@ -35,8 +35,8 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -48,7 +48,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -61,14 +61,15 @@ import it.tidalwave.bluemarine2.rest.impl.resource.RecordResource;
 import it.tidalwave.bluemarine2.rest.impl.resource.DetailedRecordResource;
 import it.tidalwave.bluemarine2.rest.impl.resource.AudioFileResource;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
 
 /***********************************************************************************************************************
  *
@@ -168,8 +169,8 @@ public class MusicResourcesController
         checkStatus();
         return catalog.findTracks().inRecord(new Id(id))
                                    .stream()
-                                   .flatMap(track -> track.asMany(AudioFileSupplier).stream())
-                                   .map(afs -> afs.getAudioFile())
+                                   .flatMap(track -> track.asMany(_AudioFileSupplier_).stream())
+                                   .map(AudioFileSupplier::getAudioFile)
                                    .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
                                    .findAny()
                                    .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
@@ -319,7 +320,7 @@ public class MusicResourcesController
       {
         final FINDER f = finder.importedFrom(new Id(source))
                                 .withFallback(new Id(fallback));
-        return ((Finder8<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder8
+        return ((Finder<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder
                      .stream()
                      .map(mapper)
                      .collect(toList());
@@ -330,7 +331,7 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @Nonnull
     private ResponseEntity<ResourceRegion> audioFileContentResponse (final @Nonnull AudioFile file,
-                                                                     final @CheckForNull String rangeHeader)
+                                                                     final @Nullable String rangeHeader)
       throws IOException
       {
         final long length = file.getSize();
@@ -346,7 +347,7 @@ public class MusicResourcesController
         final Range fullRange = Range.full(length);
         final Range range = ranges.stream().findFirst().orElse(fullRange).subrange(maxSize);
 
-        final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
+        final String displayName = file.as(_Displayable_).getDisplayName(); // FIXME: getRdfsLabel()
         final HttpStatus status = range.equals(fullRange) ? OK : PARTIAL_CONTENT;
         return file.getContent().map(resource -> ResponseEntity.status(status)
                                                             .contentType(new MediaType("audio", "mpeg"))
@@ -377,15 +378,8 @@ public class MusicResourcesController
     @Nonnull
     private static String contentDisposition (final @Nonnull String string)
       {
-        try
-          {
-            // See https://tools.ietf.org/html/rfc6266#section-5
-            return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, "UTF-8"));
-          }
-        catch (UnsupportedEncodingException e)
-          {
-            throw new RuntimeException(e);
-          }
+        // See https://tools.ietf.org/html/rfc6266#section-5
+        return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, UTF_8));
       }
 
     /*******************************************************************************************************************

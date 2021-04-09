@@ -2,7 +2,6 @@ HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Content-Length: 25
 Content-Type: text/plain
-Server: Jetty(8.1.8.v20121106)
-Vary: Accept-Encoding
+Server: Jetty(10.0.1)
 
 Example static resource.

@@ -34,15 +34,15 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-installers</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux</artifactId>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Linux</name>
+    <name>blueMarine II :: Installers :: JavaFX Application :: Linux</name>
     <description>
         This module creates a JavaFX application for Linux. The produced artifact is a .tar.gz containing all the
         required stuff, including a shell script launcher.

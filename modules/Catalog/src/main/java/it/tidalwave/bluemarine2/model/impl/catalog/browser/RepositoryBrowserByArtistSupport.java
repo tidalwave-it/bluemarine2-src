@@ -27,6 +27,8 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
+import it.tidalwave.bluemarine2.model.MediaCatalog;
+
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
@@ -36,6 +38,6 @@ public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowser
   {
     public RepositoryBrowserByArtistSupport()
       {
-        super(catalog -> catalog.findArtists());
+        super(MediaCatalog::findArtists);
       }
   }

@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Arrays;
 import java.util.List;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
@@ -97,13 +96,13 @@ public class ProgressHandler
     private final Progress downloads = new Progress("downloads");
     private final Progress insertions = new Progress("insertions");
 
-    private final List<Progress> all = Arrays.asList(folders, fingerprints, mediaItems, artists, records, downloads, insertions);
+    private final List<Progress> all = List.of(folders, fingerprints, mediaItems, artists, records, downloads, insertions);
 
     // TODO: should also collect errors
 
     public synchronized void reset()
       {
-        all.stream().forEach(progress -> progress.reset());
+        all.forEach(Progress::reset);
       }
 
     public void incrementTotalFolders()

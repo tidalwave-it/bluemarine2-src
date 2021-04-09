@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -37,8 +36,7 @@ import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder.EntityCollectionFactory;
@@ -50,8 +48,8 @@ import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.util.Parameters.r;
 
 /***********************************************************************************************************************
  *
@@ -101,10 +99,10 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
-                             new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
-                             new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
-                             new VirtualMediaFolder(parent, PATH_SERVICES, "Services", this::servicesFactory));
+        return List.of(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
+                       new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
+                       new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
+                       new VirtualMediaFolder(parent, PATH_SERVICES, "Services", this::servicesFactory));
       }
 
     @Nonnull
@@ -112,7 +110,7 @@ public class DefaultContentDirectory implements ContentDirectory
       {
         // TODO: filter by MIME type
         return entityBrowsers.stream()
-                             .sorted(comparing(browser -> browser.as(Displayable).getDisplayName()))
+                             .sorted(comparing(browser -> browser.as(Displayable.class).getDisplayName()))
                              .map(browser -> createMediaFolder(parent, browser))
                              .collect(toList());
       }
@@ -128,9 +126,9 @@ public class DefaultContentDirectory implements ContentDirectory
                                                   final @Nonnull EntityBrowser browser)
       {
         final String fallBack = browser.getClass().getSimpleName();
-        final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(fallBack);
-        final Displayable displayable = browser.asOptional(Displayable).orElse(new DefaultDisplayable(fallBack));
+        final String pathSegment = browser.maybeAs(_Identifiable_).map(i -> i.getId().stringValue()).orElse(fallBack);
+        final Displayable displayable = browser.maybeAs(Displayable.class).orElse(Displayable.of(fallBack));
         log.trace("createMediaFolder({}, {}) - path: {} displayable: {}", parent, browser, pathSegment, displayable);
-        return new PathAwareMediaFolderDecorator(browser.getRoot(), parent, Paths.get(pathSegment), displayable);
+        return new PathAwareMediaFolderDecorator(browser.getRoot(), parent, Paths.get(pathSegment), r(displayable));
       }
   }

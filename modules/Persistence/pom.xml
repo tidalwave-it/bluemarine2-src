@@ -7,15 +7,18 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Persistence</name>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <name>blueMarine II :: Persistence</name>
+    <description>
+        The implementation of RDF persistence.
+    </description>
 
     <dependencies>
         <dependency>
@@ -108,12 +111,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 

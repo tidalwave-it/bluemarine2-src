@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -114,7 +113,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     public PathAwareFinder findPhotos(final @Nonnull MediaFolder parent) {
         return parent.finderOf(
                 p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
-                        .mapToObj(x -> x)
+                        .boxed()
                         .map(year -> new VirtualMediaFolder(p1,
                                 Paths.get("" + year),
                                 "" + year,
@@ -173,7 +172,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                     galleryDescriptions.add(new GalleryDescription(displayName, url));
                   }
 
-                Collections.sort(galleryDescriptions, comparing(GalleryDescription::getUrl));
+                galleryDescriptions.sort(comparing(GalleryDescription::getUrl));
 
                 return galleryDescriptions;
               }

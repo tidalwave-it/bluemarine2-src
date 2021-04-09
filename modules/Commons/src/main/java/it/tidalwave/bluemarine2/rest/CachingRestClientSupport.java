@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.rest;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
@@ -40,8 +39,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
@@ -124,7 +121,7 @@ public class CachingRestClientSupport
     private int maxRetry = 3;
 
     @Getter @Setter
-    private List<Integer> retryStatusCodes = Arrays.asList(503);
+    private List<Integer> retryStatusCodes = List.of(503);
 
     private long latestNetworkAccessTimestamp = 0;
 
@@ -136,14 +133,14 @@ public class CachingRestClientSupport
     private static final ResponseErrorHandler IGNORE_HTTP_ERRORS = new ResponseErrorHandler()
       {
         @Override
-        public boolean hasError (final ClientHttpResponse response)
+        public boolean hasError (@Nonnull final ClientHttpResponse response)
           throws IOException
           {
             return false;
           }
 
         @Override
-        public void handleError (final ClientHttpResponse response)
+        public void handleError (@Nonnull final ClientHttpResponse response)
           throws IOException
           {
           }
@@ -154,19 +151,12 @@ public class CachingRestClientSupport
      *
      *
      ******************************************************************************************************************/
-    private final ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor()
+    private final ClientHttpRequestInterceptor interceptor = (request, body, execution) ->
       {
-        @Override
-        public ClientHttpResponse intercept (final HttpRequest request,
-                                             final byte[] body,
-                                             final ClientHttpRequestExecution execution)
-          throws IOException
-          {
-            final HttpHeaders headers = request.getHeaders();
-            headers.add(USER_AGENT, userAgent);
-            headers.add(ACCEPT, accept);
-            return execution.execute(request, body);
-          }
+        final HttpHeaders headers = request.getHeaders();
+        headers.add(USER_AGENT, userAgent);
+        headers.add(ACCEPT, accept);
+        return execution.execute(request, body);
       };
 
     /*******************************************************************************************************************

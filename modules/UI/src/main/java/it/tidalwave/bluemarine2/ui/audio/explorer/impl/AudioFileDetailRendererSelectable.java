@@ -34,7 +34,7 @@ import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
@@ -64,9 +64,9 @@ public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<
         final MediaItem.Metadata metadata = audioFile.getMetadata();
 
         final String details = String.format("%s%n%s%n%s%n%s%n%s",
-            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
+            audioFile.findMakers().stream().map(m -> m.as(_Displayable_).getDisplayName())
                                   .collect(joining(", ", "Artist: ", "")),
-            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
+            audioFile.findComposers().stream().map(e -> e.as(_Displayable_).getDisplayName())
                                      .collect(joining(", ", "Composer: ", "")),
             metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
             metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),

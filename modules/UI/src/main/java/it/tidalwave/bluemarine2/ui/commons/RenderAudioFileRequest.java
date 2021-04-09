@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.ui.commons;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.ArrayList;
 import java.util.List;
 import it.tidalwave.bluemarine2.model.PlayList;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
@@ -62,7 +61,7 @@ public class RenderAudioFileRequest
     public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
       {
         this.audioFile = audioFile;
-        this.list = unmodifiableList(new ArrayList<>(list));
+        this.list = List.copyOf(list);
       }
 
     @Nonnull
