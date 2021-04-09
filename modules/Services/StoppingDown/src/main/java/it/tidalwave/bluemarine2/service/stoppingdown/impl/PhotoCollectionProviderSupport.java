@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -40,6 +39,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 import java.io.IOException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.w3c.dom.Document;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
@@ -101,7 +101,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (@Nonnull final MediaFolder parent)
       {
         throw new UnsupportedOperationException("must be implemented in subclasses");
       }
@@ -138,8 +138,8 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ Collection<PathAwareEntity> findPhotos (final @Nonnull MediaFolder parent,
-                                                                   final @Nonnull String galleryUrl)
+    @VisibleForTesting Collection<PathAwareEntity> findPhotos (@Nonnull final MediaFolder parent,
+                                                               @Nonnull final String galleryUrl)
       {
         log.debug("findPhotos({}, {}", parent, galleryUrl);
 
@@ -193,7 +193,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static String getAttribute (final @Nonnull Node node, final @Nonnull String attrName)
+    protected static String getAttribute (@Nonnull final Node node, @Nonnull final String attrName)
       throws DOMException
       {
         return node.getAttributes().getNamedItem(attrName).getNodeValue();

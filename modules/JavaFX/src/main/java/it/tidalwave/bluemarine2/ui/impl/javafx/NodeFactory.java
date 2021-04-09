@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
@@ -43,7 +42,7 @@ import static lombok.AccessLevel.PRIVATE;
 public final class NodeFactory
   {
     @Nonnull
-    public static Label label (final @Nonnull String style, final @Nonnull String content)
+    public static Label label (@Nonnull final String style, @Nonnull final String content)
       {
         final Label label = new Label(content);
         label.getStyleClass().setAll("list-cell", style);
@@ -51,7 +50,7 @@ public final class NodeFactory
       }
 
     @Nonnull
-    public static HBox hBox (final @Nonnull String style, final @Nonnull Node ... children)
+    public static HBox hBox (@Nonnull final String style, @Nonnull final Node ... children)
       {
         final HBox hBox = new HBox(children);
         hBox.getStyleClass().setAll("list-cell", style);

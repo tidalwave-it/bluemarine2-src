@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
@@ -56,7 +55,7 @@ public class Main extends JavaFXSpringApplication
           }
       }
 
-    public static void main (final @Nonnull String ... args)
+    public static void main (@Nonnull final String ... args)
       {
         try
           {
@@ -76,7 +75,7 @@ public class Main extends JavaFXSpringApplication
       }
 
     @Override
-    protected void onStageCreated (final @Nonnull ApplicationContext applicationContext)
+    protected void onStageCreated (@Nonnull final ApplicationContext applicationContext)
       {
         applicationContext.getBean(Initializer.class).boot();
       }

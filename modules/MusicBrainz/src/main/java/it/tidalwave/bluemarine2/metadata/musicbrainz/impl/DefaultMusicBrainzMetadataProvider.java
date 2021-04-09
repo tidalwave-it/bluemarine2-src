@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
@@ -80,8 +79,8 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RestResponse<ReleaseGroupList> findReleaseGroupByTitle (final @Nonnull String title,
-                                                                   final @Nonnull String ... includes)
+    public RestResponse<ReleaseGroupList> findReleaseGroupByTitle (@Nonnull final String title,
+                                                                   @Nonnull final String ... includes)
       throws IOException, InterruptedException
       {
         log.debug("findReleaseGroupByTitle({})", title);
@@ -95,8 +94,8 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RestResponse<ReleaseList> findReleaseListByToc (final @Nonnull String toc,
-                                                           final @Nonnull String ... includes)
+    public RestResponse<ReleaseList> findReleaseListByToc (@Nonnull final String toc,
+                                                           @Nonnull final String ... includes)
       throws IOException, InterruptedException
       {
         log.debug("findReleaseListByToc({}, {})", toc, includes);
@@ -110,9 +109,9 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> RestResponse<T> getResource (final @Nonnull ResourceType<T> resourceType,
-                                            final @Nonnull String id,
-                                            final @Nonnull String ... includes)
+    public <T> RestResponse<T> getResource (@Nonnull final ResourceType<T> resourceType,
+                                            @Nonnull final String id,
+                                            @Nonnull final String ... includes)
       throws IOException, InterruptedException
       {
         log.debug("getResource({}. {}, {})", resourceType, id, includes);
@@ -125,7 +124,7 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String includesToString (final @Nonnull String separator, final @Nonnull String ... includes)
+    private static String includesToString (@Nonnull final String separator, @Nonnull final String ... includes)
       {
         return Stream.of(includes).collect(joining("%2b", separator + "inc=", ""));
       }

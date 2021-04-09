@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -40,6 +39,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -67,9 +67,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     private static final Path PATH_PLACES = Paths.get("places");
 
-    /* VisibleForTesting */ static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
+    @VisibleForTesting static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
 
-    /* VisibleForTesting */ static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
+    @VisibleForTesting static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
@@ -112,7 +112,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public ThemesPhotoCollectionProvider (final @Nonnull String baseUrl)
+    public ThemesPhotoCollectionProvider (@Nonnull final String baseUrl)
       {
         super(baseUrl);
       }
@@ -123,7 +123,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (@Nonnull final MediaFolder parent)
       {
         return parent.finderOf(p -> List.of(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
@@ -146,7 +146,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> subjectsFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> subjectsFactory (@Nonnull final MediaFolder parent)
       {
         return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
                                                          .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -157,7 +157,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> placesFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> placesFactory (@Nonnull final MediaFolder parent)
       {
         return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
                                                        .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -168,7 +168,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
+    @VisibleForTesting List<GalleryDescription> parseThemes (@Nonnull final XPathExpression expr)
       {
         final String themeUrl = String.format(URL_THEMES_TEMPLATE, baseUrl);
         log.debug("parseThemes({}, {})", themeUrl, expr);

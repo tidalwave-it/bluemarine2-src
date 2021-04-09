@@ -1,0 +1,66 @@
+#set ($project_cc = $context.get("tidalwave.ci.view"))
+#set ($project_lc = ${project_cc.toLowerCase()})
+#set ($build_status = "https://img.shields.io/jenkins/s/http/services.tidalwave.it/ci/job/" + $project_cc + "_Build_from_Scratch.svg")
+#set ($ci_view = "http://services.tidalwave.it/ci/job/" + $project_cc)
+#set ($test_status = "https://img.shields.io/jenkins/t/http/services.tidalwave.it/ci/job/" + $project_cc + ".svg")
+#set ($coverage_status = "https://img.shields.io/jenkins/c/http/services.tidalwave.it/ci/job/" + $project_cc + ".svg")
+#set ($grade = "https://badgen.net/lgtm/grade/bitbucket/tidalwave/" + $project_lc + "-src/java")
+#set ($lines = "https://badgen.net/lgtm/lines/bitbucket/tidalwave/" + $project_lc + "-src/java")
+#set ($sec_alerts = "https://badgen.net/lgtm/alerts/bitbucket/tidalwave/" + $project_lc + "-src/java")
+#set ($lgtm = "https://lgtm.com/projects/b/tidalwave/" + $project_lc + "-src/")
+#set ($lgtm_alerts = "https://lgtm.com/projects/b/tidalwave/" + $project_lc + "-src/alerts/")
+
+[![Maven Central](https://img.shields.io/maven-central/v/${project.groupId}/thesefoolishthings.svg)]()
+[![Build Status]($build_status)]($ci_view)
+[![Test Status]($test_status)]($ci_view)
+[![Coverage]($coverage_status)]($ci_view)
+[![Lines]($lines)]($lgtm)
+[![Grade]($grade)]($lgtm)
+[![Total alerts]($sec_alerts)]($lgtm_alerts)
+
+
+#[[##]]# Introduction
+
+${project.description}
+
+${project.name} is **licensed** with the Apache license.
+
+
++ [Modules](bluemarine2-modules/index.html)
+
+#[[##]]# General information
+#[[###]]# Sources, issue tracker and continuous integration
+
+The primary source repository is on **[Bitbucket]($context.get("scm.repo.browse.url"))**, a secondary repository (synchronized in real time) is available on
+**[GitHub]($context.get("tidalwave.github.browse.url"))**.
+
+To checkout sources from Bitbucket:
+
+```shell
+> git clone $context.get("scm.repo.readonly.url")
+```
+
+To checkout sources from GitHub:
+
+```shell
+> git clone $context.get("tidalwave.github.readonly.url")
+```
+
+The issue tracker is hosted on the Atlassian Jira Cloud:
+
++ ${project.issueManagement.url}
+
+The **continuous integration** is available at:
+
++ Tidalwave CI server (primary): ${project.ciManagement.url}
++ Travis: https://travis-ci.org/github/tidalwave-it/bluemarine2-src
++ Bitbucket pipelines (demonstration only): https://bitbucket.org/tidalwave/bluemarine2-src/addon/pipelines/home
+
+There are also other **quality analysis tools** available:
+
++ LGTM: https://lgtm.com/projects/b/tidalwave/bluemarine2-src/
+
+#[[###]]# API documentation
+
+[Aggregate Javadoc](apidocs/index.html)
+

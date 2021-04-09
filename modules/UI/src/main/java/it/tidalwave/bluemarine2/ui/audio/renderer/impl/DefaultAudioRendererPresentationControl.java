@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl;
 
@@ -32,6 +31,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.stream.Collectors;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -116,7 +116,7 @@ public class DefaultAudioRendererPresentationControl
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         presentation.bind(properties,
                           prevAction, rewindAction, stopAction, pauseAction, playAction, fastForwardAction, nextAction);
@@ -126,7 +126,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onRenderAudioFileRequest (final @ListensTo @Nonnull RenderAudioFileRequest request)
+    @VisibleForTesting void onRenderAudioFileRequest (@ListensTo @Nonnull final RenderAudioFileRequest request)
       throws MediaPlayer.Exception
       {
         log.info("onRenderAudioFileRequest({})", request);
@@ -143,7 +143,7 @@ public class DefaultAudioRendererPresentationControl
      *
      ******************************************************************************************************************/
     @OnDeactivate
-    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
+    @VisibleForTesting OnDeactivate.Result onDeactivate()
       throws MediaPlayer.Exception
       {
         stop();
@@ -156,7 +156,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private void setAudioFile (final @Nonnull AudioFile audioFile)
+    private void setAudioFile (@Nonnull final AudioFile audioFile)
       throws MediaPlayer.Exception
       {
         log.info("setAudioFile({})", audioFile);
@@ -255,7 +255,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private void changeTrack (final @Nonnull AudioFile audioFile)
+    private void changeTrack (@Nonnull final AudioFile audioFile)
       throws MediaPlayer.Exception
       {
         final boolean wasPlaying = mediaPlayer.statusProperty().get().equals(PLAYING);
@@ -278,7 +278,7 @@ public class DefaultAudioRendererPresentationControl
      * Binds to the {@link MediaPlayer}.
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void bindMediaPlayer()
+    @VisibleForTesting void bindMediaPlayer()
       {
         log.debug("bindMediaPlayer()");
         final ObjectProperty<Status> status = mediaPlayer.statusProperty();
@@ -309,7 +309,7 @@ public class DefaultAudioRendererPresentationControl
      * Unbinds from the {@link MediaPlayer}.
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void unbindMediaPlayer()
+    @VisibleForTesting void unbindMediaPlayer()
       {
         log.debug("unbindMediaPlayer()");
         wrap(stopAction.enabled()).unbind();

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
@@ -106,7 +105,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         private final int firstResult;
         private final int maxResult;
 
-        public Params (final @Nonnull String string)
+        public Params (@Nonnull final String string)
           {
             final String[] parts = string.split(" @@@ ");
             objectId = parts[1];
@@ -178,9 +177,9 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000)
-    public void test_sequence (final @Nonnull String clientDeviceName,
-                               final @Nonnull String testSetName,
-                               final @Nonnull String sequenceName)
+    public void test_sequence (@Nonnull final String clientDeviceName,
+                               @Nonnull final String testSetName,
+                               @Nonnull final String sequenceName)
       throws Throwable
       {
         final AtomicInteger n = new AtomicInteger(0);
@@ -204,13 +203,13 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                                              (long)params.getMaxResult())
               {
                 @Override
-                public void updateStatus (final @Nonnull Browse.Status status)
+                public void updateStatus (@Nonnull final Browse.Status status)
                   {
                     log.info("updateStatus({})", status);
                   }
 
                 @Override
-                public void received (final @Nonnull ActionInvocation actionInvocation, final @Nonnull DIDLContent didl)
+                public void received (@Nonnull final ActionInvocation actionInvocation, @Nonnull final DIDLContent didl)
                   {
                     try
                       {
@@ -238,9 +237,9 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                   }
 
                 @Override
-                public void failure (final @Nonnull ActionInvocation invocation,
-                                     final @Nonnull UpnpResponse operation,
-                                     final @Nonnull String defaultMsg)
+                public void failure (@Nonnull final ActionInvocation invocation,
+                                     @Nonnull final UpnpResponse operation,
+                                     @Nonnull final String defaultMsg)
                   {
                     log.error("failure({}, {}, {})", invocation, operation, defaultMsg);
                     error.set(new RuntimeException("browse failure " + defaultMsg));
@@ -281,7 +280,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Collection<Params> toParams (final @Nonnull Path path)
+    private static Collection<Params> toParams (@Nonnull final Path path)
       throws IOException
       {
         return Files.readAllLines(path, UTF_8).stream().filter(s -> !s.startsWith("#")).map(Params::new).collect(toList());

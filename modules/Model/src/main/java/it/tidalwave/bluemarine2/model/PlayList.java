@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model;
 
@@ -78,7 +77,7 @@ public class PlayList<ENTITY>
      * @param   items           all the items - if empty, a playlist with a single element will be created
      *
      ******************************************************************************************************************/
-    public PlayList (final @Nonnull ENTITY currentItem, final @Nonnull Collection<ENTITY> items)
+    public PlayList (@Nonnull final ENTITY currentItem, @Nonnull final Collection<ENTITY> items)
       {
         this.items = new ArrayList<>(items.isEmpty() ? List.of(currentItem) : items);
         this.currentItem = Optional.of(currentItem);

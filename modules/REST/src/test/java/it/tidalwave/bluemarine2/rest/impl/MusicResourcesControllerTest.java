@@ -1,12 +1,10 @@
-    /*
- * #%L
+/*
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
@@ -132,7 +131,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "resources")
-    public void must_serve_REST_resource (final @Nonnull String url, final @Nonnull String expected)
+    public void must_serve_REST_resource (@Nonnull final String url, @Nonnull final String expected)
       throws IOException
       {
         // given

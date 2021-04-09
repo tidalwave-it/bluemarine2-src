@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -40,6 +39,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -100,7 +100,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public DiaryPhotoCollectionProvider (final @Nonnull String baseUrl)
+    public DiaryPhotoCollectionProvider (@Nonnull final String baseUrl)
       {
         super(baseUrl);
       }
@@ -110,7 +110,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      ******************************************************************************************************************/
     @Override
     @Nonnull
-    public PathAwareFinder findPhotos(final @Nonnull MediaFolder parent) {
+    public PathAwareFinder findPhotos(@Nonnull final MediaFolder parent) {
         return parent.finderOf(
                 p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
                         .boxed()
@@ -137,7 +137,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> entriesFactory (final @Nonnull MediaFolder parent, final int year)
+    private Collection<PathAwareEntity> entriesFactory (@Nonnull final MediaFolder parent, final int year)
       {
         return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                         .collect(toList());
@@ -147,7 +147,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseDiary (final int year)
+    @VisibleForTesting List<GalleryDescription> parseDiary (final int year)
       {
         final String diaryUrl = String.format(URL_DIARY_TEMPLATE, baseUrl, year);
         log.debug("parseDiary({})", diaryUrl);

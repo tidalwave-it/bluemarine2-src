@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model;
 
@@ -68,7 +67,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite<PathAwareE
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder finderOf (final @Nonnull Finder<PathAwareEntity> delegate)
+    public default PathAwareFinder finderOf (@Nonnull final Finder<PathAwareEntity> delegate)
       {
         return new PathAwareEntityFinderDelegate(this, delegate);
       }
@@ -82,7 +81,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite<PathAwareE
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public default PathAwareFinder finderOf (@Nonnull final Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         return new PathAwareEntityFinderDelegate(this, function);
       }

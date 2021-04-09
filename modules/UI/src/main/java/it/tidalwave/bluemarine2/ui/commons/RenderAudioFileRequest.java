@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.commons;
 
@@ -53,12 +52,12 @@ public class RenderAudioFileRequest
     @Nonnull
     private final List<AudioFile> list;
 
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile)
+    public RenderAudioFileRequest (@Nonnull final AudioFile audioFile)
       {
         this(audioFile, emptyList());
       }
 
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
+    public RenderAudioFileRequest (@Nonnull final AudioFile audioFile, @Nonnull final List<AudioFile> list)
       {
         this.audioFile = audioFile;
         this.list = List.copyOf(list);

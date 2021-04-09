@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
@@ -87,9 +86,9 @@ public interface DIDLAdapter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
-                                            final @Nonnegative int from,
-                                            final @Nonnegative int maxResults)
+    public default ContentHolder toContent (@Nonnull final BrowseFlag browseFlag,
+                                            @Nonnegative final int from,
+                                            @Nonnegative final int maxResults)
       throws Exception
       {
         final DIDLContent content = new DIDLContent();
