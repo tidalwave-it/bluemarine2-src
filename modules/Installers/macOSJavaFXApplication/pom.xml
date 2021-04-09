@@ -34,13 +34,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-installers</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-macos</artifactId>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II :: Installers :: JavaFX Application :: macOS</name>
     <description>This module creates a macOS application bundle.</description>
