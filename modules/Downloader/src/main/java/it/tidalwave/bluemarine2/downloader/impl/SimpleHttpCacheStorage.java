@@ -39,6 +39,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.net.MalformedURLException;
 import java.net.URL;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.apache.http.Header;
 import org.apache.http.HttpException;
 import org.apache.http.HttpResponse;
@@ -182,7 +183,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      * 
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ boolean isCachedResourcePresent (@Nonnull final String key)
+    @VisibleForTesting boolean isCachedResourcePresent (@Nonnull final String key)
       throws MalformedURLException
       {
         final Path cachePath = getCacheItemPath(new URL(key));

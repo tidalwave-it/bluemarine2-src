@@ -37,6 +37,7 @@ import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Value;
@@ -183,7 +184,7 @@ public class EmbeddedAudioMetadataImporter
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (@ListensTo final MediaItemImportRequest request)
+    @VisibleForTesting void onMediaItemImportRequest (@ListensTo final MediaItemImportRequest request)
       {
         request.getSha1().ifPresent(sha1 ->
           {

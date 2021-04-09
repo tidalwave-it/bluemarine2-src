@@ -36,6 +36,7 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
 import it.tidalwave.role.ui.Displayable;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
 import it.tidalwave.util.Finder;
@@ -112,7 +113,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         presentation.bind(properties, navigateUpAction);
       }
@@ -121,7 +122,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onOpenAudioExplorerRequest (@ListensTo @Nonnull final OpenAudioExplorerRequest request)
+    @VisibleForTesting void onOpenAudioExplorerRequest (@ListensTo @Nonnull final OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
@@ -132,7 +133,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */  void onDownloadComplete (@ListensTo @Nonnull final DownloadComplete notification)
+    @VisibleForTesting void onDownloadComplete (@ListensTo @Nonnull final DownloadComplete notification)
       {
         log.info("onDownloadComplete({})", notification);
 
@@ -151,7 +152,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @OnActivate
-    /* VisibleForTesting */ void onActivate()
+    @VisibleForTesting void onActivate()
       {
         presentation.focusOnMediaItems();
       }
@@ -162,7 +163,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @OnDeactivate
-    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
+    @VisibleForTesting OnDeactivate.Result onDeactivate()
       {
         log.debug("onDeactivate()");
 

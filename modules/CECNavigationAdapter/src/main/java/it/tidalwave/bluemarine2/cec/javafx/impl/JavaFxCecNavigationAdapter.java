@@ -30,6 +30,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.Map;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import javafx.scene.robot.Robot;
@@ -82,7 +83,7 @@ public class JavaFxCecNavigationAdapter
     @Inject
     private JavaFxFlowController flowController;
     
-    /* VisibleForTesting */ void onCecUserControlEventReceived (@Nonnull @ListensTo final CecUserControlEvent event)
+    @VisibleForTesting void onCecUserControlEventReceived (@Nonnull @ListensTo final CecUserControlEvent event)
       {
         log.debug("onCecUserControlEventReceived({})", event);
         Platform.runLater(() -> actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run());

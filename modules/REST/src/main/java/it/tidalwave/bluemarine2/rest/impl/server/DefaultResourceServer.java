@@ -38,6 +38,7 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import javax.servlet.DispatcherType;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
@@ -90,7 +91,8 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
+    @VisibleForTesting
+    public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
@@ -117,7 +119,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOffNotification (@ListensTo @Nonnull final PowerOffNotification notification)
+    @VisibleForTesting public void onPowerOffNotification (@ListensTo @Nonnull final PowerOffNotification notification)
       throws Exception
       {
         log.info("onPowerOffNotification({})", notification);

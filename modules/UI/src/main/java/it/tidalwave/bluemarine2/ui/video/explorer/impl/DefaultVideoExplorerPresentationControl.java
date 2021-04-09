@@ -32,6 +32,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.OpenVideoExplorerRequest;
 import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -48,8 +49,8 @@ public class DefaultVideoExplorerPresentationControl
   {
     @Inject
     private VideoExplorerPresentation presentation;
-    
-    /* VisibleForTesting */ void onOpenVideoExplorerRequest (@ListensTo @Nonnull final OpenVideoExplorerRequest request)
+
+    @VisibleForTesting void onOpenVideoExplorerRequest (@ListensTo @Nonnull final OpenVideoExplorerRequest request)
       {
         log.info("onOpenVideoExplorerRequest({})", request);
         presentation.showUp();

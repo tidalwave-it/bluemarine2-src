@@ -35,6 +35,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.ProtocolException;
@@ -124,7 +125,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         connectionManager = new PoolingHttpClientConnectionManager();
         connectionManager.setMaxTotal(200);
@@ -153,7 +154,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);
@@ -165,7 +166,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDownloadRequest (@ListensTo @Nonnull final DownloadRequest request)
+    @VisibleForTesting void onDownloadRequest (@ListensTo @Nonnull final DownloadRequest request)
       throws URISyntaxException
       {
         try

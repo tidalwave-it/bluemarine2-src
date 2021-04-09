@@ -34,6 +34,7 @@ import java.io.IOException;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.ProcessExecutor.ConsoleOutput;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -99,7 +100,7 @@ public class CecClientAdapter
      * At power on runs {@code cec-client}.
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnReceived (@Nonnull @ListensTo final PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnReceived (@Nonnull @ListensTo final PowerOnNotification notification)
       {
         try
           {

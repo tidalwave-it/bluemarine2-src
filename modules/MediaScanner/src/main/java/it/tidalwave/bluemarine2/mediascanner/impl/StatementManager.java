@@ -30,6 +30,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
@@ -101,7 +102,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddStatementsRequest (@ListensTo @Nonnull final AddStatementsRequest request)
+    @VisibleForTesting void onAddStatementsRequest (@ListensTo @Nonnull final AddStatementsRequest request)
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);

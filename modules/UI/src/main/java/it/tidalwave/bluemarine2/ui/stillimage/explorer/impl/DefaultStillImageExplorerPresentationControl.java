@@ -32,6 +32,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest;
 import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -48,8 +49,8 @@ public class DefaultStillImageExplorerPresentationControl
   {
     @Inject
     private StillImageExplorerPresentation presentation;
-    
-    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (@ListensTo @Nonnull final OpenStillImageExplorerRequest request)
+
+    @VisibleForTesting void onOpenStillImageExplorerRequest (@ListensTo @Nonnull final OpenStillImageExplorerRequest request)
       {
         log.info("onOpenStillImageExplorerRequest({})", request);
         presentation.showUp();

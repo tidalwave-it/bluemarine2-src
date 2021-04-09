@@ -30,6 +30,7 @@ import javax.annotation.Nonnull;
 import java.util.concurrent.CountDownLatch;
 import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -73,7 +74,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
+    @VisibleForTesting public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);

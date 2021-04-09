@@ -39,6 +39,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -146,7 +147,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseDiary (final int year)
+    @VisibleForTesting List<GalleryDescription> parseDiary (final int year)
       {
         final String diaryUrl = String.format(URL_DIARY_TEMPLATE, baseUrl, year);
         log.debug("parseDiary({})", diaryUrl);

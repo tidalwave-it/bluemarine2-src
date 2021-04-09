@@ -36,6 +36,7 @@ import java.util.stream.Stream;
 import java.io.IOException;
 import java.net.URLEncoder;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -104,7 +105,7 @@ public class MusicResourcesController
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPersistenceInitializedNotification (@ListensTo final PersistenceInitializedNotification notification)
+    @VisibleForTesting void onPersistenceInitializedNotification (@ListensTo final PersistenceInitializedNotification notification)
       throws IOException
       {
         log.info("onPersistenceInitializedNotification({})", notification);

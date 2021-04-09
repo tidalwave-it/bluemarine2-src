@@ -30,6 +30,7 @@ import javax.inject.Inject;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.beans.factory.ListableBeanFactory;
 import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.role.ui.UserAction;
@@ -80,7 +81,7 @@ public class DefaultMainScreenPresentationControl
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
                                                                    .values()
@@ -95,7 +96,7 @@ public class DefaultMainScreenPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (@Nonnull @ListensTo final PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (@Nonnull @ListensTo final PowerOnNotification notification)
       {
         presentation.showUp();
       }

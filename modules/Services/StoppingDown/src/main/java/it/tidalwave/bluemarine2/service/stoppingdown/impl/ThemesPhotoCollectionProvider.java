@@ -39,6 +39,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -66,9 +67,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     private static final Path PATH_PLACES = Paths.get("places");
 
-    /* VisibleForTesting */ static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
+    @VisibleForTesting static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
 
-    /* VisibleForTesting */ static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
+    @VisibleForTesting static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
@@ -167,7 +168,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (@Nonnull final XPathExpression expr)
+    @VisibleForTesting List<GalleryDescription> parseThemes (@Nonnull final XPathExpression expr)
       {
         final String themeUrl = String.format(URL_THEMES_TEMPLATE, baseUrl);
         log.debug("parseThemes({}, {})", themeUrl, expr);
