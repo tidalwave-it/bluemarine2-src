@@ -327,7 +327,7 @@ public final class RdfUtilities
           {
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
-            return new Id(toHexString(digestComputer.digest()));
+            return Id.of(toHexString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {
@@ -346,7 +346,7 @@ public final class RdfUtilities
           {
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
-            return new Id(Base64.getUrlEncoder().encodeToString(digestComputer.digest()));
+            return Id.of(Base64.getUrlEncoder().encodeToString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {

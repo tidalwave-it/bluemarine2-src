@@ -112,7 +112,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
         @Override @Nonnull
         public Optional<Id> getSource()
           {
-            return Optional.of(new Id("embedded")); // FIXME
+            return Optional.of(Id.of("embedded")); // FIXME
           }
       }
 
@@ -210,7 +210,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     @Override @Nonnull
     public Id getId()
       {
-        return new Id(path.toString());
+        return Id.of(path.toString());
       }
 
     @Override @Nonnull

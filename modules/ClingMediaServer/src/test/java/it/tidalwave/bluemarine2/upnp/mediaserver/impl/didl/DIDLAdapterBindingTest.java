@@ -132,7 +132,7 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
       {
         final Repository repository = mock(Repository.class);
         final MapBindingSet bindingSet = new MapBindingSet();
-        final Id artistId = new Id("urn:bluemarine:artist:john_doe");
+        final Id artistId = Id.of("urn:bluemarine:artist:john_doe");
         bindingSet.addBinding("artist", literalFor(artistId));
         bindingSet.addBinding("label", literalFor("John Doe"));
         bindingSet.addBinding("artist_type", literalFor(1));
@@ -144,7 +144,7 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
       {
         final Repository repository = mock(Repository.class);
         final MapBindingSet bindingSet = new MapBindingSet();
-        final Id recordId = new Id("urn:bluemarine:record:the_record");
+        final Id recordId = Id.of("urn:bluemarine:record:the_record");
         bindingSet.addBinding("record", literalFor(recordId));
         bindingSet.addBinding("label", literalFor("The record"));
         return new RepositoryRecord(repository, bindingSet);
@@ -153,6 +153,6 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
     @Nonnull
     private Entity createMockEntity()
       {
-        return new EntityWithRoles(r((Identifiable) () -> new Id("urn:bluemarine:something:foo_bar")));
+        return new EntityWithRoles(r((Identifiable) () -> Id.of("urn:bluemarine:something:foo_bar")));
       }
   }

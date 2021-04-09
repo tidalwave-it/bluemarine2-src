@@ -339,7 +339,7 @@ public class EmbeddedAudioMetadataImporter
 
         return (cddb.isPresent() && trackNumber.isPresent())
                 ? createSha1IdNew(cddb.get().getToc() + "/" + trackNumber.get())
-                : new Id(default_);
+                : Id.of(default_);
       }
 
     /*******************************************************************************************************************

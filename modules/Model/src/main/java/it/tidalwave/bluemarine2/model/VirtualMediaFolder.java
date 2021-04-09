@@ -111,7 +111,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
                                 @Nonnull final Optional<EntityFinderFactory> finderFactory)
       {
         // FIXME: review if first should be prioritised
-        super(r((Identifiable)() -> new Id(absolutePath(optionalParent, pathSegment).toString()),
+        super(r((Identifiable)() -> Id.of(absolutePath(optionalParent, pathSegment).toString()),
               Displayable.of(displayName)));
         this.path = absolutePath(optionalParent, pathSegment);
         this.optionalParent = optionalParent;

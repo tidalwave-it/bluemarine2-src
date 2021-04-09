@@ -161,13 +161,13 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         records.forEach(record -> pw.printf("  %s - %d tracks - %s%n",
                 displayNameOf(record),
                 record.findTracks().count(),
-                record.getSource().orElse(new Id("unknown"))));
+                record.getSource().orElse(Id.of("unknown"))));
         pw.printf("  COUNT OF ALL RECORDS RETRIEVED BY %d QUERIES%n", recordCountQueryCount);
         pw.printf("  ALL RECORDS RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
         final int artistCountQueryCount = getLatestQueryCount();
-        artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(new Id("unknown"))));
+        artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(Id.of("unknown"))));
         pw.printf("  COUNT OF ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistCountQueryCount);
         pw.printf("  ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistsQueryCount);
 
@@ -209,7 +209,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         records.forEach(record ->
           {
             pw.printf("%nRECORD %s:%n", displayNameOf(record));
-            pw.printf("  SOURCE:  %s%n", record.getSource().orElse(new Id("unknown")));
+            pw.printf("  SOURCE:  %s%n", record.getSource().orElse(Id.of("unknown")));
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 

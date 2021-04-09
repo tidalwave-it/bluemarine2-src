@@ -135,6 +135,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         return String.format("%02d/%02d %02d %s %s (%s) %s - %s",
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath,
-                             source.orElse(new Id("unknown")));
+                             source.orElse(Id.of("unknown")));
       }
   }

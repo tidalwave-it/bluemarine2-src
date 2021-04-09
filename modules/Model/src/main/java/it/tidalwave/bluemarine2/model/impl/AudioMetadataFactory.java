@@ -211,6 +211,6 @@ public final class AudioMetadataFactory
             return null;
           }
 
-        return new Id(string);
+        return Id.of(string);
       }
   }

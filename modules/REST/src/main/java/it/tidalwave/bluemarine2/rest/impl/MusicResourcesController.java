@@ -149,8 +149,8 @@ public class MusicResourcesController
       {
         log.info("getRecord({}, {}, {})", id, source, fallback);
         checkStatus();
-        final List<TrackResource> tracks = finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackResource::new);
-        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback,
+        final List<TrackResource> tracks = finalized(catalog.findTracks().inRecord(Id.of(id)), source, fallback, TrackResource::new);
+        return single(finalized(catalog.findRecords().withId(Id.of(id)), source, fallback,
                                 record -> new DetailedRecordResource(record, tracks)));
       }
 
@@ -167,7 +167,7 @@ public class MusicResourcesController
       {
         log.info("getRecordCoverArt({})", id);
         checkStatus();
-        return catalog.findTracks().inRecord(new Id(id))
+        return catalog.findTracks().inRecord(Id.of(id))
                                    .stream()
                                    .flatMap(track -> track.asMany(_AudioFileSupplier_).stream())
                                    .map(AudioFileSupplier::getAudioFile)
@@ -214,7 +214,7 @@ public class MusicResourcesController
       {
         log.info("getTrack({}, {}, {})", id, source, fallback);
         checkStatus();
-        return single(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackResource::new));
+        return single(finalized(catalog.findTracks().withId(Id.of(id)), source, fallback, TrackResource::new));
       }
 
     /*******************************************************************************************************************
@@ -254,7 +254,7 @@ public class MusicResourcesController
       {
         log.info("getAudioFile({}, {}, {})", id, source, fallback);
         checkStatus();
-        return single(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileResource::new));
+        return single(finalized(catalog.findAudioFiles().withId(Id.of(id)), source, fallback, AudioFileResource::new));
       }
 
     /*******************************************************************************************************************
@@ -271,7 +271,7 @@ public class MusicResourcesController
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
-        return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
+        return catalog.findAudioFiles().withId(Id.of(id)).optionalResult()
                                                           .map(_f(af -> audioFileContentResponse(af, rangeHeader)))
                                                           .orElseThrow(NotFoundException::new);
       }
@@ -287,7 +287,7 @@ public class MusicResourcesController
       {
         log.info("getAudioFileCoverArt({})", id);
         checkStatus();
-        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
+        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(Id.of(id)).optionalResult();
         log.debug(">>>> audioFile: {}", audioFile);
         return audioFile.flatMap(file -> file.getMetadata().getAll(ARTWORK).stream().findFirst())
                         .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
@@ -318,8 +318,7 @@ public class MusicResourcesController
                               @Nonnull final String fallback,
                               @Nonnull final Function<ENTITY, JSON> mapper)
       {
-        final FINDER f = finder.importedFrom(new Id(source))
-                                .withFallback(new Id(fallback));
+        final FINDER f = finder.importedFrom(Id.of(source)).withFallback(Id.of(fallback));
         return ((Finder<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder
                      .stream()
                      .map(mapper)

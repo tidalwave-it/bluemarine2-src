@@ -91,8 +91,8 @@ public final class BMMO
     /** Object of the {@link #P_IMPORTED_FROM} predicate that says that the subject was imported from MusicBrainz. */
     public static final Value O_SOURCE_MUSICBRAINZ      = FACTORY.createLiteral(S_O_SOURCE_MUSICBRAINZ);
 
-    public static final Id ID_SOURCE_EMBEDDED           = new Id(S_O_SOURCE_EMBEDDED);
-    public static final Id ID_SOURCE_MUSICBRAINZ        = new Id(S_O_SOURCE_MUSICBRAINZ);
+    public static final Id ID_SOURCE_EMBEDDED           = Id.of(S_O_SOURCE_EMBEDDED);
+    public static final Id ID_SOURCE_MUSICBRAINZ        = Id.of(S_O_SOURCE_MUSICBRAINZ);
 
     private static final String S_P_ALTO                              = NS + "alto";
     private static final String S_P_ARRANGER                          = NS + "arranger";

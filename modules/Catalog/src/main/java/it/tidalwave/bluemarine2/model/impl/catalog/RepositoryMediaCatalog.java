@@ -68,12 +68,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
 
     public void setSourceAsString (@Nonnull final String sourceAsString)
       {
-        setSource(new Id(sourceAsString));
+        setSource(Id.of(sourceAsString));
       }
 
     public void setFallbackAsString (@Nonnull final String fallbackAsString)
       {
-        setFallback(new Id(fallbackAsString));
+        setFallback(Id.of(fallbackAsString));
       }
 
     @Override @Nonnull
