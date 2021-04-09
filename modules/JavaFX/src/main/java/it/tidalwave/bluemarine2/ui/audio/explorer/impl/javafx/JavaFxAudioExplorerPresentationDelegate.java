@@ -75,13 +75,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
             selectedIndex = 0;
           }
 
-        public Memento (final @Nonnull ListView<PresentationModel> lvFiles)
+        public Memento (@Nonnull final ListView<PresentationModel> lvFiles)
           {
         // TODO: add further properties, such as the precise scroller position
             selectedIndex = lvFiles.getSelectionModel().getSelectedIndex();
           }
 
-        public void applyTo (final @Nonnull ListView<PresentationModel> lvFiles)
+        public void applyTo (@Nonnull final ListView<PresentationModel> lvFiles)
           {
             lvFiles.getSelectionModel().select(selectedIndex);
             lvFiles.scrollTo(selectedIndex);
@@ -121,25 +121,25 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
 
     @Override
-    public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
+    public void bind (@Nonnull final Properties properties, @Nonnull final UserAction upAction)
       {
         binder.bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
       }
 
     @Override
-    public void showUp (final @Nonnull Object control)
+    public void showUp (@Nonnull final Object control)
       {
       }
 
     @Override
-    public void populateBrowsers (final @Nonnull PresentationModel pm)
+    public void populateBrowsers (@Nonnull final PresentationModel pm)
       {
         binder.bindToggleButtons(hbBrowserButtons, pm);
       }
 
     @Override
-    public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
+    public void populateItems (@Nonnull final PresentationModel pm, @Nonnull final Optional<Object> optionalMemento)
       {
         binder.bind(lvFiles, pm, () ->
           {
@@ -152,7 +152,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
 
     @Override
-    public void renderDetails (final @Nonnull String entityDetails)
+    public void renderDetails (@Nonnull final String entityDetails)
       {
         vbDetails.getChildren().setAll(Stream.of(entityDetails.split("\n"))
                                              .map(s -> label("track-details", s))
@@ -172,7 +172,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
 
     @Override
-    public void setCoverArt (final @Nonnull Optional<URI> optionalCoverArtUri)
+    public void setCoverArt (@Nonnull final Optional<URI> optionalCoverArtUri)
       {
         ivCoverArt.setImage(optionalCoverArtUri.map(uri -> new Image(uri.toString())).orElse(null));
       }
@@ -187,7 +187,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @FXML
-    public void onKeyPressed (final @Nonnull KeyEvent event)
+    public void onKeyPressed (@Nonnull final KeyEvent event)
       {
         log.debug("onKeyPressed({})", event);
 

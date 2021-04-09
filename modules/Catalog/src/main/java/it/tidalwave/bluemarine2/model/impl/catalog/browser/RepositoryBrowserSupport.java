@@ -51,7 +51,7 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     @Nonnull
     protected final SimpleComposite<? extends Entity> compositeForRootEntity;
 
-    protected RepositoryBrowserSupport (final @Nonnull Function<MediaCatalog, Finder<? extends Entity>> finderFactory)
+    protected RepositoryBrowserSupport (@Nonnull final Function<MediaCatalog, Finder<? extends Entity>> finderFactory)
       {
         compositeForRootEntity = () -> finderFactory.apply(catalog).withContext(RepositoryBrowserSupport.this);
       }

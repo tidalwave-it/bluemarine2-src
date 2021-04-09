@@ -78,7 +78,7 @@ public class AppleScriptCaptureOneDao implements CaptureOneDao
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ C1Document parse (final @Nonnull String xml)
+    /* package */ C1Document parse (@Nonnull final String xml)
       throws JAXBException
       {
         final JAXBContext context = JAXBContext.newInstance(C1Document.class, C1Collection.class, C1Image.class);

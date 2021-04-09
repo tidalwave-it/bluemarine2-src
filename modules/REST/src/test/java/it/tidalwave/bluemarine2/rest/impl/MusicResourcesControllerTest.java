@@ -131,7 +131,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "resources")
-    public void must_serve_REST_resource (final @Nonnull String url, final @Nonnull String expected)
+    public void must_serve_REST_resource (@Nonnull final String url, @Nonnull final String expected)
       throws IOException
       {
         // given

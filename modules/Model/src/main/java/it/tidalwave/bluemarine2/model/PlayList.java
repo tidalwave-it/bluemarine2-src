@@ -77,7 +77,7 @@ public class PlayList<ENTITY>
      * @param   items           all the items - if empty, a playlist with a single element will be created
      *
      ******************************************************************************************************************/
-    public PlayList (final @Nonnull ENTITY currentItem, final @Nonnull Collection<ENTITY> items)
+    public PlayList (@Nonnull final ENTITY currentItem, @Nonnull final Collection<ENTITY> items)
       {
         this.items = new ArrayList<>(items.isEmpty() ? List.of(currentItem) : items);
         this.currentItem = Optional.of(currentItem);

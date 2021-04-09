@@ -63,7 +63,7 @@ public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentatio
     private final AudioExplorerPresentation delegate = nad.getDelegate();
             
     @Override
-    public void showUp (final @Nonnull Object control)  
+    public void showUp (@Nonnull final Object control)
       {
         delegate.showUp(control);
         flowController.showPresentation(nad.getNode(), control);

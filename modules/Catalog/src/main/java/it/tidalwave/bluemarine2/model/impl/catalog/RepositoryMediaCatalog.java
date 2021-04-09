@@ -66,12 +66,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Inject
     private Provider<Repository> repository;
 
-    public void setSourceAsString (final @Nonnull String sourceAsString)
+    public void setSourceAsString (@Nonnull final String sourceAsString)
       {
         setSource(new Id(sourceAsString));
       }
 
-    public void setFallbackAsString (final @Nonnull String fallbackAsString)
+    public void setFallbackAsString (@Nonnull final String fallbackAsString)
       {
         setFallback(new Id(fallbackAsString));
       }
@@ -113,7 +113,7 @@ public class RepositoryMediaCatalog implements MediaCatalog
       }
 
     @Nonnull
-    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (@Nonnull final FINDER finder)
       {
         return finder.importedFrom(getSource()).withFallback(getFallback());
       }

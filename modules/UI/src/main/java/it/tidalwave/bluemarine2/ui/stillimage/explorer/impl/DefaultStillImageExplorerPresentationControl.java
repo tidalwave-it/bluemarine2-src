@@ -49,7 +49,7 @@ public class DefaultStillImageExplorerPresentationControl
     @Inject
     private StillImageExplorerPresentation presentation;
     
-    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
+    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (@ListensTo @Nonnull final OpenStillImageExplorerRequest request)
       {
         log.info("onOpenStillImageExplorerRequest({})", request);
         presentation.showUp();

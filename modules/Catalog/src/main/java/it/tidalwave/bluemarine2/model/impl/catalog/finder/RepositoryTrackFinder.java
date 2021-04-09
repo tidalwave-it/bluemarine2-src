@@ -45,7 +45,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
   {
     private static final long serialVersionUID = 770942161753738572L;
 
-    private final static String QUERY_TRACKS = readSparql(RepositoryTrackFinder.class, "Tracks.sparql");
+    private static final String QUERY_TRACKS = readSparql(RepositoryTrackFinder.class, "Tracks.sparql");
 
     @Nonnull
     protected final Optional<Id> makerId;
@@ -58,7 +58,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryTrackFinder (final @Nonnull Repository repository)
+    public RepositoryTrackFinder (@Nonnull final Repository repository)
       {
         this(repository, Optional.empty(), Optional.empty());
       }
@@ -68,7 +68,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryTrackFinder (final @Nonnull RepositoryTrackFinder other, final @Nonnull Object override)
+    public RepositoryTrackFinder (@Nonnull final RepositoryTrackFinder other, @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryTrackFinder source = getSource(RepositoryTrackFinder.class, other, override);
@@ -81,9 +81,9 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryTrackFinder (final @Nonnull Repository repository,
-                                   final @Nonnull Optional<Id> makerId,
-                                   final @Nonnull Optional<Id> recordId)
+    private RepositoryTrackFinder (@Nonnull final Repository repository,
+                                   @Nonnull final Optional<Id> makerId,
+                                   @Nonnull final Optional<Id> recordId)
       {
         super(repository, "track");
         this.makerId = makerId;
@@ -96,7 +96,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder madeBy (final @Nonnull Id artistId)
+    public TrackFinder madeBy (@Nonnull final Id artistId)
       {
         return clonedWith(new RepositoryTrackFinder(repository, Optional.of(artistId), recordId));
       }
@@ -107,7 +107,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder inRecord (final @Nonnull Id recordId)
+    public TrackFinder inRecord (@Nonnull final Id recordId)
       {
         return clonedWith(new RepositoryTrackFinder(repository, makerId, Optional.of(recordId)));
       }

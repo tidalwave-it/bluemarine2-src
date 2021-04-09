@@ -49,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @Slf4j @ToString @DciRole(datumType = Entity.class)
 public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
   {
-    public EntityDIDLAdapter (final @Nonnull Entity datum, final @Nonnull ResourceServer server)
+    public EntityDIDLAdapter (@Nonnull final Entity datum, @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

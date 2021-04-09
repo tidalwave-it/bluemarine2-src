@@ -58,13 +58,13 @@ public class StoppingDownMediaServerService implements MediaServerService
     private PhotoCollectionProvider themesProvider;
 
     @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
+    public MediaFolder createRootFolder (@Nonnull final MediaFolder parent)
       {
         return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
       }
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> childrenFactory (@Nonnull final MediaFolder parent)
       {
         return List.of(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
                        new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));

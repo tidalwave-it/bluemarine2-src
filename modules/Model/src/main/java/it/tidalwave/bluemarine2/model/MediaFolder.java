@@ -67,7 +67,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite<PathAwareE
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder finderOf (final @Nonnull Finder<PathAwareEntity> delegate)
+    public default PathAwareFinder finderOf (@Nonnull final Finder<PathAwareEntity> delegate)
       {
         return new PathAwareEntityFinderDelegate(this, delegate);
       }
@@ -81,7 +81,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite<PathAwareE
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public default PathAwareFinder finderOf (@Nonnull final Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         return new PathAwareEntityFinderDelegate(this, function);
       }

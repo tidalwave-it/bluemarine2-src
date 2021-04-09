@@ -65,7 +65,7 @@ public class AudioMetadataFactoryTest
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "pathProvider")
-    public void must_properly_read_metadata (final @Nonnull TestSetTriple triple)
+    public void must_properly_read_metadata (@Nonnull final TestSetTriple triple)
       throws IOException
       {
         // when

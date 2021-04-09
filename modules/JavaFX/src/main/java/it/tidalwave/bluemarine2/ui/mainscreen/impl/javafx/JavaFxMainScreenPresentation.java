@@ -63,7 +63,7 @@ public class JavaFxMainScreenPresentation implements MainScreenPresentation
      *
      ******************************************************************************************************************/
     @Override
-    public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
+    public void bind (@Nonnull final Collection<UserAction> mainMenuActions, @Nonnull final UserAction powerOffAction)
       {
         delegate.bind(mainMenuActions, powerOffAction); 
       }

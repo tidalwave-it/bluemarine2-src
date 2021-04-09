@@ -49,9 +49,9 @@ public class AddStatementsRequest
     @Nonnull
     private final List<Statement> statements;
 
-    public AddStatementsRequest (final @Nonnull Resource subject,
-                                 final @Nonnull IRI predicate,
-                                 final @Nonnull Value object)
+    public AddStatementsRequest (@Nonnull final Resource subject,
+                                 @Nonnull final IRI predicate,
+                                 @Nonnull final Value object)
       {
         this(List.of(SimpleValueFactory.getInstance().createStatement(subject, predicate, object)));
       }

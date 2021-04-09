@@ -46,7 +46,7 @@ import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
 @DciRole(datumType = FileSystemMediaFolder.class, context = DefaultAudioExplorerPresentationControl.class)
 public class FileSystemMediaFolderDetailRendererSelectable extends DetailRendererSelectable<FileSystemMediaFolder>
   {
-    public FileSystemMediaFolderDetailRendererSelectable (final @Nonnull FileSystemMediaFolder folder) 
+    public FileSystemMediaFolderDetailRendererSelectable (@Nonnull final FileSystemMediaFolder folder)
       {
         super(folder);
       }

@@ -84,7 +84,7 @@ public class PhotoCollectionProviderTestSupport extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static List<String> dump (final @Nonnull PathAwareFinder finder)
+    protected static List<String> dump (@Nonnull final PathAwareFinder finder)
       {
         VirtualMediaFolder.EntityFinderFactory fff = t -> finder;
         final VirtualMediaFolder md = new VirtualMediaFolder(Optional.empty(), Paths.get("/"), "xxx", fff);

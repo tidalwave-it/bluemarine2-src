@@ -42,7 +42,7 @@ import static lombok.AccessLevel.PRIVATE;
 public final class NodeFactory
   {
     @Nonnull
-    public static Label label (final @Nonnull String style, final @Nonnull String content)
+    public static Label label (@Nonnull final String style, @Nonnull final String content)
       {
         final Label label = new Label(content);
         label.getStyleClass().setAll("list-cell", style);
@@ -50,7 +50,7 @@ public final class NodeFactory
       }
 
     @Nonnull
-    public static HBox hBox (final @Nonnull String style, final @Nonnull Node ... children)
+    public static HBox hBox (@Nonnull final String style, @Nonnull final Node ... children)
       {
         final HBox hBox = new HBox(children);
         hBox.getStyleClass().setAll("list-cell", style);

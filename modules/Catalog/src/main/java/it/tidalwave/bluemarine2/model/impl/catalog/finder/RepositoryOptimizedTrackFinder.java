@@ -50,15 +50,15 @@ public class RepositoryOptimizedTrackFinder extends RepositoryTrackFinder
     @Nonnull
     private final Optional<Integer> trackCount;
 
-    public RepositoryOptimizedTrackFinder (final @Nonnull Repository repository,
-                                           final @Nonnull Optional<Integer> trackCount)
+    public RepositoryOptimizedTrackFinder (@Nonnull final Repository repository,
+                                           @Nonnull final Optional<Integer> trackCount)
       {
         super(repository);
         this.trackCount = trackCount;
       }
 
-    public RepositoryOptimizedTrackFinder (final @Nonnull RepositoryOptimizedTrackFinder other,
-                                           final @Nonnull Object override)
+    public RepositoryOptimizedTrackFinder (@Nonnull final RepositoryOptimizedTrackFinder other,
+                                           @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryOptimizedTrackFinder source = getSource(RepositoryOptimizedTrackFinder.class, other, override);

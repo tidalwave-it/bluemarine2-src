@@ -45,8 +45,8 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "selectorProvider")
-    public void must_properly_parse_themes (final @Nonnull String selector,
-                                            final @Nonnull XPathExpression expression)
+    public void must_properly_parse_themes (@Nonnull final String selector,
+                                            @Nonnull final XPathExpression expression)
       throws Exception
       {
         // given

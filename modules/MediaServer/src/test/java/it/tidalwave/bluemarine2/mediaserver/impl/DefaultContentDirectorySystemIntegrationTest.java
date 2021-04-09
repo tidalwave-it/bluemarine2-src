@@ -74,7 +74,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
-    public void must_properly_expose_data (final @Nonnull String testSetName)
+    public void must_properly_expose_data (@Nonnull final String testSetName)
       throws Exception
       {
         // given

@@ -67,7 +67,7 @@ public class FileSystemMediaFolderFinder extends FinderSupport<PathAwareEntity, 
     // FIXME: implement a better filter looking at the file name suffix
     private final Predicate<? super Path> fileFilter = path -> !path.toFile().getName().equals(".DS_Store");
 
-    public FileSystemMediaFolderFinder (final @Nonnull FileSystemMediaFolderFinder other, final @Nonnull Object override)
+    public FileSystemMediaFolderFinder (@Nonnull final FileSystemMediaFolderFinder other, @Nonnull final Object override)
       {
         super(other, override);
         final FileSystemMediaFolderFinder source = getSource(FileSystemMediaFolderFinder.class, other, override);
@@ -82,7 +82,7 @@ public class FileSystemMediaFolderFinder extends FinderSupport<PathAwareEntity, 
       }
 
     @Override @Nonnull
-    public PathAwareFinder withPath (final @Nonnull Path path)
+    public PathAwareFinder withPath (@Nonnull final Path path)
       {
         throw new UnsupportedOperationException("Not supported yet."); // TODO
       }
@@ -98,7 +98,7 @@ public class FileSystemMediaFolderFinder extends FinderSupport<PathAwareEntity, 
                                                 .collect(toList()));
       }
 
-    private <T> T evaluateDirectoryStream (final @Nonnull Function<Stream<Path>, T> function)
+    private <T> T evaluateDirectoryStream (@Nonnull final Function<Stream<Path>, T> function)
       {
         if (!Files.exists(mediaFolder.getPath()))
           {

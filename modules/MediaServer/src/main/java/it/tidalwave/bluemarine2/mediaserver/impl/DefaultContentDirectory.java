@@ -96,7 +96,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> childrenFactory (@Nonnull final MediaFolder parent)
       {
         return List.of(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
                        new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
@@ -105,7 +105,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<MediaFolder> musicFactory (final @Nonnull MediaFolder parent)
+    private Collection<MediaFolder> musicFactory (@Nonnull final MediaFolder parent)
       {
         // TODO: filter by MIME type
         return entityBrowsers.stream()
@@ -115,14 +115,14 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<MediaFolder> servicesFactory (final @Nonnull MediaFolder parent)
+    private Collection<MediaFolder> servicesFactory (@Nonnull final MediaFolder parent)
       {
         return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
       }
 
     @Nonnull
-    private static MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
-                                                  final @Nonnull EntityBrowser browser)
+    private static MediaFolder createMediaFolder (@Nonnull final MediaFolder parent,
+                                                  @Nonnull final EntityBrowser browser)
       {
         final String fallBack = browser.getClass().getSimpleName();
         final String pathSegment = browser.maybeAs(_Identifiable_).map(i -> i.getId().stringValue()).orElse(fallBack);

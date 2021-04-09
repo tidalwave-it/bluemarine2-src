@@ -48,7 +48,7 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @DciRole(datumType = Record.class) @ToString @Slf4j
 public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
   {
-    public RecordDIDLAdapter (final @Nonnull Record datum, final @Nonnull ResourceServer server)
+    public RecordDIDLAdapter (@Nonnull final Record datum, @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

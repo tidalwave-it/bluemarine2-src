@@ -44,7 +44,7 @@ public class BlueMarine2ApplicationPresentationAssembler
     private JavaFxFlowController flowController;
 
     @Override
-    public void assemble (final @Nonnull JavaFXApplicationPresentationDelegate delegate)
+    public void assemble (@Nonnull final JavaFXApplicationPresentationDelegate delegate)
       {
         flowController.setContentPane(delegate.getSpContent());
         delegate.setBackspaceCallback(Optional.of(flowController::tryToDismissCurrentPresentation));

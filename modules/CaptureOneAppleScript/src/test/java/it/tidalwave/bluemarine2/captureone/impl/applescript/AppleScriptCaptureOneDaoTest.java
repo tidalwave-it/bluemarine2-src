@@ -62,7 +62,7 @@ public class AppleScriptCaptureOneDaoTest
         final Path actualDocumentDumpFile;
         final Path expectedDocumentDumpFile;
 
-        public TestSet (final @Nonnull String name)
+        public TestSet (@Nonnull final String name)
           {
             actualDocumentXmlFile = TEST_RESULTS.resolve(name + ".xml");
             expectedDocumentXmlFile = EXPECTED_RESULTS.resolve(name + ".xml");
@@ -116,7 +116,7 @@ public class AppleScriptCaptureOneDaoTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public static void dump (final @Nonnull Path path, final @Nonnull C1Document document)
+    public static void dump (@Nonnull final Path path, @Nonnull final C1Document document)
       throws IOException
       {
         Files.createDirectories(path.getParent());
@@ -131,9 +131,9 @@ public class AppleScriptCaptureOneDaoTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public static void dump (final @Nonnull PrintWriter pw,
-                             final @Nonnull String indent,
-                             final @Nonnull C1Collection collection)
+    public static void dump (@Nonnull final PrintWriter pw,
+                             @Nonnull final String indent,
+                             @Nonnull final C1Collection collection)
       {
         pw.println(indent + " * " + collection.getName());
         collection.getCollections().forEach(c -> dump(pw, indent + "  ", c));
@@ -143,7 +143,7 @@ public class AppleScriptCaptureOneDaoTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public static void dump (final @Nonnull PrintWriter pw, final @Nonnull String indent, final @Nonnull C1Image image)
+    public static void dump (@Nonnull final PrintWriter pw, @Nonnull final String indent, @Nonnull final C1Image image)
       {
         pw.println(indent + " * " + image.getName() + " (" + image.getPath() + ")");
       }

@@ -93,7 +93,7 @@ public class RestResponse<T>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public <U> Optional<U> map (final @Nonnull Function<? super T, ? extends U> mapper)
+    public <U> Optional<U> map (@Nonnull final Function<? super T, ? extends U> mapper)
       {
         return datum.map(mapper);
       }
@@ -109,7 +109,7 @@ public class RestResponse<T>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public <U> Optional<U> flatMap (final @Nonnull Function<? super T, Optional<U>> mapper)
+    public <U> Optional<U> flatMap (@Nonnull final Function<? super T, Optional<U>> mapper)
       {
         return datum.flatMap(mapper);
       }
@@ -121,7 +121,7 @@ public class RestResponse<T>
      * @param consumer  code to be executed if a value is present
      *
      ******************************************************************************************************************/
-    public void ifPresent (final @Nonnull Consumer<? super T> consumer)
+    public void ifPresent (@Nonnull final Consumer<? super T> consumer)
       {
         datum.ifPresent(consumer);
       }

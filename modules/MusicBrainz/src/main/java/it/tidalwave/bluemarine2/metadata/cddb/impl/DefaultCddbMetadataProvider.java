@@ -59,7 +59,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
+    public RestResponse<CddbAlbum> findCddbAlbum (@Nonnull final Metadata metadata)
       throws IOException, InterruptedException
       {
         return metadata.get(CDDB).map(_f(this::findCddbAlbum)).orElse(CddbResponse.empty());
@@ -69,7 +69,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      *
      ******************************************************************************************************************/
     @Nonnull
-    private RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Cddb cddb)
+    private RestResponse<CddbAlbum> findCddbAlbum (@Nonnull final Cddb cddb)
       throws IOException, InterruptedException
       {
         final String discId = cddb.getDiscId();

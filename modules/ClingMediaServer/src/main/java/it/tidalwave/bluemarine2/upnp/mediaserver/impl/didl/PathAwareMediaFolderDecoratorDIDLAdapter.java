@@ -43,8 +43,8 @@ import lombok.ToString;
 @Immutable @DciRole(datumType = PathAwareMediaFolderDecorator.class) @ToString
 public class PathAwareMediaFolderDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum,
-                                                     final @Nonnull ResourceServer server)
+    public PathAwareMediaFolderDecoratorDIDLAdapter (@Nonnull final PathAwareMediaFolderDecorator datum,
+                                                     @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

@@ -44,7 +44,7 @@ import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 @DciRole(datumType = MusicArtist.class, context = DefaultAudioExplorerPresentationControl.class)
 public class MusicArtistDetailRendererSelectable extends DetailRendererSelectable<MusicArtist>
   {
-    public MusicArtistDetailRendererSelectable (final @Nonnull MusicArtist artist) 
+    public MusicArtistDetailRendererSelectable (@Nonnull final MusicArtist artist)
       {
         super(artist);
       }

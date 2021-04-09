@@ -54,8 +54,8 @@ public class MainMenuItem
     @Getter @Nonnull
     private final UserAction action;
 
-    public MainMenuItem (final @Nonnull String displayNameKey,
-                         final @Nonnull String requestClassName,
+    public MainMenuItem (@Nonnull final String displayNameKey,
+                         @Nonnull final String requestClassName,
                          final int priority)
       throws ClassNotFoundException
       {

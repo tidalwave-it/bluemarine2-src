@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFacto
 public class StringFactory implements EntityFactoryFunction<String>
   {
     @Override @Nonnull
-    public String apply (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public String apply (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         return bindingSet.iterator().next().getValue().stringValue();
       }

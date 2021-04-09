@@ -119,7 +119,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       }
 
     @Test(dataProvider = "testSetNames") // see BMT-46
-    public void testFileSystemConsistency (final @Nonnull String testSetName)
+    public void testFileSystemConsistency (@Nonnull final String testSetName)
       throws Exception
       {
         final Path testSetPath = musicTestSets.resolve(testSetName);
@@ -153,7 +153,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       }
 
     @Test(dataProvider = "testSetNames", dependsOnMethods = "testFileSystemConsistency")
-    public void testScan (final @Nonnull String testSetName)
+    public void testScan (@Nonnull final String testSetName)
       throws Exception
       {
         // given

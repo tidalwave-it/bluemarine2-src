@@ -76,7 +76,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem)
+    public void setMediaItem (@Nonnull final MediaItem mediaItem)
       throws Exception
       {
         log.info("setMediaItem({})", mediaItem);

@@ -50,7 +50,7 @@ class CddbResponse<T> extends RestResponse<T>
      *
      *
      ******************************************************************************************************************/
-    public CddbResponse (final @Nonnull Optional<T> datum, final @Nonnull String responseStatus)
+    public CddbResponse (@Nonnull final Optional<T> datum, @Nonnull final String responseStatus)
       {
         super(datum, responseStatus);
       }
@@ -67,8 +67,8 @@ class CddbResponse<T> extends RestResponse<T>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static <X> CddbResponse<X> of (final @Nonnull ResponseEntity<String> response,
-                                          final @Nonnull Function<String, X> parser)
+    public static <X> CddbResponse<X> of (@Nonnull final ResponseEntity<String> response,
+                                          @Nonnull final Function<String, X> parser)
       {
         final int httpStatus = response.getStatusCodeValue();
 

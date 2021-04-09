@@ -63,7 +63,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      *
      ******************************************************************************************************************/
-    public MetadataSupport (final @Nonnull Path path)
+    public MetadataSupport (@Nonnull final Path path)
       {
         this(path, Optional.empty());
       }
@@ -74,7 +74,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Optional<T> get (final @Nonnull Key<T> key)
+    public <T> Optional<T> get (@Nonnull final Key<T> key)
       {
         return properties.containsKey(key) ? Optional.ofNullable((T)properties.get(key))
                                            : fallback.flatMap(fb -> fb.apply(key).get(key));
@@ -86,7 +86,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> T getAll (final @Nonnull Key<T> key)
+    public <T> T getAll (@Nonnull final Key<T> key)
       {
         final T list = (T)properties.get(key);
         return (list != null) ? list :
@@ -99,7 +99,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override
-    public boolean containsKey (final @Nonnull Key<?> key)
+    public boolean containsKey (@Nonnull final Key<?> key)
       {
         return properties.containsKey(key);
       }
@@ -132,7 +132,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull T value)
+    public <T> MediaItem.Metadata with (@Nonnull final Key<T> key, @Nonnull final T value)
       {
         final MetadataSupport clone = new MetadataSupport(path, fallback);
         clone.properties.putAll(this.properties);
@@ -152,7 +152,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public MediaItem.Metadata withFallback (final @Nonnull Function<Key<?>, MediaItem.Metadata> fallback)
+    public MediaItem.Metadata withFallback (@Nonnull final Function<Key<?>, MediaItem.Metadata> fallback)
       {
         final MetadataSupport clone = new MetadataSupport(path, Optional.of(fallback));
         clone.properties.putAll(this.properties);
@@ -165,7 +165,7 @@ public class MetadataSupport implements MediaItem.Metadata
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull Optional<T> value)
+    public <T> MediaItem.Metadata with (@Nonnull final Key<T> key, @Nonnull final Optional<T> value)
       {
         return value.map(t -> with(key, t)).orElse(this);
       }
@@ -175,7 +175,7 @@ public class MetadataSupport implements MediaItem.Metadata
      * FIXME: remove this, make it truly immutable.
      *
      ******************************************************************************************************************/
-    protected <V> void put (final @Nonnull Key<V> key, final @Nullable V value)
+    protected <V> void put (@Nonnull final Key<V> key, @Nullable final V value)
       {
         if (value != null)
           {

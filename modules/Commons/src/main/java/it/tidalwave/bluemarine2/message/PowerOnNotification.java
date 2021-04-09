@@ -49,7 +49,7 @@ public final class PowerOnNotification
     @Getter @Nonnull
     private final TypeSafeMap properties;
 
-    public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
+    public PowerOnNotification (@Nonnull final Map<Key<?>, Object> properties)
       {
         this.properties = TypeSafeMap.ofCloned(properties);
       }

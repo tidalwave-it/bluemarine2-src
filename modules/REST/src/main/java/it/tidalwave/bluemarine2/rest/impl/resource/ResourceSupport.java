@@ -45,13 +45,13 @@ public abstract class ResourceSupport
     private ResourceServer server;
 
     @Nonnull
-    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull Identifiable resource)
+    protected final String resourceUri (@Nonnull final String resourceType, @Nonnull final Identifiable resource)
       {
         return resourceUri(resourceType, resource.getId().stringValue());
       }
 
     @Nonnull
-    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull String resourceId)
+    protected final String resourceUri (@Nonnull final String resourceType, @Nonnull final String resourceId)
       {
         return server.absoluteUrl(String.format("rest/%s/%s", resourceType, resourceId));
       }

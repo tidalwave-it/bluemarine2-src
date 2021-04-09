@@ -41,7 +41,7 @@ import it.tidalwave.bluemarine2.model.spi.NamedEntity;
  **********************************************************************************************************************/
 public class NamedRecord extends NamedEntity implements Record
   {
-    public NamedRecord (final @Nonnull String displayName)
+    public NamedRecord (@Nonnull final String displayName)
       {
         super(displayName);
       }

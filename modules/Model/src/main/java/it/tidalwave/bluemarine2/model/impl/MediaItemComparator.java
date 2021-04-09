@@ -47,7 +47,7 @@ public class MediaItemComparator implements InMemorySortCriterion<As>
   {
     private static final long serialVersionUID = 3413093735254009245L;
 
-    private final static Comparator<As> COMPARATOR = (o1, o2) ->
+    private static final Comparator<As> COMPARATOR = (o1, o2) ->
       {
         try
           {
@@ -78,10 +78,10 @@ public class MediaItemComparator implements InMemorySortCriterion<As>
         return displayNameOf(o1).compareTo(displayNameOf(o2));
       };
 
-    private final static InMemorySortCriterion<As> DELEGATE = InMemorySortCriterion.of(COMPARATOR);
+    private static final InMemorySortCriterion<As> DELEGATE = InMemorySortCriterion.of(COMPARATOR);
 
     @Nonnull
-    private static String displayNameOf (final @Nonnull As object)
+    private static String displayNameOf (@Nonnull final As object)
       {
         return object.maybeAs(_Displayable_).map(Displayable::getDisplayName).orElse("???");
       }

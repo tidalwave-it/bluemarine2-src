@@ -57,7 +57,7 @@ public abstract class DIDLAdapterSupport<T extends As> implements DIDLAdapter
      *
      *
      ******************************************************************************************************************/
-    protected <D extends DIDLObject> D setCommonFields (final @Nonnull D didlObject)
+    protected <D extends DIDLObject> D setCommonFields (@Nonnull final D didlObject)
       {
         didlObject.setRestricted(false);
         didlObject.setCreator("blueMarine II"); // FIXME

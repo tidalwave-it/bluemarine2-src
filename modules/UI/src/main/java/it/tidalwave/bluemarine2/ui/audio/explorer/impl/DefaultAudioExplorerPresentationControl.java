@@ -121,7 +121,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
+    /* VisibleForTesting */ void onOpenAudioExplorerRequest (@ListensTo @Nonnull final OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
@@ -132,7 +132,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */  void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete notification)
+    /* VisibleForTesting */  void onDownloadComplete (@ListensTo @Nonnull final DownloadComplete notification)
       {
         log.info("onDownloadComplete({})", notification);
 
@@ -183,7 +183,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @Override
-    public void selectBrowser (final @Nonnull EntityBrowser browser)
+    public void selectBrowser (@Nonnull final EntityBrowser browser)
       {
         log.info("selectBrowser({})", browser);
         navigationStack.clear();
@@ -196,7 +196,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @Override
-    public void navigateTo (final @Nonnull Entity newMediaFolder)
+    public void navigateTo (@Nonnull final Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
         navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
@@ -209,7 +209,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @Override
-    public void renderDetails (final @Nonnull String details)
+    public void renderDetails (@Nonnull final String details)
       {
         presentation.renderDetails(details);
       }
@@ -232,7 +232,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @Override
-    public void requestCoverArt (final @Nonnull Optional<URL> optionalCoverArtUrl)
+    public void requestCoverArt (@Nonnull final Optional<URL> optionalCoverArtUrl)
       {
         log.debug("requestCoverArt({})", optionalCoverArtUrl);
         currentCoverArtUrl.set(optionalCoverArtUrl);
@@ -287,7 +287,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      * @param   folderAndMemento    the folder and the presentation memento
      *
      ******************************************************************************************************************/
-    private void populateItems (final @Nonnull FolderAndMemento folderAndMemento)
+    private void populateItems (@Nonnull final FolderAndMemento folderAndMemento)
       {
         log.debug("populateItems({})", folderAndMemento);
         this.currentFolder = folderAndMemento.getFolder();

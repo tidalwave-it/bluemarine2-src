@@ -65,7 +65,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public UpnpClient (final @Nonnull String serviceName)
+    public UpnpClient (@Nonnull final String serviceName)
       {
         this(serviceName, s -> true);
       }
@@ -73,7 +73,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public UpnpClient (final @Nonnull String serviceName, final @Nonnull Function<RemoteDevice, Boolean> filter)
+    public UpnpClient (@Nonnull final String serviceName, @Nonnull final Function<RemoteDevice, Boolean> filter)
       {
         serviceId = new UDAServiceId(serviceName);
         this.filter = filter;
@@ -102,7 +102,7 @@ public class UpnpClient implements Runnable
     private final RegistryListener listener = new DefaultRegistryListener()
       {
         @Override
-        public void remoteDeviceAdded (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
+        public void remoteDeviceAdded (@Nonnull final Registry registry, @Nonnull final RemoteDevice device)
           {
             final Service remoteService = device.findService(serviceId);
 
@@ -140,7 +140,7 @@ public class UpnpClient implements Runnable
           }
 
         @Override
-        public void remoteDeviceRemoved (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
+        public void remoteDeviceRemoved (@Nonnull final Registry registry, @Nonnull final RemoteDevice device)
           {
             final Service remoteService = device.findService(serviceId);
 
@@ -173,7 +173,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public void execute (final @Nonnull ActionCallback actionCallback)
+    public void execute (@Nonnull final ActionCallback actionCallback)
       {
         upnpService.getControlPoint().execute(actionCallback);
       }

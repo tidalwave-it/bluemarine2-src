@@ -97,10 +97,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
-    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
-                                                                       final @Nullable String otherTestSetName,
-                                                                       final @Nonnull Id source,
-                                                                       final @Nonnull Id fallbackSource)
+    public void must_properly_query_the_whole_catalog_in_various_ways (@Nonnull final String testSetName,
+                                                                       @Nullable final String otherTestSetName,
+                                                                       @Nonnull final Id source,
+                                                                       @Nonnull final Id fallbackSource)
       throws Exception
       {
         // given
@@ -126,7 +126,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void queryAndDump (final @Nonnull RepositoryMediaCatalog catalog, final @Nonnull Path dumpPath)
+    private void queryAndDump (@Nonnull final RepositoryMediaCatalog catalog, @Nonnull final Path dumpPath)
       throws IOException
       {
         log.info("queryAndDump(.., {})", dumpPath);
@@ -266,7 +266,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String displayNameOf (final @Nonnull MusicPerformer musicPerformer)
+    private String displayNameOf (@Nonnull final MusicPerformer musicPerformer)
       {
         final MusicArtist artist = musicPerformer.getMusicArtist();
         final Optional<Entity> role = musicPerformer.getRole();
@@ -278,7 +278,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String displayNameOf (final @Nonnull Entity entity)
+    private String displayNameOf (@Nonnull final Entity entity)
       {
         return String.format("%s (%s)", entity.as(_Displayable_).getDisplayName(), entity.as(_Identifiable_).getId());
       }

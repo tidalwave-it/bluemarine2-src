@@ -97,7 +97,7 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    @VisibleForTesting void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOnNotification({})", notification);
@@ -145,7 +145,7 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    @VisibleForTesting void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+    @VisibleForTesting void onPowerOffNotification (@ListensTo @Nonnull final PowerOffNotification notification)
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOffNotification({})", notification);
@@ -167,7 +167,7 @@ public class DefaultPersistence implements Persistence
      *
      ******************************************************************************************************************/
     @Override
-    public void exportToFile (final @Nonnull Path path)
+    public void exportToFile (@Nonnull final Path path)
       throws RDFHandlerException, IOException, RepositoryException
       {
         log.info("exportToFile({})", path);
@@ -204,7 +204,7 @@ public class DefaultPersistence implements Persistence
      *
      ******************************************************************************************************************/
     @Override
-    public <E extends Exception> void runInTransaction (final @Nonnull TransactionalTask<E> task)
+    public <E extends Exception> void runInTransaction (@Nonnull final TransactionalTask<E> task)
       throws E, RepositoryException
       {
         log.info("runInTransaction({})", task);
@@ -237,7 +237,7 @@ public class DefaultPersistence implements Persistence
      * @throws  RepositoryException
      *
      ******************************************************************************************************************/
-    private void importFromFile (final @Nonnull Path path)
+    private void importFromFile (@Nonnull final Path path)
       throws IOException, RepositoryException, RDFParseException
       {
         try (final RepositoryConnection connection = repository.getConnection();

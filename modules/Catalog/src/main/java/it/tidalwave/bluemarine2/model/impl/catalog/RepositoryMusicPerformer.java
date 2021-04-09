@@ -57,7 +57,7 @@ public class RepositoryMusicPerformer implements MusicPerformer
 //    @Delegate
 //    private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
-    public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryMusicPerformer (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
         final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue()

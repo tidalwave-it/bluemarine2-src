@@ -51,7 +51,7 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Getter
     private final int type;
 
-    public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryMusicArtist (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "artist");
         type = toInteger(bindingSet.getBinding("artist_type")).orElse(1);

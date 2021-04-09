@@ -49,7 +49,7 @@ import lombok.RequiredArgsConstructor;
 public class EntityBrowserDisplayable implements Displayable
   {
     // FIXME: use a real bundle
-    private final static Map<String, String> BUNDLE = new HashMap<>();
+    private static final Map<String, String> BUNDLE = new HashMap<>();
 
     static
       {

@@ -68,7 +68,7 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Getter @Nonnull
     private final Optional<String> gtin;
 
-    public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryRecord (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "record");
         diskNumber = toInteger(bindingSet.getBinding("disk_number"));

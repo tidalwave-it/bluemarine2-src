@@ -43,8 +43,8 @@ import lombok.ToString;
 @Immutable @DciRole(datumType = PathAwareEntityDecorator.class) @ToString
 public class PathAwareEntityDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum,
-                                                final @Nonnull ResourceServer server)
+    public PathAwareEntityDecoratorDIDLAdapter (@Nonnull final PathAwareEntityDecorator datum,
+                                                @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

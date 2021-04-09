@@ -64,7 +64,7 @@ public class JavaFxAudioRendererPresentation implements AudioRendererPresentatio
     private final AudioRendererPresentation delegate = nad.getDelegate();
             
     @Override
-    public void showUp (final @Nonnull Object control)  
+    public void showUp (@Nonnull final Object control)
       {
         delegate.showUp(control);
         flowController.get().showPresentation(nad.getNode(), control);

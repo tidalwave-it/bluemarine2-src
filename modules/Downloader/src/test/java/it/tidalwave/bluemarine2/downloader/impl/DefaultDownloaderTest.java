@@ -129,11 +129,11 @@ public class DefaultDownloaderTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "downloadDataProvider", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
-    public void testCache (final @Nonnull String urlAsString,
-                           final @Nonnull Option option,
+    public void testCache (@Nonnull final String urlAsString,
+                           @Nonnull final Option option,
                            final int expectedStatusCode,
-                           final @Nonnull String expectedContentFileName,
-                           final @Nonnull Origin expectedOrigin)
+                           @Nonnull final String expectedContentFileName,
+                           @Nonnull final Origin expectedOrigin)
       throws Exception
       {
         final URL url = new URL(urlAsString);

@@ -58,9 +58,9 @@ public class ResponseEntityIo
      *
      *
      ******************************************************************************************************************/
-    public static void store (final @Nonnull Path path,
-                              final @Nonnull ResponseEntity<?> response,
-                              final @Nonnull List<String> ignoredHeaders)
+    public static void store (@Nonnull final Path path,
+                              @Nonnull final ResponseEntity<?> response,
+                              @Nonnull final List<String> ignoredHeaders)
       {
           store(path, response, ignoredHeaders, Function.identity());
       }
@@ -69,10 +69,10 @@ public class ResponseEntityIo
      *
      *
      ******************************************************************************************************************/
-    public static void store (final @Nonnull Path path,
-                              final @Nonnull ResponseEntity<?> response,
-                              final @Nonnull List<String> ignoredHeaders,
-                              final @Nonnull Function<String, String> postProcessor)
+    public static void store (@Nonnull final Path path,
+                              @Nonnull final ResponseEntity<?> response,
+                              @Nonnull final List<String> ignoredHeaders,
+                              @Nonnull final Function<String, String> postProcessor)
       {
         try
           {
@@ -116,7 +116,7 @@ public class ResponseEntityIo
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ static Optional<ResponseEntity<String>> load (final @Nonnull Path path)
+    /* package */ static Optional<ResponseEntity<String>> load (@Nonnull final Path path)
       throws IOException
       {
         log.trace("load({})", path);

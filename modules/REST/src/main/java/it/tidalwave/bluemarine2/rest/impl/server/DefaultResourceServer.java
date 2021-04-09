@@ -81,7 +81,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public String absoluteUrl (final @Nonnull String type)
+    public String absoluteUrl (@Nonnull final String type)
       {
         return String.format("http://%s:%d/%s", ipAddress, port, type);
       }
@@ -90,7 +90,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    /* VisibleForTesting FIXME */ public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
@@ -117,7 +117,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+    /* VisibleForTesting FIXME */ public void onPowerOffNotification (@ListensTo @Nonnull final PowerOffNotification notification)
       throws Exception
       {
         log.info("onPowerOffNotification({})", notification);

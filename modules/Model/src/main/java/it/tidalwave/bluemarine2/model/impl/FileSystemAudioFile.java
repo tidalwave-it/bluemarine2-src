@@ -74,7 +74,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
      ******************************************************************************************************************/
     static class ArtistFallback extends NamedEntity implements MusicArtist
       {
-        public ArtistFallback (final @Nonnull String displayName)
+        public ArtistFallback (@Nonnull final String displayName)
           {
             super(displayName);
           }
@@ -132,7 +132,7 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
         @Nonnull
         private final Key<String> metadataKey;
 
-        public ArtistFallbackFinder (final @Nonnull ArtistFallbackFinder other, final @Nonnull Object override)
+        public ArtistFallbackFinder (@Nonnull final ArtistFallbackFinder other, @Nonnull final Object override)
           {
             super(other, override);
             final ArtistFallbackFinder source = getSource(ArtistFallbackFinder.class, other, override);
@@ -147,37 +147,37 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
           }
 
         @Override @Nonnull
-        public MusicArtistFinder withId (final @Nonnull Id id)
+        public MusicArtistFinder withId (@Nonnull final Id id)
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
         @Override @Nonnull
-        public MusicArtistFinder makerOf (final @Nonnull Id entityId)
+        public MusicArtistFinder makerOf (@Nonnull final Id entityId)
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
         @Override @Nonnull
-        public MusicArtistFinder importedFrom (final @Nonnull Optional<Id> optionalSource)
+        public MusicArtistFinder importedFrom (@Nonnull final Optional<Id> optionalSource)
           {
             return optionalSource.map(this::importedFrom).orElse(this);
           }
 
         @Override @Nonnull
-        public MusicArtistFinder importedFrom (final @Nonnull Id source)
+        public MusicArtistFinder importedFrom (@Nonnull final Id source)
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
         @Override @Nonnull
-        public MusicArtistFinder withFallback (final @Nonnull Optional<Id> optionalFallback)
+        public MusicArtistFinder withFallback (@Nonnull final Optional<Id> optionalFallback)
           {
             return optionalFallback.map(this::withFallback).orElse(this);
           }
 
         @Override @Nonnull
-        public MusicArtistFinder withFallback (final @Nonnull Id fallback)
+        public MusicArtistFinder withFallback (@Nonnull final Id fallback)
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
@@ -198,9 +198,9 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
     @Delegate
     private final PriorityAsSupport asSupport = new PriorityAsSupport(this);
 
-    public FileSystemAudioFile (final @Nonnull Path path,
-                                final @Nonnull PathAwareEntity parent,
-                                final @Nonnull Path basePath)
+    public FileSystemAudioFile (@Nonnull final Path path,
+                                @Nonnull final PathAwareEntity parent,
+                                @Nonnull final Path basePath)
       {
         this.path = path;
         this.parent = parent;

@@ -46,7 +46,7 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @DciRole(datumType = MusicArtist.class) @Slf4j
 public class MusicArtistDIDLAdapter extends DIDLAdapterSupport<MusicArtist>
   {
-    public MusicArtistDIDLAdapter (final @Nonnull MusicArtist datum, final @Nonnull ResourceServer server)
+    public MusicArtistDIDLAdapter (@Nonnull final MusicArtist datum, @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

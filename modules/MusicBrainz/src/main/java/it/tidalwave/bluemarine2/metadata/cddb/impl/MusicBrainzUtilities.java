@@ -50,7 +50,7 @@ public final class MusicBrainzUtilities
     // + - && || ! ( ) { } [ ] ^ " ~ * ? : \
     // See http://stackoverflow.com/questions/9323848/how-can-i-escape-a-group-of-special-characters-in-java-in-one-method
     @Nonnull
-    public static String escape (final @Nonnull String string)
+    public static String escape (@Nonnull final String string)
       {
         return
           URLEncoder.encode(

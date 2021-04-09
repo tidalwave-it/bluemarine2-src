@@ -101,7 +101,7 @@ public class MusicBrainzAudioMedatataImporter
   {
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
 
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     private static final String[] TOC_INCLUDES = { "aliases", "artist-credits", "labels", "recordings" };
 
@@ -310,7 +310,7 @@ public class MusicBrainzAudioMedatataImporter
          *
          **************************************************************************************************************/
         @Nonnull
-        public ReleaseMediumDisk withEmbeddedTitle (final @Nonnull String embeddedTitle)
+        public ReleaseMediumDisk withEmbeddedTitle (@Nonnull final String embeddedTitle)
           {
             return new ReleaseMediumDisk(release, medium, disc, alternative, embeddedTitle,
                                          similarity(pickTitle(), embeddedTitle));
@@ -411,7 +411,7 @@ public class MusicBrainzAudioMedatataImporter
          *
          **************************************************************************************************************/
         @Override
-        public boolean equals (final @Nullable Object other)
+        public boolean equals (@Nullable final Object other)
           {
             if (this == other)
               {
@@ -469,7 +469,7 @@ public class MusicBrainzAudioMedatataImporter
         private final String targetType;
 
         @Nonnull
-        public static Stream<RelationAndTargetType> toStream (final @Nonnull RelationList relationList)
+        public static Stream<RelationAndTargetType> toStream (@Nonnull final RelationList relationList)
           {
             return relationList.getRelation().stream()
                                              .map(rel -> new RelationAndTargetType(rel, relationList.getTargetType()));
@@ -487,7 +487,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Model> handleMetadata (final @Nonnull Metadata metadata)
+    public Optional<Model> handleMetadata (@Nonnull final Metadata metadata)
       throws InterruptedException, IOException
       {
         final ModelBuilder model                  = createModelBuilder();
@@ -577,8 +577,8 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseMediumDisk> markedAlternative (final @Nonnull List<ReleaseMediumDisk> inRmds,
-                                                       final @Nonnull String embeddedTitle)
+    private List<ReleaseMediumDisk> markedAlternative (@Nonnull final List<ReleaseMediumDisk> inRmds,
+                                                       @Nonnull final String embeddedTitle)
       {
         if (inRmds.size() <= 1)
           {
@@ -646,7 +646,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> markedAlternativeButTheFirstNotAlternative (final @Nonnull List<ReleaseMediumDisk> rmds)
+    private static List<ReleaseMediumDisk> markedAlternativeButTheFirstNotAlternative (@Nonnull final List<ReleaseMediumDisk> rmds)
       {
         if (countOfNotAlternative(rmds) <= 1)
           {
@@ -671,7 +671,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> markedAlternativeIfNotLeastCollection (final @Nonnull List<ReleaseMediumDisk> rmds)
+    private static List<ReleaseMediumDisk> markedAlternativeIfNotLeastCollection (@Nonnull final List<ReleaseMediumDisk> rmds)
       {
         final int leastSize = rmds.stream().filter(rmd -> !rmd.isAlternative())
                                            .mapToInt(rmd -> rmd.getDiskCount().orElse(1))
@@ -688,7 +688,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> markedAlternativeByTitleAffinity (final @Nonnull List<ReleaseMediumDisk> rmds)
+    private static List<ReleaseMediumDisk> markedAlternativeByTitleAffinity (@Nonnull final List<ReleaseMediumDisk> rmds)
       {
         final int bestScore = rmds.stream().filter(rmd -> !rmd.isAlternative())
                                            .mapToInt(ReleaseMediumDisk::getScore)
@@ -706,8 +706,8 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> markedAlternative (final @Nonnull List<ReleaseMediumDisk> rmds,
-                                                              final @Nonnull Predicate<ReleaseMediumDisk> predicate)
+    private static List<ReleaseMediumDisk> markedAlternative (@Nonnull final List<ReleaseMediumDisk> rmds,
+                                                              @Nonnull final Predicate<ReleaseMediumDisk> predicate)
       {
         return rmds.stream().map(rmd -> rmd.alternativeIf(predicate.test(rmd))).collect(toList());
       }
@@ -723,8 +723,8 @@ public class MusicBrainzAudioMedatataImporter
      ******************************************************************************************************************/
     @Nonnull
     private static <T extends Comparable<?>> Optional<T> findFirstNotInAlternative (
-            final @Nonnull List<ReleaseMediumDisk> rmds,
-            final @Nonnull Function<ReleaseMediumDisk, Optional<T>> extractor)
+            @Nonnull final List<ReleaseMediumDisk> rmds,
+            @Nonnull final Function<ReleaseMediumDisk, Optional<T>> extractor)
       {
         return rmds.stream()
                    .filter(rmd -> !rmd.isAlternative())
@@ -738,7 +738,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnegative
-    private static int countOfNotAlternative (final @Nonnull List<ReleaseMediumDisk> rmds)
+    private static int countOfNotAlternative (@Nonnull final List<ReleaseMediumDisk> rmds)
       {
         return (int)rmds.stream().filter(rmd -> !rmd.isAlternative()).count();
       }
@@ -756,7 +756,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseMediumDisk rmd)
+    private ModelBuilder handleRelease (@Nonnull final Metadata metadata, @Nonnull final ReleaseMediumDisk rmd)
       throws IOException, InterruptedException
       {
         final Medium medium              = rmd.getMedium();
@@ -809,10 +809,10 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrack (final @Nonnull ReleaseMediumDisk rmd,
-                                      final @Nonnull Cddb cddb,
-                                      final @Nonnull IRI recordIri,
-                                      final @Nonnull DefTrackData track)
+    private ModelBuilder handleTrack (@Nonnull final ReleaseMediumDisk rmd,
+                                      @Nonnull final Cddb cddb,
+                                      @Nonnull final IRI recordIri,
+                                      @Nonnull final DefTrackData track)
       throws IOException, InterruptedException
       {
         final IRI trackIri                 = trackIriOf(track.getId());
@@ -855,10 +855,10 @@ public class MusicBrainzAudioMedatataImporter
     *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelations (final @Nonnull IRI signalIri,
-                                               final @Nonnull IRI trackIri,
-                                               final @Nonnull IRI recordIri,
-                                               final @Nonnull Recording recording)
+    private ModelBuilder handleTrackRelations (@Nonnull final IRI signalIri,
+                                               @Nonnull final IRI trackIri,
+                                               @Nonnull final IRI recordIri,
+                                               @Nonnull final Recording recording)
       {
         return createModelBuilder().with(recording.getRelationList()
                                                   .stream()
@@ -879,11 +879,11 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelation (final @Nonnull IRI signalIri,
-                                              final @Nonnull IRI trackIri,
-                                              final @Nonnull IRI recordIri,
-                                              final @Nonnull Recording recording,
-                                              final @Nonnull RelationAndTargetType ratt)
+    private ModelBuilder handleTrackRelation (@Nonnull final IRI signalIri,
+                                              @Nonnull final IRI trackIri,
+                                              @Nonnull final IRI recordIri,
+                                              @Nonnull final Recording recording,
+                                              @Nonnull final RelationAndTargetType ratt)
       {
         final Relation relation = ratt.getRelation();
         final String targetType = ratt.getTargetType();
@@ -938,7 +938,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<IRI> predicatesForArtists (final @Nonnull String type, final @Nonnull List<Attribute> attributes)
+    private static List<IRI> predicatesForArtists (@Nonnull final String type, @Nonnull final List<Attribute> attributes)
       {
         if (attributes.isEmpty())
           {
@@ -972,9 +972,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<ReleaseMediumDisk> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups,
-                                                        final @Nonnull Cddb cddb,
-                                                        final @Nonnull Validation validation)
+    private Collection<ReleaseMediumDisk> findReleases (@Nonnull final List<ReleaseGroup> releaseGroups,
+                                                        @Nonnull final Cddb cddb,
+                                                        @Nonnull final Validation validation)
       {
         return releaseGroups.stream()
                             .parallel()
@@ -997,9 +997,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<ReleaseMediumDisk> findReleases (final @Nonnull ReleaseList releaseList,
-                                                        final @Nonnull Cddb cddb,
-                                                        final @Nonnull Validation validation)
+    private Collection<ReleaseMediumDisk> findReleases (@Nonnull final ReleaseList releaseList,
+                                                        @Nonnull final Cddb cddb,
+                                                        @Nonnull final Validation validation)
       {
         return releaseList.getRelease().stream()
             .parallel()
@@ -1023,7 +1023,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      *
      ******************************************************************************************************************/
-    public static int similarity (final @Nonnull String a, final @Nonnull String b)
+    public static int similarity (@Nonnull final String a, @Nonnull final String b)
       {
         int score = StringUtils.getFuzzyDistance(a.toLowerCase(), b.toLowerCase(), Locale.UK);
         //
@@ -1055,7 +1055,7 @@ public class MusicBrainzAudioMedatataImporter
      * @return          {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private static boolean matchesFormat (final @Nonnull ReleaseMediumDisk rmd)
+    private static boolean matchesFormat (@Nonnull final ReleaseMediumDisk rmd)
       {
         final String format = rmd.getMedium().getFormat();
 
@@ -1078,9 +1078,9 @@ public class MusicBrainzAudioMedatataImporter
      * @return                  {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private boolean matchesTrackOffsets (final @Nonnull ReleaseMediumDisk rmd,
-                                         final @Nonnull Cddb requestedCddb,
-                                         final @Nonnull Validation validation)
+    private boolean matchesTrackOffsets (@Nonnull final ReleaseMediumDisk rmd,
+                                         @Nonnull final Cddb requestedCddb,
+                                         @Nonnull final Validation validation)
       {
         final Cddb cddb = rmd.getCddb();
 
@@ -1115,7 +1115,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<String> cddbAlternateTitleOf (final @Nonnull Metadata metadata)
+    private Optional<String> cddbAlternateTitleOf (@Nonnull final Metadata metadata)
       throws IOException, InterruptedException
       {
         final RestResponse<CddbAlbum> optionalAlbum = cddbMetadataProvider.findCddbAlbum(metadata);
@@ -1152,7 +1152,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<Attribute> getAttributes (final @Nonnull Relation relation)
+    private static List<Attribute> getAttributes (@Nonnull final Relation relation)
       {
         final List<Attribute> attributes = new ArrayList<>();
 
@@ -1181,7 +1181,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI artistIriOf (final @Nonnull String id)
+    private static IRI artistIriOf (@Nonnull final String id)
       {
         return BMMO.artistIriFor(createSha1IdNew(musicBrainzIriFor("artist", id).stringValue()));
       }
@@ -1192,7 +1192,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI trackIriOf (final @Nonnull String id)
+    private static IRI trackIriOf (@Nonnull final String id)
       {
         return BMMO.trackIriFor(createSha1IdNew(musicBrainzIriFor("track", id).stringValue()));
       }
@@ -1203,7 +1203,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
+    private static IRI recordIriOf (@Nonnull final Metadata metadata, @Nonnull final String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
         return BMMO.recordIriFor(cddb.map(value -> createSha1IdNew(value.getToc()))
@@ -1215,7 +1215,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
+    private IRI signalIriFor (@Nonnull final Cddb cddb, @Nonnegative final int trackNumber)
       {
         return BMMO.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
       }
@@ -1226,7 +1226,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI performanceIriFor (final @Nonnull String id)
+    private static IRI performanceIriFor (@Nonnull final String id)
       {
         return BMMO.performanceIriFor(createSha1IdNew(musicBrainzIriFor("performance", id).stringValue()));
       }
@@ -1237,7 +1237,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
+    private static IRI musicBrainzIriFor (@Nonnull final String resourceType, @Nonnull final String id)
       {
         return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
       }
@@ -1248,7 +1248,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static IRI predicateFor (final @Nonnull String role)
+    private static IRI predicateFor (@Nonnull final String role)
       {
         return Objects.requireNonNull(PERFORMER_MAP.get(role.toLowerCase()), "Cannot map role: " + role);
       }
@@ -1258,7 +1258,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      *
      ******************************************************************************************************************/
-    private static int scoreOf (final @Nonnull ReleaseGroup releaseGroup)
+    private static int scoreOf (@Nonnull final ReleaseGroup releaseGroup)
       {
         return Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
       }
@@ -1268,7 +1268,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      *
      ******************************************************************************************************************/
-    private void logArtists (final @Nonnull ReleaseGroup releaseGroup)
+    private void logArtists (@Nonnull final ReleaseGroup releaseGroup)
       {
         log.debug(">>>> {} {} {} artist: {}",
                   releaseGroup.getOtherAttributes().get(QNAME_SCORE),
@@ -1283,7 +1283,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Optional<Integer> emptyIfOne (final @Nonnull Optional<Integer> number)
+    private static Optional<Integer> emptyIfOne (@Nonnull final Optional<Integer> number)
       {
         return number.flatMap(n -> (n == 1) ? Optional.empty() : Optional.of(n));
       }
@@ -1294,7 +1294,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String toString (final @Nonnull Attribute attribute)
+    private static String toString (@Nonnull final Attribute attribute)
       {
         return String.format("%s %s (%s)", attribute.getContent(), attribute.getCreditedAs(), attribute.getValue());
       }

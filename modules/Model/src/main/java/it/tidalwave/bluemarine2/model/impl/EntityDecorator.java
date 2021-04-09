@@ -55,7 +55,7 @@ public class EntityDecorator extends EntityWithRoles
      * @param   additionalRoles     the additional roles
      *
      ******************************************************************************************************************/
-    public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Collection<Object> additionalRoles)
+    public EntityDecorator (@Nonnull final Entity delegate, @Nonnull final Collection<Object> additionalRoles)
       {
         super(delegate::asMany, additionalRoles);
         this.delegate = delegate;

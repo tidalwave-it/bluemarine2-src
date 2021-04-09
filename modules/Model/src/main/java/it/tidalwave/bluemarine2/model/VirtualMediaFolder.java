@@ -72,43 +72,43 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     @Nonnull
     private final EntityFinderFactory finderFactory;
 
-    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityCollectionFactory childrenFactory)
+    public VirtualMediaFolder (@Nonnull final MediaFolder parent,
+                               @Nonnull final Path pathSegment,
+                               @Nonnull final String displayName,
+                               @Nonnull final EntityCollectionFactory childrenFactory)
       {
         this(Optional.of(parent), pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
       }
 
-    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityCollectionFactory childrenFactory)
+    public VirtualMediaFolder (@Nonnull final Optional<? extends MediaFolder> optionalParent,
+                               @Nonnull final Path pathSegment,
+                               @Nonnull final String displayName,
+                               @Nonnull final EntityCollectionFactory childrenFactory)
       {
         this(optionalParent, pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
       }
 
-    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityFinderFactory finderFactory)
+    public VirtualMediaFolder (@Nonnull final MediaFolder parent,
+                               @Nonnull final Path pathSegment,
+                               @Nonnull final String displayName,
+                               @Nonnull final EntityFinderFactory finderFactory)
       {
         this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
-    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityFinderFactory finderFactory)
+    public VirtualMediaFolder (@Nonnull final Optional<? extends MediaFolder> optionalParent,
+                               @Nonnull final Path pathSegment,
+                               @Nonnull final String displayName,
+                               @Nonnull final EntityFinderFactory finderFactory)
       {
         this(optionalParent, pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
-    private VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
-                                final @Nonnull Path pathSegment,
-                                final @Nonnull String displayName,
-                                final @Nonnull Optional<EntityCollectionFactory> childrenSupplier,
-                                final @Nonnull Optional<EntityFinderFactory> finderFactory)
+    private VirtualMediaFolder (@Nonnull final Optional<? extends MediaFolder> optionalParent,
+                                @Nonnull final Path pathSegment,
+                                @Nonnull final String displayName,
+                                @Nonnull final Optional<EntityCollectionFactory> childrenSupplier,
+                                @Nonnull final Optional<EntityFinderFactory> finderFactory)
       {
         // FIXME: review if first should be prioritised
         super(r((Identifiable)() -> new Id(absolutePath(optionalParent, pathSegment).toString()),
@@ -137,8 +137,8 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       }
 
     @Nonnull
-    private static Path absolutePath (final @Nonnull Optional<? extends MediaFolder> optionalParent,
-                                      final @Nonnull Path pathSegment)
+    private static Path absolutePath (@Nonnull final Optional<? extends MediaFolder> optionalParent,
+                                      @Nonnull final Path pathSegment)
       {
         return optionalParent.map(parent -> parent.getPath().resolve(pathSegment)).orElse(pathSegment);
       }

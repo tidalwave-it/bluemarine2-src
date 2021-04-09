@@ -39,9 +39,9 @@ import it.tidalwave.bluemarine2.initializer.Initializer;
  **********************************************************************************************************************/
 public class Main
   {
-    private final static SpringContextHelper INSTANCE = new SpringContextHelper();
+    private static final SpringContextHelper INSTANCE = new SpringContextHelper();
 
-    public static void main (final @Nonnull String ... args)
+    public static void main (@Nonnull final String ... args)
       {
         try
           {

@@ -40,7 +40,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 @Slf4j
 public class FileComparisonUtilsWithPathNormalizer
   {
-    public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
+    public static void assertSameContents (@Nonnull final Path expectedPath, @Nonnull final Path actualPath)
       throws IOException
       {
         FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),

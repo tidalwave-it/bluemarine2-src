@@ -49,8 +49,8 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 @Slf4j @Immutable
 public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    public PathAwareDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum,
-                                          final @Nonnull ResourceServer server)
+    public PathAwareDecoratorDIDLAdapter (@Nonnull final PathAwareEntityDecorator datum,
+                                          @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

@@ -61,7 +61,7 @@ public class CddbAlbum
     private final Cddb cddb;
 
     @Nonnull
-    public static CddbAlbum of (final @Nonnull String stringResponse)
+    public static CddbAlbum of (@Nonnull final String stringResponse)
       {
         final String[] split = stringResponse.split("\n");
 
@@ -98,7 +98,7 @@ public class CddbAlbum
       }
 
     @Nonnull
-    public Optional<String> getProperty (final @Nonnull String key)
+    public Optional<String> getProperty (@Nonnull final String key)
       {
         return Optional.ofNullable(properties.get(key));
       }

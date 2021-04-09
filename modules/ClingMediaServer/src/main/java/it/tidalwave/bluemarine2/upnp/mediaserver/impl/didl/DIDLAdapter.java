@@ -86,9 +86,9 @@ public interface DIDLAdapter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
-                                            final @Nonnegative int from,
-                                            final @Nonnegative int maxResults)
+    public default ContentHolder toContent (@Nonnull final BrowseFlag browseFlag,
+                                            @Nonnegative final int from,
+                                            @Nonnegative final int maxResults)
       throws Exception
       {
         final DIDLContent content = new DIDLContent();

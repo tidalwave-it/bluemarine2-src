@@ -66,7 +66,7 @@ public interface TrackFinder extends SourceAwareFinder<Track, TrackFinder>,
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default TrackFinder madeBy (final @Nonnull MusicArtist artist)
+    public default TrackFinder madeBy (@Nonnull final MusicArtist artist)
       {
         return madeBy(artist.getId());
       }
@@ -91,7 +91,7 @@ public interface TrackFinder extends SourceAwareFinder<Track, TrackFinder>,
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default TrackFinder inRecord (final @Nonnull Record record)
+    public default TrackFinder inRecord (@Nonnull final Record record)
       {
         return inRecord(record.getId());
       }

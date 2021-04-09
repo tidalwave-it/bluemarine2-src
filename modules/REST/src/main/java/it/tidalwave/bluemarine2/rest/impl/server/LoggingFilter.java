@@ -50,14 +50,14 @@ public class LoggingFilter implements Filter
   {
 
     @Override
-    public void init (final @Nonnull FilterConfig filterConfig)
+    public void init (@Nonnull final FilterConfig filterConfig)
       {
       }
 
     @Override
-    public void doFilter (final @Nonnull ServletRequest req,
-                          final @Nonnull ServletResponse res,
-                          final @Nonnull FilterChain chain)
+    public void doFilter (@Nonnull final ServletRequest req,
+                          @Nonnull final ServletResponse res,
+                          @Nonnull final FilterChain chain)
       throws IOException, ServletException
       {
         final HttpServletRequest request = (HttpServletRequest)req;

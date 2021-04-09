@@ -94,7 +94,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Res createResource (final @Nonnull ProtocolInfo protocolInfo, final int size)
+    private Res createResource (@Nonnull final ProtocolInfo protocolInfo, final int size)
       {
         final Res resource = new Res(protocolInfo, null, computeUrl(size));
         resource.setResolution(size, size);

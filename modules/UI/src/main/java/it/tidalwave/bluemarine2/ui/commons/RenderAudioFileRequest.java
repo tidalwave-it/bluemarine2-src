@@ -52,12 +52,12 @@ public class RenderAudioFileRequest
     @Nonnull
     private final List<AudioFile> list;
 
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile)
+    public RenderAudioFileRequest (@Nonnull final AudioFile audioFile)
       {
         this(audioFile, emptyList());
       }
 
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
+    public RenderAudioFileRequest (@Nonnull final AudioFile audioFile, @Nonnull final List<AudioFile> list)
       {
         this.audioFile = audioFile;
         this.list = List.copyOf(list);

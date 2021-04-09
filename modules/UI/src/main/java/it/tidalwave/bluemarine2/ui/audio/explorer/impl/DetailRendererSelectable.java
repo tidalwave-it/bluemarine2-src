@@ -60,12 +60,12 @@ public abstract class DetailRendererSelectable<ENTITY> implements Selectable
         renderDetails();
       }
     
-    protected void renderDetails (final @Nonnull String details) 
+    protected void renderDetails (@Nonnull final String details)
       {
         control.renderDetails(details);
       }
     
-    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
+    protected void renderCoverArt (@Nonnull final Optional<URL> optionalImageUri)
       {
         control.requestCoverArt(optionalImageUri);
       }

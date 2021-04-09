@@ -99,7 +99,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public DiaryPhotoCollectionProvider (final @Nonnull String baseUrl)
+    public DiaryPhotoCollectionProvider (@Nonnull final String baseUrl)
       {
         super(baseUrl);
       }
@@ -109,7 +109,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      ******************************************************************************************************************/
     @Override
     @Nonnull
-    public PathAwareFinder findPhotos(final @Nonnull MediaFolder parent) {
+    public PathAwareFinder findPhotos(@Nonnull final MediaFolder parent) {
         return parent.finderOf(
                 p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
                         .boxed()
@@ -136,7 +136,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> entriesFactory (final @Nonnull MediaFolder parent, final int year)
+    private Collection<PathAwareEntity> entriesFactory (@Nonnull final MediaFolder parent, final int year)
       {
         return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                         .collect(toList());

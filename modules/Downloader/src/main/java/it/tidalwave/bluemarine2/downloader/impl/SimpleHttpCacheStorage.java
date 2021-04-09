@@ -90,7 +90,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Override
-    public void putEntry (final @Nonnull String key, final @Nonnull HttpCacheEntry entry)
+    public void putEntry (@Nonnull final String key, @Nonnull final HttpCacheEntry entry)
       throws IOException 
       {
         try 
@@ -124,7 +124,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Override
-    public HttpCacheEntry getEntry (final @Nonnull String key) 
+    public HttpCacheEntry getEntry (@Nonnull final String key)
       throws IOException 
       {
         log.debug("getEntry({})", key);
@@ -157,7 +157,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Override
-    public void removeEntry (final @Nonnull String key) 
+    public void removeEntry (@Nonnull final String key)
       throws IOException
       {
         log.debug("removeEntry({})", key);
@@ -170,7 +170,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Override
-    public void updateEntry (final @Nonnull String key, final @Nonnull HttpCacheUpdateCallback callback)
+    public void updateEntry (@Nonnull final String key, @Nonnull final HttpCacheUpdateCallback callback)
       throws IOException, HttpCacheUpdateException 
       {
         log.debug("updateEntry({}, {})", key, callback);
@@ -182,7 +182,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      * 
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ boolean isCachedResourcePresent (final @Nonnull String key)
+    /* VisibleForTesting */ boolean isCachedResourcePresent (@Nonnull final String key)
       throws MalformedURLException
       {
         final Path cachePath = getCacheItemPath(new URL(key));
@@ -199,7 +199,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Path getCacheItemPath (final @Nonnull URL url)
+    private Path getCacheItemPath (@Nonnull final URL url)
       throws MalformedURLException 
       {
         final int port = url.getPort();
@@ -214,7 +214,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static SessionInputBufferImpl sessionInputBufferFrom (final @Nonnull InputStream is) 
+    private static SessionInputBufferImpl sessionInputBufferFrom (@Nonnull final InputStream is)
       {
         final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
         final SessionInputBufferImpl sib = new SessionInputBufferImpl(metrics, 100);
@@ -228,7 +228,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static SessionOutputBufferImpl sessionOutputBufferFrom (final @Nonnull OutputStream os) 
+    private static SessionOutputBufferImpl sessionOutputBufferFrom (@Nonnull final OutputStream os)
       {
         final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
         final SessionOutputBufferImpl sob = new SessionOutputBufferImpl(metrics, 100);
@@ -242,7 +242,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static HttpResponse responseFrom (final @Nonnull HttpCacheEntry entry) 
+    private static HttpResponse responseFrom (@Nonnull final HttpCacheEntry entry)
       {
         final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
         response.setHeaders(entry.getAllHeaders());
@@ -255,8 +255,8 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private HttpCacheEntry entryFrom (final @Nonnull Path cacheContentPath, 
-                                             final @Nonnull HttpResponse response) 
+    private HttpCacheEntry entryFrom (@Nonnull final Path cacheContentPath,
+                                      @Nonnull final HttpResponse response)
       {
         final Date date = new Date(); // FIXME: force hit?
 //                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());

@@ -111,7 +111,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public ThemesPhotoCollectionProvider (final @Nonnull String baseUrl)
+    public ThemesPhotoCollectionProvider (@Nonnull final String baseUrl)
       {
         super(baseUrl);
       }
@@ -122,7 +122,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (@Nonnull final MediaFolder parent)
       {
         return parent.finderOf(p -> List.of(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
@@ -145,7 +145,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> subjectsFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> subjectsFactory (@Nonnull final MediaFolder parent)
       {
         return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
                                                          .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -156,7 +156,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<PathAwareEntity> placesFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> placesFactory (@Nonnull final MediaFolder parent)
       {
         return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
                                                        .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -167,7 +167,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
+    /* VisibleForTesting */ List<GalleryDescription> parseThemes (@Nonnull final XPathExpression expr)
       {
         final String themeUrl = String.format(URL_THEMES_TEMPLATE, baseUrl);
         log.debug("parseThemes({}, {})", themeUrl, expr);

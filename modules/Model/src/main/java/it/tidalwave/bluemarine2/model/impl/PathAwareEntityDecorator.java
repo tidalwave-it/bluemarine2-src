@@ -58,19 +58,19 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    protected PathAwareEntityDecorator (final @Nonnull Entity delegate,
-                                        final @Nonnull PathAwareEntity parent,
-                                        final @Nonnull Path pathSegment,
-                                        final @Nonnull Collection<Object> roles)
+    protected PathAwareEntityDecorator (@Nonnull final Entity delegate,
+                                        @Nonnull final PathAwareEntity parent,
+                                        @Nonnull final Path pathSegment,
+                                        @Nonnull final Collection<Object> roles)
       {
         super(delegate, roles);
         this.pathSegment = pathSegment;
         this.parent = parent;
       }
 
-    protected PathAwareEntityDecorator (final @Nonnull Entity delegate,
-                                        final @Nonnull PathAwareEntity parent,
-                                        final @Nonnull Path pathSegment)
+    protected PathAwareEntityDecorator (@Nonnull final Entity delegate,
+                                        @Nonnull final PathAwareEntity parent,
+                                        @Nonnull final Path pathSegment)
       {
         this(delegate, parent, pathSegment, Collections.emptyList());
       }
@@ -129,7 +129,7 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static PathAwareEntity wrappedEntity (final @Nonnull PathAwareEntity parent, final @Nonnull Entity entity)
+    protected static PathAwareEntity wrappedEntity (@Nonnull final PathAwareEntity parent, @Nonnull final Entity entity)
       {
         if (entity instanceof PathAwareEntity) // FIXME: possibly avoid calling
           {
@@ -146,7 +146,7 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Path idToPathSegment (final @Nonnull Entity entity)
+    private static Path idToPathSegment (@Nonnull final Entity entity)
       {
         return Paths.get(entity.as(_Identifiable_).getId().stringValue().replace('/', '_'));
       }

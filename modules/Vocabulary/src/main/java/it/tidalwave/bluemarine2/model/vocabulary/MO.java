@@ -42,7 +42,7 @@ import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class MO
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     private static final String NS = "http://purl.org/ontology/mo/";
 

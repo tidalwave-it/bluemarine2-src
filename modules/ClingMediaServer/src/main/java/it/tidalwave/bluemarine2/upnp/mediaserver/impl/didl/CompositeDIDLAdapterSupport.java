@@ -49,7 +49,7 @@ import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 @Immutable @Slf4j
 public abstract class CompositeDIDLAdapterSupport<T extends As> extends DIDLAdapterSupport<T>
   {
-    public CompositeDIDLAdapterSupport (final @Nonnull T datum, final @Nonnull ResourceServer server)
+    public CompositeDIDLAdapterSupport (@Nonnull final T datum, @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }
@@ -60,9 +60,9 @@ public abstract class CompositeDIDLAdapterSupport<T extends As> extends DIDLAdap
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
-                                    final @Nonnegative int from,
-                                    final @Nonnegative int maxResults)
+    public ContentHolder toContent (@Nonnull final BrowseFlag browseFlag,
+                                    @Nonnegative final int from,
+                                    @Nonnegative final int maxResults)
       throws Exception
       {
         final DIDLContent content = new DIDLContent();

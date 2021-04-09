@@ -65,7 +65,7 @@ public interface MusicArtistFinder extends SourceAwareFinder<MusicArtist, MusicA
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default MusicArtistFinder makerOf (final @Nonnull Identifiable entity)
+    public default MusicArtistFinder makerOf (@Nonnull final Identifiable entity)
       {
         return makerOf(entity.getId());
       }

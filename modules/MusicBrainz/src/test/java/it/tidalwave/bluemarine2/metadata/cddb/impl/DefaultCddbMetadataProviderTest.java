@@ -70,7 +70,7 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "trackResourcesProvider")
-    public void must_correctly_download_CDDB_resources (final @Nonnull TestSetTriple triple)
+    public void must_correctly_download_CDDB_resources (@Nonnull final TestSetTriple triple)
       throws Exception
       {
         // given

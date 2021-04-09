@@ -49,7 +49,7 @@ public class DefaultVideoExplorerPresentationControl
     @Inject
     private VideoExplorerPresentation presentation;
     
-    /* VisibleForTesting */ void onOpenVideoExplorerRequest (final @ListensTo @Nonnull OpenVideoExplorerRequest request)
+    /* VisibleForTesting */ void onOpenVideoExplorerRequest (@ListensTo @Nonnull final OpenVideoExplorerRequest request)
       {
         log.info("onOpenVideoExplorerRequest({})", request);
         presentation.showUp();

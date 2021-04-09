@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.model.finder.audio.MusicPerformerFinder;
  **********************************************************************************************************************/
 public class RepositoryPerformance extends RepositoryEntitySupport implements Performance
   {
-    public RepositoryPerformance (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryPerformance (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "performance");
       }

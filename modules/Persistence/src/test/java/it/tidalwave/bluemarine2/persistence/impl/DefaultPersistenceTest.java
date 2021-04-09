@@ -217,7 +217,7 @@ public class DefaultPersistenceTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private static void createPreviousStorageFrom (final @Nonnull Path path)
+    private static void createPreviousStorageFrom (@Nonnull final Path path)
       throws Exception
       {
         final Sail sail = new NativeStore(TEST_STORAGE_FOLDER.toFile());

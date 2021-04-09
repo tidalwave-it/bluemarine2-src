@@ -55,17 +55,17 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      * @param   additionalRoles     some additional roles
      *
      ******************************************************************************************************************/
-    public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
-                                          final @Nonnull PathAwareEntity parent,
-                                          final @Nonnull Path pathSegment,
-                                          final @Nonnull Collection<Object> additionalRoles)
+    public PathAwareMediaFolderDecorator (@Nonnull final Entity delegate,
+                                          @Nonnull final PathAwareEntity parent,
+                                          @Nonnull final Path pathSegment,
+                                          @Nonnull final Collection<Object> additionalRoles)
       {
         super(delegate, parent, pathSegment, additionalRoles);
       }
 
-    public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
-                                          final @Nonnull PathAwareEntity parent,
-                                          final @Nonnull Path pathSegment)
+    public PathAwareMediaFolderDecorator (@Nonnull final Entity delegate,
+                                          @Nonnull final PathAwareEntity parent,
+                                          @Nonnull final Path pathSegment)
       {
         this(delegate, parent, pathSegment, Collections.emptyList());
       }
@@ -103,8 +103,8 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static PathAwareFinder wrappedFinder (final @Nonnull MediaFolder parent,
-                                                  final @Nonnull Finder<? extends Entity> finder)
+    private static PathAwareFinder wrappedFinder (@Nonnull final MediaFolder parent,
+                                                  @Nonnull final Finder<? extends Entity> finder)
       {
         if (finder instanceof PathAwareEntityFinderDelegate)
           {

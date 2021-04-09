@@ -73,7 +73,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    /* VisibleForTesting FIXME */ public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);

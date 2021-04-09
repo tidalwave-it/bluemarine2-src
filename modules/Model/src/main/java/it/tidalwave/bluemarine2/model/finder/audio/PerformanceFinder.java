@@ -66,7 +66,7 @@ public interface PerformanceFinder extends SourceAwareFinder<Performance, Perfor
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PerformanceFinder ofTrack (final @Nonnull Track track)
+    public default PerformanceFinder ofTrack (@Nonnull final Track track)
       {
         return ofTrack(track.getId());
       }
@@ -91,7 +91,7 @@ public interface PerformanceFinder extends SourceAwareFinder<Performance, Perfor
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PerformanceFinder performedBy (final @Nonnull MusicArtist performer)
+    public default PerformanceFinder performedBy (@Nonnull final MusicArtist performer)
       {
         return performedBy(performer.getId());
       }

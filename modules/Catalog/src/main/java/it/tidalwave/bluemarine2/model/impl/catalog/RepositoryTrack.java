@@ -84,7 +84,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     private final Memoize<Optional<Performance>> performance = new Memoize<>();
 
-    public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryTrack (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
 

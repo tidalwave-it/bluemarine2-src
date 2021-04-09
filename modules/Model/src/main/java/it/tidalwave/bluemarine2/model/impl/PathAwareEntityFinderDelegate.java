@@ -86,8 +86,8 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      * @param   delegate        the delegate finder to provide data
      *
      ******************************************************************************************************************/
-    public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
-                                          final @Nonnull Finder<PathAwareEntity> delegate)
+    public PathAwareEntityFinderDelegate (@Nonnull final MediaFolder mediaFolder,
+                                          @Nonnull final Finder<PathAwareEntity> delegate)
       {
         this(mediaFolder, delegate, Optional.empty());
       }
@@ -108,8 +108,8 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      * @param   function        the function that provides children
      *
      ******************************************************************************************************************/
-    public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
-                                          final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public PathAwareEntityFinderDelegate (@Nonnull final MediaFolder mediaFolder,
+                                          @Nonnull final Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         this(mediaFolder, new SupplierBasedFinder<>(() -> function.apply(mediaFolder)), Optional.empty());
       }
@@ -119,8 +119,8 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public PathAwareEntityFinderDelegate (final @Nonnull PathAwareEntityFinderDelegate other,
-                                          final @Nonnull Object override)
+    public PathAwareEntityFinderDelegate (@Nonnull final PathAwareEntityFinderDelegate other,
+                                          @Nonnull final Object override)
       {
         super(other, override);
         final PathAwareEntityFinderDelegate source = getSource(PathAwareEntityFinderDelegate.class, other, override);
@@ -135,7 +135,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PathAwareFinder withPath (final @Nonnull Path path)
+    public PathAwareFinder withPath (@Nonnull final Path path)
       {
         return clonedWith(new PathAwareEntityFinderDelegate(mediaFolder, delegate, Optional.of(path)));
       }
@@ -171,7 +171,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<? extends PathAwareEntity> filteredByPath (final @Nonnull Path path)
+    private Optional<? extends PathAwareEntity> filteredByPath (@Nonnull final Path path)
       {
         log.debug("filteredByPath({})", path);
         return mediaFolder.getPath().equals(path)
@@ -198,7 +198,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<PathAwareEntity> childMatchingPathHead (final @Nonnull Path path)
+    private Optional<PathAwareEntity> childMatchingPathHead (@Nonnull final Path path)
       {
 //                assert filtered.size() == 1 or 0;
         log.debug(">>>> bulk query to {}, filtering in memory", delegate);
@@ -215,8 +215,8 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Optional<PathAwareEntity> childMatchingPath (final @Nonnull PathAwareEntity entity,
-                                                                final @Nonnull Path path)
+    private static Optional<PathAwareEntity> childMatchingPath (@Nonnull final PathAwareEntity entity,
+                                                                @Nonnull final Path path)
       {
         return ((PathAwareFinder)asSimpleComposite(entity).findChildren()).withPath(path).optionalResult();
       }
@@ -227,7 +227,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Nonnull // FIXME: this should be normally done by as()
-    private static SimpleComposite asSimpleComposite (final @Nonnull As object)
+    private static SimpleComposite asSimpleComposite (@Nonnull final As object)
       {
         return (object instanceof SimpleComposite) ? (SimpleComposite)object : object.as(_SimpleComposite_);
       }
@@ -239,7 +239,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      ******************************************************************************************************************/
     @Nullable
-    private Path relative (final @Nonnull Path path)
+    private Path relative (@Nonnull final Path path)
       {
         return mediaFolder.getParent().isEmpty() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
@@ -251,7 +251,7 @@ public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity
      *
      *
      ******************************************************************************************************************/
-    private static boolean sameHead (final @Nullable Path path1, final @Nullable Path path2)
+    private static boolean sameHead (@Nullable final Path path1, @Nullable final Path path2)
       {
         return (path1 != null) && (path2 != null) && path1.getName(0).equals(path2.getName(0));
       }

@@ -51,7 +51,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
 @DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
 public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<AudioFileSupplier>
   {
-    public AudioFileDetailRendererSelectable (final @Nonnull AudioFileSupplier audioFileSupplier)
+    public AudioFileDetailRendererSelectable (@Nonnull final AudioFileSupplier audioFileSupplier)
       {
         super(audioFileSupplier);
       }

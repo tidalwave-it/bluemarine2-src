@@ -73,7 +73,7 @@ public class DefaultMediaScanner
      * @param   folder      the folder
      *
      ******************************************************************************************************************/
-    public void process (final @Nonnull MediaFolder folder)
+    public void process (@Nonnull final MediaFolder folder)
       {
         log.info("process({})", folder);
 //        shared.reset();
@@ -88,7 +88,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onInternalMediaFolderScanRequest
-                                    (final @ListensTo @Nonnull InternalMediaFolderScanRequest request)
+                                    (@ListensTo @Nonnull final InternalMediaFolderScanRequest request)
       {
         try
           {
@@ -123,7 +123,7 @@ public class DefaultMediaScanner
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
+    /* VisibleForTesting */ void onMediaItemImportRequest (@ListensTo @Nonnull final MediaItemImportRequest request)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         if (request.getSha1().isEmpty())
@@ -139,7 +139,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    public byte[] sha1Of (final @Nonnull Path path)
+    public byte[] sha1Of (@Nonnull final Path path)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         try

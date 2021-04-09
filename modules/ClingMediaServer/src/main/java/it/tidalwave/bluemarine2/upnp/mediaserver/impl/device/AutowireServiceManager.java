@@ -41,16 +41,16 @@ public class AutowireServiceManager<T> extends DefaultServiceManager<T>
     @Nonnull
     private final AutowireCapableBeanFactory beanFactory;
 
-    public AutowireServiceManager (final @Nonnull AutowireCapableBeanFactory beanFactory,
-                                   final @Nonnull LocalService<T> service)
+    public AutowireServiceManager (@Nonnull final AutowireCapableBeanFactory beanFactory,
+                                   @Nonnull final LocalService<T> service)
       {
         super(service);
         this.beanFactory = beanFactory;
       }
 
-    public AutowireServiceManager (final @Nonnull AutowireCapableBeanFactory beanFactory,
-                                   final @Nonnull LocalService<T> service,
-                                   final @Nonnull Class<T> serviceClass)
+    public AutowireServiceManager (@Nonnull final AutowireCapableBeanFactory beanFactory,
+                                   @Nonnull final LocalService<T> service,
+                                   @Nonnull final Class<T> serviceClass)
       {
         super(service, serviceClass);
         this.beanFactory = beanFactory;

@@ -51,12 +51,12 @@ public interface MediaPlayer
      ******************************************************************************************************************/
     public static class Exception extends java.lang.Exception
       {
-        public Exception (final @Nonnull String message)
+        public Exception (@Nonnull final String message)
           {
             super(message);
           }
 
-        public Exception (final @Nonnull Throwable cause)
+        public Exception (@Nonnull final Throwable cause)
           {
             super(cause);
           }

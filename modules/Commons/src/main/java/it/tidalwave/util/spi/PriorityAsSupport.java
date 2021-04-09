@@ -55,7 +55,7 @@ public class PriorityAsSupport extends AsSupport implements As
     public static interface RoleProvider
       {
         @Nonnull
-        public <T> Collection<T> findRoles (final @Nonnull Class<T> type);
+        public <T> Collection<T> findRoles (@Nonnull final Class<T> type);
       }
 
     @Nonnull
@@ -69,7 +69,7 @@ public class PriorityAsSupport extends AsSupport implements As
         this(owner, Collections.emptyList());
       }
 
-    public PriorityAsSupport (@Nonnull final Object owner, final @Nonnull Collection<Object> rolesOrFactories)
+    public PriorityAsSupport (@Nonnull final Object owner, @Nonnull final Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
@@ -77,8 +77,8 @@ public class PriorityAsSupport extends AsSupport implements As
       }
 
     public PriorityAsSupport (@Nonnull final Object owner,
-                              final @Nonnull RoleProvider additionalRoleProvider,
-                              final @Nonnull Collection<Object> rolesOrFactories)
+                              @Nonnull final RoleProvider additionalRoleProvider,
+                              @Nonnull final Collection<Object> rolesOrFactories)
       {
         super(owner, rolesOrFactories);
         this.owner = owner;
@@ -96,7 +96,7 @@ public class PriorityAsSupport extends AsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type)
+    public <T> T as (@Nonnull final Class<T> type)
       {
         return as(type, As.Defaults.throwAsException(type));
       }
@@ -112,7 +112,7 @@ public class PriorityAsSupport extends AsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
+    public <T> T as (@Nonnull final Class<T> type, @Nonnull final NotFoundBehaviour<T> notFoundBehaviour)
       {
         return maybeAs(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
       }
@@ -128,7 +128,7 @@ public class PriorityAsSupport extends AsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Optional<T> maybeAs (final @Nonnull Class<T> type)
+    public <T> Optional<T> maybeAs (@Nonnull final Class<T> type)
       {
         return asMany(type).stream().findFirst();
       }
@@ -145,7 +145,7 @@ public class PriorityAsSupport extends AsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Collection<T> asMany (final @Nonnull Class<T> type)
+    public <T> Collection<T> asMany (@Nonnull final Class<T> type)
       {
         log.trace("asMany({}) - {}", type, owner);
         final List<T> unordered = new ArrayList<>(super.asMany(type));
@@ -169,7 +169,7 @@ public class PriorityAsSupport extends AsSupport implements As
      * subclass of its datum class.
      *
      ******************************************************************************************************************/
-    private static <T> void addInOrder (final @Nonnull List<T> list, final @Nonnull T item)
+    private static <T> void addInOrder (@Nonnull final List<T> list, @Nonnull final T item)
       {
         log.trace(">>>> add in order {} into {}", item, list);
         final Optional<T> firstAncestor = list.stream().filter(i -> isDatumAncestor(i, item)).findFirst();
@@ -181,7 +181,7 @@ public class PriorityAsSupport extends AsSupport implements As
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private static <T> boolean isDatumAncestor (final @Nonnull T a, final @Nonnull T b)
+    private static <T> boolean isDatumAncestor (@Nonnull final T a, @Nonnull final T b)
       {
         final DciRole aBoundDatumClass = a.getClass().getAnnotation(DciRole.class);
         final DciRole bBoundDatumClass = b.getClass().getAnnotation(DciRole.class);

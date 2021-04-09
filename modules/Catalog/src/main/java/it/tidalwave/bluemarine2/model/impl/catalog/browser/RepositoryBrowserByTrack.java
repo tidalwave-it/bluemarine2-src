@@ -39,7 +39,7 @@ import org.springframework.core.annotation.Order;
 @Order(40)
 public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
   {
-    private final static SortCriterion BY_TRACK_NAME = InMemorySortCriterion.of(Displayable.asComparing());
+    private static final SortCriterion BY_TRACK_NAME = InMemorySortCriterion.of(Displayable.asComparing());
 
     public RepositoryBrowserByTrack()
       {

@@ -65,7 +65,7 @@ public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, 
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
+    public default MusicPerformerFinder performerOf (@Nonnull final Performance performance)
       {
         return performerOf(performance.getId());
       }

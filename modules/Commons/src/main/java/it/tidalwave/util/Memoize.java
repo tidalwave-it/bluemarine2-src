@@ -47,7 +47,7 @@ public class Memoize<T>
       {
       }
 
-    public Memoize (final @Nonnull Supplier<T> supplier)
+    public Memoize (@Nonnull final Supplier<T> supplier)
       {
         this.supplier = supplier;
       }
@@ -59,7 +59,7 @@ public class Memoize<T>
       }
 
     @Nonnull
-    public T get (final @Nonnull Supplier<T> supplier)
+    public T get (@Nonnull final Supplier<T> supplier)
       {
         if (!initialized) // double checked locking
           {

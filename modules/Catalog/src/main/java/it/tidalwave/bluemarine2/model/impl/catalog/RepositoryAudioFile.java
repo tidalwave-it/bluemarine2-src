@@ -90,7 +90,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Inject
     private MediaFileSystem fileSystem;
 
-    public RepositoryAudioFile (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryAudioFile (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "audioFile", rdfsLabelOf(bindingSet.getBinding("path").getValue().stringValue()));
         this.path      = toPath(bindingSet.getBinding("path"));
@@ -180,7 +180,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Nonnull
-    private static String rdfsLabelOf (final @Nonnull String path)
+    private static String rdfsLabelOf (@Nonnull final String path)
       {
         return path.replaceAll("^.*/", "");
       }

@@ -104,8 +104,8 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
         must_find_the_correct_adapter_for_decorated_entities(createMockEntity(), PathAwareDecoratorDIDLAdapter.class);
       }
 
-    private void must_find_the_correct_adapter_for_decorated_entities (final @Nonnull Entity datum,
-                                                                       final @Nonnull Class<?> expectedAdapterClass)
+    private void must_find_the_correct_adapter_for_decorated_entities (@Nonnull final Entity datum,
+                                                                       @Nonnull final Class<?> expectedAdapterClass)
       {
         // given
         final PathAwareEntity parent = mock(PathAwareEntity.class);
@@ -118,8 +118,8 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
 
-    private void must_find_the_correct_adapter (final @Nonnull Entity datum,
-                                                final @Nonnull Class<?> expectedAdapterClass)
+    private void must_find_the_correct_adapter (@Nonnull final Entity datum,
+                                                @Nonnull final Class<?> expectedAdapterClass)
       {
         // when
         final DIDLAdapter adapter = datum.as(_DIDLAdapter_);

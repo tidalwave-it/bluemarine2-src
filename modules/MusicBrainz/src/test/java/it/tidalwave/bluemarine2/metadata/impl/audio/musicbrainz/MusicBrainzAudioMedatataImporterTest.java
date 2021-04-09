@@ -150,7 +150,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
      *
      *
      ******************************************************************************************************************/
-    private void verifyGlobalModel (final @Nonnull Model model, final @Nonnull String testSetName)
+    private void verifyGlobalModel (@Nonnull final Model model, @Nonnull final String testSetName)
       throws RDFHandlerException, IOException
       {
         final String name = "musicbrainz-" + testSetName + ".n3";
@@ -167,7 +167,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "trackResourcesProvider2")
-    public void must_correctly_retrieve_MusicBrainz_data (final @Nonnull TestSetTriple triple)
+    public void must_correctly_retrieve_MusicBrainz_data (@Nonnull final TestSetTriple triple)
       throws Exception
       {
         // given

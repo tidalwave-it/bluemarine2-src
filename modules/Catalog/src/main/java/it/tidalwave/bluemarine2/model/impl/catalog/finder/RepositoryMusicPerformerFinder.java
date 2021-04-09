@@ -45,7 +45,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
   {
     private static final long serialVersionUID = 4571966692541694627L;
 
-    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicPerformerFinder.class, "AllMusicArtists.sparql");
+    private static final String QUERY_ARTISTS = readSparql(RepositoryMusicPerformerFinder.class, "AllMusicArtists.sparql");
 
     @Nonnull
     private final Optional<Id> performanceId;
@@ -55,7 +55,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryMusicPerformerFinder (final @Nonnull Repository repository)
+    public RepositoryMusicPerformerFinder (@Nonnull final Repository repository)
       {
         this(repository, Optional.empty());
       }
@@ -65,8 +65,8 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryMusicPerformerFinder (final @Nonnull RepositoryMusicPerformerFinder other,
-                                           final @Nonnull Object override)
+    public RepositoryMusicPerformerFinder (@Nonnull final RepositoryMusicPerformerFinder other,
+                                           @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryMusicPerformerFinder source = getSource(RepositoryMusicPerformerFinder.class, other, override);
@@ -78,8 +78,8 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryMusicPerformerFinder (final @Nonnull Repository repository,
-                                            final @Nonnull Optional<Id> performanceId)
+    private RepositoryMusicPerformerFinder (@Nonnull final Repository repository,
+                                            @Nonnull final Optional<Id> performanceId)
       {
         super(repository, "artist");
         this.performanceId = performanceId;
@@ -91,7 +91,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public MusicPerformerFinder performerOf (final @Nonnull Id performanceId)
+    public MusicPerformerFinder performerOf (@Nonnull final Id performanceId)
       {
         return clonedWith(new RepositoryMusicPerformerFinder(repository, Optional.of(performanceId)));
       }

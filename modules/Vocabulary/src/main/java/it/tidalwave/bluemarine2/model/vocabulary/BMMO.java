@@ -43,7 +43,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BMMO
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     public static final String NS = "http://bluemarine.tidalwave.it/2015/04/mo/";
 
@@ -337,37 +337,37 @@ public final class BMMO
     public static final IRI P_PERFORMER_XYLOPHONE               = FACTORY.createIRI(S_P_PERFORMER_XYLOPHONE);
 
     @Nonnull
-    public static IRI audioFileIriFor (final @Nonnull String sha1)
+    public static IRI audioFileIriFor (@Nonnull final String sha1)
       {
         return FACTORY.createIRI("urn:bluemarine:audiofile:" + sha1);
       }
 
     @Nonnull
-    public static IRI signalIriFor (final @Nonnull Id id)
+    public static IRI signalIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:signal:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI trackIriFor (final @Nonnull Id id)
+    public static IRI trackIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:track:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI performanceIriFor (final @Nonnull Id id)
+    public static IRI performanceIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:performance:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI recordIriFor (final @Nonnull Id id)
+    public static IRI recordIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:record:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI artistIriFor (final @Nonnull Id id)
+    public static IRI artistIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }

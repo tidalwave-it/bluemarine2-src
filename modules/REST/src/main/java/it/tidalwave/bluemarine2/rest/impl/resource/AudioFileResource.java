@@ -66,7 +66,7 @@ public class AudioFileResource extends ResourceSupport
 
     private final Optional<String> coverArt;
 
-    public AudioFileResource (final @Nonnull AudioFile audioFile)
+    public AudioFileResource (@Nonnull final AudioFile audioFile)
       {
         this.id          = audioFile.getId().stringValue();
         this.displayName = audioFile.as(_Displayable_).getDisplayName();

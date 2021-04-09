@@ -55,13 +55,13 @@ public class DownloadRequest
     @Nonnull
     private final Set<Option> options;
 
-    public DownloadRequest (final @Nonnull URL url, final @Nonnull Option ... options) 
+    public DownloadRequest (@Nonnull final URL url, @Nonnull final Option ... options)
       {
         this.url = url;
         this.options = new HashSet<>(List.of(options));
       }
     
-    public boolean isOptionPresent (final @Nonnull Option option)
+    public boolean isOptionPresent (@Nonnull final Option option)
       {
         return options.contains(option);
       }

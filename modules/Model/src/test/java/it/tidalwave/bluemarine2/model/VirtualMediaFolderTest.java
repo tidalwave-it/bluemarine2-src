@@ -92,13 +92,13 @@ public class VirtualMediaFolderTest extends SpringTestSupport
 //            log.info("children: {}", childrenMap);
           }
 
-        private void createFolder (final @Nonnull String pathAsString)
+        private void createFolder (@Nonnull final String pathAsString)
           {
             findOrCreateFolder(Paths.get(pathAsString));
           }
 
         @Nonnull
-        private VirtualMediaFolder findOrCreateFolder (final @Nonnull Path path)
+        private VirtualMediaFolder findOrCreateFolder (@Nonnull final Path path)
           {
             //return folderMap.computeIfAbsent(path, k1 ->
             if (!folderMap.containsKey(path))
@@ -158,7 +158,7 @@ public class VirtualMediaFolderTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "pathsProvider")
-    public void must_correctly_find_children_by_path (final @Nonnull Path path)
+    public void must_correctly_find_children_by_path (@Nonnull final Path path)
       {
         // when
         final List<? extends PathAwareEntity> children = underTest.findChildren().withPath(path).results();

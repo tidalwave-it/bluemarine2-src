@@ -47,7 +47,7 @@ public class PropertyWrapper
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static BooleanProperty wrap (final @Nonnull BoundProperty<Boolean> property)
+    public static BooleanProperty wrap (@Nonnull final BoundProperty<Boolean> property)
       {
         final BooleanProperty jfxProperty = new SimpleBooleanProperty(property.get());
         property.addPropertyChangeListener(event ->

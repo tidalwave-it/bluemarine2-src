@@ -125,7 +125,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onRenderAudioFileRequest (final @ListensTo @Nonnull RenderAudioFileRequest request)
+    /* VisibleForTesting */ void onRenderAudioFileRequest (@ListensTo @Nonnull final RenderAudioFileRequest request)
       throws MediaPlayer.Exception
       {
         log.info("onRenderAudioFileRequest({})", request);
@@ -155,7 +155,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private void setAudioFile (final @Nonnull AudioFile audioFile)
+    private void setAudioFile (@Nonnull final AudioFile audioFile)
       throws MediaPlayer.Exception
       {
         log.info("setAudioFile({})", audioFile);
@@ -254,7 +254,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private void changeTrack (final @Nonnull AudioFile audioFile)
+    private void changeTrack (@Nonnull final AudioFile audioFile)
       throws MediaPlayer.Exception
       {
         final boolean wasPlaying = mediaPlayer.statusProperty().get().equals(PLAYING);

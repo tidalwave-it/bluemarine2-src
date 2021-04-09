@@ -116,7 +116,7 @@ public class JavaFXApplicationPresentationDelegate
      *
      ******************************************************************************************************************/
     @FXML
-    public void onKeyReleased (final @Nonnull KeyEvent event)
+    public void onKeyReleased (@Nonnull final KeyEvent event)
       {
         if (event.getCode().equals(KeyCode.BACK_SPACE))
           {

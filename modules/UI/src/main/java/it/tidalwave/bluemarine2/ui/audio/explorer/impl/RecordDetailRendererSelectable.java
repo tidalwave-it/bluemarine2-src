@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.audio.Record;
 @DciRole(datumType = Record.class, context = DefaultAudioExplorerPresentationControl.class)
 public class RecordDetailRendererSelectable extends DetailRendererSelectable<Record>
   {
-    public RecordDetailRendererSelectable (final @Nonnull Record record) 
+    public RecordDetailRendererSelectable (@Nonnull final Record record)
       {
         super(record);
       }

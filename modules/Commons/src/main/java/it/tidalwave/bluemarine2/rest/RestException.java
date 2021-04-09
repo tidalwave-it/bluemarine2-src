@@ -48,28 +48,28 @@ public class RestException extends RuntimeException // FIXME: runtime or checked
     @Nonnull
     private final Optional<HttpStatus> httpStatus;
 
-    public RestException (final @Nonnull String message)
+    public RestException (@Nonnull final String message)
       {
         super(message);
         responseStatus = Optional.empty();
         httpStatus = Optional.empty();
       }
 
-    public RestException (final @Nonnull String message, final @Nonnull String responseStatus)
+    public RestException (@Nonnull final String message, @Nonnull final String responseStatus)
       {
         super(message + ": " + responseStatus);
         this.responseStatus = Optional.of(responseStatus);
         this.httpStatus = Optional.empty();
       }
 
-    public RestException (final @Nonnull String message, final @Nonnull HttpStatus httpStatus)
+    public RestException (@Nonnull final String message, @Nonnull final HttpStatus httpStatus)
       {
         super(message);
         this.responseStatus = Optional.empty();
         this.httpStatus = Optional.of(httpStatus);
       }
 
-    public RestException (final @Nonnull Throwable cause)
+    public RestException (@Nonnull final Throwable cause)
       {
         super(cause);
         responseStatus = Optional.empty();

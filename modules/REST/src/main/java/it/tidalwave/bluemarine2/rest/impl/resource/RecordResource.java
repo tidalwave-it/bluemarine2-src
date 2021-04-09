@@ -67,7 +67,7 @@ public class RecordResource extends ResourceSupport
 
     protected String details;
 
-    public RecordResource (final @Nonnull Record record)
+    public RecordResource (@Nonnull final Record record)
       {
         this.id          = record.getId().stringValue();
         this.displayName = record.as(_Displayable_).getDisplayName();

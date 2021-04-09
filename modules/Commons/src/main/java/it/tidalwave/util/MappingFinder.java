@@ -47,13 +47,13 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder<TYPE>
     @Nonnull
     private final transient Function<TYPE, TYPE> mapper;
 
-    public MappingFinder (final @Nonnull Finder<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public MappingFinder (@Nonnull final Finder<TYPE> delegate, @Nonnull final Function<TYPE, TYPE> mapper)
       {
         super(delegate::results);
         this.mapper = mapper;
       }
 
-    public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
+    public MappingFinder (@Nonnull final MappingFinder other, @Nonnull final Object override)
       {
         super(other, override);
         final MappingFinder<TYPE> source = getSource(MappingFinder.class, other, override);

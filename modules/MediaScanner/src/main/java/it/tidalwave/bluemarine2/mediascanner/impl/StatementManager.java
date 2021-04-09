@@ -64,7 +64,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Resource subject, final @Nonnull IRI predicate, final @Nonnull Value literal)
+    public void requestAdd (@Nonnull final Resource subject, @Nonnull final IRI predicate, @Nonnull final Value literal)
       {
         requestAdd(new AddStatementsRequest(subject, predicate, literal));
       }
@@ -73,7 +73,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull List<Statement> statements)
+    public void requestAdd (@Nonnull final List<Statement> statements)
       {
         requestAdd(new AddStatementsRequest(statements));
       }
@@ -82,7 +82,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Model model)
+    public void requestAdd (@Nonnull final Model model)
       {
         requestAdd(new AddStatementsRequest(new ArrayList<>(model)));
       }
@@ -91,7 +91,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull AddStatementsRequest request)
+    public void requestAdd (@Nonnull final AddStatementsRequest request)
       {
         progress.incrementTotalInsertions();
         messageBus.publish(request);
@@ -101,7 +101,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request)
+    /* VisibleForTesting */ void onAddStatementsRequest (@ListensTo @Nonnull final AddStatementsRequest request)
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);

@@ -104,8 +104,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      *
      ******************************************************************************************************************/
     @Override
-    public BrowseResult browse (final @Nonnull String objectId,
-                                final @Nonnull BrowseFlag browseFlag,
+    public BrowseResult browse (@Nonnull final String objectId,
+                                @Nonnull final BrowseFlag browseFlag,
                                 final String filter,
                                 final long firstResult,
                                 final long maxResults,
@@ -143,7 +143,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Object findEntity (final @Nonnull BrowseParams params)
+    private Object findEntity (@Nonnull final BrowseParams params)
       {
         try
           {
@@ -181,7 +181,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
+    private static void log (@Nonnull final String message, @Nonnull final BrowseResult browseResult)
       {
         log.info("{} BrowseResult(..., {}, {}, {})",
                  message,

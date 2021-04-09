@@ -50,7 +50,7 @@ public class DetailedRecordResource extends RecordResource
   {
     private final List<TrackResource> tracks;
 
-    public DetailedRecordResource (final @Nonnull Record record, final @Nonnull List<TrackResource> tracks)
+    public DetailedRecordResource (@Nonnull final Record record, @Nonnull final List<TrackResource> tracks)
       {
         super(record);
         this.details = null;

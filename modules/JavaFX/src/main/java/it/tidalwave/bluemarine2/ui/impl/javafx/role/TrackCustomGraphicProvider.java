@@ -61,7 +61,7 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
       }
 
     @Nonnull
-    private static String trackLabel (final @Nonnull Metadata metadata)
+    private static String trackLabel (@Nonnull final Metadata metadata)
       {
         final int diskCount = metadata.get(DISK_COUNT).orElse(1);
         return String.format("%s%s.",

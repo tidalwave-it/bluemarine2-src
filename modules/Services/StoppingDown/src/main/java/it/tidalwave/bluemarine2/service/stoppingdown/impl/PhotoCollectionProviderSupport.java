@@ -100,7 +100,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (@Nonnull final MediaFolder parent)
       {
         throw new UnsupportedOperationException("must be implemented in subclasses");
       }
@@ -137,8 +137,8 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ Collection<PathAwareEntity> findPhotos (final @Nonnull MediaFolder parent,
-                                                                   final @Nonnull String galleryUrl)
+    /* VisibleForTesting */ Collection<PathAwareEntity> findPhotos (@Nonnull final MediaFolder parent,
+                                                                    @Nonnull final String galleryUrl)
       {
         log.debug("findPhotos({}, {}", parent, galleryUrl);
 
@@ -192,7 +192,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static String getAttribute (final @Nonnull Node node, final @Nonnull String attrName)
+    protected static String getAttribute (@Nonnull final Node node, @Nonnull final String attrName)
       throws DOMException
       {
         return node.getAttributes().getNamedItem(attrName).getNodeValue();

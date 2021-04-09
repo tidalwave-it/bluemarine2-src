@@ -54,7 +54,7 @@ public final class Formatters
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String xmlPrettyPrinted (final @Nonnull String xml)
+    public static String xmlPrettyPrinted (@Nonnull final String xml)
       {
         try
           {
@@ -78,7 +78,7 @@ public final class Formatters
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String format (final @Nonnull Duration duration)
+    public static String format (@Nonnull final Duration duration)
       {
         final long s = duration.get(ChronoUnit.SECONDS);
         final long hours = s / 3600;
@@ -95,7 +95,7 @@ public final class Formatters
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String toHexString (final @Nonnull byte[] bytes)
+    public static String toHexString (@Nonnull final byte[] bytes)
       {
         final StringBuilder builder = new StringBuilder();
 
@@ -114,7 +114,7 @@ public final class Formatters
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String toBase64String (final @Nonnull byte[] bytes)
+    public static String toBase64String (@Nonnull final byte[] bytes)
       {
         return  Base64.getUrlEncoder().encodeToString(bytes);
       }

@@ -95,7 +95,7 @@ public class DefaultMainScreenPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
+    /* VisibleForTesting */ void onPowerOnNotification (@Nonnull @ListensTo final PowerOnNotification notification)
       {
         presentation.showUp();
       }

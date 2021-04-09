@@ -54,14 +54,14 @@ public class EntityWithRoles implements Entity
         this(Collections.emptyList());
       }
 
-    public EntityWithRoles (final @Nonnull Collection<Object> roles)
+    public EntityWithRoles (@Nonnull final Collection<Object> roles)
       {
         this.asSupport = new PriorityAsSupport(this, roles);
         this.roles = roles;
       }
 
-    protected EntityWithRoles (final @Nonnull PriorityAsSupport.RoleProvider additionalRoleProvider,
-                               final @Nonnull Collection<Object> roles)
+    protected EntityWithRoles (@Nonnull final PriorityAsSupport.RoleProvider additionalRoleProvider,
+                               @Nonnull final Collection<Object> roles)
       {
         this.asSupport = new PriorityAsSupport(this, additionalRoleProvider, roles);
         this.roles = roles;

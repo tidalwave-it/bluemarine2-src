@@ -59,7 +59,7 @@ public class SortingRDFHandler implements RDFHandler
     private final List<Statement> statements = new ArrayList<>();
 
     @Override
-    public void handleStatement (final @Nonnull Statement statement)
+    public void handleStatement (@Nonnull final Statement statement)
       throws RDFHandlerException
       {
         statements.add(statement);

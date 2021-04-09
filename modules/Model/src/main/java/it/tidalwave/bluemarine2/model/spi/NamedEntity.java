@@ -41,7 +41,7 @@ import static it.tidalwave.util.Parameters.r;
  **********************************************************************************************************************/
 public class NamedEntity extends EntityWithRoles
   {
-    public NamedEntity (final @Nonnull String displayName)
+    public NamedEntity (@Nonnull final String displayName)
       {
         super(r(Displayable.of(displayName)));
       }

@@ -44,7 +44,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
   {
     private static final long serialVersionUID = -9049698559834098380L;
 
-    private final static String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
+    private static final String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
 
     @Nonnull
     private final Record record;
@@ -54,7 +54,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordImageFinder (final @Nonnull Repository repository, final @Nonnull Record record)
+    public RepositoryRecordImageFinder (@Nonnull final Repository repository, @Nonnull final Record record)
       {
         super(repository, "record");
         this.record = record;
@@ -65,8 +65,8 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordImageFinder (final @Nonnull RepositoryRecordImageFinder other,
-                                        final @Nonnull Object override)
+    public RepositoryRecordImageFinder (@Nonnull final RepositoryRecordImageFinder other,
+                                        @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryRecordImageFinder source = getSource(RepositoryRecordImageFinder.class, other, override);

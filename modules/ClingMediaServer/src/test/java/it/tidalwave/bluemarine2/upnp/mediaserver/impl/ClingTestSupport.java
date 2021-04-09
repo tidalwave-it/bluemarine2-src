@@ -48,7 +48,7 @@ public class ClingTestSupport extends SpringTestSupport
         SystemConfigurer.setupSlf4jBridgeHandler();
       }
 
-    protected ClingTestSupport (final @Nonnull String ... configLocations)
+    protected ClingTestSupport (@Nonnull final String ... configLocations)
       {
         super(LifeCycle.AROUND_CLASS, configLocations);
       }

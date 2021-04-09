@@ -61,7 +61,7 @@ import static it.tidalwave.role.ui.Displayable._Displayable_;
 @Immutable @DciRole(datumType = Track.class)
 public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
-    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer server)
+    public TrackDIDLAdapter (@Nonnull final Track track , @Nonnull final ResourceServer server)
       {
         super(track, server);
       }
@@ -106,7 +106,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
       }
 
     @Nonnull
-    private Res audioResourceOf (final @Nonnull AudioFile audioFile)
+    private Res audioResourceOf (@Nonnull final AudioFile audioFile)
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
         final Metadata audioFileMetadata = audioFile.getMetadata();
@@ -123,7 +123,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
       }
 
     @Nonnull
-    private static String durationToString (final @Nonnull Duration duration)
+    private static String durationToString (@Nonnull final Duration duration)
       {
         final int d = (int)duration.getSeconds();
         final int seconds = d % 60;

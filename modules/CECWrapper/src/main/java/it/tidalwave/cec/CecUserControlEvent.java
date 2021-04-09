@@ -85,7 +85,7 @@ public class CecUserControlEvent extends CecEvent
     @Nonnull
     private final UserControlCode userControlCode;
     
-    public CecUserControlEvent (final @Nonnull EventType eventType, final @Nonnull UserControlCode userControlCode) 
+    public CecUserControlEvent (@Nonnull final EventType eventType, @Nonnull final UserControlCode userControlCode)
       {
         super(eventType);
         this.userControlCode = userControlCode;

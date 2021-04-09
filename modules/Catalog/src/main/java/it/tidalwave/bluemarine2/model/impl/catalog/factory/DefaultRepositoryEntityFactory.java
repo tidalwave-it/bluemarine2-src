@@ -61,9 +61,9 @@ public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <E> E createEntity (final @Nonnull Repository repository,
-                               final @Nonnull Class<E> entityClass,
-                               final @Nonnull BindingSet bindingSet)
+    public <E> E createEntity (@Nonnull final Repository repository,
+                               @Nonnull final Class<E> entityClass,
+                               @Nonnull final BindingSet bindingSet)
       {
         return entityClass.cast(factoryMapByType.getOrDefault(entityClass, notFound(entityClass))
                                                 .apply(repository, bindingSet));
@@ -73,7 +73,7 @@ public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E> EntityFactoryFunction<E> notFound (final @Nonnull Class<E> entityClass)
+    private <E> EntityFactoryFunction<E> notFound (@Nonnull final Class<E> entityClass)
       {
         return (repository, bindingSet) ->
           {

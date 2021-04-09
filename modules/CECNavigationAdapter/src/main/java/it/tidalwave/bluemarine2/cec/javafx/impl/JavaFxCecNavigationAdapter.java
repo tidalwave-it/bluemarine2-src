@@ -82,20 +82,20 @@ public class JavaFxCecNavigationAdapter
     @Inject
     private JavaFxFlowController flowController;
     
-    /* VisibleForTesting */ void onCecUserControlEventReceived (final @Nonnull @ListensTo CecUserControlEvent event)
+    /* VisibleForTesting */ void onCecUserControlEventReceived (@Nonnull @ListensTo final CecUserControlEvent event)
       {
         log.debug("onCecUserControlEventReceived({})", event);
         Platform.runLater(() -> actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run());
       }
     
-    private void keyPress (final @Nonnull KeyCode code)
+    private void keyPress (@Nonnull final KeyCode code)
       {
         log.debug("keyPress({})", code);
         final Robot robot = new Robot();
         robot.keyPress(code);              
       }
     
-    private void keyRelease (final @Nonnull KeyCode code)
+    private void keyRelease (@Nonnull final KeyCode code)
       {
         log.debug("keyRelease({})", code);
         final Robot robot = new Robot();

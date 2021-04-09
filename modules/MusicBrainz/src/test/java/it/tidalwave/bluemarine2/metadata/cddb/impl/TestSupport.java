@@ -64,7 +64,7 @@ public class TestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Metadata mockMetadataFrom (final @Nonnull Path file)
+    protected Metadata mockMetadataFrom (@Nonnull final Path file)
       throws IOException
       {
         final List<String> lines = Files.readAllLines(file, UTF_8);

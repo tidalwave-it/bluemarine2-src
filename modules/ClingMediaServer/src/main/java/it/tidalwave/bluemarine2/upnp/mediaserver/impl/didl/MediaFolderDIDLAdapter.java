@@ -52,7 +52,7 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 @Immutable @DciRole(datumType = MediaFolder.class) @Slf4j @ToString
 public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
   {
-    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum, final @Nonnull ResourceServer server)
+    public MediaFolderDIDLAdapter (@Nonnull final MediaFolder datum, @Nonnull final ResourceServer server)
       {
         super(datum, server);
       }

@@ -56,13 +56,13 @@ public class SpringTestSupport
     @Nonnull
     private final String[] configLocations;
 
-    protected SpringTestSupport (final @Nonnull LifeCycle lifeCycle, final @Nonnull String ... configLocations)
+    protected SpringTestSupport (@Nonnull final LifeCycle lifeCycle, @Nonnull final String ... configLocations)
       {
         this.lifeCycle = lifeCycle;
         this.configLocations = configLocations;
       }
 
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
+    protected SpringTestSupport (@Nonnull final String ... configLocations)
       {
         this(LifeCycle.AROUND_METHOD, configLocations);
       }

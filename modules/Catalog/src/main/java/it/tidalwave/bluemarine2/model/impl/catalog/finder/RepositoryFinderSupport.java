@@ -158,13 +158,13 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
         private final List<Object> parameters = new ArrayList<>();
 
         @Nonnull
-        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Optional<? extends Value> value)
+        public QueryAndParameters withParameter (@Nonnull final String name, @Nonnull final Optional<? extends Value> value)
           {
             return value.map(v -> withParameter(name, v)).orElse(this);
           }
 
         @Nonnull
-        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Value value)
+        public QueryAndParameters withParameter (@Nonnull final String name, @Nonnull final Value value)
           {
             parameters.addAll(List.of(name, value));
             return this;
@@ -190,7 +190,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      *
      ******************************************************************************************************************/
-    protected RepositoryFinderSupport (final @Nonnull Repository repository, final @Nonnull String idName)
+    protected RepositoryFinderSupport (@Nonnull final Repository repository, @Nonnull final String idName)
       {
         this.repository = repository;
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
@@ -205,12 +205,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      *
      ******************************************************************************************************************/
-    private RepositoryFinderSupport (final @Nonnull Repository repository,
-                                     final @Nonnull Class<ENTITY> entityClass,
-                                     final @Nonnull String idName,
-                                     final @Nonnull Optional<Id> id,
-                                     final @Nonnull Optional<Value> source,
-                                     final @Nonnull Optional<Value> sourceFallback)
+    private RepositoryFinderSupport (@Nonnull final Repository repository,
+                                     @Nonnull final Class<ENTITY> entityClass,
+                                     @Nonnull final String idName,
+                                     @Nonnull final Optional<Id> id,
+                                     @Nonnull final Optional<Value> source,
+                                     @Nonnull final Optional<Value> sourceFallback)
       {
         this.repository = repository;
         this.entityClass = entityClass;
@@ -225,8 +225,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryFinderSupport (final @Nonnull RepositoryFinderSupport<ENTITY, FINDER> other,
-                                    final @Nonnull Object override)
+    public RepositoryFinderSupport (@Nonnull final RepositoryFinderSupport<ENTITY, FINDER> other,
+                                    @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
@@ -270,7 +270,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER withId (final @Nonnull Id id)
+    public FINDER withId (@Nonnull final Id id)
       {
         return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
@@ -286,7 +286,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource)
+    public FINDER importedFrom (@Nonnull final Optional<Id> optionalSource)
       {
         return optionalSource.map(this::importedFrom).orElse((FINDER)this);
       }
@@ -297,7 +297,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source)
+    public FINDER importedFrom (@Nonnull final Id source)
       {
         return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
@@ -313,7 +313,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER withFallback (final @Nonnull Optional<Id> sourceFallback)
+    public FINDER withFallback (@Nonnull final Optional<Id> sourceFallback)
       {
         return sourceFallback.map(this::withFallback).orElse((FINDER)this);
       }
@@ -324,7 +324,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER withFallback (final @Nonnull Id sourceFallback)
+    public FINDER withFallback (@Nonnull final Id sourceFallback)
       {
         return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
@@ -381,9 +381,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E> E query (final @Nonnull Function<QueryAndParameters, String> sparqlSelector,
-                         final @Nonnull Function<TupleQueryResult, E> finalizer,
-                         final @Nonnull Function<E, String> resultToString)
+    private <E> E query (@Nonnull final Function<QueryAndParameters, String> sparqlSelector,
+                         @Nonnull final Function<TupleQueryResult, E> finalizer,
+                         @Nonnull final Function<E, String> resultToString)
       {
         log.info("query() - {}", entityClass);
         final long baseTime = System.nanoTime();
@@ -418,9 +418,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <R> R query (final @Nonnull String sparql,
-                         final @Nonnull Function<TupleQueryResult, R> finalizer,
-                         final @Nonnull Object ... parameters)
+    private <R> R query (@Nonnull final String sparql,
+                         @Nonnull final Function<TupleQueryResult, R> finalizer,
+                         @Nonnull final Object ... parameters)
       {
         try (final RepositoryConnection connection = repository.getConnection())
           {
@@ -454,7 +454,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Value iriFor (final @Nonnull Id id)
+    protected Value iriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI(id.stringValue());
       }
@@ -479,7 +479,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
+    protected static String readSparql (@Nonnull final Class<?> clazz, @Nonnull final String name)
       {
         try (final InputStream is = clazz.getResourceAsStream(name))
           {
@@ -507,9 +507,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E> List<E> createEntities (final @Nonnull Repository repository,
-                                        final @Nonnull Class<E> entityClass,
-                                        final @Nonnull TupleQueryResult queryResult)
+    private <E> List<E> createEntities (@Nonnull final Repository repository,
+                                        @Nonnull final Class<E> entityClass,
+                                        @Nonnull final TupleQueryResult queryResult)
       {
         return contextManager.runWithContexts(getContexts(), new Task<>()
           {
@@ -538,7 +538,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      * @return              {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private static boolean matchesTag (final @Nonnull String string, final @Nonnull Object[] bindings)
+    private static boolean matchesTag (@Nonnull final String string, @Nonnull final Object[] bindings)
       {
         final Pattern patternBindingTagLine = Pattern.compile(REGEX_BINDING_TAG_LINE);
         final Matcher matcher = patternBindingTagLine.matcher(string);
@@ -570,9 +570,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      * @param   bindings        the bindings
      *
      ******************************************************************************************************************/
-    private void log (final @Nonnull String originalSparql,
-                      final @Nonnull String sparql,
-                      final @Nonnull Object ... bindings)
+    private void log (@Nonnull final String originalSparql,
+                      @Nonnull final String sparql,
+                      @Nonnull final Object ... bindings)
       {
         if (log.isTraceEnabled())
           {
@@ -600,7 +600,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String compacted (final @Nonnull String sparql)
+    private static String compacted (@Nonnull final String sparql)
       {
         return sparql.replace("\n", " ").replaceAll("\\s+", " ").trim();
       }

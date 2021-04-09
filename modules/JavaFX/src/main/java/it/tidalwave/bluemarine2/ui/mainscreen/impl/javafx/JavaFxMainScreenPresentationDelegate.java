@@ -57,7 +57,7 @@ public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentat
     private JavaFXBinder binder;
 
     @Override
-    public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
+    public void bind (@Nonnull final Collection<UserAction> mainMenuActions, @Nonnull final UserAction powerOffAction)
       {
         binder.bindButtonsInPane(gpMainMenuBar, mainMenuActions);
         binder.bind(btPowerOff, powerOffAction);

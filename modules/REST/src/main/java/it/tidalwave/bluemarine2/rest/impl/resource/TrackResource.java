@@ -70,7 +70,7 @@ public class TrackResource extends ResourceSupport
 
     private final Optional<String> audioFile;
 
-    public TrackResource (final @Nonnull Track track)
+    public TrackResource (@Nonnull final Track track)
       {
         this.id          = track.getId().stringValue();
         this.displayName = track.as(_Displayable_).getDisplayName();

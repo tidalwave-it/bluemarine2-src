@@ -40,7 +40,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class DbTune
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     public static final String NS = "http://dbtune.org/musicbrainz/resource/vocab/";
 

@@ -40,7 +40,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Purl
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     private static final String NS_BIO          = "http://purl.org/vocab/bio/0.1/";
     private static final String NS_RELATIONSHIP = "http://purl.org/vocab/relationship/";

@@ -41,7 +41,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFacto
 public class UrlFactory implements EntityFactoryFunction<URL>
   {
     @Override @Nonnull
-    public URL apply (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public URL apply (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         try
           {

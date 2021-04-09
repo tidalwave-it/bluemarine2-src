@@ -99,7 +99,7 @@ public class CecClientAdapter
      * At power on runs {@code cec-client}.
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnReceived (final @Nonnull @ListensTo PowerOnNotification notification)
+    /* VisibleForTesting */ void onPowerOnReceived (@Nonnull @ListensTo final PowerOnNotification notification)
       {
         try
           {

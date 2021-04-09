@@ -43,7 +43,7 @@ public class RepositoryMusicPerformerRole implements Entity
     @Delegate
     private final PriorityAsSupport asSupport;
 
-    public RepositoryMusicPerformerRole (final @Nonnull String s)
+    public RepositoryMusicPerformerRole (@Nonnull final String s)
       {
         asSupport = new PriorityAsSupport(this, r(Displayable.of(s)));
       }

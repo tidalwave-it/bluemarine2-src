@@ -153,7 +153,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    /* VisibleForTesting */ void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);
@@ -165,7 +165,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDownloadRequest (final @ListensTo @Nonnull DownloadRequest request)
+    /* VisibleForTesting */ void onDownloadRequest (@ListensTo @Nonnull final DownloadRequest request)
       throws URISyntaxException
       {
         try
@@ -225,7 +225,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      ******************************************************************************************************************/
     @Nonnull
-    private byte[] bytesFrom (final @Nonnull HttpResponse response)
+    private byte[] bytesFrom (@Nonnull final HttpResponse response)
       throws IOException
       {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();

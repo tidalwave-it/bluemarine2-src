@@ -44,14 +44,14 @@ public class EventBarrier<TOPIC> implements MessageBus.Listener<TOPIC>
     @Nonnull
     private final Class<TOPIC> eventType;
 
-    public EventBarrier (final @Nonnull Class<TOPIC> topic, final @Nonnull MessageBus messageBus)
+    public EventBarrier (@Nonnull final Class<TOPIC> topic, @Nonnull final MessageBus messageBus)
       {
         this.eventType = topic;
         messageBus.subscribe(topic, this);
       }
 
     @Override
-    public void notify (final @Nonnull TOPIC event)
+    public void notify (@Nonnull final TOPIC event)
       {
         latch.countDown();
       }
