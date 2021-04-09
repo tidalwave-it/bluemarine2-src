@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl;
 
@@ -38,19 +37,19 @@ import it.tidalwave.bluemarine2.model.spi.CacheManager;
  **********************************************************************************************************************/
 public class MockCacheManager implements CacheManager
   {
-    private final static Cache CACHE = new MockCache();
+    private static final Cache CACHE = new MockCache();
 
     static class MockCache implements Cache
       {
         @Override @Nonnull
-        public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+        public <T> T getCachedObject (@Nonnull final Object key, @Nonnull final Supplier<T> supplier)
           {
             return supplier.get();
           }
       }
 
     @Override @Nonnull
-    public Cache getCache (final @Nonnull Object cacheKey)
+    public Cache getCache (@Nonnull final Object cacheKey)
       {
         return CACHE;
       }

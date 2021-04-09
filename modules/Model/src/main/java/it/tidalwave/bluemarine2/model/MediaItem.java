@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model;
 
@@ -153,7 +152,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              * @return              {@code true} if this object matches
              *
              **********************************************************************************************************/
-            public boolean matches (final @Nonnull Cddb other, final @Nonnegative int threshold)
+            public boolean matches (@Nonnull final Cddb other, @Nonnegative final int threshold)
               {
                 if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))
                   {
@@ -176,7 +175,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              * @return              {@code true} if the number of tracks matches
              *
              **********************************************************************************************************/
-            public boolean sameTrackCountOf (final @Nonnull Cddb other)
+            public boolean sameTrackCountOf (@Nonnull final Cddb other)
               {
                 return this.trackFrameOffsets.length == other.trackFrameOffsets.length;
               }
@@ -189,7 +188,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              * @return              the difference
              *
              **********************************************************************************************************/
-            public int computeDifference (final @Nonnull Cddb other)
+            public int computeDifference (@Nonnull final Cddb other)
               {
                 final int delta = this.trackFrameOffsets[0] - other.trackFrameOffsets[0];
                 double acc = 0;
@@ -263,7 +262,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              *
              **********************************************************************************************************/
             @Nonnull
-            public static Optional<ITunesComment> from (final @Nonnull Metadata metadata)
+            public static Optional<ITunesComment> from (@Nonnull final Metadata metadata)
               {
                 return metadata.get(ENCODER).flatMap(
                         encoders -> encoders.stream().anyMatch(encoder -> encoder.startsWith("iTunes"))
@@ -280,7 +279,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              *
              **********************************************************************************************************/
             @Nonnull
-            public static ITunesComment fromToString (final @Nonnull String string)
+            public static ITunesComment fromToString (@Nonnull final String string)
               {
                 final Matcher matcher = PATTERN_TO_STRING.matcher(string);
 
@@ -301,7 +300,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
              *
              **********************************************************************************************************/
             @Nonnull
-            private static Optional<ITunesComment> from (final @Nonnull List <String> comments)
+            private static Optional<ITunesComment> from (@Nonnull final List <String> comments)
               {
                 return comments.get(comments.size() - 2).contains("+")
                         ? Optional.of(new ITunesComment(comments.get(3), comments.get(4)))

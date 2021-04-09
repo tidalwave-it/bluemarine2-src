@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
@@ -98,10 +97,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
-    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
-                                                                       final @Nullable String otherTestSetName,
-                                                                       final @Nonnull Id source,
-                                                                       final @Nonnull Id fallbackSource)
+    public void must_properly_query_the_whole_catalog_in_various_ways (@Nonnull final String testSetName,
+                                                                       @Nullable final String otherTestSetName,
+                                                                       @Nonnull final Id source,
+                                                                       @Nonnull final Id fallbackSource)
       throws Exception
       {
         // given
@@ -127,7 +126,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void queryAndDump (final @Nonnull RepositoryMediaCatalog catalog, final @Nonnull Path dumpPath)
+    private void queryAndDump (@Nonnull final RepositoryMediaCatalog catalog, @Nonnull final Path dumpPath)
       throws IOException
       {
         log.info("queryAndDump(.., {})", dumpPath);
@@ -162,13 +161,13 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         records.forEach(record -> pw.printf("  %s - %d tracks - %s%n",
                 displayNameOf(record),
                 record.findTracks().count(),
-                record.getSource().orElse(new Id("unknown"))));
+                record.getSource().orElse(Id.of("unknown"))));
         pw.printf("  COUNT OF ALL RECORDS RETRIEVED BY %d QUERIES%n", recordCountQueryCount);
         pw.printf("  ALL RECORDS RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
         final int artistCountQueryCount = getLatestQueryCount();
-        artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(new Id("unknown"))));
+        artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(Id.of("unknown"))));
         pw.printf("  COUNT OF ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistCountQueryCount);
         pw.printf("  ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistsQueryCount);
 
@@ -210,7 +209,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         records.forEach(record ->
           {
             pw.printf("%nRECORD %s:%n", displayNameOf(record));
-            pw.printf("  SOURCE:  %s%n", record.getSource().orElse(new Id("unknown")));
+            pw.printf("  SOURCE:  %s%n", record.getSource().orElse(Id.of("unknown")));
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
@@ -267,7 +266,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String displayNameOf (final @Nonnull MusicPerformer musicPerformer)
+    private String displayNameOf (@Nonnull final MusicPerformer musicPerformer)
       {
         final MusicArtist artist = musicPerformer.getMusicArtist();
         final Optional<Entity> role = musicPerformer.getRole();
@@ -279,7 +278,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String displayNameOf (final @Nonnull Entity entity)
+    private String displayNameOf (@Nonnull final Entity entity)
       {
         return String.format("%s (%s)", entity.as(_Displayable_).getDisplayName(), entity.as(_Identifiable_).getId());
       }

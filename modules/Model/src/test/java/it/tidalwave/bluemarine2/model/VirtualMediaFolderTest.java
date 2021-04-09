@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model;
 
@@ -93,13 +92,13 @@ public class VirtualMediaFolderTest extends SpringTestSupport
 //            log.info("children: {}", childrenMap);
           }
 
-        private void createFolder (final @Nonnull String pathAsString)
+        private void createFolder (@Nonnull final String pathAsString)
           {
             findOrCreateFolder(Paths.get(pathAsString));
           }
 
         @Nonnull
-        private VirtualMediaFolder findOrCreateFolder (final @Nonnull Path path)
+        private VirtualMediaFolder findOrCreateFolder (@Nonnull final Path path)
           {
             //return folderMap.computeIfAbsent(path, k1 ->
             if (!folderMap.containsKey(path))
@@ -159,7 +158,7 @@ public class VirtualMediaFolderTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "pathsProvider")
-    public void must_correctly_find_children_by_path (final @Nonnull Path path)
+    public void must_correctly_find_children_by_path (@Nonnull final Path path)
       {
         // when
         final List<? extends PathAwareEntity> children = underTest.findChildren().withPath(path).results();

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.downloader.impl;
 
@@ -130,11 +129,11 @@ public class DefaultDownloaderTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "downloadDataProvider", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
-    public void testCache (final @Nonnull String urlAsString,
-                           final @Nonnull Option option,
+    public void testCache (@Nonnull final String urlAsString,
+                           @Nonnull final Option option,
                            final int expectedStatusCode,
-                           final @Nonnull String expectedContentFileName,
-                           final @Nonnull Origin expectedOrigin)
+                           @Nonnull final String expectedContentFileName,
+                           @Nonnull final Origin expectedOrigin)
       throws Exception
       {
         final URL url = new URL(urlAsString);

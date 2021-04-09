@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.commons.test;
 
@@ -68,7 +67,7 @@ public class TestSetTriple
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Stream<TestSetTriple> streamOfTestSetTriples (final @Nonnull Collection<String> testSetNames)
+    public static Stream<TestSetTriple> streamOfTestSetTriples (@Nonnull final Collection<String> testSetNames)
       {
         return streamOfTestSetTriples(testSetNames, n -> TestSetLocator.getMusicTestSetsPath().resolve(n));
       }
@@ -83,8 +82,8 @@ public class TestSetTriple
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Stream<TestSetTriple> streamOfTestSetTriples (final @Nonnull Collection<String> testSetNames,
-                                                                final @Nonnull Function<String, Path> basePathProvider)
+    public static Stream<TestSetTriple> streamOfTestSetTriples (@Nonnull final Collection<String> testSetNames,
+                                                                @Nonnull final Function<String, Path> basePathProvider)
       {
         return testSetNames.stream()
                            .map(testSetName -> TestSetTriple.ofName(testSetName, basePathProvider))
@@ -136,8 +135,8 @@ public class TestSetTriple
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static TestSetTriple ofName (final @Nonnull String testSetName,
-                                         final @Nonnull Function<String, Path> basePathProvider)
+    private static TestSetTriple ofName (@Nonnull final String testSetName,
+                                         @Nonnull final Function<String, Path> basePathProvider)
       {
         return new TestSetTriple(testSetName, basePathProvider.apply(testSetName), null);
       }

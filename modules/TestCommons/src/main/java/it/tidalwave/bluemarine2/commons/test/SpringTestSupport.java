@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.commons.test;
 
@@ -57,13 +56,13 @@ public class SpringTestSupport
     @Nonnull
     private final String[] configLocations;
 
-    protected SpringTestSupport (final @Nonnull LifeCycle lifeCycle, final @Nonnull String ... configLocations)
+    protected SpringTestSupport (@Nonnull final LifeCycle lifeCycle, @Nonnull final String ... configLocations)
       {
         this.lifeCycle = lifeCycle;
         this.configLocations = configLocations;
       }
 
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
+    protected SpringTestSupport (@Nonnull final String ... configLocations)
       {
         this(LifeCycle.AROUND_METHOD, configLocations);
       }

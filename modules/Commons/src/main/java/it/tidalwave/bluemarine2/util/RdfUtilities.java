@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.util;
 
@@ -74,14 +73,14 @@ public final class RdfUtilities
   {
     private static final String ALGORITHM = "SHA1";
 
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
 
     /*******************************************************************************************************************
      *
      * Exports the repository to the given file. FIXME: duplicated in DefaultPerstistence
      *
      ******************************************************************************************************************/
-    public static void exportToFile (final @Nonnull Model model, final @Nonnull Path path)
+    public static void exportToFile (@Nonnull final Model model, @Nonnull final Path path)
       throws RDFHandlerException, IOException, RepositoryException
       {
         log.info("exportToFile({})", path);
@@ -118,7 +117,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static <T, X extends RuntimeException> Stream<T> streamOf (final @Nonnull Iteration<T, X> iteration)
+    public static <T, X extends RuntimeException> Stream<T> streamOf (@Nonnull final Iteration<T, X> iteration)
       {
         return stream(spliteratorUnknownSize(iteratorOf(iteration), 0), false);
       }
@@ -128,7 +127,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static <T, X extends RuntimeException> Iterator<T> iteratorOf (final @Nonnull Iteration<T, X> iteration)
+    private static <T, X extends RuntimeException> Iterator<T> iteratorOf (@Nonnull final Iteration<T, X> iteration)
       {
         return new Iterator<>()
           {
@@ -261,7 +260,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final @Nonnull Instant instant)
+    public static Value literalFor (@Nonnull final Instant instant)
       {
         return FACTORY.createLiteral(new Date(instant.toEpochMilli()));
       }
@@ -271,7 +270,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI uriFor (final @Nonnull Id id)
+    public static IRI uriFor (@Nonnull final Id id)
       {
         return uriFor(id.stringValue());
       }
@@ -281,7 +280,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI uriFor (final @Nonnull String id)
+    public static IRI uriFor (@Nonnull final String id)
       {
         return FACTORY.createIRI(id);
       }
@@ -291,7 +290,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI uriFor (final @Nonnull URL url)
+    public static IRI uriFor (@Nonnull final URL url)
       {
         return FACTORY.createIRI(url.toString());
       }
@@ -301,7 +300,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static URL urlFor (final @Nonnull IRI uri)
+    public static URL urlFor (@Nonnull final IRI uri)
       throws MalformedURLException
       {
         return new URL(uri.toString());
@@ -312,7 +311,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String emptyWhenNull (final @Nullable String string)
+    public static String emptyWhenNull (@Nullable final String string)
       {
         return (string != null) ? string : "";
       }
@@ -322,13 +321,13 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Id createSha1Id (final @Nonnull String string)
+    public static Id createSha1Id (@Nonnull final String string)
       {
         try
           {
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
-            return new Id(toHexString(digestComputer.digest()));
+            return Id.of(toHexString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {
@@ -341,13 +340,13 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Id createSha1IdNew (final @Nonnull String string)
+    public static Id createSha1IdNew (@Nonnull final String string)
       {
         try
           {
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
-            return new Id(Base64.getUrlEncoder().encodeToString(digestComputer.digest()));
+            return Id.of(Base64.getUrlEncoder().encodeToString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {

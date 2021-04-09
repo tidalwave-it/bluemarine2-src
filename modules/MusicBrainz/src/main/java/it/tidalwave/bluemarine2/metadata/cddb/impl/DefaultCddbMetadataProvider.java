@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
@@ -60,7 +59,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
+    public RestResponse<CddbAlbum> findCddbAlbum (@Nonnull final Metadata metadata)
       throws IOException, InterruptedException
       {
         return metadata.get(CDDB).map(_f(this::findCddbAlbum)).orElse(CddbResponse.empty());
@@ -70,7 +69,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      *
      ******************************************************************************************************************/
     @Nonnull
-    private RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Cddb cddb)
+    private RestResponse<CddbAlbum> findCddbAlbum (@Nonnull final Cddb cddb)
       throws IOException, InterruptedException
       {
         final String discId = cddb.getDiscId();

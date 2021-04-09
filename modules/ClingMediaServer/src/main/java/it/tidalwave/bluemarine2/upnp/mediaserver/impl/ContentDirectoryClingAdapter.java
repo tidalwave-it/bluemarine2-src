@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
@@ -105,8 +104,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      *
      ******************************************************************************************************************/
     @Override
-    public BrowseResult browse (final @Nonnull String objectId,
-                                final @Nonnull BrowseFlag browseFlag,
+    public BrowseResult browse (@Nonnull final String objectId,
+                                @Nonnull final BrowseFlag browseFlag,
                                 final String filter,
                                 final long firstResult,
                                 final long maxResults,
@@ -144,7 +143,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Object findEntity (final @Nonnull BrowseParams params)
+    private Object findEntity (@Nonnull final BrowseParams params)
       {
         try
           {
@@ -182,7 +181,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
+    private static void log (@Nonnull final String message, @Nonnull final BrowseResult browseResult)
       {
         log.info("{} BrowseResult(..., {}, {}, {})",
                  message,

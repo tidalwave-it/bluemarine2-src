@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.commons.test;
 
@@ -61,7 +60,7 @@ public class TestUtilities
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull Collection<?> data)
+    public static void dumpAndAssertResults (@Nonnull final String fileName, @Nonnull final Collection<?> data)
       throws IOException
       {
         final Path actualResult = Paths.get("target", "test-results", fileName);
@@ -76,7 +75,7 @@ public class TestUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static List<String> dump (final @Nonnull As entity)
+    public static List<String> dump (@Nonnull final As entity)
       {
         final List<String> result = new ArrayList<>();
         result.add((entity instanceof Dumpable) ? ((Dumpable)entity).toDumpString() : entity.toString());
@@ -89,7 +88,7 @@ public class TestUtilities
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public static void loadRepository (final @Nonnull Repository repository, final @Nonnull Path path)
+    public static void loadRepository (@Nonnull final Repository repository, @Nonnull final Path path)
       throws Exception
       {
         log.info("loadRepository(..., {})", path);

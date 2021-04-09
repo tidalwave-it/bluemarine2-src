@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    *********************************************************************************************************************
+
+    blueMarine II: Semantic Media Centre
+    http://tidalwave.it/projects/bluemarine2
+
+    Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
+
+    *********************************************************************************************************************
+
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+    the License. You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+    an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations under the License.
+
+    *********************************************************************************************************************
+
+    git clone https://bitbucket.org/tidalwave/bluemarine2-src
+    git clone https://github.com/tidalwave-it/bluemarine2-src
+
+    *********************************************************************************************************************
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
@@ -18,19 +46,29 @@
     <url>http://blueMarine.tidalwave.it</url>
     <inceptionYear>2015</inceptionYear>
     <description>
-blueMarine II is a small media centre for the Raspberry PI, based on a semantic database. It is developed on Java 8 and
-Java FX.
+blueMarine II is a media centre based on a semantic database. It is developed on Java 11 and Java FX. It exposes resources via DLNA and REST;
+it can run on a Raspberry PI and integrated with CEC for being operated with a TV remote.
 
-Still at the early stage of development, it can be used with some hack to reproduce audio files.
+Still at the alpha stage of development, it can be used with some hack to reproduce audio files.
+
+The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tidalwave.it); the developer website is at
+[http://tidalwave.it/projects/bluemarine2](http://tidalwave.it/projects/bluemarine2).
     </description>
+
+    <distributionManagement>
+        <site>
+            <id>bluemarine2-site</id>
+            <url>${tidalwave.project.url}</url>
+        </site>
+    </distributionManagement>
 
     <properties>
         <tft.maven.requiredJdk>[11,12)</tft.maven.requiredJdk>
         <scm.repo.url>ssh://git@bitbucket.org:tidalwave/bluemarine2-src.git</scm.repo.url>
         <scm.repo.readonly.url>https://bitbucket.org/tidalwave/bluemarine2-src</scm.repo.readonly.url>
         <scm.repo.browse.url>https://bitbucket.org/tidalwave/bluemarine2-src/src</scm.repo.browse.url>
-        <tidalwave.project.url>http://tidalwave.it/projects/thesefoolishthings</tidalwave.project.url>
-        <tidalwave.slogan>blueMarine2: Semantic Media Centre</tidalwave.slogan>
+        <tidalwave.project.url>http://tidalwave.it/projects/bluemarine2</tidalwave.project.url>
+        <tidalwave.slogan>blueMarine II: Semantic Media Centre</tidalwave.slogan>
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
         <tidalwave.github.readonly.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.readonly.url>

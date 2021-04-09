@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -69,8 +68,8 @@ public class GalleryDescription
     // FIXME: even though the finder is retrieved later, through the factory, the translation to DIDL does compute
     // the finder because it calls the count() for the children count
     @Nonnull
-    public PathAwareEntity createFolder (final @Nonnull MediaFolder parent,
-                                         final @Nonnull BiFunction<MediaFolder, String, Collection<PathAwareEntity>> entitiesFactory)
+    public PathAwareEntity createFolder (@Nonnull final MediaFolder parent,
+                                         @Nonnull final BiFunction<MediaFolder, String, Collection<PathAwareEntity>> entitiesFactory)
       {
         final Path path = Paths.get(url.replaceAll("^.*(themes|diary\\/[0-9]{4})\\/(.*)\\/images\\.xml", "$2"));
         final EntityCollectionFactory ecf = p -> entitiesFactory.apply(p, url);

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest.impl.server;
 
@@ -39,6 +38,7 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import javax.servlet.DispatcherType;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
@@ -82,7 +82,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public String absoluteUrl (final @Nonnull String type)
+    public String absoluteUrl (@Nonnull final String type)
       {
         return String.format("http://%s:%d/%s", ipAddress, port, type);
       }
@@ -91,7 +91,8 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting
+    public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
@@ -118,7 +119,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+    @VisibleForTesting public void onPowerOffNotification (@ListensTo @Nonnull final PowerOffNotification notification)
       throws Exception
       {
         log.info("onPowerOffNotification({})", notification);
