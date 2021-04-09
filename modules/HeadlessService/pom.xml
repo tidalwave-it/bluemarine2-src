@@ -13,7 +13,10 @@
     <artifactId>it-tidalwave-bluemarine2-headlessservice</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Headless Service</name>
+    <name>blueMarine II :: Headless Service</name>
+    <description>
+        A headless service that exposes resources by means of stuff such as REST, UPnP, etc.
+    </description>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->

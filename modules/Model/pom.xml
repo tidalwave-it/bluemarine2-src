@@ -15,7 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-model</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Model</name>
+    <name>blueMarine II :: Model</name>
+    <description>
+        The core model for the application.
+    </description>
 
     <dependencies>
         <dependency>

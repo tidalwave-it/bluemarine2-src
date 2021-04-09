@@ -15,7 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Commons</name>
+    <name>blueMarine II :: Commons</name>
+    <description>
+        Utility code that is common to the whole project.
+    </description>
 
     <dependencies>
         <dependency>
@@ -52,12 +55,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>

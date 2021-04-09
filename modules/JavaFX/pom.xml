@@ -15,8 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - UI - JavaFX</name>
-    <description>blueMarine2 - UI - JavaFX</description>
+    <name>blueMarine II :: UI :: JavaFX</name>
+    <description>
+        The JavaFX implementation of the User Interface.
+    </description>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
@@ -54,12 +56,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>

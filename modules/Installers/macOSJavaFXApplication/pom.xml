@@ -42,7 +42,7 @@
     <artifactId>bluemarine2-application-javafx-macos</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, macOS</name>
+    <name>blueMarine II :: Installers :: JavaFX Application :: macOS</name>
     <description>This module creates a macOS application bundle.</description>
 
     <properties>

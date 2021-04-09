@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-service-linux</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>deb</packaging>
-    <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
+    <name>blueMarine II :: Installers :: Headless Service :: Linux :: DEB</name>
     <description>
         This module takes the .tar.gz produced by 'Installers - Headless Service' and produces a .deb package
         contaning also stuff for installing it as a service.

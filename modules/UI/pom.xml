@@ -15,8 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - UI</name>
-    <description>blueMarine2 - UI</description>
+    <name>blueMarine II :: UI</name>
+    <description>
+        The abstract model of the User Interface.
+    </description>
 
     <dependencies>
         <dependency>

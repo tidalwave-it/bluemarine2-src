@@ -15,7 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Media Scanner</name>
+    <name>blueMarine II :: Media Scanner</name>
+    <description>
+        The component that scans media and imports metadata into the database.
+    </description>
 
     <dependencies>
         <dependency>
@@ -67,12 +70,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
