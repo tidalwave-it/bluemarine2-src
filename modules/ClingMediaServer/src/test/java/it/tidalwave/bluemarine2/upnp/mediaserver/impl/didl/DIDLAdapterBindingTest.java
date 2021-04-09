@@ -45,9 +45,10 @@ import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.Identifiable._Identifiable_;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter._DIDLAdapter_;
+import static it.tidalwave.util.Parameters.r;
 import static org.mockito.Mockito.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
@@ -110,10 +111,10 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
         // given
         final PathAwareEntity parent = mock(PathAwareEntity.class);
         when(parent.getPath()).thenReturn(Paths.get("/"));
-        final Path pathSegment = Paths.get(datum.as(Identifiable).getId().stringValue());
+        final Path pathSegment = Paths.get(datum.as(_Identifiable_).getId().stringValue());
         final PathAwareMediaFolderDecorator decorator = new PathAwareMediaFolderDecorator(datum, parent, pathSegment);
         // when
-        final DIDLAdapter adapter = decorator.as(DIDLAdapter);
+        final DIDLAdapter adapter = decorator.as(_DIDLAdapter_);
         // then
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
@@ -122,7 +123,7 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
                                                 final @Nonnull Class<?> expectedAdapterClass)
       {
         // when
-        final DIDLAdapter adapter = datum.as(DIDLAdapter);
+        final DIDLAdapter adapter = datum.as(_DIDLAdapter_);
         // then
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
@@ -153,6 +154,6 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
     @Nonnull
     private Entity createMockEntity()
       {
-        return new EntityWithRoles((Identifiable) () -> new Id("urn:bluemarine:something:foo_bar"));
+        return new EntityWithRoles(r((Identifiable) () -> new Id("urn:bluemarine:something:foo_bar")));
       }
   }

@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static org.mockito.Mockito.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 
 /***********************************************************************************************************************
  *
@@ -74,6 +74,6 @@ public class PhotoItemDIDLAdapterTest extends SpringTestSupport
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "didl.xml");
         Files.createDirectories(actualResult.getParent());
         Files.write(actualResult, xml.getBytes(StandardCharsets.UTF_8));
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        assertSameContents(expectedResult, actualResult);
       }
   }

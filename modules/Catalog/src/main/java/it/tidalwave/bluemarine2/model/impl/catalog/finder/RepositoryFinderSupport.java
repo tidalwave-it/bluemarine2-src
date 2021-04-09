@@ -53,11 +53,10 @@ import org.springframework.util.StreamUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.LoggingUtilities;
+import it.tidalwave.util.ReflectionUtils;
 import it.tidalwave.util.Task;
-import it.tidalwave.util.spi.ReflectionUtils;
+import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.util.ImmutableTupleQueryResult;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
@@ -88,8 +87,8 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
  *
  **********************************************************************************************************************/
 @Configurable @Slf4j
-public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
-        extends Finder8Support<ENTITY, FINDER>
+public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
+        extends FinderSupport<ENTITY, FINDER>
         implements SourceAwareFinder<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";
@@ -168,7 +167,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         @Nonnull
         public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Value value)
           {
-            parameters.addAll(Arrays.asList(name, value));
+            parameters.addAll(List.of(name, value));
             return this;
           }
 
@@ -274,7 +273,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Override @Nonnull
     public FINDER withId (final @Nonnull Id id)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  Optional.of(id),
@@ -301,7 +300,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Override @Nonnull
     public FINDER importedFrom (final @Nonnull Id source)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  id,
@@ -328,7 +327,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Override @Nonnull
     public FINDER withFallback (final @Nonnull Id sourceFallback)
       {
-        return clone(new RepositoryFinderSupport(repository,
+        return clonedWith(new RepositoryFinderSupport(repository,
                                                  entityClass,
                                                  idName,
                                                  id,
@@ -466,7 +465,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Value literalFor (final @Nonnull boolean b)
+    protected Value literalFor (final boolean b)
       {
         return FACTORY.createLiteral(b);
       }
@@ -513,14 +512,14 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                         final @Nonnull Class<E> entityClass,
                                         final @Nonnull TupleQueryResult queryResult)
       {
-        return contextManager.runWithContexts(getContexts(), new Task<List<E>, RuntimeException>()
+        return contextManager.runWithContexts(getContexts(), new Task<>()
           {
             @Override @Nonnull
             public List<E> run()
               {
                 return streamOf(queryResult)
-                            .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
-                            .collect(toList());
+                        .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
+                        .collect(toList());
               }
           });
         // TODO: requires TheseFoolishThings 3.1-ALPHA-3

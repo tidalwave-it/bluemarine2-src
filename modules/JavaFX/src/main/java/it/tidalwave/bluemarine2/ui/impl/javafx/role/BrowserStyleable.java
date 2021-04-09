@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Collection;
 import it.tidalwave.role.ui.Styleable;
 import it.tidalwave.dci.annotation.DciRole;
@@ -48,6 +48,6 @@ public class BrowserStyleable implements Styleable
     @Override @Nonnull
     public Collection<String> getStyles() 
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return List.of(owner.getClass().getSimpleName());
       }
   }

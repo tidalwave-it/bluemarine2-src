@@ -27,57 +27,35 @@
  */
 package it.tidalwave.util;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Supplier;
-import it.tidalwave.util.spi.SimpleFinder8Support;
-import lombok.AllArgsConstructor;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import it.tidalwave.role.ui.BoundProperty;
 
 /***********************************************************************************************************************
- *
- * A {@link Finder} which retrieve results from a {@link Supplier}.
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-@Immutable @AllArgsConstructor
-public class SupplierBasedFinder8<T> extends SimpleFinder8Support<T>
+public class PropertyWrapper
   {
-    private static final long serialVersionUID = 1344191036948400804L;
-
+    /*******************************************************************************************************************
+     *
+     * Returns a JavaFX wrapping property which is kept in sync with the given {@link BoundProperty}.
+     * FIXME: this is temporary until we fix the JavaFX property issue: either they are supported by UserAction or
+     * everything is replaced by BoundProperty.
+     * FIXME: this is for sure prone to leaks, as listeners are not weak.
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    private final Supplier<Collection<? extends T>> resultSupplier;
-
-    @Nonnull
-    private final Supplier<Integer> countSupplier;
-
-    public SupplierBasedFinder8 (final @Nonnull Supplier<Collection<? extends T>> resultSupplier)
+    public static BooleanProperty wrap (final @Nonnull BoundProperty<Boolean> property)
       {
-        this(resultSupplier, () -> resultSupplier.get().size());
-      }
-
-    public SupplierBasedFinder8 (final @Nonnull SupplierBasedFinder8<T> other, @Nonnull Object override)
-      {
-        super(other, override);
-        final SupplierBasedFinder8<T> source = getSource(SupplierBasedFinder8.class, other, override);
-        this.resultSupplier = source.resultSupplier;
-        this.countSupplier  = source.countSupplier;
-      }
-
-    @Override @Nonnull
-    protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
-      {
-        return new CopyOnWriteArrayList<>(resultSupplier.get());
-      }
-
-    // This can get out of sync with results().size() if paging or such - in case of paging, fallback to super.count()
-    @Override @Nonnegative
-    public int count()
-      {
-        return countSupplier.get();
+        final BooleanProperty jfxProperty = new SimpleBooleanProperty(property.get());
+        property.addPropertyChangeListener(event ->
+           {
+             if (!jfxProperty.isBound()) jfxProperty.setValue((Boolean)event.getNewValue());
+           });
+        jfxProperty.addListener((observable, oldValue, newValue) -> property.set(newValue));
+        return jfxProperty;
       }
   }

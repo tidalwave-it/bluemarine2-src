@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.nio.file.Paths;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
@@ -77,7 +77,7 @@ public class PhotoCollectionProviderTestSupport extends SpringTestSupport
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("Folder(\"/folder\"))");
 //        when(mediaFolder.toDumpString()).thenReturn("Folder(\"/folder\"))");
-        when(mediaFolder.finderOf(any(Finder8.class))).thenCallRealMethod();
+        when(mediaFolder.finderOf(any(Finder.class))).thenCallRealMethod();
         when(mediaFolder.finderOf(any(Function.class))).thenCallRealMethod();
       }
 

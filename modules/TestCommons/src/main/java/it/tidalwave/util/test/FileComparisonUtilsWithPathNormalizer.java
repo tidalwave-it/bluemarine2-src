@@ -25,26 +25,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.util;
+package it.tidalwave.util.test;
 
 import javax.annotation.Nonnull;
-import java.util.Map;
+import java.io.IOException;
+import java.nio.file.Path;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public class TypeSafeHashMap8 extends TypeSafeHashMap implements TypeSafeMap8
+@Slf4j
+public class FileComparisonUtilsWithPathNormalizer
   {
-    private static final long serialVersionUID = 2877980290140651775L;
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public TypeSafeHashMap8 (final @Nonnull Map<Key<?>, Object> map)
+    public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
+      throws IOException
       {
-        super(map);
+        FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),
+                                               toFileBMT46(normalizedPath(actualPath.toAbsolutePath())));
       }
   }

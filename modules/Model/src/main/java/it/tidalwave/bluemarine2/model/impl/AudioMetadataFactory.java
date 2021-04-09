@@ -27,11 +27,9 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -67,7 +65,7 @@ import org.jaudiotagger.tag.images.Artwork;
 @Slf4j @NoArgsConstructor(access = PRIVATE)
 public final class AudioMetadataFactory
   {
-    private final static List<FieldKey> MAPPED_TAGS = Arrays.asList(
+    private final static List<FieldKey> MAPPED_TAGS = List.of(
         FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE, FieldKey.TITLE, FieldKey.COMMENT,
         FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
         FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
@@ -114,18 +112,22 @@ public final class AudioMetadataFactory
                                .with(MBZ_ARTIST_ID,   optionalList(tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
                                                                                     .filter(s -> ((s != null) && !"".equals(s)))
                                                                                     .flatMap(s -> Stream.of(s.split("/"))) // FIXME:correct?
-                                                                                    .map(s -> id(s))
+                                                                                    .map(AudioMetadataFactory::id)
                                                                                     .collect(toList())));
 
             for (final FieldKey fieldKey : FieldKey.values())
               {
                 if (!MAPPED_TAGS.contains(fieldKey))
                   {
-                    final Key<Object> key = new Key<Object>("tag." + fieldKey.name()) {};
+                    final String keyName = "tag." + fieldKey.name();
                     final List<String> values = tag.getAll(fieldKey);
 
                     if (!values.isEmpty())
                       {
+                        final Key<Object> key = (Key<Object>)Key.allKeys().stream()
+                                                                .filter(k -> k.getName().equals(keyName))
+                                                                .findFirst()
+                                                                .orElseGet(() -> Key.of(keyName, List.class));
                         metadata = metadata.with(key, values);
                       }
                   }
@@ -172,7 +174,7 @@ public final class AudioMetadataFactory
         // e.g. for wav files
         catch (UnsupportedOperationException e)
           {
-            log.error("Unsupported tag in " + audioFile, e.toString());
+            log.error("Unsupported tag in {} {}", audioFile, e.toString());
           }
         catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
 //        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
@@ -202,7 +204,7 @@ public final class AudioMetadataFactory
           }
       }
 
-    @CheckForNull
+    @Nullable
     private static Id id (final @Nullable String string)
       {
         if ((string == null) || "".equals(string))

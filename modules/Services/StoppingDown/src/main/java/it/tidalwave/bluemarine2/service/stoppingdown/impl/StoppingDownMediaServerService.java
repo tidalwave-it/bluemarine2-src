@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Collection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -67,7 +67,7 @@ public class StoppingDownMediaServerService implements MediaServerService
     @Nonnull
     private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        return List.of(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
+                       new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
       }
   }

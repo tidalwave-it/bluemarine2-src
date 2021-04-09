@@ -47,7 +47,7 @@ import it.tidalwave.bluemarine2.model.spi.Entity;
  **********************************************************************************************************************/
 public interface MusicArtist extends Entity, Identifiable
   {
-    public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
+    public static final Class<MusicArtist> _MusicArtist_ = MusicArtist.class;
 
     /*******************************************************************************************************************
      *

@@ -40,15 +40,23 @@
         </encoder>
     </appender>
 
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-20.20(%thread)] %-5level %-50logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <logger name="it" level="DEBUG"/>
     <logger name="org.springframework" level="INFO"/>
     <logger name="org.apache.http" level="INFO"/>
     <logger name="org.eclipse.jetty" level="INFO"/>
     <logger name="it.tidalwave.util.spi.FinderSupport" level="INFO"/>
+    <logger name="it.tidalwave.role.ui.javafx" level="INFO"/>
     <!--<logger name="it.tidalwave.role" level="TRACE" />-->
 
     <root level="DEBUG">
         <appender-ref ref="FILE" />
+        <!-- appender-ref ref="STDERR" / -->
     </root>
 
     <include file="${blueMarine2.logConfig}" optional="true" />

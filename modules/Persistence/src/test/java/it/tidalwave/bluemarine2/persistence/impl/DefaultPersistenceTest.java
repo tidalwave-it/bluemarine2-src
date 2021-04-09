@@ -54,7 +54,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static it.tidalwave.bluemarine2.persistence.PersistencePropertyNames.*;
-import static it.tidalwave.util.test.FileComparisonUtils8.*;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 
 /***********************************************************************************************************************
  *

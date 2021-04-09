@@ -30,13 +30,14 @@ package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Function;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.Finder;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.util.Parameters.r;
 
 /***********************************************************************************************************************
  *
@@ -49,9 +50,9 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     private MediaCatalog catalog;
 
     @Nonnull
-    protected final SimpleComposite8<? extends Entity> compositeForRootEntity;
+    protected final SimpleComposite<? extends Entity> compositeForRootEntity;
 
-    protected RepositoryBrowserSupport (final @Nonnull Function<MediaCatalog, Finder8<? extends Entity>> finderFactory)
+    protected RepositoryBrowserSupport (final @Nonnull Function<MediaCatalog, Finder<? extends Entity>> finderFactory)
       {
         compositeForRootEntity = () -> finderFactory.apply(catalog).withContext(RepositoryBrowserSupport.this);
       }
@@ -59,6 +60,8 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     @Override @Nonnull
     public Entity getRoot()
       {
-        return new EntityWithRoles(compositeForRootEntity, this.as(Displayable)); // FIXME: what about an EntityDecorator?
+        // FIXME: review if first should be prioritised
+        return new EntityWithRoles(r(compositeForRootEntity, this.as(_Displayable_))); // FIXME: what about an
+        // EntityDecorator?
       }
   }

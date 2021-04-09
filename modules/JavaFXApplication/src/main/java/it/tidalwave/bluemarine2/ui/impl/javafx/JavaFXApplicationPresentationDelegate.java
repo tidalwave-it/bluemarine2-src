@@ -122,7 +122,7 @@ public class JavaFXApplicationPresentationDelegate
         if (event.getCode().equals(KeyCode.BACK_SPACE))
           {
             log.debug("onKeyReleased({})", event);
-            backspaceCallback.ifPresent(r -> r.run());
+            backspaceCallback.ifPresent(Runnable::run);
           }
       }
   }

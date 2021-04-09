@@ -42,5 +42,5 @@ public final class DownloaderPropertyNames
   {
     private static final String PREFIX = DownloaderPropertyNames.class.getPackage().getName();
     
-    public static final Key<Path> CACHE_FOLDER_PATH = new Key<Path>(PREFIX + ".cacheFolderPath") {};
+    public static final Key<Path> CACHE_FOLDER_PATH = Key.of(PREFIX + ".cacheFolderPath", Path.class);
   }

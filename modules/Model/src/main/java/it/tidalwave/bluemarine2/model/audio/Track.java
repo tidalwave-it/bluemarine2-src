@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.model.spi.SourceAware;
  **********************************************************************************************************************/
 public interface Track extends Entity, SourceAware, Identifiable
   {
-    public static final Class<Track> Track = Track.class;
+    public static final Class<Track> _Track_ = Track.class;
 
     /*******************************************************************************************************************
      *

@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Arrays;
 import java.util.List;
 import org.eclipse.rdf4j.model.Resource;
 import org.eclipse.rdf4j.model.Statement;
@@ -55,6 +54,6 @@ public class AddStatementsRequest
                                  final @Nonnull IRI predicate,
                                  final @Nonnull Value object)
       {
-        this(Arrays.asList(SimpleValueFactory.getInstance().createStatement(subject, predicate, object)));
+        this(List.of(SimpleValueFactory.getInstance().createStatement(subject, predicate, object)));
       }
   }

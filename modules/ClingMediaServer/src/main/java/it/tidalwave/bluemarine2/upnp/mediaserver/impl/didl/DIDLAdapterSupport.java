@@ -31,12 +31,12 @@ import javax.annotation.Nonnull;
 import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
-import it.tidalwave.util.As8;
+import it.tidalwave.util.As;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
@@ -45,7 +45,7 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor
-public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
+public abstract class DIDLAdapterSupport<T extends As> implements DIDLAdapter
   {
     @Nonnull
     protected final T datum;
@@ -62,13 +62,13 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
       {
         didlObject.setRestricted(false);
         didlObject.setCreator("blueMarine II"); // FIXME
-        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(externalized(identifiable.getId().stringValue())));
-        datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
+        datum.maybeAs(_Identifiable_).ifPresent(identifiable -> didlObject.setId(externalized(identifiable.getId().stringValue())));
+        datum.maybeAs(_Displayable_).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
 
         if (didlObject instanceof Container)
           {
             final Container container = (Container)didlObject;
-            datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+            datum.maybeAs(_SimpleComposite_).ifPresent(c -> container.setChildCount(c.findChildren().count()));
 //
 //          ALTERNATE FIX, BAD
 //            final Optional<Integer> x = datum.asOptional(Record.class).flatMap(r -> r.getTrackCount());

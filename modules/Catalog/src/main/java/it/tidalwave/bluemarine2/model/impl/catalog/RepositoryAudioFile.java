@@ -161,7 +161,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public String toDumpString()
       {
         return String.format("%s %8s %s %s    -    %s", duration.map(Formatters::format).orElse("??:??"),
-                                                        fileSize.map(l -> l.toString()).orElse(""),
+                                                        fileSize.map(Object::toString).orElse(""),
                                                         id, path, rdfsLabel);
       }
 

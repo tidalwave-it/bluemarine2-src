@@ -42,7 +42,7 @@ import java.nio.file.Path;
  **********************************************************************************************************************/
 public interface PathAwareEntity extends Entity
   {
-    public static final Class<PathAwareEntity> PathAwareEntity = PathAwareEntity.class;
+    public static final Class<PathAwareEntity> _PathAwareEntity_ = PathAwareEntity.class;
 
     /*******************************************************************************************************************
      *

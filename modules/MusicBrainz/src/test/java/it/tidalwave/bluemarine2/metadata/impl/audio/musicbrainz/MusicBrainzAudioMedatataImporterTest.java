@@ -52,8 +52,7 @@ import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
 import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMetadataProvider;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
@@ -132,7 +131,19 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
         stats.values().stream().flatMap(s -> s.withoutCddb.stream()).collect(toSet())
                 .stream().forEachOrdered(path -> log.info("STATS: without CDDB:        {}", path));
-        modelBuilders.entrySet().forEach(_c(entry -> verifyGlobalModel(entry.getValue().toModel(), entry.getKey())));
+        modelBuilders.forEach((key, value) ->
+          {
+            try
+              {
+                verifyGlobalModel(value.toModel(), key);
+              }
+            // An error here is likely to have been already detected in a previous failed test; OTOH it would cause
+            // *all* the tests in this class to fail as "CONFIGURATION FAILED".
+            catch (AssertionError | IOException e)
+              {
+                log.warn("While printing stats: {}", e.toString());
+              }
+          });
       }
 
     /*******************************************************************************************************************
@@ -208,7 +219,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
 
             exportToFile(model, actualResult);
             assertSameContents(expectedResult, actualResult);
-          };
+          }
       }
 
     /*******************************************************************************************************************
@@ -217,8 +228,8 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     @DataProvider
     protected static Object[][] trackResourcesProvider2()
       {
-        return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
-                // Files there apparendly don't have CDDB offsets
+        return streamOfTestSetTriples(TestSetLocator.allTestSets(), METADATA::resolve)
+                // Files there apparently don't have CDDB offsets
                 .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
                 .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))
                 .collect(toTestNGDataProvider());

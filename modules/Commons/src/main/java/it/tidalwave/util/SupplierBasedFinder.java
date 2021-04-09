@@ -25,43 +25,54 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.util.test;
+package it.tidalwave.util;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.file.Path;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import javax.annotation.concurrent.Immutable;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
+import lombok.AllArgsConstructor;
+import it.tidalwave.util.spi.SimpleFinderSupport;
 
 /***********************************************************************************************************************
+ *
+ * A {@link Finder} which retrieve results from a {@link Supplier}.
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-@Slf4j
-public class FileComparisonUtils8
+@Immutable @AllArgsConstructor
+public class SupplierBasedFinder<T> extends SimpleFinderSupport<T>
   {
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
-      throws IOException
+    private static final long serialVersionUID = 1344191036948400804L;
+
+    @Nonnull
+    private final Supplier<Collection<? extends T>> resultSupplier;
+
+    @Nonnull
+    private final Supplier<Integer> countSupplier;
+
+    public SupplierBasedFinder (final @Nonnull SupplierBasedFinder<T> other, @Nonnull Object override)
       {
-        FileComparisonUtils.assertSameContents(toFileBMT46(expectedPath), toFileBMT46(actualPath));
-//        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
+        super(other, override);
+        final SupplierBasedFinder<T> source = getSource(SupplierBasedFinder.class, other, override);
+        this.resultSupplier = source.resultSupplier;
+        this.countSupplier  = source.countSupplier;
       }
 
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    public static void assertSameContents2 (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
-      throws IOException
+    @Override @Nonnull
+    protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
       {
-        FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),
-                                               toFileBMT46(normalizedPath(actualPath.toAbsolutePath())));
+        return new CopyOnWriteArrayList<>(resultSupplier.get());
+      }
+
+    // This can get out of sync with results().size() if paging or such - in case of paging, fallback to super.count()
+    @Override @Nonnegative
+    public int count()
+      {
+        return countSupplier.get();
       }
   }
