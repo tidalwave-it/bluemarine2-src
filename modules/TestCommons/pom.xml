@@ -34,14 +34,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.1-ALPHA-1-SNAPSHOT</version>
+        <version>1.1-ALPHA-2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <version>1.1-ALPHA-2-SNAPSHOT</version>
     <name>blueMarine II :: Commons for Tests</name>
     <description>
         Utility code that is common to many tests through the project.
