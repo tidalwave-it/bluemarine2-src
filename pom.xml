@@ -40,7 +40,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2</artifactId>
-    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <version>1.1-ALPHA-2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II</name>
     <url>http://blueMarine.tidalwave.it</url>
@@ -73,7 +73,7 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
         <tidalwave.issues>BMT</tidalwave.issues>
         <tidalwave.github.readonly.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.readonly.url>
         <tidalwave.github.browse.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.browse.url>
-        <release.profiles>release,installers</release.profiles>
+        <release.profiles>release-sign-artifacts,installers</release.profiles>
     </properties>
 
     <!-- Repeated because of http://jira.codehaus.org/browse/SCM-442 -->
@@ -106,136 +106,136 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-headlessservice</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-cec</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
                 <classifier>tests</classifier>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
                 <classifier>tests</classifier>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
                 <classifier>tests</classifier>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-rest</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
                 <classifier>tests</classifier>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>bluemarine2-service</artifactId>
-                <version>1.1-ALPHA-1-SNAPSHOT</version>
+                <version>1.1-ALPHA-2-SNAPSHOT</version>
                 <classifier>bin</classifier>
                 <type>tar.gz</type>
             </dependency>
