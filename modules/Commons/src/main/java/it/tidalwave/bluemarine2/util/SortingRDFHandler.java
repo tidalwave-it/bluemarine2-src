@@ -29,8 +29,6 @@ package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import lombok.experimental.Delegate;
 import lombok.RequiredArgsConstructor;
@@ -72,43 +70,39 @@ public class SortingRDFHandler implements RDFHandler
     public void endRDF()
       throws RDFHandlerException
       {
-        Collections.sort(statements, new Comparator<Statement>()
+        statements.sort((st1, st2) ->
           {
-            @Override
-            public int compare (final @Nonnull Statement st1, final @Nonnull Statement st2)
+            final String s1 = st1.getSubject().stringValue();
+            final String s2 = st2.getSubject().stringValue();
+            final int c1 = s1.compareTo(s2);
+
+            if (c1 != 0)
               {
-                final String s1 = st1.getSubject().stringValue();
-                final String s2 = st2.getSubject().stringValue();
-                final int c1 = s1.compareTo(s2);
-
-                if (c1 != 0)
-                  {
-                    return c1;
-                  }
-
-                final String p1 = st1.getPredicate().stringValue();
-                final String p2 = st2.getPredicate().stringValue();
-                final int c2 = p1.compareTo(p2);
-
-                if (c2 != 0)
-                  {
-                    if (p1.equals(RDF.TYPE.stringValue()))
-                      {
-                        return -1;
-                      }
-                    else if (p2.equals(RDF.TYPE.stringValue()))
-                      {
-                        return +1;
-                      }
-
-                    return c2;
-                  }
-
-                final String o1 = st1.getObject().stringValue();
-                final String o2 = st2.getObject().stringValue();
-
-                return o1.compareTo(o2);
+                return c1;
               }
+
+            final String p1 = st1.getPredicate().stringValue();
+            final String p2 = st2.getPredicate().stringValue();
+            final int c2 = p1.compareTo(p2);
+
+            if (c2 != 0)
+              {
+                if (p1.equals(RDF.TYPE.stringValue()))
+                  {
+                    return -1;
+                  }
+                else if (p2.equals(RDF.TYPE.stringValue()))
+                  {
+                    return +1;
+                  }
+
+                return c2;
+              }
+
+            final String o1 = st1.getObject().stringValue();
+            final String o2 = st2.getObject().stringValue();
+
+            return o1.compareTo(o2);
           });
 
         for (final Statement statement : statements)

@@ -29,13 +29,12 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable8.displayableFromBundle;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 
 /***********************************************************************************************************************
  *
@@ -58,13 +57,13 @@ public class MainMenuItem
 
     public MainMenuItem (final @Nonnull String displayNameKey,
                          final @Nonnull String requestClassName,
-                         final @Nonnull int priority)
+                         final int priority)
       throws ClassNotFoundException
       {
         this.priority = priority;
         final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
         // FIXME: use MessageSendingUserAction?
-        this.action  = new UserActionSupport8(() -> messageBus.publish(_s(requestClass::newInstance).get()),
-                                               displayableFromBundle(getClass(), displayNameKey));
+        this.action  = UserAction.of(() -> messageBus.publish(_s(requestClass::newInstance).get()),
+                                     Displayable.fromBundle(getClass(), displayNameKey));
       }
   }

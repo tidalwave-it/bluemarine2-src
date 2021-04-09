@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.time.Duration;
@@ -49,10 +49,10 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
   {
     private static final javafx.util.Duration SKIP_DURATION = javafx.util.Duration.seconds(1);
 
-    @CheckForNull
+    @Nullable
     private Media media;
 
-    @CheckForNull
+    @Nullable
     private javafx.scene.media.MediaPlayer mediaPlayer;
 
     @Inject
@@ -120,9 +120,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
                     (ObservableValue<? extends javafx.util.Duration> observable,
                     javafx.util.Duration oldValue,
                     javafx.util.Duration newValue) ->
-              {
-                playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
-              });
+                            playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis())));
 
             mediaPlayer.play();
             mediaPlayer.setOnEndOfMedia(cleanup);

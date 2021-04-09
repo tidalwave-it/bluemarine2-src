@@ -94,7 +94,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
     @Override @Nonnull
     public MusicPerformerFinder performerOf (final @Nonnull Id performanceId)
       {
-        return clone(new RepositoryMusicPerformerFinder(repository, Optional.of(performanceId)));
+        return clonedWith(new RepositoryMusicPerformerFinder(repository, Optional.of(performanceId)));
       }
 
     /*******************************************************************************************************************

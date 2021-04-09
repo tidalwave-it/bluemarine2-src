@@ -28,6 +28,7 @@
 package it.tidalwave.bluemarine2.util;
 
 import org.slf4j.bridge.SLF4JBridgeHandler;
+import it.tidalwave.util.PreferencesHandler;
 import lombok.NoArgsConstructor;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -47,28 +48,10 @@ public final class SystemConfigurer
 
     public static void setSystemProperties()
       {
-        final String home = System.getProperty("user.home", "/tmp");
-        final String osName = System.getProperty("os.name").toLowerCase();
-
-        switch (osName)
-          {
-            case "linux":
-                // on Linux we define paths in the launcher shell
-                break;
-
-            case "mac os x":
-                final String workspace = System.getProperty("blueMarine2.workspace", home + "/Library/Application Support/blueMarine2");
-                System.setProperty("blueMarine2.workspace", workspace);
-                System.setProperty("blueMarine2.logFolder", workspace + "/logs");
-                System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");
-                break;
-
-            case "windows":
-                // FIXME todo
-                break;
-
-            default:
-                throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
-          }
+        final PreferencesHandler preferencesHandler = PreferencesHandler.getInstance();
+        final String workspace = preferencesHandler.getAppFolder().toString();
+        System.setProperty("blueMarine2.workspace", workspace);
+        System.setProperty("blueMarine2.logFolder", preferencesHandler.getLogFolder().toString());
+        System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");
       }
   }

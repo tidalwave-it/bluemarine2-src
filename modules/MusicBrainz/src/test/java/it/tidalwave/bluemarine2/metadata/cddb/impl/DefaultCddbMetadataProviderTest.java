@@ -34,14 +34,13 @@ import java.nio.file.Files;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 

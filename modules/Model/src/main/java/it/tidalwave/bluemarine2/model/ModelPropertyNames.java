@@ -42,5 +42,5 @@ public final class ModelPropertyNames
   {
     private static final String PREFIX = ModelPropertyNames.class.getPackage().getName();
     
-    public static final Key<Path> ROOT_PATH = new Key<Path>(PREFIX + ".rootPath") {};
+    public static final Key<Path> ROOT_PATH = Key.of(PREFIX + ".rootPath", Path.class);
   }

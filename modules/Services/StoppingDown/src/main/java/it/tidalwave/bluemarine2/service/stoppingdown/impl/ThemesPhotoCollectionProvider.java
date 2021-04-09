@@ -29,9 +29,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
@@ -127,7 +125,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return parent.finderOf(p -> Arrays.asList(
+        return parent.finderOf(p -> List.of(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
                 new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
       }
@@ -193,7 +191,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                     galleryDescriptions.add(new GalleryDescription(description, url));
                   }
 
-                Collections.sort(galleryDescriptions, comparing(GalleryDescription::getDisplayName));
+                galleryDescriptions.sort(comparing(GalleryDescription::getDisplayName));
 
                 return galleryDescriptions;
               }

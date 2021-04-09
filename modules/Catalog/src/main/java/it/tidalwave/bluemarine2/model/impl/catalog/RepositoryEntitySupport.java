@@ -34,6 +34,7 @@ import java.time.Duration;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.Binding;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -166,7 +167,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Nonnull
     protected static Optional<String> toString (final @Nullable Binding binding)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue());
+        return Optional.ofNullable(binding).map(Binding::getValue).map(Value::stringValue);
       }
 
     /*******************************************************************************************************************
@@ -175,7 +176,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Nonnull
     protected static Optional<Id> toId (final @Nullable Binding binding)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue()).map(s -> new Id(s));
+        return Optional.ofNullable(binding).map(Binding::getValue).map(Value::stringValue).map(Id::new);
       }
 
     /*******************************************************************************************************************
@@ -184,7 +185,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Nonnull
     protected static Optional<Integer> toInteger (final @Nullable Binding binding)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Integer.parseInt(v.stringValue()));
+        return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Integer.parseInt(v.stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -193,7 +194,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Nonnull
     protected static Optional<Long> toLong (final @Nullable Binding binding)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Long.parseLong(v.stringValue()));
+        return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Long.parseLong(v.stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -202,7 +203,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Nonnull
     protected static Optional<Duration> toDuration (final @Nullable Binding binding)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
+        return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
       }
 
     /*******************************************************************************************************************

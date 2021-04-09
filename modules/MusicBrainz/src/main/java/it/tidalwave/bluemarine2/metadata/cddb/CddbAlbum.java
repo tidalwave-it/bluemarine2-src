@@ -77,7 +77,7 @@ public class CddbAlbum
                             .discLength(
                                     Stream.of(split)
                                           .skip(2)
-                                          .map(string -> PATTERN_DISC_LENGTH.matcher(string))
+                                          .map(PATTERN_DISC_LENGTH::matcher)
                                           .filter(Matcher::matches)
                                           .map(matcher -> Integer.parseInt(matcher.group(1)))
                                           .findFirst()

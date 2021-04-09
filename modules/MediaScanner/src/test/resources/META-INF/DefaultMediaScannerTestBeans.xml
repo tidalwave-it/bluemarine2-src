@@ -67,7 +67,7 @@
 
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.StatementManager" />
 
-    <bean class="it.tidalwave.util.spi.MockInstantProvider" />
+    <bean class="it.tidalwave.util.test.MockTimeProvider" />
 
     <!-- FIXME: this should be mocked -->
     <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
