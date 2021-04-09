@@ -34,14 +34,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.1-ALPHA-1-SNAPSHOT</version>
+        <version>1.1-ALPHA-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-ALPHA-1-SNAPSHOT</version>
+    <version>1.1-ALPHA-1</version>
     <name>blueMarine II :: UI</name>
     <description>
         The abstract model of the User Interface.
