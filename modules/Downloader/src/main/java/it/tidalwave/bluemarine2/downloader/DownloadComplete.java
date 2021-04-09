@@ -51,8 +51,8 @@ public class DownloadComplete
       {
         NETWORK,
         CACHE
-      };
-    
+      }
+
     @Nonnull
     private final URL url;
 

@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -81,7 +80,7 @@ public class PlayList<ENTITY>
      ******************************************************************************************************************/
     public PlayList (final @Nonnull ENTITY currentItem, final @Nonnull Collection<ENTITY> items)
       {
-        this.items = new ArrayList<>(items.isEmpty() ? Arrays.asList(currentItem) : items);
+        this.items = new ArrayList<>(items.isEmpty() ? List.of(currentItem) : items);
         this.currentItem = Optional.of(currentItem);
         this.index = this.items.indexOf(currentItem);
         update();

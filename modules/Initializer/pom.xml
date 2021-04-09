@@ -5,15 +5,18 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-21-SNAPSHOT</version>
+        <version>1.1-ALPHA-1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
-    <version>1.0-ALPHA-21-SNAPSHOT</version>
+    <version>1.1-ALPHA-1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Initializer</name>
+    <name>blueMarine II :: Initializer</name>
+    <description>
+        A module that is responsible for the initialisation of other modules.
+    </description>
 
     <dependencies>
         <dependency>

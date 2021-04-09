@@ -101,7 +101,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     @Override @Nonnull
     public RecordFinder madeBy (final @Nonnull Id artistId)
       {
-        return clone(new RepositoryRecordFinder(repository, Optional.of(artistId), trackId));
+        return clonedWith(new RepositoryRecordFinder(repository, Optional.of(artistId), trackId));
       }
 
     /*******************************************************************************************************************
@@ -112,7 +112,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     @Override @Nonnull
     public RecordFinder containingTrack (final @Nonnull Id trackId)
       {
-        return clone(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
+        return clonedWith(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
       }
 
     /*******************************************************************************************************************

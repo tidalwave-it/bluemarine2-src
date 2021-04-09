@@ -28,7 +28,8 @@
 package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.role.ui.Displayable;
+import static it.tidalwave.util.Parameters.r;
 
 /***********************************************************************************************************************
  *
@@ -43,6 +44,6 @@ public class NamedEntity extends EntityWithRoles
   {
     public NamedEntity (final @Nonnull String displayName)
       {
-        super(new DefaultDisplayable(displayName));
+        super(r(Displayable.of(displayName)));
       }
   }

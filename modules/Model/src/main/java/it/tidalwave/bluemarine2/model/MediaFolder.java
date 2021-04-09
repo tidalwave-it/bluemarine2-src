@@ -30,15 +30,15 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.function.Function;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.Finder;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link SimpleComposite8}
+ * Represents a folder on a filesystem that contains media items. It is associated with the {@link SimpleComposite}
  * role. The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept
  * is flexible and represents any composite collection of items.
  *
@@ -47,7 +47,7 @@ import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAwareEntity>
+public interface MediaFolder extends PathAwareEntity, SimpleComposite<PathAwareEntity>
   {
     /*******************************************************************************************************************
      *
@@ -61,14 +61,14 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
 
     /*******************************************************************************************************************
      *
-     * Decorates an existing {@link Finder8}{@code <PathAwareEntity>} with a {@link PathAwareFinder}.
+     * Decorates an existing {@link Finder}{@code <PathAwareEntity>} with a {@link PathAwareFinder}.
      *
      * @param   delegate    the {@code Finder} to decorate
      * @return              the {@code PathAwareFinder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default PathAwareFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
+    public default PathAwareFinder finderOf (final @Nonnull Finder<PathAwareEntity> delegate)
       {
         return new PathAwareEntityFinderDelegate(this, delegate);
       }

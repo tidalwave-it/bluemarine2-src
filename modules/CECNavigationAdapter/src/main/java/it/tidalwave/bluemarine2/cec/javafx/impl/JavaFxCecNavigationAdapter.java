@@ -86,10 +86,7 @@ public class JavaFxCecNavigationAdapter
     /* VisibleForTesting */ void onCecUserControlEventReceived (final @Nonnull @ListensTo CecUserControlEvent event)
       {
         log.debug("onCecUserControlEventReceived({})", event);
-        Platform.runLater(() -> 
-          {
-            actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
-          });
+        Platform.runLater(() -> actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run());
       }
     
     private void keyPress (final @Nonnull KeyCode code)

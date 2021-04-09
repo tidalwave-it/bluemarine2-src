@@ -61,7 +61,7 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
       throws Exception
       {
         log.debug("toObject() - {}", datum);
-        final DIDLObject item = datum.getDelegate().as(DIDLAdapter).toObject();
+        final DIDLObject item = datum.getDelegate().as(_DIDLAdapter_).toObject();
 
         if (item instanceof Item)
           {

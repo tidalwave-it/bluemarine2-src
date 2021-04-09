@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.downloader.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Date;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -143,7 +143,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
                 .setCacheConfig(cacheConfig)
                 .setRedirectStrategy(dontFollowRedirect)
                 .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
-                .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
+                .setDefaultHeaders(List.of(new BasicHeader("Accept", "application/n3")))
                 .setConnectionManager(connectionManager)
                 .addInterceptorFirst(killCacheHeaders) // FIXME: only if  explicitly configured
          .build();
@@ -188,7 +188,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
 
                 // FIXME: shouldn't do this by myself
                 // FIXME: upon configuration, everything should be cached (needed for supporting integration tests)
-                if (!origin.equals(Origin.CACHE) && Arrays.asList(200, 303).contains(response.getStatusLine().getStatusCode()))
+                if (!origin.equals(Origin.CACHE) && List.of(200, 303).contains(response.getStatusLine().getStatusCode()))
                   {
                     final Date date = new Date();
                     final Resource resource = new HeapResource(bytes);

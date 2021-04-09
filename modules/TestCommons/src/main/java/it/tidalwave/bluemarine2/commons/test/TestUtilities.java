@@ -41,13 +41,13 @@ import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.rio.RDFFormat;
-import it.tidalwave.util.As8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.As;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.util.Dumpable;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -69,19 +69,19 @@ public class TestUtilities
         Files.createDirectories(actualResult.getParent());
         final Stream<String> stream = data.stream().map(Object::toString);
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        assertSameContents(expectedResult, actualResult);
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static List<String> dump (final @Nonnull As8 entity)
+    public static List<String> dump (final @Nonnull As entity)
       {
         final List<String> result = new ArrayList<>();
         result.add((entity instanceof Dumpable) ? ((Dumpable)entity).toDumpString() : entity.toString());
-        final Optional<SimpleComposite8> composite = entity.asOptional(SimpleComposite8);
-        composite.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));
+        final Optional<SimpleComposite> composite = entity.maybeAs(_SimpleComposite_);
+        composite.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As)child))));
 
         return result;
       }
@@ -89,7 +89,6 @@ public class TestUtilities
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Nonnull
     public static void loadRepository (final @Nonnull Repository repository, final @Nonnull Path path)
       throws Exception
       {

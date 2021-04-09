@@ -46,7 +46,7 @@ import it.tidalwave.bluemarine2.model.spi.SourceAware;
  **********************************************************************************************************************/
 public interface Record extends Entity, SourceAware, Identifiable
   {
-    public static final Class<Record> Record = Record.class;
+    public static final Class<Record> _Record_ = Record.class;
 
     /*******************************************************************************************************************
      *

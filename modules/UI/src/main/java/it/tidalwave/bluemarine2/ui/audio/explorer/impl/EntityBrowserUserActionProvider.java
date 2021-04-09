@@ -32,7 +32,6 @@ import javax.inject.Inject;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import lombok.RequiredArgsConstructor;
 
@@ -56,6 +55,6 @@ public class EntityBrowserUserActionProvider extends DefaultUserActionProvider
     @Override @Nonnull
     public UserAction getDefaultAction()
       {
-        return new UserActionSupport8(()-> control.selectBrowser(entityBrowser));
+        return UserAction.of(()-> control.selectBrowser(entityBrowser));
       }
   }

@@ -50,7 +50,6 @@ public interface DevicePublisher<T>
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
     public void publishDevice()
       throws ValidationException;
   }

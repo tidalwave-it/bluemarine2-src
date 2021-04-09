@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
  **********************************************************************************************************************/
 public interface MediaCatalog
   {
-    public static final Class<MediaCatalog> MediaCatalog = MediaCatalog.class;
+    public static final Class<MediaCatalog> _MediaCatalog_ = MediaCatalog.class;
 
     /*******************************************************************************************************************
      *

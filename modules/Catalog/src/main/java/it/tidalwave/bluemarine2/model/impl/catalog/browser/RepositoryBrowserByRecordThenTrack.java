@@ -27,6 +27,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
+import it.tidalwave.bluemarine2.model.MediaCatalog;
 import org.springframework.core.annotation.Order;
 
 /***********************************************************************************************************************
@@ -39,6 +40,6 @@ public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport
   {
     public RepositoryBrowserByRecordThenTrack()
       {
-        super(catalog -> catalog.findRecords());
+        super(MediaCatalog::findRecords);
       }
   }

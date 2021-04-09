@@ -96,7 +96,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     @Override @Nonnull
     public MusicArtistFinder makerOf (final @Nonnull Id madeEntityId)
       {
-        return clone(new RepositoryMusicArtistFinder(repository, Optional.of(madeEntityId)));
+        return clonedWith(new RepositoryMusicArtistFinder(repository, Optional.of(madeEntityId)));
       }
 
     /*******************************************************************************************************************
