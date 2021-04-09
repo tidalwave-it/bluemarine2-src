@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     *********************************************************************************************************************
 
-    blueMarine II: Semantic Media Centre
-    http://tidalwave.it/projects/bluemarine2
+    TheseFoolishThings: Miscellaneous utilities
+    http://tidalwave.it/projects/thesefoolishthings
 
-    Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
+    Copyright (C) 2009 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
 
     *********************************************************************************************************************
 
@@ -20,8 +21,8 @@
 
     *********************************************************************************************************************
 
-    git clone https://bitbucket.org/tidalwave/bluemarine2-src
-    git clone https://github.com/tidalwave-it/bluemarine2-src
+    git clone https://bitbucket.org/tidalwave/thesefoolishthings-src
+    git clone https://github.com/tidalwave-it/thesefoolishthings-src
 
     *********************************************************************************************************************
 
@@ -37,8 +38,16 @@
             <outputDirectory>/</outputDirectory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
-                <exclude>**/target/**</exclude>
+                <exclude>bitbucket-pipelines.yml</exclude>
+                <exclude>.travis.yml</exclude>
+                <exclude>**/.maven-env</exclude>
+                <exclude>**/.maven-local-env</exclude>
                 <exclude>.git/**</exclude>
+                <exclude>**/.idea/**</exclude>
+                <exclude>**/*.iml</exclude>
+                <exclude>**/*.tar.gz</exclude>
+                <exclude>**/target/**</exclude>
+                <exclude>**/.description</exclude>
             </excludes>
         </fileSet>
     </fileSets>
