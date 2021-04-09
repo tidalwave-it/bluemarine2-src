@@ -166,7 +166,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
         lvFiles.requestFocus();
       }
 
-    @Override
+    @Override @Nonnull
     public Object getMemento()
       {
         return new Memento(lvFiles);

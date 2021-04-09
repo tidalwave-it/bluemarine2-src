@@ -15,8 +15,8 @@
     <artifactId>bluemarine2-services-modules</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Services (modules)</name>
-    <description>blueMarine2 Services (modules)</description>
+    <name>blueMarine II :: Services (modules)</name>
+    <description>The umbrella POM for all services.</description>
 
     <modules>
         <module>StoppingDown</module>

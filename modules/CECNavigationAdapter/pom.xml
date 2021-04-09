@@ -13,7 +13,11 @@
     <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - CEC Navigation Adapter</name>
+    <name>blueMarine II :: CEC :: Navigation Adapter</name>
+    <description>
+        An adapter that allows to navigate through the application by means of CEC (Consumer Electronic Control), that is a remote
+        control connected to the TV/monitor.
+    </description>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->

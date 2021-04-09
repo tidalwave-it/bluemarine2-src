@@ -42,7 +42,7 @@
     <artifactId>bluemarine2-service</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers - Headless Service</name>
+    <name>blueMarine II :: Installers :: Headless Service</name>
     <description>
         This module creates a headless service. The produced artifacts are a .tar.gz and a .zip containing all the
         required stuff, including a shell script launcher.

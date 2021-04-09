@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.captureone.impl.applescript;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.List;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -40,11 +40,8 @@ import it.tidalwave.bluemarine2.captureone.impl.C1Collection;
 import it.tidalwave.bluemarine2.captureone.impl.C1Document;
 import it.tidalwave.bluemarine2.captureone.impl.C1Image;
 import org.testng.annotations.Test;
-import static java.util.stream.Collectors.joining;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *
@@ -92,7 +89,7 @@ public class AppleScriptCaptureOneDaoTest
         final Path actualFile = testSet.actualDocumentXmlFile;
         final Path expectedFile = testSet.expectedDocumentXmlFile;
         Files.createDirectories(actualFile.getParent());
-        Files.write(actualFile, Arrays.asList(document));
+        Files.write(actualFile, List.of(document));
         assertSameContents(expectedFile.toFile(), actualFile.toFile());
       }
 
@@ -105,7 +102,7 @@ public class AppleScriptCaptureOneDaoTest
       {
         // given
         final AppleScriptCaptureOneDao underTest = new AppleScriptCaptureOneDao();
-        final String in = Files.readAllLines(testSet.expectedDocumentXmlFile, UTF_8).stream().collect(joining("\n"));
+        final String in = String.join("\n", Files.readAllLines(testSet.expectedDocumentXmlFile, UTF_8));
         // when
         final C1Document document = underTest.parse(in);
         // then
@@ -128,7 +125,7 @@ public class AppleScriptCaptureOneDaoTest
         try (final PrintWriter pw = new PrintWriter(path.toFile()))
           {
             pw.println(document.getName());
-            document.getCollections().stream().forEach(c -> dump(pw, "", c));
+            document.getCollections().forEach(c -> dump(pw, "", c));
           }
       }
 
@@ -140,8 +137,8 @@ public class AppleScriptCaptureOneDaoTest
                              final @Nonnull C1Collection collection)
       {
         pw.println(indent + " * " + collection.getName());
-        collection.getCollections().stream().forEach(c -> dump(pw, indent + "  ", c));
-        collection.getImages().stream().forEach(i -> dump(pw, indent + "  ", i));
+        collection.getCollections().forEach(c -> dump(pw, indent + "  ", c));
+        collection.getImages().forEach(i -> dump(pw, indent + "  ", i));
       }
 
     /*******************************************************************************************************************

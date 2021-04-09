@@ -80,7 +80,7 @@ public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory
           {
             throw new RuntimeException("Unknown type: " + entityClass + "; registered: " + factoryMapByType.keySet());
           };
-      };
+      }
 
     /*******************************************************************************************************************
      *

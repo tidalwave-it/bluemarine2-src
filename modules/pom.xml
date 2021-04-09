@@ -19,8 +19,11 @@
     <description>blueMarine2 (modules)</description>
 
     <properties>
+        <tft.javac.source>11</tft.javac.source>
+        <tft.javac.target>11</tft.javac.target>
+        <tft.javac.release>11</tft.javac.release>
+
         <activation.version>1.1.1</activation.version>
-        <aquafx.version>0.2</aquafx.version>
         <cling.version>2.1.1</cling.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <httpclient.version>4.4</httpclient.version>
@@ -28,17 +31,18 @@
         <tft.javafx.version>11.0.1</tft.javafx.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
         <jaxb.version>2.2.11</jaxb.version>
-        <jackson.version>2.8.5</jackson.version>
-        <jetty.version>8.1.8.v20121106</jetty.version>
-        <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
+        <jackson.version>2.12.2</jackson.version>
+        <jetty.version>10.0.1</jetty.version>
         <mp3agic.version>0.8.3</mp3agic.version>
         <rdf4j.version>2.1.4</rdf4j.version>
-        <steelblue.version>1.0-ALPHA-16</steelblue.version>
-        <thesefoolishthings.version>3.1-ALPHA-7</thesefoolishthings.version>
+        <tft.spring.version>5.3.1</tft.spring.version>
+        <steelblue.version>1.1-ALPHA-2</steelblue.version>
+        <thesefoolishthings.version>3.2-ALPHA-11</thesefoolishthings.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
-        <tft.spring.version>4.3.30.RELEASE</tft.spring.version> <!-- 5.3.1 breaks some tests. -->
+        <tft.appbundle.name>blueMarine2</tft.appbundle.name>
+        <tft.appbundle.signature>TDLW</tft.appbundle.signature>
 
         <tft.test.vmOptions>-Xss512m -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
         <tft.test.maxMemory>2048M</tft.test.maxMemory>
@@ -83,12 +87,6 @@
                 <groupId>net.jthink</groupId>
                 <artifactId>jaudiotagger</artifactId>
                 <version>${jaudiotagger.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.aquafx-project</groupId>
-                <artifactId>aquafx</artifactId>
-                <version>${aquafx.version}</version>
             </dependency>
 
             <!-- Should activate by itself with JDK 11+, but it fails with Jenkins Maven integration. -->
@@ -158,7 +156,17 @@
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
@@ -381,12 +389,6 @@
         ============================================================================================================ -->
         <profile>
             <id>installers</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <modules>
                 <module>Installers</module>
             </modules>
@@ -401,6 +403,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <blueMarine2.musicTestSets.path>${blueMarine2.musicTestSets.path}</blueMarine2.musicTestSets.path>
+                        <it.tidalwave.util.test.FileComparisonUtils.tabularOutput>true</it.tidalwave.util.test.FileComparisonUtils.tabularOutput>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -415,31 +418,6 @@
                         </systemProperty>
                     </systemProperties>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>enforce-banned-dependencies</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <bannedDependencies>
-                                    <excludes>
-                                        <exclude>commons-logging:commons-logging</exclude>
-                                        <exclude>org.aspectj:aspectjweaver</exclude>
-                                        <exclude>com.kenai.nbpwr:org-slf4j-jdk14</exclude>
-                                    </excludes>
-                                </bannedDependencies>
-                            </rules>
-                            <fail>true</fail>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

@@ -12,8 +12,10 @@
     <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Media Server</name>
-    <description>blueMarine2 - Media Server</description>
+    <name>blueMarine II :: Media Server</name>
+    <description>
+        The abstract model of the component that exposes media.
+    </description>
 
     <dependencies>
         <dependency>

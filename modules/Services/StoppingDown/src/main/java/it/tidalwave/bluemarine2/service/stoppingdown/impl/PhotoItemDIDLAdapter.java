@@ -28,9 +28,9 @@
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Arrays;
 import java.util.List;
 import java.nio.file.Path;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
@@ -41,7 +41,6 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Collections.reverseOrder;
-import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -61,7 +60,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     private static final String MEDIA_URL_TEMPLATE =
             PhotoCollectionProviderSupport.URL_STOPPINGDOWN + "/media/stillimages/%s/%d/image.jpg";
 
-    private static final List<Integer> SIZES = Arrays.asList(200, 400, 800, 1280, 1920, 2560);
+    private static final List<Integer> SIZES = List.of(200, 400, 800, 1280, 1920, 2560);
 
     @Nonnull
     private final PhotoItem datum;
@@ -73,16 +72,15 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Override
+    @Override @Nonnull
     public DIDLObject toObject()
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "image/jpeg", "*");
         final Res[] resources = SIZES.stream()
                                      .sorted(reverseOrder())
                                      .map(size -> createResource(protocolInfo, size))
-                                     .collect(toList())
-                                     .toArray(new Res[0]);
-        final Path parentPath = datum.getParent().map(e -> e.getPath()).orElseThrow(() -> new RuntimeException());
+                                     .toArray(Res[]::new);
+        final Path parentPath = datum.getParent().map(PathAwareEntity::getPath).orElseThrow(RuntimeException::new);
         final String parentId = parentPath.toString();
         final String photoId = parentPath.resolve(datum.getId()).toString();
         final String title = datum.getId();

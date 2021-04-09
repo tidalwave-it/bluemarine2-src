@@ -15,7 +15,7 @@
     <artifactId>bluemarine2-plugins-modules</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Plugins (modules)</name>
-    <description>blueMarine2 Plugins (modules)</description>
+    <name>blueMarine II :: Plugins (modules)</name>
+    <description>The umbrella POM for all plugins.</description>
 
 </project>

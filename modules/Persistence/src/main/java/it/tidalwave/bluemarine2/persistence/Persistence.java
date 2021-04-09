@@ -46,7 +46,7 @@ import org.eclipse.rdf4j.rio.RDFHandlerException;
  **********************************************************************************************************************/
 public interface Persistence
   {
-    public static final Class<Persistence> Persistence = Persistence.class;
+    public static final Class<Persistence> _Persistence_ = Persistence.class;
 
     public static interface TransactionalTask<E extends Exception>
       {

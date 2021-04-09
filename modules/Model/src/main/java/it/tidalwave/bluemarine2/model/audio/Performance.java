@@ -44,7 +44,7 @@ import it.tidalwave.bluemarine2.model.spi.SourceAware;
  **********************************************************************************************************************/
 public interface Performance extends Entity, SourceAware, Identifiable
   {
-    public static final Class<Performance> Performance = Performance.class;
+    public static final Class<Performance> _Performance_ = Performance.class;
 
     /*******************************************************************************************************************
      *

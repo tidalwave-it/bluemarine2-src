@@ -29,7 +29,7 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -59,10 +59,10 @@ import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
-import static it.tidalwave.util.test.FileComparisonUtils.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.role.Identifiable._Identifiable_;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
@@ -79,7 +79,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
     private static final Comparator<Entity> BY_DISPLAY_NAME =
-            (e1, e2) -> e1.as(Displayable).getDisplayName().compareTo(e2.as(Displayable).getDisplayName());
+            (e1, e2) -> e1.as(_Displayable_).getDisplayName().compareTo(e2.as(_Displayable_).getDisplayName());
 
     private static int latestQueryCount;
 
@@ -99,7 +99,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
     public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
-                                                                       final @CheckForNull String otherTestSetName,
+                                                                       final @Nullable String otherTestSetName,
                                                                        final @Nonnull Id source,
                                                                        final @Nonnull Id fallbackSource)
       throws Exception
@@ -121,7 +121,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         // when
         queryAndDump(underTest, actualResult);
         // then
-        assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
+        assertSameContents(expectedResult, actualResult);
       }
 
     /*******************************************************************************************************************
@@ -134,7 +134,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         createDirectories(PATH_TEST_RESULTS);
         RepositoryFinderSupport.resetQueryCount();
         latestQueryCount = 0;
-        final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
+        final PrintWriter pw = new PrintWriter(dumpPath.toFile(), UTF_8);
 
         final MusicArtistFinder allArtistsFinder = catalog.findArtists();
         final RecordFinder allRecordsFinder = catalog.findRecords();
@@ -237,7 +237,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         log.info("QUERYING ALL AUDIO TRACKS...");
         final AudioFileFinder allAudioFileFinder = catalog.findAudioFiles();
         pw.printf("%n%n%nALL AUDIO FILES (%d):%n%n", allAudioFileFinder.count());
-        allAudioFileFinder.forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
+        allAudioFileFinder.results().forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
+        // FIXME: allAudioFileFinder.forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
@@ -270,7 +271,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         final MusicArtist artist = musicPerformer.getMusicArtist();
         final Optional<Entity> role = musicPerformer.getRole();
-        final String performer = role.get().as(Displayable).getDisplayName().replaceAll("^performer_", "").replace('_', ' ');
+        final String performer = role.get().as(_Displayable_).getDisplayName().replaceAll("^performer_", "").replace('_', ' ');
         return String.format("%-20s %s", performer, displayNameOf(artist));
       }
 
@@ -280,7 +281,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     @Nonnull
     private String displayNameOf (final @Nonnull Entity entity)
       {
-        return String.format("%s (%s)", entity.as(Displayable).getDisplayName(), entity.as(Identifiable).getId());
+        return String.format("%s (%s)", entity.as(_Displayable_).getDisplayName(), entity.as(_Identifiable_).getId());
       }
 
     /*******************************************************************************************************************

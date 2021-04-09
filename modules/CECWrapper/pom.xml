@@ -13,7 +13,10 @@
     <artifactId>it-tidalwave-cec</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - CEC Adapter</name>
+    <name>blueMarine II :: CEC :: Adapter</name>
+    <description>
+        An adapter for the CEC (Consumer Electronics Control) protocol.
+    </description>
 
     <dependencies>
         <dependency>

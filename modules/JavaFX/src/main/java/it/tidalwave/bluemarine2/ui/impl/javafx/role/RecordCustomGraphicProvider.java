@@ -33,7 +33,7 @@ import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.audio.Record;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
@@ -52,7 +52,7 @@ public class RecordCustomGraphicProvider implements CustomGraphicProvider
       {
         return hBox("cell-container",
                     label("record-icon", ""),
-                    label("record-label", record.as(Displayable).getDisplayName()),
+                    label("record-label", record.as(_Displayable_).getDisplayName()),
                     label("record-duration", "")); // FIXME format(record.getDuration())
       }
   }

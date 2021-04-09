@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
-import java.util.Arrays;
+import java.util.List;
 import org.fourthline.cling.model.meta.Icon;
 import org.fourthline.cling.model.types.UDN;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
@@ -54,7 +54,7 @@ public class DefaultDevicePublisherTest extends ClingTestSupport
       {
         final DefaultDevicePublisher<UPnPServerMock> underTest = context.getBean("underTest", DefaultDevicePublisher.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
-        underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
+        underTest.setIcons(List.of(createDefaultDeviceIcon()));
         underTest.publishDevice();
 
         log.info("Completed device registration");

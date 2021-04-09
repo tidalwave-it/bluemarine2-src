@@ -152,7 +152,7 @@ public class ModelBuilder
                                            final @Nonnull IRI predicate,
                                            final @Nonnull Value object)
       {
-        subjects.stream().forEach(subject -> ModelBuilder.this.with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
+        subjects.forEach(subject -> ModelBuilder.this.with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
         return this;
       }
 
@@ -228,7 +228,7 @@ public class ModelBuilder
     @Nonnull
     public synchronized ModelBuilder with (final @Nonnull Optional<ModelBuilder> optionalBuiilder)
       {
-        optionalBuiilder.ifPresent(builder -> ModelBuilder.this.with(builder));
+        optionalBuiilder.ifPresent(ModelBuilder.this::with);
         return this;
       }
 
@@ -251,7 +251,7 @@ public class ModelBuilder
     @Nonnull
     public synchronized ModelBuilder with (final @Nonnull Model other)
       {
-        other.forEach(statement -> model.add(statement));
+        other.forEach(model::add);
         return this;
       }
 
@@ -263,7 +263,7 @@ public class ModelBuilder
     @Nonnull
     public synchronized ModelBuilder with (final @Nonnull List<ModelBuilder> others)
       {
-        others.stream().map(other -> other.toModel()).forEach(m -> m.forEach(statement -> model.add(statement)));
+        others.stream().map(ModelBuilder::toModel).forEach(m -> m.forEach(model::add));
         return this;
       }
   }

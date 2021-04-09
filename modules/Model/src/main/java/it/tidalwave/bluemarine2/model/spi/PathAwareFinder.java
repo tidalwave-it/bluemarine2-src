@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.spi;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.util.spi.ExtendedFinderSupport;
 
 /***********************************************************************************************************************
  *
@@ -39,7 +39,7 @@ import it.tidalwave.util.spi.ExtendedFinder8Support;
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity, PathAwareFinder>
+public interface PathAwareFinder extends ExtendedFinderSupport<PathAwareEntity, PathAwareFinder>
   {
     /*******************************************************************************************************************
      *

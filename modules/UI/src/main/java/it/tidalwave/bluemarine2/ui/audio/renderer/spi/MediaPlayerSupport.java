@@ -27,7 +27,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.spi;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 import java.time.Duration;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -43,7 +43,7 @@ import lombok.experimental.Accessors;
  **********************************************************************************************************************/
 public abstract class MediaPlayerSupport implements MediaPlayer
   {
-    @CheckForNull
+    @Nullable
     protected MediaItem mediaItem;
     
     @Getter @Accessors(fluent = true)

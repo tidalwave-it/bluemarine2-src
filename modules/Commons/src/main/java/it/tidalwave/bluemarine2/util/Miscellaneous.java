@@ -27,7 +27,6 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
@@ -89,7 +88,7 @@ public final class Miscellaneous
      *
      *
      ******************************************************************************************************************/
-    @CheckForNull
+    @Nullable
     public static String normalizedToNativeForm (final @Nullable String string)
       {
         return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);

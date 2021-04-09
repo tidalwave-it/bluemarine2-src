@@ -36,17 +36,15 @@ import java.util.Optional;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
+import it.tidalwave.role.ui.Displayable;
 import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.util.Finder;
 import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
+import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
@@ -61,10 +59,10 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity.PathAwareEntity;
+import static it.tidalwave.bluemarine2.model.spi.PathAwareEntity._PathAwareEntity_;
 
 /***********************************************************************************************************************
  *
@@ -103,12 +101,12 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
 
-    private final UserAction8 navigateUpAction = new UserActionSupport8(() -> navigateUp());
+    private final UserAction navigateUpAction = UserAction.of(this::navigateUp);
 
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
 
     @Getter
-    private final List<AudioFileSupplier> mediaItems = new ArrayList<>();
+    private final List<Entity> mediaItems = new ArrayList<>();
 
     /*******************************************************************************************************************
      *
@@ -270,7 +268,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //            public Void run()
 //              {
 //                final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
-//                                                     .map(o -> o.as(Presentable).createPresentationModel())
+//                                                     .map(o -> o.as(_Presentable_).createPresentationModel())
 //                                                     .collect(toCompositePresentationModel());
 //                presentation.populateBrowsers(pm);
 //                selectBrowser(browsers.get(0));
@@ -278,7 +276,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //              }
 //           });
 
-        final PresentationModel pm = toCompositePresentationModel(browsers, o -> new EntityBrowserUserActionProvider(o));
+        final PresentationModel pm = toCompositePresentationModel(browsers, EntityBrowserUserActionProvider::new);
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
       }
@@ -295,16 +293,15 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         log.debug("populateItems({})", folderAndMemento);
         this.currentFolder = folderAndMemento.getFolder();
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
+        Platform.runLater(() -> navigateUpAction.enabled().set(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
-        final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
-        final Finder8<? extends Entity> finder = composite.findChildren().withContext(this);
+        final Finder<? extends Entity> finder = currentFolder.as(_SimpleComposite_).findChildren().withContext(this);
         mediaItems.clear();
-//        mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList()));
-        mediaItems.addAll(finder.stream().filter(i -> i instanceof AudioFileSupplier)
-                                         .map(i -> ((AudioFileSupplier)i).getAudioFile())
-                                         .collect(toList()));
-        final PresentationModel pm = toCompositePresentationModel(finder);
+        // mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList
+        // ()));
+        mediaItems.addAll(finder.results());
+        // Needs the cast for overloading ambiguity in the method signature
+        final PresentationModel pm = toCompositePresentationModel(mediaItems);
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
 
@@ -316,10 +313,10 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     @Nonnull
     private String getCurrentPathLabel()
       {
-        return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> i.asOptional(PathAwareEntity).map(p -> p.getParent().isPresent()).orElse(true))
-                .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
-                .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
+        return concat(navigationStack.stream().map(FolderAndMemento::getFolder), of(currentFolder))
+                .filter(i -> i.maybeAs(_PathAwareEntity_).map(p -> p.getParent().isPresent()).orElse(true))
+                .filter(i -> i.maybeAs(_Displayable_).isPresent())
+                .map(i -> i.maybeAs(_Displayable_).map(Displayable::getDisplayName).orElse("???"))
                 .collect(joining(" / "));
       }
   }

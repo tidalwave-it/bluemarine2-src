@@ -15,7 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Downloader</name>
+    <name>blueMarine II :: Downloader</name>
+    <description>
+        The component that is capable to download stuff from the internet.
+    </description>
 
     <dependencies>
         <dependency>
@@ -76,12 +79,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>

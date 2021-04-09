@@ -65,37 +65,37 @@ public class NamedRecord extends NamedEntity implements Record
         throw new UnsupportedOperationException("Not supported yet."); // FIXME
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<Id> getSource()
       {
         return Optional.empty();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<String> getAsin()
       {
         return Optional.empty();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<String> getGtin()
       {
         return Optional.empty();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<Integer> getDiskNumber()
       {
         return Optional.empty();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<Integer> getDiskCount()
       {
         return Optional.empty();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<Integer> getTrackCount()
       {
         return Optional.empty();

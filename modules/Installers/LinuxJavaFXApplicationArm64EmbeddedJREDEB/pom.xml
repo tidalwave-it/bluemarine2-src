@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-application-javafx-linux-aarch64-embedded-jre-deb</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>deb</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Linux ARM 64, embedded JRE DEB</name>
+    <name>blueMarine II :: Installers :: JavaFX Application :: Linux :: ARM 64 :: Embedded JRE :: DEB</name>
     <description>
         This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux ARM 64, embedded JRE' and
         produces a .deb package containing also stuff for installing it as a service.

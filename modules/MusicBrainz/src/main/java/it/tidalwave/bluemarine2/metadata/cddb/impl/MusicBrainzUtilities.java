@@ -28,9 +28,9 @@
 package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import lombok.NoArgsConstructor;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -52,11 +52,10 @@ public final class MusicBrainzUtilities
     // See http://stackoverflow.com/questions/9323848/how-can-i-escape-a-group-of-special-characters-in-java-in-one-method
     @Nonnull
     public static String escape (final @Nonnull String string)
-      throws UnsupportedEncodingException
       {
         return
           URLEncoder.encode(
-                string
+                  string
 //                     .replace("#", " ")
 //
 //                     .replace("/", " ")
@@ -71,8 +70,7 @@ public final class MusicBrainzUtilities
                      .replace("]", "\\]")
                      .replace("(", "\\(")
                      .replace(")", "\\)")
-                , "UTF-8")
-        ;
+                , UTF_8);
 
 //        final Pattern pattern = Pattern.compile("([-&\\|!\\(\\){}\\[\\]\\^\"\\~\\*\\?:\\\\])");
 //        return pattern.matcher(string).replaceAll("\\\\$1");

@@ -13,7 +13,10 @@
     <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - Vocabulary</name>
+    <name>blueMarine II :: Vocabulary</name>
+    <description>
+        A collection of semantic elements for the database.
+    </description>
 
     <dependencies>
         <dependency>

@@ -144,7 +144,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Override
+    @Override @Nonnull
     public LocalDevice getDevice()
       throws ValidationException
       {

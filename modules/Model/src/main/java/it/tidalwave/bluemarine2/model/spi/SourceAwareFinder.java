@@ -36,7 +36,7 @@ import it.tidalwave.util.Id;
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupport<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
     @Nonnull
     public FINDER withId (final @Nonnull Id id);

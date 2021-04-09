@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -46,7 +47,7 @@ import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.NFC;
 import static java.text.Normalizer.normalize;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
+import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
@@ -80,10 +81,11 @@ public class AudioMetadataFactoryTest
                                                   .filter(entry -> !entry.getKey().equals(ARTWORK))
                                                   // FIXME: this should be removed, and the expected results updated
                                                   .filter(entry -> !entry.getKey().equals(CDDB))
-                                                  .sorted(comparing(e -> e.getKey()))
-                                                  .map(e -> String.format("%s.%s = %s", normalize(relativePath, NFC),
-                                                                                        e.getKey(),
-                                                                                        e.getValue()))
+                                                  .sorted(comparing(Map.Entry::getKey))
+                                                  .map(e -> String.format("%s.Key[%s] = %s",
+                                                                          normalize(relativePath, NFC),
+                                                                          e.getKey().getName(),
+                                                                          e.getValue()))
                                                   .collect(toList());
 
         metadata.get(ARTWORK).ifPresent(artworks ->
@@ -91,9 +93,9 @@ public class AudioMetadataFactoryTest
             final AtomicInteger n = new AtomicInteger();
             artworks.forEach(artwork ->
               {
-                metadataDump.add(String.format("%s.%s[%s] = %s",
+                metadataDump.add(String.format("%s.Key[%s][%s] = %s",
                         normalize(relativePath, NFC),
-                        ARTWORK,
+                        ARTWORK.getName(),
                         n,
                         Base64.getEncoder().encodeToString(artwork)));
                 n.incrementAndGet();
@@ -102,7 +104,7 @@ public class AudioMetadataFactoryTest
 
         Files.createDirectories(actualFile.getParent());
         Files.write(actualFile, metadataDump);
-        assertSameContents2(expectedFile, actualFile);
+        assertSameContents(expectedFile, actualFile);
       }
 
     /*******************************************************************************************************************

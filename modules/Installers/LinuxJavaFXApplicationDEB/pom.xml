@@ -42,7 +42,7 @@
     <artifactId>bluemarine2-application-javafx-linux-deb</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>deb</packaging>
-    <name>blueMarine II - Installers - JavaFX Application, Linux DEB</name>
+    <name>blueMarine II :: Installers :: JavaFX Application :: Linux :: DEB</name>
     <description>
         This module produces a .deb package out of the contents of the blueMarine JavaFX application tarball.
     </description>

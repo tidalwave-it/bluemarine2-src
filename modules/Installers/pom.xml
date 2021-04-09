@@ -15,8 +15,8 @@
     <artifactId>bluemarine2-installers</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installers (modules)</name>
-    <description>blueMarine II - Installers (modules)</description>
+    <name>blueMarine II :: Installers (modules)</name>
+    <description>The umbrella POM for all installers.</description>
 
     <properties>
         <tft.embedded-jdk.artifactId>adoptopenjdk-jre</tft.embedded-jdk.artifactId>

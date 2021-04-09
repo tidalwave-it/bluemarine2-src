@@ -15,7 +15,10 @@
     <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
-    <name>blueMarine II - MusicBrainz</name>
+    <name>blueMarine II :: MusicBrainz</name>
+    <description>
+        The adapter that is able to import MusicBrainz metadata.
+    </description>
 
     <dependencies>
         <dependency>
@@ -39,12 +42,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
@@ -79,7 +76,7 @@
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
         <expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20210408_2135</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
@@ -128,8 +125,6 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${metadata.folder}</outputDirectory>
                                 </artifactItem>
-
-
 
                                 <!-- REST caches -->
                                 <artifactItem>

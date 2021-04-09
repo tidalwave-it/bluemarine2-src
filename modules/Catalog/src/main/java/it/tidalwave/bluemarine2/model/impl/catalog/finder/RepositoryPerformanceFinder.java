@@ -102,7 +102,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     @Override @Nonnull
     public PerformanceFinder ofTrack (final @Nonnull Id trackId)
       {
-        return clone(new RepositoryPerformanceFinder(repository, Optional.of(trackId), performerId));
+        return clonedWith(new RepositoryPerformanceFinder(repository, Optional.of(trackId), performerId));
       }
 
     /*******************************************************************************************************************
@@ -113,7 +113,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     @Override @Nonnull
     public PerformanceFinder performedBy (final @Nonnull Id performerId)
       {
-        return clone(new RepositoryPerformanceFinder(repository, trackId, Optional.of(performerId)));
+        return clonedWith(new RepositoryPerformanceFinder(repository, trackId, Optional.of(performerId)));
       }
 
     /*******************************************************************************************************************

@@ -13,7 +13,10 @@
     <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Application - JavaFX</name>
+    <name>blueMarine II :: Application :: JavaFX</name>
+    <description>
+        The JavaFX application.
+    </description>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->

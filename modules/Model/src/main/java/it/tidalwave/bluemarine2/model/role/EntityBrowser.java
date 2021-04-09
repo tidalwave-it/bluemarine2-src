@@ -28,7 +28,7 @@
 package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.As8;
+import it.tidalwave.util.As;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
@@ -40,7 +40,7 @@ import it.tidalwave.bluemarine2.model.spi.Entity;
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-public interface EntityBrowser extends As8
+public interface EntityBrowser extends As
   {
     /*******************************************************************************************************************
      *

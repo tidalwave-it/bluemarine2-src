@@ -15,16 +15,15 @@
     <artifactId>it-tidalwave-bluemarine2-phaseone-captureone11-applescript</artifactId>
     <version>1.0-ALPHA-21-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Capture One 11 Applescript</name>
+    <name>blueMarine II :: Capture One 11 Applescript</name>
+    <description>
+        An adapter to interact with Capture One.
+    </description>
 
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-util-java8supplement</artifactId>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
