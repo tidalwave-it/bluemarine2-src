@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
@@ -97,7 +96,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> childrenFactory (@Nonnull final MediaFolder parent)
       {
         return List.of(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
                        new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
@@ -106,7 +105,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<MediaFolder> musicFactory (final @Nonnull MediaFolder parent)
+    private Collection<MediaFolder> musicFactory (@Nonnull final MediaFolder parent)
       {
         // TODO: filter by MIME type
         return entityBrowsers.stream()
@@ -116,14 +115,14 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<MediaFolder> servicesFactory (final @Nonnull MediaFolder parent)
+    private Collection<MediaFolder> servicesFactory (@Nonnull final MediaFolder parent)
       {
         return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
       }
 
     @Nonnull
-    private static MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
-                                                  final @Nonnull EntityBrowser browser)
+    private static MediaFolder createMediaFolder (@Nonnull final MediaFolder parent,
+                                                  @Nonnull final EntityBrowser browser)
       {
         final String fallBack = browser.getClass().getSimpleName();
         final String pathSegment = browser.maybeAs(_Identifiable_).map(i -> i.getId().stringValue()).orElse(fallBack);

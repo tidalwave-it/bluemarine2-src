@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
@@ -58,7 +57,7 @@ public final class UpnpUtilities
      * entity types, but some DLNA cients don't accept long paths. See BMT-62.
      *
      ******************************************************************************************************************/
-    private final static String[][] REPLACEMENT_PAIRS = new String[][]
+    private static final String[][] REPLACEMENT_PAIRS = new String[][]
       {
         { "/urn:bluemarine:artist:",              "/a:"    },
         { "/urn:bluemarine:record:",              "/r:"    },
@@ -79,7 +78,7 @@ public final class UpnpUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static String pathToDidlId (final @Nonnull Path path)
+    public static String pathToDidlId (@Nonnull final Path path)
       {
         return externalized(path.toString().replaceAll(REGEXP_ROOT, ID_ROOT));
       }
@@ -93,7 +92,7 @@ public final class UpnpUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Path didlIdToPath (final @Nonnull String id)
+    public static Path didlIdToPath (@Nonnull final String id)
       {
         return Paths.get(id.equals(ID_ROOT) ? PATH_ROOT : internalized(id));
       }
@@ -139,7 +138,7 @@ public final class UpnpUtilities
      *
      ******************************************************************************************************************/
     @Nonnegative
-    public static int maxCount (final @Nonnegative long value)
+    public static int maxCount (@Nonnegative final long value)
       {
         return (value == 0) ? Integer.MAX_VALUE : (int)value;
       }

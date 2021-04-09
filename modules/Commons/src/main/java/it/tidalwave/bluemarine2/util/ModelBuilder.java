@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.util;
 
@@ -51,14 +50,14 @@ public class ModelBuilder
   {
     private final Model model = new TreeModel();
 
-    private final @Nonnull Resource[] contexts;
+    @Nonnull private final Resource[] contexts;
 
     /*******************************************************************************************************************
      *
      *
      *
      ******************************************************************************************************************/
-    public ModelBuilder (final @Nonnull Resource ... contexts)
+    public ModelBuilder (@Nonnull final Resource ... contexts)
       {
         this.contexts = contexts;
       }
@@ -80,10 +79,10 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Resource subject,
-                                           final @Nonnull IRI predicate,
-                                           final @Nonnull Value object,
-                                           final @Nonnull Resource... contexts)
+    public synchronized ModelBuilder with (@Nonnull final Resource subject,
+                                           @Nonnull final IRI predicate,
+                                           @Nonnull final Value object,
+                                           @Nonnull final Resource... contexts)
       {
         model.add(subject, predicate, object, contexts);
         return this;
@@ -95,10 +94,10 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Resource subjext,
-                                           final @Nonnull IRI predicate,
-                                           final @Nonnull Optional<Value> optionalObject,
-                                           final @Nonnull Resource... contexts)
+    public synchronized ModelBuilder with (@Nonnull final Resource subjext,
+                                           @Nonnull final IRI predicate,
+                                           @Nonnull final Optional<Value> optionalObject,
+                                           @Nonnull final Resource... contexts)
       {
         return optionalObject.map(object -> ModelBuilder.this.with(subjext, predicate, object, contexts)).orElse(this);
       }
@@ -109,9 +108,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject,
-                                                   final @Nonnull IRI predicate,
-                                                   final @Nonnull Value object)
+    public synchronized ModelBuilder withOptional (@Nonnull final Optional<? extends Resource> optionalSubject,
+                                                   @Nonnull final IRI predicate,
+                                                   @Nonnull final Value object)
       {
         return optionalSubject.map(subject -> ModelBuilder.this.with(subject, predicate, object)).orElse(this);
       }
@@ -122,9 +121,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder withOptional (final @Nonnull Resource subject,
-                                                   final @Nonnull IRI predicate,
-                                                   final @Nonnull Optional<? extends Value> optionalObject)
+    public synchronized ModelBuilder withOptional (@Nonnull final Resource subject,
+                                                   @Nonnull final IRI predicate,
+                                                   @Nonnull final Optional<? extends Value> optionalObject)
       {
         return optionalObject.map(object -> ModelBuilder.this.with(subject, predicate, object)).orElse(this);
       }
@@ -135,9 +134,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject,
-                                                   final @Nonnull IRI predicate,
-                                                   final @Nonnull Optional<? extends Value> optionalObject)
+    public synchronized ModelBuilder withOptional (@Nonnull final Optional<? extends Resource> optionalSubject,
+                                                   @Nonnull final IRI predicate,
+                                                   @Nonnull final Optional<? extends Value> optionalObject)
       {
         return optionalObject.map(object -> withOptional(optionalSubject, predicate, object)).orElse(this);
       }
@@ -148,9 +147,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull List<? extends Resource> subjects,
-                                           final @Nonnull IRI predicate,
-                                           final @Nonnull Value object)
+    public synchronized ModelBuilder with (@Nonnull final List<? extends Resource> subjects,
+                                           @Nonnull final IRI predicate,
+                                           @Nonnull final Value object)
       {
         subjects.forEach(subject -> ModelBuilder.this.with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
         return this;
@@ -162,9 +161,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull List<? extends Resource> subjects,
-                                           final @Nonnull IRI predicate,
-                                           final @Nonnull List<? extends Value> objects)
+    public synchronized ModelBuilder with (@Nonnull final List<? extends Resource> subjects,
+                                           @Nonnull final IRI predicate,
+                                           @Nonnull final List<? extends Value> objects)
       {
         assert subjects.size() == objects.size();
 
@@ -182,9 +181,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Resource subject,
-                                           final @Nonnull IRI predicate,
-                                           final @Nonnull Stream<? extends Value> objects)
+    public synchronized ModelBuilder with (@Nonnull final Resource subject,
+                                           @Nonnull final IRI predicate,
+                                           @Nonnull final Stream<? extends Value> objects)
       {
         objects.forEach(object -> ModelBuilder.this.with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
         return this;
@@ -196,9 +195,9 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder withOptional (final @Nonnull Optional<? extends Resource> subject,
-                                                   final @Nonnull IRI predicate,
-                                                   final @Nonnull Stream<? extends Value> objects)
+    public synchronized ModelBuilder withOptional (@Nonnull final Optional<? extends Resource> subject,
+                                                   @Nonnull final IRI predicate,
+                                                   @Nonnull final Stream<? extends Value> objects)
       {
         if (subject.isPresent())
           {
@@ -214,7 +213,7 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Statement statement)
+    public synchronized ModelBuilder with (@Nonnull final Statement statement)
       {
         model.add(statement);
         return this;
@@ -226,7 +225,7 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Optional<ModelBuilder> optionalBuiilder)
+    public synchronized ModelBuilder with (@Nonnull final Optional<ModelBuilder> optionalBuiilder)
       {
         optionalBuiilder.ifPresent(ModelBuilder.this::with);
         return this;
@@ -238,7 +237,7 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull ModelBuilder other)
+    public synchronized ModelBuilder with (@Nonnull final ModelBuilder other)
       {
         return ModelBuilder.this.with(other.toModel());
       }
@@ -249,7 +248,7 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull Model other)
+    public synchronized ModelBuilder with (@Nonnull final Model other)
       {
         other.forEach(model::add);
         return this;
@@ -261,7 +260,7 @@ public class ModelBuilder
      *
      ******************************************************************************************************************/
     @Nonnull
-    public synchronized ModelBuilder with (final @Nonnull List<ModelBuilder> others)
+    public synchronized ModelBuilder with (@Nonnull final List<ModelBuilder> others)
       {
         others.stream().map(ModelBuilder::toModel).forEach(m -> m.forEach(model::add));
         return this;

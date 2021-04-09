@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.spi;
 
@@ -39,7 +38,7 @@ import it.tidalwave.util.Id;
 public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupport<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
     @Nonnull
-    public FINDER withId (final @Nonnull Id id);
+    public FINDER withId (@Nonnull final Id id);
 
     /*******************************************************************************************************************
      *
@@ -50,7 +49,7 @@ public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupp
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
+    public FINDER importedFrom (@Nonnull final Id source);
 
     /*******************************************************************************************************************
      *
@@ -61,7 +60,7 @@ public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupp
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+    public FINDER importedFrom (@Nonnull final Optional<Id> optionalSource);
 
     /*******************************************************************************************************************
      *
@@ -72,7 +71,7 @@ public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupp
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER withFallback (final @Nonnull Id fallback);
+    public FINDER withFallback (@Nonnull final Id fallback);
 
     /*******************************************************************************************************************
      *
@@ -83,5 +82,5 @@ public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinderSupp
      *
      ******************************************************************************************************************/
     @Nonnull
-    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
+    public FINDER withFallback (@Nonnull final Optional<Id> optionalFallback);
   }

@@ -6,10 +6,13 @@
 blueMarine II
 ================================
 
-blueMarine II is a small media centre for the Raspberry PI, based on a semantic database. It is developed on Java 8 and
-Java FX.
+blueMarine II is a media centre based on a semantic database. It is developed on Java 11 and Java FX. It exposes resources via DLNA and REST;
+it can run on a Raspberry PI and integrated with CEC for being operated with a TV remote.
 
-Still at the early stage of development, it can be used with some hack to reproduce audio files.
+Still at the alpha stage of development, it can be used with some hack to reproduce audio files.
+
+The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tidalwave.it); the developer website is at
+[http://tidalwave.it/projects/bluemarine2](http://tidalwave.it/projects/bluemarine2).
 
 
 Bootstrapping
@@ -26,22 +29,6 @@ Documentation
 -------------
 
 More information can be found on the [homepage](http://blueMarine.tidalwave.it) of the project.
-
-
-Where can I get the latest release?
------------------------------------
-
-You can download source and binaries from the [download page](https://bitbucket.org/tidalwave/bluemarine2-src/src).
-
-Alternatively you can pull it from the central Maven repositories:
-
-```xml
-<dependency>
-    <groupId>it.tidalwave.bluemarine2<groupId>
-    <artifactId>bluemarine2</artifactId>
-    <version>-- version --</version>
-</dependency>
-```
 
 
 Contributing
@@ -72,5 +59,3 @@ Additional Resources
 --------------------
 
 * [Tidalwave Homepage](http://tidalwave.it)
-* [Project Issue Tracker (Jira)](http://services.tidalwave.it/jira/browse/BMT)
-* [Project Continuous Integration (Jenkins)](http://services.tidalwave.it/ci/view/blueMarine2)

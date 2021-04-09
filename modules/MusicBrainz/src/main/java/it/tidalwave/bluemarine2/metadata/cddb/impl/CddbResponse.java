@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
@@ -51,7 +50,7 @@ class CddbResponse<T> extends RestResponse<T>
      *
      *
      ******************************************************************************************************************/
-    public CddbResponse (final @Nonnull Optional<T> datum, final @Nonnull String responseStatus)
+    public CddbResponse (@Nonnull final Optional<T> datum, @Nonnull final String responseStatus)
       {
         super(datum, responseStatus);
       }
@@ -68,8 +67,8 @@ class CddbResponse<T> extends RestResponse<T>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static <X> CddbResponse<X> of (final @Nonnull ResponseEntity<String> response,
-                                          final @Nonnull Function<String, X> parser)
+    public static <X> CddbResponse<X> of (@Nonnull final ResponseEntity<String> response,
+                                          @Nonnull final Function<String, X> parser)
       {
         final int httpStatus = response.getStatusCodeValue();
 

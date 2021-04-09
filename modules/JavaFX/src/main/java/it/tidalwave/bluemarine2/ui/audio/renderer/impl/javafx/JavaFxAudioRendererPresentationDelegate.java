@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
@@ -119,20 +118,20 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
       }
 
     @FXML // TODO: should be useless, but getScene().getAccelerators() doesn't work
-    public void onKeyReleased (final @Nonnull KeyEvent event)
+    public void onKeyReleased (@Nonnull final KeyEvent event)
       {
         accelerators.getOrDefault(new KeyCodeCombination(event.getCode()), () -> {}).run();
       }
 
     @Override
-    public void bind (final @Nonnull Properties properties,
-                      final @Nonnull UserAction prevAction,
-                      final @Nonnull UserAction rewindAction,
-                      final @Nonnull UserAction stopAction,
-                      final @Nonnull UserAction pauseAction,
-                      final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction,
-                      final @Nonnull UserAction nextAction)
+    public void bind (@Nonnull final Properties properties,
+                      @Nonnull final UserAction prevAction,
+                      @Nonnull final UserAction rewindAction,
+                      @Nonnull final UserAction stopAction,
+                      @Nonnull final UserAction pauseAction,
+                      @Nonnull final UserAction playAction,
+                      @Nonnull final UserAction fastForwardAction,
+                      @Nonnull final UserAction nextAction)
       {
         binder.bind(btPrev,        prevAction);
         binder.bind(btRewind,      rewindAction);
@@ -153,7 +152,7 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
       }
 
     @Override
-    public void showUp (final @Nonnull Object control)
+    public void showUp (@Nonnull final Object control)
       {
       }
 

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.downloader.impl;
 
@@ -36,6 +35,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.ProtocolException;
@@ -125,7 +125,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         connectionManager = new PoolingHttpClientConnectionManager();
         connectionManager.setMaxTotal(200);
@@ -154,7 +154,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);
@@ -166,7 +166,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDownloadRequest (final @ListensTo @Nonnull DownloadRequest request)
+    @VisibleForTesting void onDownloadRequest (@ListensTo @Nonnull final DownloadRequest request)
       throws URISyntaxException
       {
         try
@@ -226,7 +226,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
      *
      ******************************************************************************************************************/
     @Nonnull
-    private byte[] bytesFrom (final @Nonnull HttpResponse response)
+    private byte[] bytesFrom (@Nonnull final HttpResponse response)
       throws IOException
       {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();

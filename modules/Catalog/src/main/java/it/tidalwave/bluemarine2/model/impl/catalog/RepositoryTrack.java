@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
@@ -85,7 +84,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     private final Memoize<Optional<Performance>> performance = new Memoize<>();
 
-    public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryTrack (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
 
@@ -136,6 +135,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         return String.format("%02d/%02d %02d %s %s (%s) %s - %s",
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath,
-                             source.orElse(new Id("unknown")));
+                             source.orElse(Id.of("unknown")));
       }
   }

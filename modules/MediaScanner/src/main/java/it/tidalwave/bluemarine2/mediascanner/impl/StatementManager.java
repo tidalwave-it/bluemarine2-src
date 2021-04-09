@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
@@ -31,6 +30,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
@@ -65,7 +65,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Resource subject, final @Nonnull IRI predicate, final @Nonnull Value literal)
+    public void requestAdd (@Nonnull final Resource subject, @Nonnull final IRI predicate, @Nonnull final Value literal)
       {
         requestAdd(new AddStatementsRequest(subject, predicate, literal));
       }
@@ -74,7 +74,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull List<Statement> statements)
+    public void requestAdd (@Nonnull final List<Statement> statements)
       {
         requestAdd(new AddStatementsRequest(statements));
       }
@@ -83,7 +83,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Model model)
+    public void requestAdd (@Nonnull final Model model)
       {
         requestAdd(new AddStatementsRequest(new ArrayList<>(model)));
       }
@@ -92,7 +92,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull AddStatementsRequest request)
+    public void requestAdd (@Nonnull final AddStatementsRequest request)
       {
         progress.incrementTotalInsertions();
         messageBus.publish(request);
@@ -102,7 +102,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request)
+    @VisibleForTesting void onAddStatementsRequest (@ListensTo @Nonnull final AddStatementsRequest request)
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);

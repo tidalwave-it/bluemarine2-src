@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.cddb;
 
@@ -62,7 +61,7 @@ public class CddbAlbum
     private final Cddb cddb;
 
     @Nonnull
-    public static CddbAlbum of (final @Nonnull String stringResponse)
+    public static CddbAlbum of (@Nonnull final String stringResponse)
       {
         final String[] split = stringResponse.split("\n");
 
@@ -99,7 +98,7 @@ public class CddbAlbum
       }
 
     @Nonnull
-    public Optional<String> getProperty (final @Nonnull String key)
+    public Optional<String> getProperty (@Nonnull final String key)
       {
         return Optional.ofNullable(properties.get(key));
       }

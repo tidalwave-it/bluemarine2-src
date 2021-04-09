@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
@@ -43,6 +42,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
@@ -74,7 +74,7 @@ public class DefaultMediaScanner
      * @param   folder      the folder
      *
      ******************************************************************************************************************/
-    public void process (final @Nonnull MediaFolder folder)
+    public void process (@Nonnull final MediaFolder folder)
       {
         log.info("process({})", folder);
 //        shared.reset();
@@ -88,8 +88,9 @@ public class DefaultMediaScanner
      * Scans a folder of {@link MediaItem}s.
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onInternalMediaFolderScanRequest
-                                    (final @ListensTo @Nonnull InternalMediaFolderScanRequest request)
+    @VisibleForTesting
+    void onInternalMediaFolderScanRequest
+                                    (@ListensTo @Nonnull final InternalMediaFolderScanRequest request)
       {
         try
           {
@@ -124,7 +125,7 @@ public class DefaultMediaScanner
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
+    /* VisibleForTesting */ void onMediaItemImportRequest (@ListensTo @Nonnull final MediaItemImportRequest request)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         if (request.getSha1().isEmpty())
@@ -140,7 +141,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    public byte[] sha1Of (final @Nonnull Path path)
+    public byte[] sha1Of (@Nonnull final Path path)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         try

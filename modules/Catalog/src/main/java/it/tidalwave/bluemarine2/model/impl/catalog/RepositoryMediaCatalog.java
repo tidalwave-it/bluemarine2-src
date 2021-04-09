@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
@@ -67,14 +66,14 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Inject
     private Provider<Repository> repository;
 
-    public void setSourceAsString (final @Nonnull String sourceAsString)
+    public void setSourceAsString (@Nonnull final String sourceAsString)
       {
-        setSource(new Id(sourceAsString));
+        setSource(Id.of(sourceAsString));
       }
 
-    public void setFallbackAsString (final @Nonnull String fallbackAsString)
+    public void setFallbackAsString (@Nonnull final String fallbackAsString)
       {
-        setFallback(new Id(fallbackAsString));
+        setFallback(Id.of(fallbackAsString));
       }
 
     @Override @Nonnull
@@ -114,7 +113,7 @@ public class RepositoryMediaCatalog implements MediaCatalog
       }
 
     @Nonnull
-    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (@Nonnull final FINDER finder)
       {
         return finder.importedFrom(getSource()).withFallback(getFallback());
       }

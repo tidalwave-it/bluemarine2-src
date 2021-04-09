@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
@@ -105,8 +104,8 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
         must_find_the_correct_adapter_for_decorated_entities(createMockEntity(), PathAwareDecoratorDIDLAdapter.class);
       }
 
-    private void must_find_the_correct_adapter_for_decorated_entities (final @Nonnull Entity datum,
-                                                                       final @Nonnull Class<?> expectedAdapterClass)
+    private void must_find_the_correct_adapter_for_decorated_entities (@Nonnull final Entity datum,
+                                                                       @Nonnull final Class<?> expectedAdapterClass)
       {
         // given
         final PathAwareEntity parent = mock(PathAwareEntity.class);
@@ -119,8 +118,8 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
 
-    private void must_find_the_correct_adapter (final @Nonnull Entity datum,
-                                                final @Nonnull Class<?> expectedAdapterClass)
+    private void must_find_the_correct_adapter (@Nonnull final Entity datum,
+                                                @Nonnull final Class<?> expectedAdapterClass)
       {
         // when
         final DIDLAdapter adapter = datum.as(_DIDLAdapter_);
@@ -133,7 +132,7 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
       {
         final Repository repository = mock(Repository.class);
         final MapBindingSet bindingSet = new MapBindingSet();
-        final Id artistId = new Id("urn:bluemarine:artist:john_doe");
+        final Id artistId = Id.of("urn:bluemarine:artist:john_doe");
         bindingSet.addBinding("artist", literalFor(artistId));
         bindingSet.addBinding("label", literalFor("John Doe"));
         bindingSet.addBinding("artist_type", literalFor(1));
@@ -145,7 +144,7 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
       {
         final Repository repository = mock(Repository.class);
         final MapBindingSet bindingSet = new MapBindingSet();
-        final Id recordId = new Id("urn:bluemarine:record:the_record");
+        final Id recordId = Id.of("urn:bluemarine:record:the_record");
         bindingSet.addBinding("record", literalFor(recordId));
         bindingSet.addBinding("label", literalFor("The record"));
         return new RepositoryRecord(repository, bindingSet);
@@ -154,6 +153,6 @@ public class DIDLAdapterBindingTest extends SpringTestSupport
     @Nonnull
     private Entity createMockEntity()
       {
-        return new EntityWithRoles(r((Identifiable) () -> new Id("urn:bluemarine:something:foo_bar")));
+        return new EntityWithRoles(r((Identifiable) () -> Id.of("urn:bluemarine:something:foo_bar")));
       }
   }

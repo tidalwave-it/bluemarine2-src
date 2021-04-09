@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl;
 
@@ -31,6 +30,7 @@ import javax.annotation.Nonnull;
 import java.util.concurrent.CountDownLatch;
 import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -74,7 +74,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting FIXME */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting public void onPowerOnNotification (@ListensTo @Nonnull final PowerOnNotification notification)
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);

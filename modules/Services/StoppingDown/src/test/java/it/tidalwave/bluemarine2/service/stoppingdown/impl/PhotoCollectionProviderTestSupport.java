@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -85,7 +84,7 @@ public class PhotoCollectionProviderTestSupport extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static List<String> dump (final @Nonnull PathAwareFinder finder)
+    protected static List<String> dump (@Nonnull final PathAwareFinder finder)
       {
         VirtualMediaFolder.EntityFinderFactory fff = t -> finder;
         final VirtualMediaFolder md = new VirtualMediaFolder(Optional.empty(), Paths.get("/"), "xxx", fff);
