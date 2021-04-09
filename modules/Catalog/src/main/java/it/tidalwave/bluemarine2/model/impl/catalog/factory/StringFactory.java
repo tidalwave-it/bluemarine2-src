@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
@@ -40,7 +39,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFacto
 public class StringFactory implements EntityFactoryFunction<String>
   {
     @Override @Nonnull
-    public String apply (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public String apply (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         return bindingSet.iterator().next().getValue().stringValue();
       }

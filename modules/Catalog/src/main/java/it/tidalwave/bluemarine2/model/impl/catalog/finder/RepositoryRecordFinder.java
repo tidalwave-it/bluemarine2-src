@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
@@ -48,7 +47,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
   {
     private static final long serialVersionUID = -6899011281060253740L;
 
-    private final static String QUERY_RECORDS = readSparql(RepositoryRecordFinder.class, "Records.sparql");
+    private static final String QUERY_RECORDS = readSparql(RepositoryRecordFinder.class, "Records.sparql");
 
     @Nonnull
     private final Optional<Id> makerId;
@@ -61,7 +60,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull Repository repository)
+    public RepositoryRecordFinder (@Nonnull final Repository repository)
       {
         this(repository, Optional.empty(), Optional.empty());
       }
@@ -71,7 +70,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull RepositoryRecordFinder other, final @Nonnull Object override)
+    public RepositoryRecordFinder (@Nonnull final RepositoryRecordFinder other, @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryRecordFinder source = getSource(RepositoryRecordFinder.class, other, override);
@@ -84,9 +83,9 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryRecordFinder (final @Nonnull Repository repository,
-                                    final @Nonnull Optional<Id> makerId,
-                                    final @Nonnull Optional<Id> trackId)
+    private RepositoryRecordFinder (@Nonnull final Repository repository,
+                                    @Nonnull final Optional<Id> makerId,
+                                    @Nonnull final Optional<Id> trackId)
       {
         super(repository, "record");
         this.makerId = makerId;
@@ -99,7 +98,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder madeBy (final @Nonnull Id artistId)
+    public RecordFinder madeBy (@Nonnull final Id artistId)
       {
         return clonedWith(new RepositoryRecordFinder(repository, Optional.of(artistId), trackId));
       }
@@ -110,7 +109,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder containingTrack (final @Nonnull Id trackId)
+    public RecordFinder containingTrack (@Nonnull final Id trackId)
       {
         return clonedWith(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
       }

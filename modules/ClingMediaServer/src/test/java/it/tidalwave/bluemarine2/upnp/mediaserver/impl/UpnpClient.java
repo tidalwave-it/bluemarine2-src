@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
@@ -66,7 +65,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public UpnpClient (final @Nonnull String serviceName)
+    public UpnpClient (@Nonnull final String serviceName)
       {
         this(serviceName, s -> true);
       }
@@ -74,7 +73,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public UpnpClient (final @Nonnull String serviceName, final @Nonnull Function<RemoteDevice, Boolean> filter)
+    public UpnpClient (@Nonnull final String serviceName, @Nonnull final Function<RemoteDevice, Boolean> filter)
       {
         serviceId = new UDAServiceId(serviceName);
         this.filter = filter;
@@ -103,7 +102,7 @@ public class UpnpClient implements Runnable
     private final RegistryListener listener = new DefaultRegistryListener()
       {
         @Override
-        public void remoteDeviceAdded (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
+        public void remoteDeviceAdded (@Nonnull final Registry registry, @Nonnull final RemoteDevice device)
           {
             final Service remoteService = device.findService(serviceId);
 
@@ -141,7 +140,7 @@ public class UpnpClient implements Runnable
           }
 
         @Override
-        public void remoteDeviceRemoved (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
+        public void remoteDeviceRemoved (@Nonnull final Registry registry, @Nonnull final RemoteDevice device)
           {
             final Service remoteService = device.findService(serviceId);
 
@@ -174,7 +173,7 @@ public class UpnpClient implements Runnable
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public void execute (final @Nonnull ActionCallback actionCallback)
+    public void execute (@Nonnull final ActionCallback actionCallback)
       {
         upnpService.getControlPoint().execute(actionCallback);
       }

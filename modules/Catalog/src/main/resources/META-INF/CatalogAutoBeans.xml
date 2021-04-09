@@ -1,54 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  #%L
-  *********************************************************************************************************************
 
-  blueMarine2 - Semantic Media Center
-  http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
-  %%
-  Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
-  %%
+    *********************************************************************************************************************
 
-  *********************************************************************************************************************
+    blueMarine II: Semantic Media Centre
+    http://tidalwave.it/projects/bluemarine2
 
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
-  the License. You may obtain a copy of the License at
+    Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
 
-      http://www.apache.org/licenses/LICENSE-2.0
+    *********************************************************************************************************************
 
-  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
-  an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
-  specific language governing permissions and limitations under the License.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+    the License. You may obtain a copy of the License at
 
-  *********************************************************************************************************************
+        http://www.apache.org/licenses/LICENSE-2.0
 
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+    an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations under the License.
 
-  *********************************************************************************************************************
-  #L%
-  -->
+    *********************************************************************************************************************
 
+    git clone https://bitbucket.org/tidalwave/bluemarine2-src
+    git clone https://github.com/tidalwave-it/bluemarine2-src
+
+    *********************************************************************************************************************
+
+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:lang="http://www.springframework.org/schema/lang"
-       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
-                           http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd
                            http://www.springframework.org/schema/aop
-                           http://www.springframework.org/schema/aop/spring-aop.xsd
-                           http://www.springframework.org/schema/lang
-                           http://www.springframework.org/schema/lang/spring-lang.xsd
-                           http://www.springframework.org/schema/util
-                           http://www.springframework.org/schema/util/spring-util.xsd
-                           http://www.springframework.org/schema/task
-                           http://www.springframework.org/schema/task/spring-task.xsd"
+                           http://www.springframework.org/schema/aop/spring-aop.xsd"
        default-autowire="byType">
 
     <!-- Turns on @Autowired, @PostConstruct, etc. -->

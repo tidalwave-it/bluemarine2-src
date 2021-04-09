@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
@@ -46,14 +45,14 @@ public class RepositoryAudioFileFinder extends RepositoryFinderSupport<AudioFile
   {
     private static final long serialVersionUID = -5065322643235453428L;
 
-    private final static String QUERY_PERFORMANCES = readSparql(RepositoryAudioFileFinder.class, "AudioFiles.sparql");
+    private static final String QUERY_PERFORMANCES = readSparql(RepositoryAudioFileFinder.class, "AudioFiles.sparql");
 
     /*******************************************************************************************************************
      *
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryAudioFileFinder (final @Nonnull Repository repository)
+    public RepositoryAudioFileFinder (@Nonnull final Repository repository)
       {
         super(repository, "audioFile");
       }
@@ -63,8 +62,8 @@ public class RepositoryAudioFileFinder extends RepositoryFinderSupport<AudioFile
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryAudioFileFinder (final @Nonnull RepositoryAudioFileFinder other,
-                                      final @Nonnull Object override)
+    public RepositoryAudioFileFinder (@Nonnull final RepositoryAudioFileFinder other,
+                                      @Nonnull final Object override)
       {
         super(other, override);
 //        final RepositoryAudioFileFinder source = getSource(RepositoryAudioFileFinder.class, other, override);

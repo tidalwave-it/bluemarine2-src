@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
@@ -91,7 +90,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Inject
     private MediaFileSystem fileSystem;
 
-    public RepositoryAudioFile (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    public RepositoryAudioFile (@Nonnull final Repository repository, @Nonnull final BindingSet bindingSet)
       {
         super(repository, bindingSet, "audioFile", rdfsLabelOf(bindingSet.getBinding("path").getValue().stringValue()));
         this.path      = toPath(bindingSet.getBinding("path"));
@@ -181,7 +180,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Nonnull
-    private static String rdfsLabelOf (final @Nonnull String path)
+    private static String rdfsLabelOf (@Nonnull final String path)
       {
         return path.replaceAll("^.*/", "");
       }

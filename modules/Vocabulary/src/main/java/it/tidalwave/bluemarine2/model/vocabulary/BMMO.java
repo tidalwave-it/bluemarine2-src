@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
@@ -44,7 +43,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BMMO
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    private static final ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     public static final String NS = "http://bluemarine.tidalwave.it/2015/04/mo/";
 
@@ -92,8 +91,8 @@ public final class BMMO
     /** Object of the {@link #P_IMPORTED_FROM} predicate that says that the subject was imported from MusicBrainz. */
     public static final Value O_SOURCE_MUSICBRAINZ      = FACTORY.createLiteral(S_O_SOURCE_MUSICBRAINZ);
 
-    public static final Id ID_SOURCE_EMBEDDED           = new Id(S_O_SOURCE_EMBEDDED);
-    public static final Id ID_SOURCE_MUSICBRAINZ        = new Id(S_O_SOURCE_MUSICBRAINZ);
+    public static final Id ID_SOURCE_EMBEDDED           = Id.of(S_O_SOURCE_EMBEDDED);
+    public static final Id ID_SOURCE_MUSICBRAINZ        = Id.of(S_O_SOURCE_MUSICBRAINZ);
 
     private static final String S_P_ALTO                              = NS + "alto";
     private static final String S_P_ARRANGER                          = NS + "arranger";
@@ -338,37 +337,37 @@ public final class BMMO
     public static final IRI P_PERFORMER_XYLOPHONE               = FACTORY.createIRI(S_P_PERFORMER_XYLOPHONE);
 
     @Nonnull
-    public static IRI audioFileIriFor (final @Nonnull String sha1)
+    public static IRI audioFileIriFor (@Nonnull final String sha1)
       {
         return FACTORY.createIRI("urn:bluemarine:audiofile:" + sha1);
       }
 
     @Nonnull
-    public static IRI signalIriFor (final @Nonnull Id id)
+    public static IRI signalIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:signal:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI trackIriFor (final @Nonnull Id id)
+    public static IRI trackIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:track:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI performanceIriFor (final @Nonnull Id id)
+    public static IRI performanceIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:performance:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI recordIriFor (final @Nonnull Id id)
+    public static IRI recordIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:record:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI artistIriFor (final @Nonnull Id id)
+    public static IRI artistIriFor (@Nonnull final Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }

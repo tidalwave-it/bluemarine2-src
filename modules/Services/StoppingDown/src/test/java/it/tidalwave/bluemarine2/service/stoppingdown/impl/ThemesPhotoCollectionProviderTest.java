@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
@@ -46,8 +45,8 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "selectorProvider")
-    public void must_properly_parse_themes (final @Nonnull String selector,
-                                            final @Nonnull XPathExpression expression)
+    public void must_properly_parse_themes (@Nonnull final String selector,
+                                            @Nonnull final XPathExpression expression)
       throws Exception
       {
         // given

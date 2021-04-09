@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
@@ -46,9 +45,9 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
   {
     private static final long serialVersionUID = 2271161001432418095L;
 
-    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
+    private static final String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
 
-    private final static String QUERY_ARTISTS_MAKER_OF = readSparql(RepositoryMusicArtistFinder.class, "MakerArtists.sparql");
+    private static final String QUERY_ARTISTS_MAKER_OF = readSparql(RepositoryMusicArtistFinder.class, "MakerArtists.sparql");
 
     @Nonnull
     private final Optional<Id> madeEntityId;
@@ -58,7 +57,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryMusicArtistFinder (final @Nonnull Repository repository)
+    public RepositoryMusicArtistFinder (@Nonnull final Repository repository)
       {
         this(repository, Optional.empty());
       }
@@ -68,8 +67,8 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryMusicArtistFinder (final @Nonnull RepositoryMusicArtistFinder other,
-                                        final @Nonnull Object override)
+    public RepositoryMusicArtistFinder (@Nonnull final RepositoryMusicArtistFinder other,
+                                        @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryMusicArtistFinder source = getSource(RepositoryMusicArtistFinder.class, other, override);
@@ -81,8 +80,8 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryMusicArtistFinder (final @Nonnull Repository repository,
-                                         final @Nonnull Optional<Id> madeEntityId)
+    private RepositoryMusicArtistFinder (@Nonnull final Repository repository,
+                                         @Nonnull final Optional<Id> madeEntityId)
       {
         super(repository, "artist");
         this.madeEntityId = madeEntityId;
@@ -94,7 +93,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public MusicArtistFinder makerOf (final @Nonnull Id madeEntityId)
+    public MusicArtistFinder makerOf (@Nonnull final Id madeEntityId)
       {
         return clonedWith(new RepositoryMusicArtistFinder(repository, Optional.of(madeEntityId)));
       }

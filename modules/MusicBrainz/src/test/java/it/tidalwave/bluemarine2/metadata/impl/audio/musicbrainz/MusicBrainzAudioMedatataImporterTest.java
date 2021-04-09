@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
@@ -151,7 +150,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
      *
      *
      ******************************************************************************************************************/
-    private void verifyGlobalModel (final @Nonnull Model model, final @Nonnull String testSetName)
+    private void verifyGlobalModel (@Nonnull final Model model, @Nonnull final String testSetName)
       throws RDFHandlerException, IOException
       {
         final String name = "musicbrainz-" + testSetName + ".n3";
@@ -168,7 +167,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "trackResourcesProvider2")
-    public void must_correctly_retrieve_MusicBrainz_data (final @Nonnull TestSetTriple triple)
+    public void must_correctly_retrieve_MusicBrainz_data (@Nonnull final TestSetTriple triple)
       throws Exception
       {
         // given

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.util;
 
@@ -50,12 +49,12 @@ public class SupplierBasedFinder<T> extends SimpleFinderSupport<T>
     @Nonnull
     private final Supplier<Collection<? extends T>> supplier;
 
-    public SupplierBasedFinder (final @Nonnull Supplier<Collection<? extends T>> supplier)
+    public SupplierBasedFinder (@Nonnull final Supplier<Collection<? extends T>> supplier)
       {
         this.supplier = supplier;
       }
 
-    public SupplierBasedFinder (final @Nonnull SupplierBasedFinder<T> other, @Nonnull Object override)
+    public SupplierBasedFinder (@Nonnull final SupplierBasedFinder<T> other, @Nonnull Object override)
       {
         super(other, override);
         final SupplierBasedFinder<T> source = getSource(SupplierBasedFinder.class, other, override);

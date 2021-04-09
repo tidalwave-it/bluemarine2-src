@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.util;
 
@@ -89,7 +88,7 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nullable
-    public static String normalizedToNativeForm (final @Nullable String string)
+    public static String normalizedToNativeForm (@Nullable final String string)
       {
         return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
       }
@@ -109,7 +108,7 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Path normalizedPath (final @Nonnull Path path)
+    public static Path normalizedPath (@Nonnull final Path path)
       throws IOException
       {
 //        log.trace("normalizedPath({}", path);
@@ -168,7 +167,7 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static File toFileBMT46 (final @Nonnull Path path)
+    public static File toFileBMT46 (@Nonnull final Path path)
       throws IOException
       {
         File file = path.toFile();
@@ -190,7 +189,7 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String extensionOf (final @Nonnull Path path)
+    private static String extensionOf (@Nonnull final Path path)
       {
         final int i = path.toString().lastIndexOf('.');
         return (i < 0) ? "" : path.toString().substring(i + 1);
@@ -203,7 +202,7 @@ public final class Miscellaneous
      *
      *
      ******************************************************************************************************************/
-    private static boolean probeBMT46 (final @Nonnull Path path)
+    private static boolean probeBMT46 (@Nonnull final Path path)
       {
         return Files.exists(path) && !path.toFile().exists();
       }
