@@ -73,7 +73,7 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
         <tidalwave.issues>BMT</tidalwave.issues>
         <tidalwave.github.readonly.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.readonly.url>
         <tidalwave.github.browse.url>https://github.com/tidalwave-it/bluemarine2-src</tidalwave.github.browse.url>
-        <release.profiles>release,installers</release.profiles>
+        <release.profiles>release-sign-artifacts,installers</release.profiles>
     </properties>
 
     <!-- Repeated because of http://jira.codehaus.org/browse/SCM-442 -->
