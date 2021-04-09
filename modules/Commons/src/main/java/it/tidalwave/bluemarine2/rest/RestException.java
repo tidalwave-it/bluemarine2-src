@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest;
 
@@ -49,28 +48,28 @@ public class RestException extends RuntimeException // FIXME: runtime or checked
     @Nonnull
     private final Optional<HttpStatus> httpStatus;
 
-    public RestException (final @Nonnull String message)
+    public RestException (@Nonnull final String message)
       {
         super(message);
         responseStatus = Optional.empty();
         httpStatus = Optional.empty();
       }
 
-    public RestException (final @Nonnull String message, final @Nonnull String responseStatus)
+    public RestException (@Nonnull final String message, @Nonnull final String responseStatus)
       {
         super(message + ": " + responseStatus);
         this.responseStatus = Optional.of(responseStatus);
         this.httpStatus = Optional.empty();
       }
 
-    public RestException (final @Nonnull String message, final @Nonnull HttpStatus httpStatus)
+    public RestException (@Nonnull final String message, @Nonnull final HttpStatus httpStatus)
       {
         super(message);
         this.responseStatus = Optional.empty();
         this.httpStatus = Optional.of(httpStatus);
       }
 
-    public RestException (final @Nonnull Throwable cause)
+    public RestException (@Nonnull final Throwable cause)
       {
         super(cause);
         responseStatus = Optional.empty();

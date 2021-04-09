@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
@@ -31,6 +30,7 @@ import javax.inject.Inject;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.beans.factory.ListableBeanFactory;
 import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.role.ui.UserAction;
@@ -81,7 +81,7 @@ public class DefaultMainScreenPresentationControl
      *
      ******************************************************************************************************************/
     @PostConstruct
-    /* VisibleForTesting */ void initialize()
+    @VisibleForTesting void initialize()
       {
         final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
                                                                    .values()
@@ -96,7 +96,7 @@ public class DefaultMainScreenPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (@Nonnull @ListensTo final PowerOnNotification notification)
       {
         presentation.showUp();
       }

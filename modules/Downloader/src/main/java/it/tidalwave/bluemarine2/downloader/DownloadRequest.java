@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.downloader;
 
@@ -56,13 +55,13 @@ public class DownloadRequest
     @Nonnull
     private final Set<Option> options;
 
-    public DownloadRequest (final @Nonnull URL url, final @Nonnull Option ... options) 
+    public DownloadRequest (@Nonnull final URL url, @Nonnull final Option ... options)
       {
         this.url = url;
         this.options = new HashSet<>(List.of(options));
       }
     
-    public boolean isOptionPresent (final @Nonnull Option option)
+    public boolean isOptionPresent (@Nonnull final Option option)
       {
         return options.contains(option);
       }

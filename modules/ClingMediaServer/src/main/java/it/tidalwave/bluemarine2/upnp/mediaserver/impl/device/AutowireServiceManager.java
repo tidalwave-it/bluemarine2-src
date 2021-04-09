@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,10 +19,12 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
- */package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
+ */
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
 import javax.annotation.Nonnull;
 import org.fourthline.cling.model.DefaultServiceManager;
@@ -41,16 +41,16 @@ public class AutowireServiceManager<T> extends DefaultServiceManager<T>
     @Nonnull
     private final AutowireCapableBeanFactory beanFactory;
 
-    public AutowireServiceManager (final @Nonnull AutowireCapableBeanFactory beanFactory,
-                                   final @Nonnull LocalService<T> service)
+    public AutowireServiceManager (@Nonnull final AutowireCapableBeanFactory beanFactory,
+                                   @Nonnull final LocalService<T> service)
       {
         super(service);
         this.beanFactory = beanFactory;
       }
 
-    public AutowireServiceManager (final @Nonnull AutowireCapableBeanFactory beanFactory,
-                                   final @Nonnull LocalService<T> service,
-                                   final @Nonnull Class<T> serviceClass)
+    public AutowireServiceManager (@Nonnull final AutowireCapableBeanFactory beanFactory,
+                                   @Nonnull final LocalService<T> service,
+                                   @Nonnull final Class<T> serviceClass)
       {
         super(service, serviceClass);
         this.beanFactory = beanFactory;

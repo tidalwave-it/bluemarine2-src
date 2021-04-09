@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
@@ -60,7 +59,7 @@ public class Range
      * @param   total   total length of the byte source.
      *
      ******************************************************************************************************************/
-    public Range (final @Nonnegative long start, final @Nonnegative long end, final @Nonnegative long total)
+    public Range (@Nonnegative final long start, @Nonnegative final long end, @Nonnegative final long total)
       {
         this.start = start;
         this.end = end;
@@ -73,7 +72,7 @@ public class Range
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Range full (final @Nonnegative long total)
+    public static Range full (@Nonnegative final long total)
       {
         return new Range(0, total - 1, total);
       }
@@ -83,7 +82,7 @@ public class Range
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Range subrange (final @Nonnegative long size)
+    public Range subrange (@Nonnegative final long size)
       {
        return new Range(start, Math.min(end, start + size - 1), total);
       }
@@ -98,7 +97,7 @@ public class Range
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static List<Range> fromHeader (final @Nullable String rangeHeader, final @Nonnegative long total)
+    public static List<Range> fromHeader (@Nullable final String rangeHeader, @Nonnegative final long total)
       {
         final List<Range> ranges = new ArrayList<>();
 
@@ -149,7 +148,7 @@ public class Range
      *
      ******************************************************************************************************************/
     @Nonnull
-    public ResourceRegion getRegion (final @Nonnull Resource resource)
+    public ResourceRegion getRegion (@Nonnull final Resource resource)
       {
         return new ResourceRegion(resource, start, length);
       }
@@ -165,9 +164,9 @@ public class Range
      * @return              a substring of the given string value as long or -1 if substring is empty.
      *
      ******************************************************************************************************************/
-    private static long subStringOrMinusOne (final @Nonnull String value,
-                                             final @Nonnegative int beginIndex,
-                                             final @Nonnegative int endIndex)
+    private static long subStringOrMinusOne (@Nonnull final String value,
+                                             @Nonnegative final int beginIndex,
+                                             @Nonnegative final int endIndex)
       {
         final String substring = value.substring(beginIndex, endIndex);
         return (substring.length() > 0) ? Long.parseLong(substring) : -1;

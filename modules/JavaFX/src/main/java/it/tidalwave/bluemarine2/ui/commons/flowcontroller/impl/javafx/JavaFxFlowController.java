@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
 
@@ -88,7 +87,7 @@ public class JavaFxFlowController implements FlowController
      *
      ******************************************************************************************************************/
     @Override
-    public void showPresentation (final @Nonnull Object presentation)
+    public void showPresentation (@Nonnull final Object presentation)
       {
         showPresentationImpl(presentation, null);
       }
@@ -99,7 +98,7 @@ public class JavaFxFlowController implements FlowController
      *
      ******************************************************************************************************************/
     @Override
-    public void showPresentation (final @Nonnull Object presentation, final @Nonnull Object control)
+    public void showPresentation (@Nonnull final Object presentation, @Nonnull final Object control)
       {
         showPresentationImpl(presentation, control);
       }
@@ -109,7 +108,7 @@ public class JavaFxFlowController implements FlowController
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    private void showPresentationImpl (final @Nonnull Object presentation, final @Nullable Object control)
+    private void showPresentationImpl (@Nonnull final Object presentation, @Nullable final Object control)
       {
         log.info("showPresentationImpl({}, {})", presentation, control);
         
@@ -201,7 +200,7 @@ public class JavaFxFlowController implements FlowController
      * 
      * 
      ******************************************************************************************************************/
-    private void notifyActivated (final @Nullable Object control)
+    private void notifyActivated (@Nullable final Object control)
       {
         try 
           {
@@ -229,7 +228,7 @@ public class JavaFxFlowController implements FlowController
      * @param   control     the Presentation Control
      *
      ******************************************************************************************************************/
-    private void canDeactivate (final @Nullable Object control, final @Nonnull Runnable runnable)
+    private void canDeactivate (@Nullable final Object control, @Nonnull final Runnable runnable)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
         log.debug("canDeactivate({})", control);
@@ -255,8 +254,8 @@ public class JavaFxFlowController implements FlowController
      * 
      ******************************************************************************************************************/
     @Nullable
-    private static Method findAnnotatedMethod (final @Nullable Object object,
-                                               final @Nonnull Class<? extends Annotation> annotationClass)
+    private static Method findAnnotatedMethod (@Nullable final Object object,
+                                               @Nonnull final Class<? extends Annotation> annotationClass)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
         log.debug("findAnnotatedMethod({}, {})", object, annotationClass);
@@ -287,7 +286,7 @@ public class JavaFxFlowController implements FlowController
      * @param   direction   +1 for "forward" direction, -1 for "backward" direction
      *
      ******************************************************************************************************************/
-    private void slide (final @Nonnull Node newNode, final @Nonnull Node oldNode, final int direction)
+    private void slide (@Nonnull final Node newNode, @Nonnull final Node oldNode, final int direction)
       {
         contentPane.getChildren().add(newNode);
         final double height = contentPane.getHeight();

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
@@ -48,7 +47,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
   {
     private static final long serialVersionUID = -5065032203985453428L;
 
-    private final static String QUERY_PERFORMANCES = readSparql(RepositoryPerformanceFinder.class, "Performances.sparql");
+    private static final String QUERY_PERFORMANCES = readSparql(RepositoryPerformanceFinder.class, "Performances.sparql");
 
     @Nonnull
     private final Optional<Id> trackId;
@@ -61,7 +60,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryPerformanceFinder (final @Nonnull Repository repository)
+    public RepositoryPerformanceFinder (@Nonnull final Repository repository)
       {
         this(repository, Optional.empty(), Optional.empty());
       }
@@ -71,8 +70,8 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryPerformanceFinder (final @Nonnull RepositoryPerformanceFinder other,
-                                        final @Nonnull Object override)
+    public RepositoryPerformanceFinder (@Nonnull final RepositoryPerformanceFinder other,
+                                        @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryPerformanceFinder source = getSource(RepositoryPerformanceFinder.class, other, override);
@@ -85,9 +84,9 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryPerformanceFinder (final @Nonnull Repository repository,
-                                         final @Nonnull Optional<Id> trackId,
-                                         final @Nonnull Optional<Id> performerId)
+    private RepositoryPerformanceFinder (@Nonnull final Repository repository,
+                                         @Nonnull final Optional<Id> trackId,
+                                         @Nonnull final Optional<Id> performerId)
       {
         super(repository, "performance");
         this.trackId = trackId;
@@ -100,7 +99,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PerformanceFinder ofTrack (final @Nonnull Id trackId)
+    public PerformanceFinder ofTrack (@Nonnull final Id trackId)
       {
         return clonedWith(new RepositoryPerformanceFinder(repository, Optional.of(trackId), performerId));
       }
@@ -111,7 +110,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public PerformanceFinder performedBy (final @Nonnull Id performerId)
+    public PerformanceFinder performedBy (@Nonnull final Id performerId)
       {
         return clonedWith(new RepositoryPerformanceFinder(repository, trackId, Optional.of(performerId)));
       }
