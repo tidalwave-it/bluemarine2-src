@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl;
 
@@ -59,7 +58,7 @@ public class DefaultCacheManager implements CacheManager
         private final Map<Object, SoftReference<?>> objectMap = new ConcurrentHashMap<>();
 
         @Override @Nonnull
-        public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+        public <T> T getCachedObject (@Nonnull final Object key, @Nonnull final Supplier<T> supplier)
           {
             SoftReference<T> ref = (SoftReference<T>)(objectMap.computeIfAbsent(key, k -> computeObject(k, supplier)));
             T object = ref.get();
@@ -74,7 +73,7 @@ public class DefaultCacheManager implements CacheManager
           }
 
         @Nonnull
-        private <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+        private <T> SoftReference<T> computeObject (@Nonnull final Object key, @Nonnull final Supplier<T> supplier)
           {
             log.info(">>>> cache {} miss for {}", name, key);
             return new SoftReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
@@ -82,12 +81,12 @@ public class DefaultCacheManager implements CacheManager
       }
 
     @Override @Nonnull
-    public Cache getCache (final @Nonnull Object cacheKey)
+    public Cache getCache (@Nonnull final Object cacheKey)
       {
         return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache(cacheKey.toString()));
       }
 
-    /* visible for testing FIXME */ public void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
+    /* visible for testing FIXME */ public void onPersistenceUpdated (@ListensTo final PersistenceInitializedNotification notification)
       {
         log.debug("onPersistenceUpdated({})", notification);
         cacheMap.clear();

@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
@@ -54,7 +53,7 @@ class MusicBrainzResponse<T> extends RestResponse<T>
      *
      *
      ******************************************************************************************************************/
-    public MusicBrainzResponse (final @Nonnull Optional<T> datum, final @Nonnull String responseStatus)
+    public MusicBrainzResponse (@Nonnull final Optional<T> datum, @Nonnull final String responseStatus)
       {
         super(datum, responseStatus);
       }
@@ -71,8 +70,8 @@ class MusicBrainzResponse<T> extends RestResponse<T>
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static <X> MusicBrainzResponse<X> of (final @Nonnull ResponseEntity<String> response,
-                                                 final @Nonnull Function<Metadata, X> function)
+    public static <X> MusicBrainzResponse<X> of (@Nonnull final ResponseEntity<String> response,
+                                                 @Nonnull final Function<Metadata, X> function)
       {
         final int httpStatus = response.getStatusCodeValue();
         final String statusCodeAsString = response.getStatusCode().toString();

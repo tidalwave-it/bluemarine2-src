@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.embedded;
 
@@ -38,6 +37,7 @@ import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Value;
@@ -184,7 +184,7 @@ public class EmbeddedAudioMetadataImporter
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo MediaItemImportRequest request)
+    @VisibleForTesting void onMediaItemImportRequest (@ListensTo final MediaItemImportRequest request)
       {
         request.getSha1().ifPresent(sha1 ->
           {
@@ -210,7 +210,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Model importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull byte[] sha1)
+    private Model importMediaItem (@Nonnull final MediaItem mediaItem, @Nonnull final byte[] sha1)
       {
         log.debug("importMediaItem({})", mediaItem);
 
@@ -302,7 +302,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Instant getLastModifiedTime (final @Nonnull Path path)
+    private Instant getLastModifiedTime (@Nonnull final Path path)
       {
         try
           {
@@ -320,7 +320,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
+    public static IRI recordIriOf (@Nonnull final Metadata metadata, @Nonnull final String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
         return BMMO.recordIriFor(cddb.map(value -> createSha1IdNew(value.getToc()))
@@ -332,14 +332,14 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Id uniqueTrackId (final @Nonnull Metadata metadata, final @Nonnull String default_)
+    private Id uniqueTrackId (@Nonnull final Metadata metadata, @Nonnull final String default_)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
         final Optional<Integer> trackNumber = metadata.get(TRACK_NUMBER);
 
         return (cddb.isPresent() && trackNumber.isPresent())
                 ? createSha1IdNew(cddb.get().getToc() + "/" + trackNumber.get())
-                : new Id(default_);
+                : Id.of(default_);
       }
 
     /*******************************************************************************************************************
@@ -347,7 +347,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI artistIriOf (final @Nonnull String name)
+    private IRI artistIriOf (@Nonnull final String name)
       {
         return BMMO.artistIriFor(createSha1IdNew("ARTIST:" + name));
       }
@@ -358,7 +358,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Optional<Integer> emptyIfOne (final @Nonnull Optional<Integer> number)
+    private static Optional<Integer> emptyIfOne (@Nonnull final Optional<Integer> number)
       {
         return number.flatMap(n -> (n == 1) ? Optional.empty() : Optional.of(n));
       }

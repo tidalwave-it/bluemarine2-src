@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest;
 
@@ -64,8 +63,8 @@ public class CachingRestClientSupport
         DONT_USE_CACHE
           {
             @Override @Nonnull
-            public ResponseEntity<String> request (final @Nonnull CachingRestClientSupport api,
-                                                   final @Nonnull String url)
+            public ResponseEntity<String> request (@Nonnull final CachingRestClientSupport api,
+                                                   @Nonnull final String url)
               throws IOException, InterruptedException
               {
                 return api.requestFromNetwork(url);
@@ -75,8 +74,8 @@ public class CachingRestClientSupport
         ONLY_USE_CACHE
           {
             @Override @Nonnull
-            public ResponseEntity<String> request (final @Nonnull CachingRestClientSupport api,
-                                                   final @Nonnull String url)
+            public ResponseEntity<String> request (@Nonnull final CachingRestClientSupport api,
+                                                   @Nonnull final String url)
               throws IOException
               {
                 return api.requestFromCache(url).get();
@@ -86,8 +85,8 @@ public class CachingRestClientSupport
         USE_CACHE
           {
             @Override @Nonnull
-            public ResponseEntity<String> request (final @Nonnull CachingRestClientSupport api,
-                                                   final @Nonnull String url)
+            public ResponseEntity<String> request (@Nonnull final CachingRestClientSupport api,
+                                                   @Nonnull final String url)
               throws IOException, InterruptedException
               {
                 return api.requestFromCacheAndThenNetwork(url);
@@ -188,7 +187,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected ResponseEntity<String> request (final @Nonnull String url)
+    protected ResponseEntity<String> request (@Nonnull final String url)
       throws IOException, InterruptedException
       {
         log.debug("request({})", url);
@@ -201,7 +200,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<ResponseEntity<String>> requestFromCache (final @Nonnull String url)
+    private Optional<ResponseEntity<String>> requestFromCache (@Nonnull final String url)
       throws IOException
       {
         log.debug("requestFromCache({})", url);
@@ -214,7 +213,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private synchronized ResponseEntity<String> requestFromNetwork (final @Nonnull String url)
+    private synchronized ResponseEntity<String> requestFromNetwork (@Nonnull final String url)
       throws IOException, InterruptedException
       {
         log.debug("requestFromNetwork({})", url);
@@ -255,7 +254,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<String> requestFromCacheAndThenNetwork (final @Nonnull String url)
+    private ResponseEntity<String> requestFromCacheAndThenNetwork (@Nonnull final String url)
       throws IOException, InterruptedException
       {
         log.debug("requestFromCacheAndThenNetwork({})", url);
@@ -286,7 +285,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ static String fixedPath (final @Nonnull String url)
+    /* package */ static String fixedPath (@Nonnull final String url)
       {
         String s = url.replace("://", "/");
         int i = s.lastIndexOf('/');
@@ -317,7 +316,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String toString (final @Nonnull byte[] bytes)
+    private static String toString (@Nonnull final byte[] bytes)
       {
         final StringBuilder builder = new StringBuilder();
 

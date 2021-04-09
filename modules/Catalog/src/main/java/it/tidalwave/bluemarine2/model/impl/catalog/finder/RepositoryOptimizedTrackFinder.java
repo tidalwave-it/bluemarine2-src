@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
@@ -51,15 +50,15 @@ public class RepositoryOptimizedTrackFinder extends RepositoryTrackFinder
     @Nonnull
     private final Optional<Integer> trackCount;
 
-    public RepositoryOptimizedTrackFinder (final @Nonnull Repository repository,
-                                           final @Nonnull Optional<Integer> trackCount)
+    public RepositoryOptimizedTrackFinder (@Nonnull final Repository repository,
+                                           @Nonnull final Optional<Integer> trackCount)
       {
         super(repository);
         this.trackCount = trackCount;
       }
 
-    public RepositoryOptimizedTrackFinder (final @Nonnull RepositoryOptimizedTrackFinder other,
-                                           final @Nonnull Object override)
+    public RepositoryOptimizedTrackFinder (@Nonnull final RepositoryOptimizedTrackFinder other,
+                                           @Nonnull final Object override)
       {
         super(other, override);
         final RepositoryOptimizedTrackFinder source = getSource(RepositoryOptimizedTrackFinder.class, other, override);

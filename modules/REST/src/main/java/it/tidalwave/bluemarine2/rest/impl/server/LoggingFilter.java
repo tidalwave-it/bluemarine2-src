@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest.impl.server;
 
@@ -51,14 +50,14 @@ public class LoggingFilter implements Filter
   {
 
     @Override
-    public void init (final @Nonnull FilterConfig filterConfig)
+    public void init (@Nonnull final FilterConfig filterConfig)
       {
       }
 
     @Override
-    public void doFilter (final @Nonnull ServletRequest req,
-                          final @Nonnull ServletResponse res,
-                          final @Nonnull FilterChain chain)
+    public void doFilter (@Nonnull final ServletRequest req,
+                          @Nonnull final ServletResponse res,
+                          @Nonnull final FilterChain chain)
       throws IOException, ServletException
       {
         final HttpServletRequest request = (HttpServletRequest)req;

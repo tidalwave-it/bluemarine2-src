@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.cec;
 
@@ -86,7 +85,7 @@ public class CecUserControlEvent extends CecEvent
     @Nonnull
     private final UserControlCode userControlCode;
     
-    public CecUserControlEvent (final @Nonnull EventType eventType, final @Nonnull UserControlCode userControlCode) 
+    public CecUserControlEvent (@Nonnull final EventType eventType, @Nonnull final UserControlCode userControlCode)
       {
         super(eventType);
         this.userControlCode = userControlCode;

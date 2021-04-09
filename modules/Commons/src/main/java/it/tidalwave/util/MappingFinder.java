@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.util;
 
@@ -48,13 +47,13 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder<TYPE>
     @Nonnull
     private final transient Function<TYPE, TYPE> mapper;
 
-    public MappingFinder (final @Nonnull Finder<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public MappingFinder (@Nonnull final Finder<TYPE> delegate, @Nonnull final Function<TYPE, TYPE> mapper)
       {
         super(delegate::results);
         this.mapper = mapper;
       }
 
-    public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
+    public MappingFinder (@Nonnull final MappingFinder other, @Nonnull final Object override)
       {
         super(other, override);
         final MappingFinder<TYPE> source = getSource(MappingFinder.class, other, override);

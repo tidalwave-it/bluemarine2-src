@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
@@ -91,9 +90,9 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    public RepositoryEntitySupport (final @Nonnull Repository repository,
-                                    final @Nonnull BindingSet bindingSet,
-                                    final @Nonnull String idName)
+    public RepositoryEntitySupport (@Nonnull final Repository repository,
+                                    @Nonnull final BindingSet bindingSet,
+                                    @Nonnull final String idName)
       {
         this(repository, bindingSet, idName, toString(bindingSet.getBinding("label")).orElse(""));
       }
@@ -103,13 +102,13 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    public RepositoryEntitySupport (final @Nonnull Repository repository,
-                                    final @Nonnull BindingSet bindingSet,
-                                    final @Nonnull String idName,
-                                    final @Nonnull String rdfsLabel)
+    public RepositoryEntitySupport (@Nonnull final Repository repository,
+                                    @Nonnull final BindingSet bindingSet,
+                                    @Nonnull final String idName,
+                                    @Nonnull final String rdfsLabel)
       {
         this.repository = repository;
-        this.id = new Id(toString(bindingSet.getBinding(idName)).get());
+        this.id = Id.of(toString(bindingSet.getBinding(idName)).get());
         this.rdfsLabel = rdfsLabel;
         this.fallback = toId(bindingSet.getBinding("fallback"));
         this.source = toId(Optional.ofNullable(bindingSet.getBinding("source"))
@@ -165,7 +164,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Optional<String> toString (final @Nullable Binding binding)
+    protected static Optional<String> toString (@Nullable final Binding binding)
       {
         return Optional.ofNullable(binding).map(Binding::getValue).map(Value::stringValue);
       }
@@ -174,7 +173,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Optional<Id> toId (final @Nullable Binding binding)
+    protected static Optional<Id> toId (@Nullable final Binding binding)
       {
         return Optional.ofNullable(binding).map(Binding::getValue).map(Value::stringValue).map(Id::new);
       }
@@ -183,7 +182,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Optional<Integer> toInteger (final @Nullable Binding binding)
+    protected static Optional<Integer> toInteger (@Nullable final Binding binding)
       {
         return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Integer.parseInt(v.stringValue()));
       }
@@ -192,7 +191,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Optional<Long> toLong (final @Nullable Binding binding)
+    protected static Optional<Long> toLong (@Nullable final Binding binding)
       {
         return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Long.parseLong(v.stringValue()));
       }
@@ -201,7 +200,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Optional<Duration> toDuration (final @Nullable Binding binding)
+    protected static Optional<Duration> toDuration (@Nullable final Binding binding)
       {
         return Optional.ofNullable(binding).map(Binding::getValue).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
       }
@@ -218,7 +217,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Path toPath (final @Nonnull Binding binding)
+    protected static Path toPath (@Nonnull final Binding binding)
       {
         try // FIXME: see BMT-46 - try all posibile normalizations
           {
@@ -238,7 +237,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+    protected <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (@Nonnull final FINDER finder)
       {
         return finder.importedFrom(source).withFallback(fallback);
       }

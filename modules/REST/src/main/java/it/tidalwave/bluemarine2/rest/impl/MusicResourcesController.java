@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
@@ -37,6 +36,7 @@ import java.util.stream.Stream;
 import java.io.IOException;
 import java.net.URLEncoder;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -105,7 +105,7 @@ public class MusicResourcesController
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPersistenceInitializedNotification (final @ListensTo PersistenceInitializedNotification notification)
+    @VisibleForTesting void onPersistenceInitializedNotification (@ListensTo final PersistenceInitializedNotification notification)
       throws IOException
       {
         log.info("onPersistenceInitializedNotification({})", notification);
@@ -123,8 +123,8 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public List<RecordResource> getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                            final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<RecordResource> getRecords (@RequestParam(required = false, defaultValue = "embedded") final String source,
+                                            @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getRecords({}, {})", source, fallback);
         checkStatus();
@@ -143,14 +143,14 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public DetailedRecordResource getRecord (final @PathVariable String id,
-                                             final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                             final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public DetailedRecordResource getRecord (@PathVariable final String id,
+                                             @RequestParam(required = false, defaultValue = "embedded") final String source,
+                                             @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getRecord({}, {}, {})", id, source, fallback);
         checkStatus();
-        final List<TrackResource> tracks = finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackResource::new);
-        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback,
+        final List<TrackResource> tracks = finalized(catalog.findTracks().inRecord(Id.of(id)), source, fallback, TrackResource::new);
+        return single(finalized(catalog.findRecords().withId(Id.of(id)), source, fallback,
                                 record -> new DetailedRecordResource(record, tracks)));
       }
 
@@ -163,11 +163,11 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/record/{id}/coverart")
-    public ResponseEntity<byte[]> getRecordCoverArt (final @PathVariable String id)
+    public ResponseEntity<byte[]> getRecordCoverArt (@PathVariable final String id)
       {
         log.info("getRecordCoverArt({})", id);
         checkStatus();
-        return catalog.findTracks().inRecord(new Id(id))
+        return catalog.findTracks().inRecord(Id.of(id))
                                    .stream()
                                    .flatMap(track -> track.asMany(_AudioFileSupplier_).stream())
                                    .map(AudioFileSupplier::getAudioFile)
@@ -188,8 +188,8 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public List<TrackResource> getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                          final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<TrackResource> getTracks (@RequestParam(required = false, defaultValue = "embedded") final String source,
+                                          @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getTracks({}, {})", source, fallback);
         checkStatus();
@@ -208,13 +208,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/track/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TrackResource getTrack (final @PathVariable String id,
-                                   final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                   final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public TrackResource getTrack (@PathVariable final String id,
+                                   @RequestParam(required = false, defaultValue = "embedded") final String source,
+                                   @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getTrack({}, {}, {})", id, source, fallback);
         checkStatus();
-        return single(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackResource::new));
+        return single(finalized(catalog.findTracks().withId(Id.of(id)), source, fallback, TrackResource::new));
       }
 
     /*******************************************************************************************************************
@@ -228,8 +228,8 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public List<AudioFileResource> getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<AudioFileResource> getAudioFiles (@RequestParam(required = false, defaultValue = "embedded") final String source,
+                                                  @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getAudioFiles({}, {})", source, fallback);
         checkStatus();
@@ -248,13 +248,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public AudioFileResource getAudioFile (final @PathVariable String id,
-                                           final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                           final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public AudioFileResource getAudioFile (@PathVariable final String id,
+                                           @RequestParam(required = false, defaultValue = "embedded") final String source,
+                                           @RequestParam(required = false, defaultValue = "embedded") final String fallback)
       {
         log.info("getAudioFile({}, {}, {})", id, source, fallback);
         checkStatus();
-        return single(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileResource::new));
+        return single(finalized(catalog.findAudioFiles().withId(Id.of(id)), source, fallback, AudioFileResource::new));
       }
 
     /*******************************************************************************************************************
@@ -266,12 +266,12 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/content")
     public ResponseEntity<ResourceRegion> getAudioFileContent (
-            final @PathVariable String id,
-            final @RequestHeader(name = "Range", required = false) String rangeHeader)
+            @PathVariable final String id,
+            @RequestHeader(name = "Range", required = false) final String rangeHeader)
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
-        return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
+        return catalog.findAudioFiles().withId(Id.of(id)).optionalResult()
                                                           .map(_f(af -> audioFileContentResponse(af, rangeHeader)))
                                                           .orElseThrow(NotFoundException::new);
       }
@@ -283,11 +283,11 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/coverart")
-    public ResponseEntity<byte[]> getAudioFileCoverArt (final @PathVariable String id)
+    public ResponseEntity<byte[]> getAudioFileCoverArt (@PathVariable final String id)
       {
         log.info("getAudioFileCoverArt({})", id);
         checkStatus();
-        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
+        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(Id.of(id)).optionalResult();
         log.debug(">>>> audioFile: {}", audioFile);
         return audioFile.flatMap(file -> file.getMetadata().getAll(ARTWORK).stream().findFirst())
                         .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
@@ -298,7 +298,7 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <T> T single (final @Nonnull List<T> list)
+    private <T> T single (@Nonnull final List<T> list)
       {
         if (list.isEmpty())
           {
@@ -313,13 +313,12 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @Nonnull
     private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>, JSON>
-        List<JSON> finalized (final @Nonnull FINDER finder,
-                              final @Nonnull String source,
-                              final @Nonnull String fallback,
-                              final @Nonnull Function<ENTITY, JSON> mapper)
+        List<JSON> finalized (@Nonnull final FINDER finder,
+                              @Nonnull final String source,
+                              @Nonnull final String fallback,
+                              @Nonnull final Function<ENTITY, JSON> mapper)
       {
-        final FINDER f = finder.importedFrom(new Id(source))
-                                .withFallback(new Id(fallback));
+        final FINDER f = finder.importedFrom(Id.of(source)).withFallback(Id.of(fallback));
         return ((Finder<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder
                      .stream()
                      .map(mapper)
@@ -330,8 +329,8 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<ResourceRegion> audioFileContentResponse (final @Nonnull AudioFile file,
-                                                                     final @Nullable String rangeHeader)
+    private ResponseEntity<ResourceRegion> audioFileContentResponse (@Nonnull final AudioFile file,
+                                                                     @Nullable final String rangeHeader)
       throws IOException
       {
         final long length = file.getSize();
@@ -360,10 +359,10 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes,
-                                                  final @Nonnull String type,
-                                                  final @Nonnull String subtype,
-                                                  final @Nonnull String contentDisposition)
+    private ResponseEntity<byte[]> bytesResponse (@Nonnull final byte[] bytes,
+                                                  @Nonnull final String type,
+                                                  @Nonnull final String subtype,
+                                                  @Nonnull final String contentDisposition)
       {
         return ResponseEntity.ok()
                              .contentType(new MediaType(type, subtype))
@@ -376,7 +375,7 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String contentDisposition (final @Nonnull String string)
+    private static String contentDisposition (@Nonnull final String string)
       {
         // See https://tools.ietf.org/html/rfc6266#section-5
         return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, UTF_8));

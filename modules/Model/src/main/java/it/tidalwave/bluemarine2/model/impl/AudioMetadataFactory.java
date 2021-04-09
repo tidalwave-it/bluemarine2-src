@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.model.impl;
 
@@ -65,14 +64,14 @@ import org.jaudiotagger.tag.images.Artwork;
 @Slf4j @NoArgsConstructor(access = PRIVATE)
 public final class AudioMetadataFactory
   {
-    private final static List<FieldKey> MAPPED_TAGS = List.of(
+    private static final List<FieldKey> MAPPED_TAGS = List.of(
         FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE, FieldKey.TITLE, FieldKey.COMMENT,
         FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
         FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
 
     // FIXME: use interface and implementation
     @Nonnull
-    public static Metadata loadFrom (final @Nonnull Path path)
+    public static Metadata loadFrom (@Nonnull final Path path)
       {
         Metadata metadata = new MetadataSupport(path);
         AudioFile audioFile = null;
@@ -186,13 +185,13 @@ public final class AudioMetadataFactory
       }
 
     @Nonnull
-    private static <T> Optional<List<T>> optionalList (final @Nonnull List<T> list)
+    private static <T> Optional<List<T>> optionalList (@Nonnull final List<T> list)
       {
         return list.isEmpty() ? Optional.empty() : Optional.of(list);
       }
 
     @Nonnull
-    private static Optional<Integer> parseOptionalInt (final @Nullable String string)
+    private static Optional<Integer> parseOptionalInt (@Nullable final String string)
       {
         try
           {
@@ -205,13 +204,13 @@ public final class AudioMetadataFactory
       }
 
     @Nullable
-    private static Id id (final @Nullable String string)
+    private static Id id (@Nullable final String string)
       {
         if ((string == null) || "".equals(string))
           {
             return null;
           }
 
-        return new Id(string);
+        return Id.of(string);
       }
   }

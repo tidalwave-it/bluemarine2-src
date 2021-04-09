@@ -1,12 +1,10 @@
 /*
- * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
- * %%
- * Copyright (C) 2015 - 2021 Tidalwave s.a.s. (http://tidalwave.it)
- * %%
+ * blueMarine II: Semantic Media Centre
+ * http://tidalwave.it/projects/bluemarine2
+ *
+ * Copyright (C) 2015 - 2021 by Tidalwave s.a.s. (http://tidalwave.it)
  *
  * *********************************************************************************************************************
  *
@@ -21,9 +19,10 @@
  *
  * *********************************************************************************************************************
  *
+ * git clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * git clone https://github.com/tidalwave-it/bluemarine2-src
  *
  * *********************************************************************************************************************
- * #L%
  */
 package it.tidalwave.bluemarine2.cec.javafx.impl;
 
@@ -31,6 +30,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.Map;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import javafx.scene.robot.Robot;
@@ -83,20 +83,20 @@ public class JavaFxCecNavigationAdapter
     @Inject
     private JavaFxFlowController flowController;
     
-    /* VisibleForTesting */ void onCecUserControlEventReceived (final @Nonnull @ListensTo CecUserControlEvent event)
+    @VisibleForTesting void onCecUserControlEventReceived (@Nonnull @ListensTo final CecUserControlEvent event)
       {
         log.debug("onCecUserControlEventReceived({})", event);
         Platform.runLater(() -> actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run());
       }
     
-    private void keyPress (final @Nonnull KeyCode code)
+    private void keyPress (@Nonnull final KeyCode code)
       {
         log.debug("keyPress({})", code);
         final Robot robot = new Robot();
         robot.keyPress(code);              
       }
     
-    private void keyRelease (final @Nonnull KeyCode code)
+    private void keyRelease (@Nonnull final KeyCode code)
       {
         log.debug("keyRelease({})", code);
         final Robot robot = new Robot();
