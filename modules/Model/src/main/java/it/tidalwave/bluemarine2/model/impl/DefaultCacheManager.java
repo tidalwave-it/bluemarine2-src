@@ -33,11 +33,11 @@ import java.util.function.Supplier;
 import java.lang.ref.SoftReference;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import lombok.RequiredArgsConstructor;
-import static java.util.Objects.*;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
  *

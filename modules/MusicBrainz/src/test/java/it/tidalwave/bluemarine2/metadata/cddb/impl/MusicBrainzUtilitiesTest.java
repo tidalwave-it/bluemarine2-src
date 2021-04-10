@@ -26,10 +26,10 @@
  */
 package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 import java.io.UnsupportedEncodingException;
-import static org.testng.Assert.*;
 import org.testng.annotations.Test;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
+import static org.testng.Assert.*;
 
 /***********************************************************************************************************************
  *

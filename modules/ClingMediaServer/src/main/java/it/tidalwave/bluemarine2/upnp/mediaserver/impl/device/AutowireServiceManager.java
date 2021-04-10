@@ -27,9 +27,9 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
 import javax.annotation.Nonnull;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.fourthline.cling.model.DefaultServiceManager;
 import org.fourthline.cling.model.meta.LocalService;
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 
 /***********************************************************************************************************************
  *

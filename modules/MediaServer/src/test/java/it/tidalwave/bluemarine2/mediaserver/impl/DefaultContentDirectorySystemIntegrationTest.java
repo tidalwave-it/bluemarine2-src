@@ -31,11 +31,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
-import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************

@@ -32,11 +32,11 @@ import java.util.function.Function;
 import it.tidalwave.util.Finder;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.role.EntityBrowser;
-import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.util.Parameters.r;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *

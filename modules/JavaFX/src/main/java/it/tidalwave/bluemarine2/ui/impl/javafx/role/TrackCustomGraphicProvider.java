@@ -34,7 +34,7 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.audio.Track;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
-import static it.tidalwave.bluemarine2.util.Formatters.format;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 

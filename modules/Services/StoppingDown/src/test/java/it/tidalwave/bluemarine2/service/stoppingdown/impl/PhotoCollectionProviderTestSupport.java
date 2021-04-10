@@ -35,12 +35,11 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
+import org.testng.annotations.BeforeMethod;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.commons.test.TestUtilities;
-import org.testng.annotations.BeforeMethod;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 /***********************************************************************************************************************
  *

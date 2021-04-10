@@ -28,10 +28,10 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import javafx.fxml.FXML;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.ColumnConstraints;

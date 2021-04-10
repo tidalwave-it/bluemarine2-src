@@ -29,7 +29,6 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
-//import java.util.regex.Pattern;
 import java.util.Objects;
 import java.util.stream.Stream;
 import java.io.File;
@@ -40,9 +39,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.*;
-//import java.util.regex.Matcher;
+import static java.util.stream.Collectors.*;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************

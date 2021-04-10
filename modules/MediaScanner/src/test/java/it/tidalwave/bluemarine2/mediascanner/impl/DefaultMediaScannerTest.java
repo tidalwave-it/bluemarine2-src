@@ -27,11 +27,11 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Stream;
-import java.time.Instant;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -39,23 +39,23 @@ import it.tidalwave.util.Key;
 import it.tidalwave.util.test.MockTimeProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
-import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
-import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static org.testng.AssertJUnit.assertTrue;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
  *

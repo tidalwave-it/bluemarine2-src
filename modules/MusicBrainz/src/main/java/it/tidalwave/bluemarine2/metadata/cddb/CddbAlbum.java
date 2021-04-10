@@ -35,7 +35,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
