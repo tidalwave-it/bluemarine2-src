@@ -31,28 +31,28 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.stream.Collectors;
-import it.tidalwave.util.annotation.VisibleForTesting;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.PlayList;
-import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
-import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.ui.Displayable._Displayable_;
-import static it.tidalwave.bluemarine2.util.Formatters.format;
-import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.util.PropertyWrapper.wrap;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.PLAYING;
 
 /***********************************************************************************************************************
  *

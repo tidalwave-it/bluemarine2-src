@@ -36,8 +36,8 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
+import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 
 /***********************************************************************************************************************
  *

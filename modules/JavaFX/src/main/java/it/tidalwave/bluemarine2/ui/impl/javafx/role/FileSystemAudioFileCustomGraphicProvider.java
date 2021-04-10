@@ -29,13 +29,13 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 import javax.annotation.Nonnull;
 import java.time.Duration;
 import javafx.scene.Node;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.impl.FileSystemAudioFile;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
-import static it.tidalwave.bluemarine2.util.Formatters.format;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 

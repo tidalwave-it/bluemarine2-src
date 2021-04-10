@@ -28,8 +28,8 @@ package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.time.Instant;
 import java.text.Normalizer;
+import java.time.Instant;
 import java.util.Base64;
 import java.util.Date;
 import java.util.Iterator;
@@ -43,25 +43,25 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import org.eclipse.rdf4j.common.iteration.Iteration;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.repository.RepositoryException;
-import org.eclipse.rdf4j.rio.n3.N3Writer;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
-import org.eclipse.rdf4j.common.iteration.Iteration;
+import org.eclipse.rdf4j.rio.n3.N3Writer;
 import it.tidalwave.util.Id;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.text.Normalizer.Form.NFC;
+import static java.text.Normalizer.Form.*;
 import static java.util.Spliterators.spliteratorUnknownSize;
 import static java.util.stream.StreamSupport.stream;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *

@@ -37,15 +37,15 @@ import java.nio.MappedByteBuffer;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *

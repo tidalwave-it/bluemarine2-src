@@ -36,7 +36,7 @@ import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable._Identifiable_;
 import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.externalized;
 
 /***********************************************************************************************************************
  *

@@ -37,15 +37,15 @@ import java.util.function.Function;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.util.SupplierBasedFinder;
+import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Collections.*;
+import static java.util.Collections.singletonList;
 import static it.tidalwave.role.SimpleComposite._SimpleComposite_;
 import static lombok.AccessLevel.PRIVATE;
 
