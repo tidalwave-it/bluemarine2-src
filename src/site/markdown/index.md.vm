@@ -10,7 +10,7 @@
 #set ($lgtm = "https://lgtm.com/projects/b/tidalwave/" + $project_lc + "-src/")
 #set ($lgtm_alerts = "https://lgtm.com/projects/b/tidalwave/" + $project_lc + "-src/alerts/")
 
-[![Maven Central](https://img.shields.io/maven-central/v/${project.groupId}/thesefoolishthings.svg)]()
+[![Maven Central](https://img.shields.io/maven-central/v/${project.groupId}/$project_lc.svg)]()
 [![Build Status]($build_status)]($ci_view)
 [![Test Status]($test_status)]($ci_view)
 [![Coverage]($coverage_status)]($ci_view)

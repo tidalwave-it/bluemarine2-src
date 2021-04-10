@@ -26,13 +26,13 @@
  */
 package it.tidalwave.bluemarine2.model.spi;
 
+import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Optional;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.*;
 import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *

@@ -26,10 +26,10 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import it.tidalwave.util.Finder.SortCriterion;
-import it.tidalwave.util.Finder.InMemorySortCriterion;
-import it.tidalwave.role.ui.Displayable;
 import org.springframework.core.annotation.Order;
+import it.tidalwave.util.Finder.InMemorySortCriterion;
+import it.tidalwave.util.Finder.SortCriterion;
+import it.tidalwave.role.ui.Displayable;
 
 /***********************************************************************************************************************
  *

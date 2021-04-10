@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.cec.CecUserControlEvent.UserControlCode;
-import lombok.experimental.Delegate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *

@@ -28,8 +28,8 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.net.URL;
 import java.util.Optional;
+import java.net.URL;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.Selectable;
 import lombok.RequiredArgsConstructor;

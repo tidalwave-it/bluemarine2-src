@@ -26,12 +26,12 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import java.io.StringReader;
-import java.io.StringWriter;
+import javax.annotation.Nonnull;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Base64;
-import javax.annotation.Nonnull;
+import java.io.StringReader;
+import java.io.StringWriter;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;

@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
@@ -35,8 +35,6 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
 import java.net.URLEncoder;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -46,29 +44,31 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
-import it.tidalwave.bluemarine2.rest.impl.resource.TrackResource;
-import it.tidalwave.bluemarine2.rest.impl.resource.RecordResource;
-import it.tidalwave.bluemarine2.rest.impl.resource.DetailedRecordResource;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.rest.impl.resource.AudioFileResource;
+import it.tidalwave.bluemarine2.rest.impl.resource.DetailedRecordResource;
+import it.tidalwave.bluemarine2.rest.impl.resource.RecordResource;
+import it.tidalwave.bluemarine2.rest.impl.resource.TrackResource;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
-import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
 
 /***********************************************************************************************************************

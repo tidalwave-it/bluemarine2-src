@@ -26,10 +26,10 @@
  */
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
-import java.util.HashMap;
-import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.HashMap;
+import java.util.Map;
 import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;

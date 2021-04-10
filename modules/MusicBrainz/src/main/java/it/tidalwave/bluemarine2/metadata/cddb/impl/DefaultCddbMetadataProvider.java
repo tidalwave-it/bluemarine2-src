@@ -29,16 +29,16 @@ package it.tidalwave.bluemarine2.metadata.cddb.impl;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
-import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
-import it.tidalwave.bluemarine2.rest.RestResponse;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
+import it.tidalwave.bluemarine2.rest.RestResponse;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *

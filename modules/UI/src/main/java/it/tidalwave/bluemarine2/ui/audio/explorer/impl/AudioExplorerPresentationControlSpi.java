@@ -30,8 +30,8 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
 import java.net.URL;
-import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *
