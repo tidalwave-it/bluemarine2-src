@@ -29,12 +29,12 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.experimental.Delegate;
-import lombok.RequiredArgsConstructor;
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *

@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import javax.annotation.concurrent.Immutable;
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;

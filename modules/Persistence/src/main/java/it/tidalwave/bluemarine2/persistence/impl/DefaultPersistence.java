@@ -26,7 +26,6 @@
  */
 package it.tidalwave.bluemarine2.persistence.impl;
 
-import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Optional;
@@ -38,23 +37,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.apache.commons.io.FileUtils;
-import com.google.common.annotations.VisibleForTesting;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
-import org.eclipse.rdf4j.sail.Sail;
-import org.eclipse.rdf4j.sail.memory.MemoryStore;
-import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.n3.N3Writer;
+import org.eclipse.rdf4j.sail.Sail;
+import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
 import it.tidalwave.util.TypeSafeMap;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;

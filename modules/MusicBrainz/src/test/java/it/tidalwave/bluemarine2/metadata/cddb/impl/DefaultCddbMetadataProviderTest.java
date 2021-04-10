@@ -28,20 +28,20 @@ package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.nio.file.Path;
 import java.nio.file.Files;
-import it.tidalwave.bluemarine2.rest.RestResponse;
-import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
+import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
-import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
+import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
+import it.tidalwave.bluemarine2.rest.RestResponse;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Collections.*;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
+import static java.util.Collections.singletonList;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.ONLY_USE_CACHE;
 
 /***********************************************************************************************************************
  *

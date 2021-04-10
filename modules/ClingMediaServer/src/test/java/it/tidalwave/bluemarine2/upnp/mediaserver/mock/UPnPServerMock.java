@@ -27,7 +27,6 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.mock;
 
 import java.beans.PropertyChangeSupport;
-import lombok.extern.slf4j.Slf4j;
 import org.fourthline.cling.binding.annotations.UpnpAction;
 import org.fourthline.cling.binding.annotations.UpnpInputArgument;
 import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
@@ -35,6 +34,7 @@ import org.fourthline.cling.binding.annotations.UpnpService;
 import org.fourthline.cling.binding.annotations.UpnpServiceId;
 import org.fourthline.cling.binding.annotations.UpnpServiceType;
 import org.fourthline.cling.binding.annotations.UpnpStateVariable;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *

@@ -29,16 +29,16 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.Optional;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import it.tidalwave.bluemarine2.model.audio.MusicPerformer;
-import it.tidalwave.bluemarine2.model.vocabulary.BMMO;
 import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.bluemarine2.model.vocabulary.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import org.eclipse.rdf4j.query.BindingSet;
-import org.eclipse.rdf4j.repository.Repository;
 
 /***********************************************************************************************************************
  *

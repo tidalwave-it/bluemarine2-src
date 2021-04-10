@@ -31,8 +31,8 @@ import org.fourthline.cling.model.meta.Icon;
 import org.fourthline.cling.model.types.UDN;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
 import it.tidalwave.bluemarine2.upnp.mediaserver.mock.UPnPServerMock;
-import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.Test;
 
 /***********************************************************************************************************************
  *

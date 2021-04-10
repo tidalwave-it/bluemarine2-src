@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.persistence.impl;
 
-import java.io.File;
 import javax.inject.Inject;
+import java.io.File;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;

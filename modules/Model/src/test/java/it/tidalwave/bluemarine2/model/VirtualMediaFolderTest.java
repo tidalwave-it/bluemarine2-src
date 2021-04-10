@@ -39,16 +39,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
-import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.toTestNGDataProvider;
 import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
 /***********************************************************************************************************************
  *

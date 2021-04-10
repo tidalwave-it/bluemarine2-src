@@ -39,16 +39,16 @@ import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.VirtualMediaFolder.EntityCollectionFactory;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Comparator.comparing;
+import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Identifiable._Identifiable_;
 import static it.tidalwave.util.Parameters.r;
+import static it.tidalwave.role.Identifiable._Identifiable_;
 
 /***********************************************************************************************************************
  *

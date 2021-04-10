@@ -27,11 +27,11 @@
 package it.tidalwave.bluemarine2.model.vocabulary;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
+import it.tidalwave.util.Id;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

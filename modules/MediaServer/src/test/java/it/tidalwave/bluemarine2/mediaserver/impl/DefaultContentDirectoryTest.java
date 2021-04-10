@@ -28,13 +28,13 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import java.util.List;
 import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.CoreMatchers.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *

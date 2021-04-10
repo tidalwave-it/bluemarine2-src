@@ -40,7 +40,6 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
-import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
 import it.tidalwave.bluemarine2.model.audio.MusicPerformer;
@@ -51,21 +50,22 @@ import it.tidalwave.bluemarine2.model.finder.audio.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
-import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryFinderSupport;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
-import static java.nio.file.Files.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.role.Identifiable._Identifiable_;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
+import static org.testng.Assert.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import static org.testng.Assert.*;
 
 /***********************************************************************************************************************
  *

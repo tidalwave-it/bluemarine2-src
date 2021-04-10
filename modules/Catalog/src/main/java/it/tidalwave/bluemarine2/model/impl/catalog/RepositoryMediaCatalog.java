@@ -38,15 +38,15 @@ import it.tidalwave.bluemarine2.model.finder.audio.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
-import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryAudioFileFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 
 /***********************************************************************************************************************
