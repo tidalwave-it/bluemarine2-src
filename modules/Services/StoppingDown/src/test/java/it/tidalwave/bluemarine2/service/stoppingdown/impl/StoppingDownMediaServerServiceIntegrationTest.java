@@ -27,8 +27,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
-import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.Test;
 
 /***********************************************************************************************************************
  *

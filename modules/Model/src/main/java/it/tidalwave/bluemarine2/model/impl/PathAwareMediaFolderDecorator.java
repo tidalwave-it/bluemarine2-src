@@ -27,9 +27,9 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
+import java.nio.file.Path;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.MappingFinder;
 import it.tidalwave.role.SimpleComposite;

@@ -28,11 +28,11 @@ package it.tidalwave.bluemarine2.ui.video.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.OpenVideoExplorerRequest;
 import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
-import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************

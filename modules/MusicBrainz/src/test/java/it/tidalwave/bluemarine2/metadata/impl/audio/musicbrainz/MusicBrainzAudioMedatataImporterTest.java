@@ -38,24 +38,24 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
+import it.tidalwave.bluemarine2.util.ModelBuilder;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.DefaultCddbMetadataProvider;
+import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMetadataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import it.tidalwave.bluemarine2.util.ModelBuilder;
-import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
-import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
-import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMetadataProvider;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
-import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
-import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
+import static it.tidalwave.bluemarine2.util.RdfUtilities.exportToFile;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.USE_CACHE;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
 /***********************************************************************************************************************
  *

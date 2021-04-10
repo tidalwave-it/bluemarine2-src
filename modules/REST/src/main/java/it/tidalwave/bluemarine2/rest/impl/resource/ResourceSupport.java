@@ -28,8 +28,8 @@ package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Configurable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 

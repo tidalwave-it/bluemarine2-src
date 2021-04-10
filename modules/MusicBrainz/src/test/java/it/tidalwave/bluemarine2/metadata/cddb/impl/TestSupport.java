@@ -27,19 +27,19 @@
 package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.testng.annotations.DataProvider;
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
+import org.testng.annotations.DataProvider;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import java.util.List;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
 /***********************************************************************************************************************
  *

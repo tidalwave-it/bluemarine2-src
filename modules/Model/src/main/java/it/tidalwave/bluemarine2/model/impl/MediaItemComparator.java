@@ -29,14 +29,14 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Comparator;
 import java.util.List;
-import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder.SortDirection;
 import it.tidalwave.util.Finder.InMemorySortCriterion;
+import it.tidalwave.util.Finder.SortDirection;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *

@@ -32,7 +32,7 @@ import java.util.List;
 import it.tidalwave.bluemarine2.model.PlayList;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import lombok.ToString;
-import static java.util.Collections.*;
+import static java.util.Collections.emptyList;
 
 /***********************************************************************************************************************
  *

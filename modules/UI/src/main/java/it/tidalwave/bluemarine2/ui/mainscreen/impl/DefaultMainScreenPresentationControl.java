@@ -26,12 +26,12 @@
  */
 package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
-import javax.inject.Inject;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.Collection;
-import it.tidalwave.util.annotation.VisibleForTesting;
 import org.springframework.beans.factory.ListableBeanFactory;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -40,7 +40,7 @@ import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Comparator.comparing;
+import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************

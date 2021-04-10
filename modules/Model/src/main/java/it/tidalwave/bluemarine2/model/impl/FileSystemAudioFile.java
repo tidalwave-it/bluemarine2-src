@@ -26,9 +26,9 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.Nullable;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
 import java.util.Optional;
@@ -37,8 +37,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import it.tidalwave.util.spi.FinderSupport;import it.tidalwave.util.Id;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
+import it.tidalwave.util.spi.FinderSupport;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
@@ -49,10 +50,10 @@ import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
-import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import static java.util.Collections.*;
+import lombok.experimental.Delegate;
+import static java.util.Collections.emptyList;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************

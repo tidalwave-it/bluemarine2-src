@@ -34,7 +34,7 @@ import java.util.function.Function;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static lombok.AccessLevel.*;
+import static lombok.AccessLevel.PROTECTED;
 
 /***********************************************************************************************************************
  *
