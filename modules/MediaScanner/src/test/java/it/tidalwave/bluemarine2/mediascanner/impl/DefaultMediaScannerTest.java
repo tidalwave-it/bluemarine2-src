@@ -177,8 +177,10 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         // then
         final String modelName = "model-" + testSetName + ".n3";
         final Path actualFile = Path.of("target/test-results/" + modelName);
-        final Path expectedFile = Path.of("src/test/resources/expected-results/" + modelName);
+        final Path expectedFile = Path.of("target/test-classes/expected-results/" + modelName);
         persistence.exportToFile(actualFile);
+        rewriteN3(expectedFile);
+        rewriteN3(actualFile); // FIXME: why?
         assertSameContents(expectedFile, actualFile);
       }
 

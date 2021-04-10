@@ -157,7 +157,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         final Path actualFile = TEST_RESULTS.resolve(name);
         final Path expectedFile = Paths.get("target/test-classes/expected-results").resolve(name);
         exportToFile(model, actualFile);
-
+        rewriteN3(expectedFile);
         assertSameContents(expectedFile, actualFile);
       }
 
@@ -217,6 +217,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
               }
 
             exportToFile(model, actualResult);
+            rewriteN3(expectedResult);
             assertSameContents(expectedResult, actualResult);
           }
       }
