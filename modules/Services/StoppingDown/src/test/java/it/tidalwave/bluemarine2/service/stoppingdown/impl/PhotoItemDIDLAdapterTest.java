@@ -30,15 +30,15 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.DIDLContent;
+import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
-import lombok.extern.slf4j.Slf4j;
-import static org.mockito.Mockito.*;
-import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
+import static org.mockito.Mockito.*;
 
 /***********************************************************************************************************************
  *

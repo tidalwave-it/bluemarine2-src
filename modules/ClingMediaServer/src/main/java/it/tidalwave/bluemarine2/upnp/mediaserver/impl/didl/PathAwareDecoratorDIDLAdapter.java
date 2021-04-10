@@ -33,7 +33,7 @@ import org.fourthline.cling.support.model.item.Item;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.externalized;
 
 /***********************************************************************************************************************
  *

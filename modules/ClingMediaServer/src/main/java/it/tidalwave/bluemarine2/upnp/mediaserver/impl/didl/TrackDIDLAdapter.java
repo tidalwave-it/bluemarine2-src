@@ -30,7 +30,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
 import java.io.IOException;
-import it.tidalwave.role.ui.Displayable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
@@ -38,15 +37,16 @@ import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.StorageMedium;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.MusicTrack;
+import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.Track;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier._AudioFileSupplier_;
-import static it.tidalwave.role.ui.Displayable._Displayable_;
 
 /***********************************************************************************************************************
  *

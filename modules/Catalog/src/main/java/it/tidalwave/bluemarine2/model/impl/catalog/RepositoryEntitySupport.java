@@ -28,15 +28,15 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Optional;
 import java.time.Duration;
+import java.util.Optional;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.model.Value;
-import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.Binding;
 import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.role.Identifiable;
@@ -45,19 +45,19 @@ import it.tidalwave.bluemarine2.model.finder.audio.MusicPerformerFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.audio.TrackFinder;
-import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerformerFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
-import lombok.experimental.Delegate;
+import it.tidalwave.bluemarine2.model.spi.Entity;
+import it.tidalwave.bluemarine2.model.spi.SourceAwareFinder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.experimental.Delegate;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *

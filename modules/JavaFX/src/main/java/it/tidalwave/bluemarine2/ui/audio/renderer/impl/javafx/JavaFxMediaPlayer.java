@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
-import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.nio.file.Path;

@@ -29,10 +29,10 @@ package it.tidalwave.bluemarine2.model.impl.role;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import it.tidalwave.role.ui.Presentable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.spi.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************

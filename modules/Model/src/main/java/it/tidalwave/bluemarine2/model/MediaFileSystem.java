@@ -29,8 +29,8 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import org.springframework.core.annotation.Order;
-import it.tidalwave.bluemarine2.model.spi.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.spi.Entity;
 
 /***********************************************************************************************************************
  *

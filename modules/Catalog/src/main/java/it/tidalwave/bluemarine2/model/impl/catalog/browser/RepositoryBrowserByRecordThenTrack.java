@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import it.tidalwave.bluemarine2.model.MediaCatalog;
 import org.springframework.core.annotation.Order;
+import it.tidalwave.bluemarine2.model.MediaCatalog;
 
 /***********************************************************************************************************************
  *

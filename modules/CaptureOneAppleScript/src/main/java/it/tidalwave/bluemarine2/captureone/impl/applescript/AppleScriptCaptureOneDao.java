@@ -28,9 +28,9 @@ package it.tidalwave.bluemarine2.captureone.impl.applescript;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.Reader;
-import java.io.InputStreamReader;
 import java.io.StringReader;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

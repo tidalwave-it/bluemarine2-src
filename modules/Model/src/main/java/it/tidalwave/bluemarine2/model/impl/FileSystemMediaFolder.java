@@ -26,18 +26,18 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import java.util.Optional;
-import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.PathAwareFinder;
 import lombok.AllArgsConstructor;
-import lombok.experimental.Delegate;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *

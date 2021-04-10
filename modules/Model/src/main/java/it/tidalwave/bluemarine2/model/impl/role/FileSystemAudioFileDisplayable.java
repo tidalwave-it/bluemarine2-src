@@ -31,7 +31,7 @@ import it.tidalwave.role.ui.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.impl.FileSystemAudioFile;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.TITLE;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *

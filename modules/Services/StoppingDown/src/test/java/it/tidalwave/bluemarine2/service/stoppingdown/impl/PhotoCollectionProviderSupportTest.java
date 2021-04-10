@@ -27,8 +27,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import java.util.Collection;
-import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
+import org.testng.annotations.Test;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************

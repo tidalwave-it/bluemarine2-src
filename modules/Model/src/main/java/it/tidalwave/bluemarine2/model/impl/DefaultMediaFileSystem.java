@@ -34,12 +34,12 @@ import it.tidalwave.util.annotation.VisibleForTesting;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
-import lombok.experimental.Delegate;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
