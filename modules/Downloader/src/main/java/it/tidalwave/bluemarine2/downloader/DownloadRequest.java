@@ -28,8 +28,8 @@ package it.tidalwave.bluemarine2.downloader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.List;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.net.URL;
 import lombok.Getter;

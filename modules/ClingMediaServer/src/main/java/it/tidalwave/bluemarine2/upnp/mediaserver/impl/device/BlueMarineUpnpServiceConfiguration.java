@@ -26,9 +26,9 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
+import org.fourthline.cling.DefaultUpnpServiceConfiguration;
 import lombok.Getter;
 import lombok.Setter;
-import org.fourthline.cling.DefaultUpnpServiceConfiguration;
 
 /***********************************************************************************************************************
  *

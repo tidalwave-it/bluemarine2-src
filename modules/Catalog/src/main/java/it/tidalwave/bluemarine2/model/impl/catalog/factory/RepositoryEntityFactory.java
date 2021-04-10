@@ -26,8 +26,8 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
-import java.util.function.BiFunction;
 import javax.annotation.Nonnull;
+import java.util.function.BiFunction;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
 

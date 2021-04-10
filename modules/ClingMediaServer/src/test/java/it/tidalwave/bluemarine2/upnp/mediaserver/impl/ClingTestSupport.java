@@ -28,10 +28,10 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import org.fourthline.cling.UpnpService;
-import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
-import org.testng.annotations.BeforeClass;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeClass;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 
 /***********************************************************************************************************************
  *

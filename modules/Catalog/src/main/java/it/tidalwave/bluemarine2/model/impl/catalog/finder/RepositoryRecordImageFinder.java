@@ -29,8 +29,8 @@ package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 import javax.annotation.Nonnull;
 import java.net.URL;
 import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.util.Finder;
+import it.tidalwave.bluemarine2.model.audio.Record;
 import lombok.ToString;
 
 /***********************************************************************************************************************

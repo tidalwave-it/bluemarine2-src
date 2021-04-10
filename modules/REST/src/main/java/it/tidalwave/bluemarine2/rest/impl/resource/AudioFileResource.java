@@ -27,13 +27,13 @@
 package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import java.time.Duration;
+import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import lombok.Getter;
 import static it.tidalwave.role.ui.Displayable._Displayable_;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;

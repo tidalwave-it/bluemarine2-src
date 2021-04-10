@@ -33,11 +33,13 @@ import javax.inject.Inject;
 import java.time.Duration;
 import java.util.Optional;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Memoize;
 import it.tidalwave.bluemarine2.util.Formatters;
@@ -45,18 +47,16 @@ import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.Record;
 import it.tidalwave.bluemarine2.model.finder.audio.MusicArtistFinder;
-import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
-import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadataFactory;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.Resource;
 
 /***********************************************************************************************************************
  *

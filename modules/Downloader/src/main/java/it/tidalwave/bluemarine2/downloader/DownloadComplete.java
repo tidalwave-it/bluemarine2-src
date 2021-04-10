@@ -26,14 +26,14 @@
  */
 package it.tidalwave.bluemarine2.downloader;
 
-import java.io.IOException;
-import java.net.URI;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.net.URL;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.net.URI;
+import java.net.URL;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

@@ -44,17 +44,17 @@ import org.jaudiotagger.audio.mp3.MP3FileReader;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
+import org.jaudiotagger.tag.images.Artwork;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.toList;
-import static lombok.AccessLevel.PRIVATE;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
-import org.jaudiotagger.tag.images.Artwork;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *

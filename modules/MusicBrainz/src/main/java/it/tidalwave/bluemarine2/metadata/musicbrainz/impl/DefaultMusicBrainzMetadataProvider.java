@@ -34,14 +34,14 @@ import org.springframework.http.ResponseEntity;
 import org.musicbrainz.ns.mmd_2.Metadata;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
 import org.musicbrainz.ns.mmd_2.ReleaseList;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
 import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
 import it.tidalwave.bluemarine2.rest.RestResponse;
-import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
 
 /***********************************************************************************************************************
  *

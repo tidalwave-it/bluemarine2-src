@@ -30,9 +30,9 @@ import javax.annotation.Nonnull;
 import javafx.application.Platform;
 import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
+import it.tidalwave.util.PreferencesHandler;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
-import it.tidalwave.util.PreferencesHandler;
 
 /***********************************************************************************************************************
  *

@@ -27,14 +27,14 @@
 package it.tidalwave.bluemarine2.downloader.impl;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
-import java.net.URL;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.io.IOException;
+import java.net.URL;
 import org.apache.http.HttpStatus;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.NotFoundException;
@@ -49,12 +49,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import static java.nio.file.Files.write;
 import static java.nio.file.Files.*;
 import static org.apache.commons.io.FileUtils.*;
-import static it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames.CACHE_FOLDER_PATH;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static org.hamcrest.MatcherAssert.*;
+import static it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames.CACHE_FOLDER_PATH;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *

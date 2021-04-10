@@ -27,35 +27,35 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.net.URI;
-import org.springframework.web.client.ResponseErrorHandler;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.ResponseErrorHandler;
+import org.springframework.web.client.RestTemplate;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Key;
-import it.tidalwave.bluemarine2.message.PowerOnNotification;
-import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.rest.ResponseEntityIo;
-import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
-import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
+import static org.mockito.Mockito.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import static org.mockito.Mockito.*;
 
 /***********************************************************************************************************************
  *
