@@ -29,10 +29,12 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
+import it.tidalwave.util.Pair;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Delegate;
 
@@ -46,6 +48,12 @@ public class SortingRDFHandler implements RDFHandler
   {
     interface Exclusions
       {
+        public void startRDF()
+          throws RDFHandlerException;
+
+        public void handleNamespace (String prefix, String uri)
+          throws RDFHandlerException;
+
         public void handleStatement (Statement statement)
           throws RDFHandlerException;
 
@@ -58,11 +66,30 @@ public class SortingRDFHandler implements RDFHandler
 
     private final List<Statement> statements = new ArrayList<>();
 
+    private final List<Pair<String, String>> nameSpaces = new ArrayList<>();
+
+    private BiConsumer<String, String> namespaceHandler = (prefix, uri) -> nameSpaces.add(Pair.of(prefix, uri));
+
+    @Override
+    public void handleNamespace (@Nonnull final String prefix, @Nonnull final String uri)
+      {
+        namespaceHandler.accept(prefix, uri);
+      }
+
     @Override
     public void handleStatement (@Nonnull final Statement statement)
       throws RDFHandlerException
       {
         statements.add(statement);
+      }
+
+    @Override
+    public void startRDF()
+      throws RDFHandlerException
+      {
+        delegate.startRDF();
+        namespaceHandler = delegate::handleNamespace;
+        nameSpaces.forEach(p -> delegate.handleNamespace(p.a, p.b));
       }
 
     @Override

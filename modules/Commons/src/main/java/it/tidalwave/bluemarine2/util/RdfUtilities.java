@@ -81,7 +81,7 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     public static void exportToFile (@Nonnull final Model model, @Nonnull final Path path)
-      throws RDFHandlerException, IOException, RepositoryException
+            throws RDFHandlerException, IOException, RepositoryException
       {
         log.info("exportToFile({})", path);
         Files.createDirectories(path.getParent());
@@ -300,7 +300,7 @@ public final class RdfUtilities
      ******************************************************************************************************************/
     @Nonnull
     public static URL urlFor (@Nonnull final IRI uri)
-      throws MalformedURLException
+            throws MalformedURLException
       {
         return new URL(uri.toString());
       }

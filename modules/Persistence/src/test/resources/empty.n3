@@ -8,4 +8,3 @@
 @prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix vocab: <http://dbtune.org/musicbrainz/resource/vocab/> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
-

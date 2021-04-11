@@ -61,14 +61,10 @@
         <jackson.version>2.12.2</jackson.version>
         <jetty.version>10.0.1</jetty.version>
         <mp3agic.version>0.8.3</mp3agic.version>
-        <rdf4j.version>2.5.4</rdf4j.version>
+        <rdf4j.version>3.6.2</rdf4j.version>
         <tft.spring.version>5.3.1</tft.spring.version>
         <steelblue.version>1.1-ALPHA-2</steelblue.version>
         <thesefoolishthings.version>3.2-ALPHA-11</thesefoolishthings.version>
-
-        <!-- Needed for dependency convergence. -->
-        <commons-math3.version>3.5</commons-math3.version>
-        <spatial4j.version>0.7</spatial4j.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
@@ -204,19 +200,6 @@
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jdk8</artifactId>
                 <version>${jackson.version}</version>
-            </dependency>
-
-            <!-- Needed for dependency convergence. -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-math3</artifactId>
-                <version>${commons-math3.version}</version>
-            </dependency>
-            <!-- Needed for dependency convergence. -->
-            <dependency>
-                <groupId>org.locationtech.spatial4j</groupId>
-                <artifactId>spatial4j</artifactId>
-                <version>${spatial4j.version}</version>
             </dependency>
 
             <dependency>
