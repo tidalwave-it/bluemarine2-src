@@ -30,6 +30,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Stream;
 import java.io.File;
 import java.io.IOException;
@@ -37,19 +38,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
-import static java.util.stream.Collectors.*;
-import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE) @Slf4j
-public final class Miscellaneous
+@UtilityClass @Slf4j
+public class Miscellaneous
   {
     private static final Normalizer.Form NATIVE_FORM;
 
@@ -77,7 +76,7 @@ public final class Miscellaneous
                 throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
           }
 
-        log.info(">>>> Charset normalizer form: {}", NATIVE_FORM);
+        log.info("Charset normalizer form: {}", NATIVE_FORM);
       }
 
     /*******************************************************************************************************************
@@ -109,7 +108,7 @@ public final class Miscellaneous
     public static Path normalizedPath (@Nonnull final Path path)
       throws IOException
       {
-//        log.trace("normalizedPath({}", path);
+//        log.trace("normalizedPath({})", path);
 
         if (Files.exists(path))
           {
@@ -118,40 +117,30 @@ public final class Miscellaneous
 
         Path pathSoFar = Paths.get("/");
 
-        for (final Path element : path)
+        for (final Path segment : path)
           {
-//            log.trace(">>>> pathSoFar: {} element: {}", pathSoFar, element);
-            final Path resolved = pathSoFar.resolve(element);
+//            log.trace(">>>> pathSoFar: {} segment: {}", pathSoFar, segment);
+            final Path resolved = pathSoFar.resolve(segment);
 
             if (Files.exists(resolved))
               {
                 pathSoFar = resolved;
               }
-            else
+            else // didn't find 'resolved' because of wrong normalisation, searching in alternative way
               {
-                // FIXME: refactor with lambdas
                 try (final Stream<Path> stream = Files.list(pathSoFar))
                   {
-                    boolean found = false;
-
-                    for (final Path child : stream.collect(toList()))
+                    final Optional<Path> child = stream.map(Path::getFileName)
+                                                       .filter(p -> equalsNormalized(segment, p))
+                                                       .findFirst();
+                    if (!child.isPresent())
                       {
-                        final Path childName = child.getFileName();
-                        found = Objects.equals(normalizedToNativeForm(element.toString()),
-                                               normalizedToNativeForm(childName.toString()));
-//                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
-
-                        if (found)
-                          {
-                            pathSoFar = pathSoFar.resolve(childName);
-                            break;
-                          }
+                        log.warn(">>>> normalization failed - did you pass an absolute path? At {}", pathSoFar);
+                        return path;
                       }
 
-                    if (!found)
-                      {
-                        return path; // fail
-                      }
+                    pathSoFar = pathSoFar.resolve(child.get());
+                    assert Files.exists(pathSoFar) : "Normalization failed at: " + pathSoFar;
                   }
               }
           }
@@ -161,7 +150,23 @@ public final class Miscellaneous
 
     /*******************************************************************************************************************
      *
+     * Checks whether two Paths are equal after normalisation of their string representation.
      *
+     * @param   path1   the former path
+     * @param   path2   the latter path
+     * @return          {@true} if they are equal
+     *
+     ******************************************************************************************************************/
+    private static boolean equalsNormalized (@Nullable final Path path1, @Nullable final Path path2)
+      {
+        return Objects.equals(normalizedToNativeForm(path1.toString()), normalizedToNativeForm(path2.toString()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * @param path
+     * @return
+     * @throws IOException
      *
      ******************************************************************************************************************/
     @Nonnull
