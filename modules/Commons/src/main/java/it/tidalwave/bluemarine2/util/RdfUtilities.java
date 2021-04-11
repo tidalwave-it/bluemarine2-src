@@ -36,7 +36,7 @@ import java.util.Iterator;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
@@ -86,16 +86,10 @@ public final class RdfUtilities
         log.info("exportToFile({})", path);
         Files.createDirectories(path.getParent());
 
-        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8)))
+        try (final Writer w = Files.newBufferedWriter(path, UTF_8))
           {
-            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(w));
             writer.startRDF();
-//            FIXME: use Iterations - and sort
-//            for (final Namespace namespace : connection.getNamespaces().asList())
-//              {
-//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
-//              }
-
             writer.handleNamespace("bio", "http://purl.org/vocab/bio/0.1/");
             writer.handleNamespace("bmmo", "http://bluemarine.tidalwave.it/2015/04/mo/");
             writer.handleNamespace("dc", "http://purl.org/dc/elements/1.1/");
@@ -106,7 +100,7 @@ public final class RdfUtilities
             writer.handleNamespace("rel", "http://purl.org/vocab/relationship/");
             writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
             writer.handleNamespace("xs", "http://www.w3.org/2001/XMLSchema#");
-            model.stream().forEachOrdered(writer::handleStatement);
+            model.stream().forEach(writer::handleStatement);
             writer.endRDF();
           }
       }
