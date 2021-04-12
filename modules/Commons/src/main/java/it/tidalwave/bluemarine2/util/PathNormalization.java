@@ -38,6 +38,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
@@ -77,17 +78,6 @@ public class PathNormalization
           }
 
         log.info("Charset normalizer form: {}", NATIVE_FORM);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nullable
-    public static String normalizedToNativeForm (@Nullable final String string)
-      {
-        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
       }
 
     /*******************************************************************************************************************
@@ -157,7 +147,7 @@ public class PathNormalization
      * @return          {@true} if they are equal
      *
      ******************************************************************************************************************/
-    private static boolean equalsNormalized (@Nullable final Path path1, @Nullable final Path path2)
+    @VisibleForTesting static boolean equalsNormalized (@Nullable final Path path1, @Nullable final Path path2)
       {
         return Objects.equals(normalizedToNativeForm(path1.toString()), normalizedToNativeForm(path2.toString()));
       }
@@ -191,6 +181,17 @@ public class PathNormalization
      *
      *
      ******************************************************************************************************************/
+    @Nullable
+    public static String normalizedToNativeForm (@Nullable final String string)
+      {
+        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static String extensionOf (@Nonnull final Path path)
       {
@@ -205,7 +206,7 @@ public class PathNormalization
      *
      *
      ******************************************************************************************************************/
-    private static boolean probeBMT46 (@Nonnull final Path path)
+    @VisibleForTesting static boolean probeBMT46 (@Nonnull final Path path)
       {
         return Files.exists(path) && !path.toFile().exists();
       }
