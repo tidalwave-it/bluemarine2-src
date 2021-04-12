@@ -116,7 +116,68 @@
                 <version>${jaudiotagger.version}</version>
             </dependency>
 
-            <!-- Should activate by itself with JDK 11+, but it fails with Jenkins Maven integration. -->
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-media</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-media</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-base</artifactId>
