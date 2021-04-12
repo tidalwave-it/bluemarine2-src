@@ -48,6 +48,10 @@
         required stuff, including a shell script launcher.
     </description>
 
+    <properties>
+        <tft.javafx.platform>linux</tft.javafx.platform>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
