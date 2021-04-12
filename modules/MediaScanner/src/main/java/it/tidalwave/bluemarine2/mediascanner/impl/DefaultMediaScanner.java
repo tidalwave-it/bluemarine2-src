@@ -45,6 +45,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
+import static it.tidalwave.bluemarine2.util.PathNormalization.fixedPath;
 
 /***********************************************************************************************************************
  *
@@ -146,7 +147,7 @@ public class DefaultMediaScanner
         try
           {
             diskSemaphore.acquire();
-            final File file = path.toFile();
+            final File file = fixedPath(path).toFile();
 
             try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
               {
