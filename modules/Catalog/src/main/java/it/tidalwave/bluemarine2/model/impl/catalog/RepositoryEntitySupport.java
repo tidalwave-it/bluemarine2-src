@@ -57,7 +57,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Delegate;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 
 /***********************************************************************************************************************
  *

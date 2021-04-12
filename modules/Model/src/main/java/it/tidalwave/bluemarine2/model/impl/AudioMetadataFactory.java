@@ -52,7 +52,7 @@ import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static lombok.AccessLevel.PRIVATE;
 

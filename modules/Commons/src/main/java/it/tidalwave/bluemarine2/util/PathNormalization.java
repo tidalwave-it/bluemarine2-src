@@ -48,7 +48,7 @@ import static java.text.Normalizer.Form.*;
  *
  **********************************************************************************************************************/
 @UtilityClass @Slf4j
-public class Miscellaneous
+public class PathNormalization
   {
     private static final Normalizer.Form NATIVE_FORM;
 

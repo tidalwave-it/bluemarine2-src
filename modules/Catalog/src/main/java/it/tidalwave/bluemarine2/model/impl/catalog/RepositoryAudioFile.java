@@ -55,7 +55,7 @@ import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************

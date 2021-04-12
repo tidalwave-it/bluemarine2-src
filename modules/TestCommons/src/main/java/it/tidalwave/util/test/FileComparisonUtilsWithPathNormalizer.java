@@ -39,7 +39,7 @@ import org.eclipse.rdf4j.rio.n3.N3Writer;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 
 /***********************************************************************************************************************
  *

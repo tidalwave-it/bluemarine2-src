@@ -53,7 +53,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static org.testng.AssertJUnit.assertTrue;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
