@@ -378,7 +378,11 @@ public class PathNormalizationTest
             throws IOException, InterruptedException
       {
         log.info("Extracting files from tar...");
-        DefaultProcessExecutor.forExecutable("/usr/bin/tar")
+        // FIXME: ProcessExecutor should search in $PATH
+        final String tar = List.of("/bin/tar", "/usr/bin/tar").stream()
+                               .filter(s -> Files.exists(Path.of(s)))
+                               .findFirst().get();
+        DefaultProcessExecutor.forExecutable(tar)
                               .withArgument("-xvf")
                               .withArgument("src/test/resources/agacantes.tar.gz")
                               .withArgument("-C")
