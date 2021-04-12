@@ -38,6 +38,7 @@ import it.tidalwave.util.spi.DefaultProcessExecutor;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardOpenOption.*;
 import static org.testng.Assert.*;
@@ -76,7 +77,7 @@ public class PathNormalizationTest
      */
     private static final String AGACANTE_NFC = "L'Agac" + ofBytes(0xCC, 0xA7) + "ante";
 
-    /** Test string in NDF mode. */
+    /** Test string in NFD mode. */
     private static final String AGACANTE_NFD = "L'Aga" + ofBytes(0xC3, 0xA7) + "ante";
 
     /** Test string in native mode. */
@@ -146,10 +147,10 @@ public class PathNormalizationTest
     public void test_equalsNormalized()
       {
         // given
-        final Path PATH_AGACANTE_NFC = JAVA_FOLDER.resolve(AGACANTE_NFC);
-        final Path PATH_AGACANTE_NFD = JAVA_FOLDER.resolve(AGACANTE_NFD);
+        final Path pathAgacanteNfc = JAVA_FOLDER.resolve(AGACANTE_NFC);
+        final Path pathAgacanteNfd = JAVA_FOLDER.resolve(AGACANTE_NFD);
         // when
-        final boolean equals = PathNormalization.equalsNormalized(PATH_AGACANTE_NFC, PATH_AGACANTE_NFD);
+        final boolean equals = PathNormalization.equalsNormalized(pathAgacanteNfc, pathAgacanteNfd);
         // then
         assertThat(equals, is(true));
       }
@@ -165,13 +166,13 @@ public class PathNormalizationTest
       {
         // given
         Files.createDirectories(JAVA_FOLDER);
-        final Path PATH_AGACANTE_NFC = JAVA_FOLDER.resolve(AGACANTE_NFC);
-        final Path PATH_AGACANTE_NFD = JAVA_FOLDER.resolve(AGACANTE_NFD);
+        final Path pathAgacanteNfc = JAVA_FOLDER.resolve(AGACANTE_NFC);
+        final Path pathAgacanteNfd = JAVA_FOLDER.resolve(AGACANTE_NFD);
         // when
-        Files.writeString(PATH_AGACANTE_NFC, FOO_BAR, UTF_8, CREATE);
-        Files.writeString(PATH_AGACANTE_NFD, FOO_BAR, UTF_8, CREATE);
+        Files.writeString(pathAgacanteNfc, FOO_BAR, UTF_8, CREATE);
+        Files.writeString(pathAgacanteNfd, FOO_BAR, UTF_8, CREATE);
         // then
-        final List<Path> children = Files.list(JAVA_FOLDER).collect(Collectors.toList());
+        final List<Path> children = Files.list(JAVA_FOLDER).collect(toList());
 
         switch (OS_NAME)
           {
@@ -263,33 +264,15 @@ public class PathNormalizationTest
         // then
         assertThat(extractedNfc.toFile().exists(), is(true));
         assertThat(Files.exists(extractedNfc), is(true));
-
-        try
-          {
-            assertThat(Files.readString(extractedNfc, UTF_8), is(FOO_BAR));
-            Files.newBufferedReader(extractedNfc);
-            log.info("NFC can be opened: {}", extractedNfc);
-          }
-        catch (NoSuchFileException e)
-          {
-            log.info("NFC can't be opened: {}", extractedNfc);
-            fail("NFC can't be opened");
-          }
+        assertThat(Files.readString(extractedNfc, UTF_8), is(FOO_BAR));
+        Files.newBufferedReader(extractedNfc);
+        log.info("NFC can be opened: {}", extractedNfc);
 
         assertThat(extractedNfd.toFile().exists(), is(true));
         assertThat(Files.exists(extractedNfd), is(true));
-
-        try
-          {
-            assertThat(Files.readString(extractedNfd, UTF_8), is(FOO_BAR));
-            Files.newBufferedReader(extractedNfd);
-            log.info("NFD can be opened: {}", extractedNfd);
-          }
-        catch (NoSuchFileException e)
-          {
-            log.info("NFD can't be opened: {}", extractedNfd);
-            fail("NFD can't be opened");
-          }
+        assertThat(Files.readString(extractedNfd, UTF_8), is(FOO_BAR));
+        Files.newBufferedReader(extractedNfd);
+        log.info("NFD can be opened: {}", extractedNfd);
       }
 
     /*******************************************************************************************************************
@@ -335,11 +318,15 @@ public class PathNormalizationTest
           }
         catch (NoSuchFileException e)
           {
-            log.info("NFC can't be opened: {}", extractedNfc);
-
-            if (MAC_OS_X.equals(OS_NAME))
+            switch (OS_NAME)
               {
-                fail("NFC can't be opened");
+                case MAC_OS_X:
+                  fail("NFC can't be opened: " + extractedNfc);
+                  break;
+
+                case LINUX:
+                  log.info("NFC can't be opened, as expected: {}", extractedNfc);
+                  break;
               }
           }
 
