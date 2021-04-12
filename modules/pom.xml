@@ -425,6 +425,7 @@
                                     <goal>unpack</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>${skipTests}</skip>
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>it.tidalwave.bluemarine2</groupId>
