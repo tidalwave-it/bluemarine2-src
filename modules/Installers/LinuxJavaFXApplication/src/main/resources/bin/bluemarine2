@@ -21,7 +21,13 @@ fi
 
 mkdir -p "$LOG_FOLDER"
 
-exec $JAVA -DblueMarine2.workspace=$WORKSPACE \
-           -DblueMarine2.logFolder=$LOG_FOLDER \
-           -DblueMarine2.logConfigOverride=$WORKSPACE/config/logback-override.xml \
-           -jar $JAR_FILE
+# See https://stackoverflow.com/questions/60801629/arch-linux-java-critical-error-executing-jar
+JAVA_OPTIONS="-Djdk.gtk.version=2"
+
+exec $JAVA $JAVA_OPTIONS \
+           --module-path "$BASE_DIR"/../mods \
+           --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media \
+           -DblueMarine2.workspace="$WORKSPACE" \
+           -DblueMarine2.logFolder="$LOG_FOLDER" \
+           -DblueMarine2.logConfigOverride="$WORKSPACE"/config/logback-override.xml \
+           -jar "$JAR_FILE"
