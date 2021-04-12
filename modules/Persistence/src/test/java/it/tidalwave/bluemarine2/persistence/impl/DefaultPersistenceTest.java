@@ -138,6 +138,7 @@ public class DefaultPersistenceTest extends SpringTestSupport
         // then
         assertThat(underTest.sail, is(instanceOf(NativeStore.class)));
         underTest.exportToFile(TEST_EXPORT_FILE);
+        // rewriteN3(EMPTY_STORE);
         assertSameContents(EMPTY_STORE, TEST_EXPORT_FILE);
 //        verify(messageBus).publish(new PersistenceInitializedNotification()); // FIXME
 //        verifyNoMoreInteractions(messageBus);
@@ -160,6 +161,8 @@ public class DefaultPersistenceTest extends SpringTestSupport
         // then
         assertThat(underTest.sail, is(instanceOf(NativeStore.class)));
         underTest.exportToFile(TEST_EXPORT_FILE);
+        rewriteN3(TEST_IMPORT_FILE, false);
+        rewriteN3(TEST_EXPORT_FILE, true); // FIXME: why is needed?
         assertSameContents(TEST_IMPORT_FILE, TEST_EXPORT_FILE);
 //        verify(messageBus).publish(new PersistenceInitializedNotification()); // FIXME
 //        verifyNoMoreInteractions(messageBus);
@@ -182,6 +185,8 @@ public class DefaultPersistenceTest extends SpringTestSupport
         // then
         assertThat(underTest.sail, is(instanceOf(NativeStore.class)));
         underTest.exportToFile(TEST_EXPORT_FILE);
+        rewriteN3(TEST_IMPORT_FILE, false);
+        rewriteN3(TEST_EXPORT_FILE, true); // FIXME: why is needed?
         assertSameContents(TEST_IMPORT_FILE, TEST_EXPORT_FILE);
         assertThat(Files.exists(TEST_IMPORT_FILE_COPY), is(true));
         assertThat(Files.exists(TEST_TILDE_FILE), is(false));
@@ -207,6 +212,8 @@ public class DefaultPersistenceTest extends SpringTestSupport
         // then
         assertThat(underTest.sail, is(instanceOf(NativeStore.class)));
         underTest.exportToFile(TEST_EXPORT_FILE);
+        rewriteN3(TEST_IMPORT_FILE, false);
+        rewriteN3(TEST_EXPORT_FILE, true); // FIXME: why is needed?
         assertSameContents(TEST_IMPORT_FILE, TEST_EXPORT_FILE);
         assertThat(Files.exists(TEST_IMPORT_FILE_COPY), is(false));
         assertThat(Files.exists(TEST_TILDE_FILE), is(true));

@@ -36,7 +36,7 @@ import java.util.Iterator;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
@@ -81,33 +81,26 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     public static void exportToFile (@Nonnull final Model model, @Nonnull final Path path)
-      throws RDFHandlerException, IOException, RepositoryException
+            throws RDFHandlerException, IOException, RepositoryException
       {
         log.info("exportToFile({})", path);
         Files.createDirectories(path.getParent());
 
-        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8)))
+        try (final Writer w = Files.newBufferedWriter(path, UTF_8))
           {
-            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(w));
             writer.startRDF();
-//            FIXME: use Iterations - and sort
-//            for (final Namespace namespace : connection.getNamespaces().asList())
-//              {
-//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
-//              }
-
-            writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
-            writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
-            writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
-            writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
-            writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
-            writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
-            writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
-            writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
+            writer.handleNamespace("bio", "http://purl.org/vocab/bio/0.1/");
+            writer.handleNamespace("bmmo", "http://bluemarine.tidalwave.it/2015/04/mo/");
+            writer.handleNamespace("dc", "http://purl.org/dc/elements/1.1/");
+            writer.handleNamespace("foaf", "http://xmlns.com/foaf/0.1/");
+            writer.handleNamespace("owl", "http://www.w3.org/2002/07/owl#");
+            writer.handleNamespace("mo", "http://purl.org/ontology/mo/");
+            writer.handleNamespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
+            writer.handleNamespace("rel", "http://purl.org/vocab/relationship/");
             writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
-            writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
-
-            model.stream().forEachOrdered(writer::handleStatement);
+            writer.handleNamespace("xs", "http://www.w3.org/2001/XMLSchema#");
+            model.stream().forEach(writer::handleStatement);
             writer.endRDF();
           }
       }
@@ -301,7 +294,7 @@ public final class RdfUtilities
      ******************************************************************************************************************/
     @Nonnull
     public static URL urlFor (@Nonnull final IRI uri)
-      throws MalformedURLException
+            throws MalformedURLException
       {
         return new URL(uri.toString());
       }

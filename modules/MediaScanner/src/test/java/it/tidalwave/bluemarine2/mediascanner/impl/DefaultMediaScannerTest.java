@@ -53,7 +53,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtilsWithPathNormalizer.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static org.testng.AssertJUnit.assertTrue;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
@@ -136,7 +136,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
               {
                 try
                   {
-                    assertTrue("Inconsistent file: " + path, Files.exists(normalizedPath(path)));
+                    assertTrue("Inconsistent file: " + path, Files.exists(fixedPath(path)));
 //                    assertTrue("Inconsistent file: " + path, normalizedPath(path).toFile().exists());
                   }
                 catch (IOException e)
@@ -177,8 +177,10 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         // then
         final String modelName = "model-" + testSetName + ".n3";
         final Path actualFile = Path.of("target/test-results/" + modelName);
-        final Path expectedFile = Path.of("src/test/resources/expected-results/" + modelName);
+        final Path expectedFile = Path.of("target/test-classes/expected-results/" + modelName);
         persistence.exportToFile(actualFile);
+        rewriteN3(expectedFile);
+        rewriteN3(actualFile); // FIXME: why?
         assertSameContents(expectedFile, actualFile);
       }
 

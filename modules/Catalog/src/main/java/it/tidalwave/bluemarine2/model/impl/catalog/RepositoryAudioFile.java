@@ -55,7 +55,7 @@ import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -114,7 +114,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public Optional<Resource> getContent()
       throws IOException
       {
-        final Path absolutePath = normalizedPath(getAbsolutePath());
+        final Path absolutePath = fixedPath(getAbsolutePath());
         return Files.exists(absolutePath) ? Optional.of(new FileSystemResource(absolutePath.toFile())) : Optional.empty();
       }
 
@@ -122,7 +122,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public long getSize()
       throws IOException
       {
-        return Files.size(normalizedPath(getAbsolutePath()));
+        return Files.size(fixedPath(getAbsolutePath()));
       }
 
     @Override @Nonnull

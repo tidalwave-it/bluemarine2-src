@@ -17,7 +17,7 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
 Deliverables
 ------------
 
-+ A desktop application (full-screen style) for macOS and Linux (including the Raspbian PI)
++ A desktop application (full-screen style) for macOS and Linux (including the Raspberry PI)
 + A headless service serving resources by means of DLNA and REST for any operating system
         
 
@@ -41,12 +41,12 @@ Technologies
 + [JAXB](https://javaee.github.io/jaxb-v2) for XML marshalling from XSD
 + [Spring 5](https://spring.io/projects/spring-framework) for Dependency Injection and REST
 + [RDF4J](https://rdf4j.org/) for the semantic store
-+ [Cling](https://github.com/4thline/cling) for DLNA
-+ [SLF4J](slf4j.org)/[Logback](http://logback.qos.ch) for logging
-+ [Lombok](https://projectlombok.org) for language enhancement
-+ [Maven](https://maven.apache.org) as the build tool
 + [jaudiotagger](https://bitbucket.org/ijabz/jaudiotagger) and [mp3agic](https://github.com/mpatric/mp3agic) for audio file metadata
++ [Cling](https://github.com/4thline/cling) for DLNA
++ [SLF4J](http://slf4j.org)/[Logback](http://logback.qos.ch) for logging
++ [Lombok](https://projectlombok.org) for language enhancement
 + [TestNG](https://testng.org) and [Mockito](https://site.mockito.org) for testing
++ [Maven](https://maven.apache.org) as the build tool
 
 
 Bootstrapping

@@ -31,8 +31,8 @@ import javax.inject.Inject;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Reader;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -173,10 +173,10 @@ public class DefaultPersistence implements Persistence
         log.info("exportToFile({})", path);
         Files.createDirectories(path.getParent());
 
-        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8));
+        try (final Writer w = Files.newBufferedWriter(path, UTF_8);
              final RepositoryConnection connection = repository.getConnection())
           {
-            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(w));
 
 //            FIXME: use Iterations - and sort
 //            for (final Namespace namespace : connection.getNamespaces().asList())

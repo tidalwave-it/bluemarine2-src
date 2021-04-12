@@ -30,30 +30,28 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Stream;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import lombok.NoArgsConstructor;
+import it.tidalwave.util.annotation.VisibleForTesting;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
-import static java.util.stream.Collectors.*;
-import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
+ *
+ * See the related test for detailed information.
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE) @Slf4j
-public final class Miscellaneous
+@UtilityClass @Slf4j
+public class PathNormalization
   {
     private static final Normalizer.Form NATIVE_FORM;
-
-//    private static final Pattern PATTERN_EXTENSION = Pattern.compile("(\\.[^.]+)$");
 
     static
       {
@@ -77,24 +75,14 @@ public final class Miscellaneous
                 throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
           }
 
-        log.info(">>>> Charset normalizer form: {}", NATIVE_FORM);
+        log.info("Charset normalizer form: {}", NATIVE_FORM);
       }
 
     /*******************************************************************************************************************
      *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nullable
-    public static String normalizedToNativeForm (@Nullable final String string)
-      {
-        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Takes a path, and in case it can't be resolved, it tries to replace with an equivalent representation of an
-     * existing path, with the native form of character encoding (i.e. the one used by the file system).
+     * Takes a path that maps to an existing file, and in case it can't be resolved, it tries to replace with an
+     * equivalent representation of an existing path, with the native form of character encoding (i.e. the one used
+     * by the file system).
      * If there is no normalized path to replace with, the original path is returned.
      * Note that this method is I/O heavy, as it must access the file system.
      * FIXME: what about using a cache?
@@ -106,52 +94,42 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Path normalizedPath (@Nonnull final Path path)
+    public static Path fixedPath (@Nonnull final Path path)
       throws IOException
       {
-//        log.trace("normalizedPath({}", path);
+//        log.trace("fixedPath({})", path);
 
-        if (Files.exists(path))
+        if (Files.exists(path)) // can be normally found, no need to process it
           {
             return path;
           }
 
         Path pathSoFar = Paths.get("/");
 
-        for (final Path element : path)
+        for (final Path segment : path.toAbsolutePath())
           {
-//            log.trace(">>>> pathSoFar: {} element: {}", pathSoFar, element);
-            final Path resolved = pathSoFar.resolve(element);
+//            log.trace(">>>> pathSoFar: {} segment: {}", pathSoFar, segment);
+            final Path resolved = pathSoFar.resolve(segment);
 
             if (Files.exists(resolved))
               {
                 pathSoFar = resolved;
               }
-            else
+            else // didn't find 'resolved' because of wrong normalisation, searching in alternative way
               {
-                // FIXME: refactor with lambdas
                 try (final Stream<Path> stream = Files.list(pathSoFar))
                   {
-                    boolean found = false;
-
-                    for (final Path child : stream.collect(toList()))
+                    final Optional<Path> child = stream.map(Path::getFileName)
+                                                       .filter(p -> equalsNormalized(segment, p))
+                                                       .findFirst();
+                    if (child.isEmpty())
                       {
-                        final Path childName = child.getFileName();
-                        found = Objects.equals(normalizedToNativeForm(element.toString()),
-                                               normalizedToNativeForm(childName.toString()));
-//                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
-
-                        if (found)
-                          {
-                            pathSoFar = pathSoFar.resolve(childName);
-                            break;
-                          }
+                        log.warn(">>>> fixing failed at: {}", pathSoFar);
+                        return path;
                       }
 
-                    if (!found)
-                      {
-                        return path; // fail
-                      }
+                    pathSoFar = pathSoFar.resolve(child.get());
+                    assert Files.exists(pathSoFar) : "Fixing failed at: " + pathSoFar;
                   }
               }
           }
@@ -161,24 +139,16 @@ public final class Miscellaneous
 
     /*******************************************************************************************************************
      *
+     * Checks whether two Paths are equal after normalisation of their string representation.
      *
+     * @param   path1   the former path
+     * @param   path2   the latter path
+     * @return          {@code true} if they are equal
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public static File toFileBMT46 (@Nonnull final Path path)
-      throws IOException
+    @VisibleForTesting static boolean equalsNormalized (@Nonnull final Path path1, @Nonnull final Path path2)
       {
-        File file = path.toFile();
-
-        if (probeBMT46(path))
-          {
-            file = File.createTempFile("bmt46-", "." + extensionOf(path));
-            file.deleteOnExit();
-            log.warn("Workaround for BMT-46: copying {} to temporary file: {}", path, file);
-            Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-          }
-
-        return file;
+        return Objects.equals(normalizedToNativeForm(path1.toString()), normalizedToNativeForm(path2.toString()));
       }
 
     /*******************************************************************************************************************
@@ -186,22 +156,9 @@ public final class Miscellaneous
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
-    private static String extensionOf (@Nonnull final Path path)
+    @Nullable
+    public static String normalizedToNativeForm (@Nullable final String string)
       {
-        final int i = path.toString().lastIndexOf('.');
-        return (i < 0) ? "" : path.toString().substring(i + 1);
-//        final Matcher matcher = PATTERN_EXTENSION.matcher(path.toString()); TODO
-//        return matcher.matches() ? matcher.group(0) : "";
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    private static boolean probeBMT46 (@Nonnull final Path path)
-      {
-        return Files.exists(path) && !path.toFile().exists();
+        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
       }
   }

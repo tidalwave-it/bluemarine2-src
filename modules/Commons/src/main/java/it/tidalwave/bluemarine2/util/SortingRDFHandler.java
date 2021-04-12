@@ -28,13 +28,18 @@ package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiConsumer;
 import org.eclipse.rdf4j.model.Statement;
+import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
+import it.tidalwave.util.Pair;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Delegate;
+import static java.util.Comparator.*;
 
 /***********************************************************************************************************************
  *
@@ -44,8 +49,32 @@ import lombok.experimental.Delegate;
 @RequiredArgsConstructor
 public class SortingRDFHandler implements RDFHandler
   {
+    static class ValueComparator implements Comparator<Value>
+      {
+        @Override
+        public int compare (final Value o1, final Value o2)
+          {
+            if (o1.stringValue().equals(RDF.TYPE.stringValue()))
+              {
+                return -1;
+              }
+            else if (o2.stringValue().equals(RDF.TYPE.stringValue()))
+              {
+                return +1;
+              }
+
+            return o1.stringValue().compareTo(o2.stringValue());
+          }
+      }
+
     interface Exclusions
       {
+        public void startRDF()
+          throws RDFHandlerException;
+
+        public void handleNamespace (String prefix, String uri)
+          throws RDFHandlerException;
+
         public void handleStatement (Statement statement)
           throws RDFHandlerException;
 
@@ -53,62 +82,47 @@ public class SortingRDFHandler implements RDFHandler
           throws RDFHandlerException;
       }
 
+    private static final ValueComparator VALUE_COMPARATOR = new ValueComparator();
+
     @Nonnull @Delegate(excludes = Exclusions.class)
     private final RDFHandler delegate;
 
     private final List<Statement> statements = new ArrayList<>();
 
+    private final List<Pair<String, String>> nameSpaces = new ArrayList<>();
+
+    private BiConsumer<String, String> namespaceHandler = (prefix, uri) -> nameSpaces.add(Pair.of(prefix, uri));
+
+    @Override
+    public void handleNamespace (@Nonnull final String prefix, @Nonnull final String uri)
+      {
+        namespaceHandler.accept(prefix, uri);
+      }
+
     @Override
     public void handleStatement (@Nonnull final Statement statement)
-      throws RDFHandlerException
       {
         statements.add(statement);
+      }
+
+    @Override
+    public void startRDF()
+      throws RDFHandlerException
+      {
+        delegate.startRDF();
+        namespaceHandler = delegate::handleNamespace;
+        nameSpaces.forEach(p -> delegate.handleNamespace(p.a, p.b));
       }
 
     @Override
     public void endRDF()
       throws RDFHandlerException
       {
-        statements.sort((st1, st2) ->
-          {
-            final String s1 = st1.getSubject().stringValue();
-            final String s2 = st2.getSubject().stringValue();
-            final int c1 = s1.compareTo(s2);
-
-            if (c1 != 0)
-              {
-                return c1;
-              }
-
-            final String p1 = st1.getPredicate().stringValue();
-            final String p2 = st2.getPredicate().stringValue();
-            final int c2 = p1.compareTo(p2);
-
-            if (c2 != 0)
-              {
-                if (p1.equals(RDF.TYPE.stringValue()))
-                  {
-                    return -1;
-                  }
-                else if (p2.equals(RDF.TYPE.stringValue()))
-                  {
-                    return +1;
-                  }
-
-                return c2;
-              }
-
-            final String o1 = st1.getObject().stringValue();
-            final String o2 = st2.getObject().stringValue();
-
-            return o1.compareTo(o2);
-          });
-
-        for (final Statement statement : statements)
-          {
-            delegate.handleStatement(statement);
-          }
-
+        statements.stream()
+                  .sorted(comparing(Statement::getSubject, VALUE_COMPARATOR)
+                     .thenComparing(Statement::getPredicate, VALUE_COMPARATOR)
+                     .thenComparing(Statement::getObject, VALUE_COMPARATOR))
+                  .forEach(delegate::handleStatement);
         delegate.endRDF();
       }
   }

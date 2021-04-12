@@ -52,7 +52,7 @@ import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.PathNormalization.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -79,9 +79,9 @@ public final class AudioMetadataFactory
 
         try
           {
-            final Path normalizedPath = normalizedPath(path.toAbsolutePath());
+            final Path normalizedPath = fixedPath(path);
             log.debug("path: {}", normalizedPath);
-            file = toFileBMT46(normalizedPath);
+            file = normalizedPath.toFile();
 //            audioFile = AudioFileIO.read(aPath.toFile());
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
             final AudioHeader header = audioFile.getAudioHeader();
