@@ -52,8 +52,8 @@ public class FileComparisonUtilsWithPathNormalizer
     public static void assertSameContents (@Nonnull final Path expectedPath, @Nonnull final Path actualPath)
       throws IOException
       {
-        FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),
-                                               toFileBMT46(normalizedPath(actualPath.toAbsolutePath())));
+        FileComparisonUtils.assertSameContents(normalizedPath(expectedPath.toAbsolutePath()),
+                                               normalizedPath(actualPath.toAbsolutePath()));
       }
 
     public static void rewriteN3 (@Nonnull final Path file)

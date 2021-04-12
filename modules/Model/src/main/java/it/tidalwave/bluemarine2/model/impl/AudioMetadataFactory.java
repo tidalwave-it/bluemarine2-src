@@ -81,7 +81,7 @@ public final class AudioMetadataFactory
           {
             final Path normalizedPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", normalizedPath);
-            file = toFileBMT46(normalizedPath);
+            file = normalizedPath.toFile();
 //            audioFile = AudioFileIO.read(aPath.toFile());
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
             final AudioHeader header = audioFile.getAudioHeader();

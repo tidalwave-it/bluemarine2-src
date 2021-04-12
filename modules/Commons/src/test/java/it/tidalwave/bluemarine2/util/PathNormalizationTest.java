@@ -26,26 +26,23 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import it.tidalwave.util.spi.DefaultProcessExecutor;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import org.apache.commons.io.FileUtils;
+import it.tidalwave.util.spi.DefaultProcessExecutor;
+import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.nio.file.StandardOpenOption.CREATE;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.fail;
+import static java.nio.file.StandardOpenOption.*;
+import static org.testng.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 /***********************************************************************************************************************
  *

@@ -32,18 +32,18 @@ import java.text.Normalizer;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import it.tidalwave.util.annotation.VisibleForTesting;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
 
 /***********************************************************************************************************************
+ *
+ * See the related test for detailed information.
  *
  * @author  Fabrizio Giudici
  *
@@ -52,8 +52,6 @@ import static java.text.Normalizer.Form.*;
 public class PathNormalization
   {
     private static final Normalizer.Form NATIVE_FORM;
-
-//    private static final Pattern PATTERN_EXTENSION = Pattern.compile("(\\.[^.]+)$");
 
     static
       {
@@ -123,7 +121,7 @@ public class PathNormalization
                     final Optional<Path> child = stream.map(Path::getFileName)
                                                        .filter(p -> equalsNormalized(segment, p))
                                                        .findFirst();
-                    if (!child.isPresent())
+                    if (child.isEmpty())
                       {
                         log.warn(">>>> normalization failed - did you pass an absolute path? At {}", pathSoFar);
                         return path;
@@ -144,36 +142,12 @@ public class PathNormalization
      *
      * @param   path1   the former path
      * @param   path2   the latter path
-     * @return          {@true} if they are equal
+     * @return          {@code true} if they are equal
      *
      ******************************************************************************************************************/
-    @VisibleForTesting static boolean equalsNormalized (@Nullable final Path path1, @Nullable final Path path2)
+    @VisibleForTesting static boolean equalsNormalized (@Nonnull final Path path1, @Nonnull final Path path2)
       {
         return Objects.equals(normalizedToNativeForm(path1.toString()), normalizedToNativeForm(path2.toString()));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * @param path
-     * @return
-     * @throws IOException
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static File toFileBMT46 (@Nonnull final Path path)
-      throws IOException
-      {
-        File file = path.toFile();
-
-        if (probeBMT46(path))
-          {
-            file = File.createTempFile("bmt46-", "." + extensionOf(path));
-            file.deleteOnExit();
-            log.warn("Workaround for BMT-46: copying {} to temporary file: {}", path, file);
-            Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-          }
-
-        return file;
       }
 
     /*******************************************************************************************************************
@@ -185,29 +159,5 @@ public class PathNormalization
     public static String normalizedToNativeForm (@Nullable final String string)
       {
         return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static String extensionOf (@Nonnull final Path path)
-      {
-        final int i = path.toString().lastIndexOf('.');
-        return (i < 0) ? "" : path.toString().substring(i + 1);
-//        final Matcher matcher = PATTERN_EXTENSION.matcher(path.toString()); TODO
-//        return matcher.matches() ? matcher.group(0) : "";
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @VisibleForTesting static boolean probeBMT46 (@Nonnull final Path path)
-      {
-        return Files.exists(path) && !path.toFile().exists();
       }
   }
