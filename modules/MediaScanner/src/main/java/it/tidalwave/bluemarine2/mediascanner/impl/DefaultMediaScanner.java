@@ -45,6 +45,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
+import static it.tidalwave.util.FunctionalCheckedExceptionWrappers.*;
 import static it.tidalwave.bluemarine2.util.PathNormalization.fixedPath;
 
 /***********************************************************************************************************************
@@ -64,8 +65,7 @@ public class DefaultMediaScanner
     private MessageBus messageBus;
 
     // With magnetic disks it's better to access files one at a time
-    // TODO: with SSD, this is not true
-    private final Semaphore diskSemaphore = new Semaphore(1);
+    private final Optional<Semaphore> diskSemaphore = Optional.empty(); // new Semaphore(1);
 
     /*******************************************************************************************************************
      *
@@ -146,7 +146,7 @@ public class DefaultMediaScanner
       {
         try
           {
-            diskSemaphore.acquire();
+            diskSemaphore.ifPresent(_c(Semaphore::acquire));
             final File file = fixedPath(path).toFile();
 
             try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
@@ -159,7 +159,7 @@ public class DefaultMediaScanner
           }
         finally
           {
-            diskSemaphore.release();
+            diskSemaphore.ifPresent(_c(Semaphore::release));
           }
       }
   }
