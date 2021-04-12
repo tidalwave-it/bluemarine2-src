@@ -79,7 +79,7 @@ public final class AudioMetadataFactory
 
         try
           {
-            final Path normalizedPath = normalizedPath(path.toAbsolutePath());
+            final Path normalizedPath = normalizedPath(path);
             log.debug("path: {}", normalizedPath);
             file = normalizedPath.toFile();
 //            audioFile = AudioFileIO.read(aPath.toFile());

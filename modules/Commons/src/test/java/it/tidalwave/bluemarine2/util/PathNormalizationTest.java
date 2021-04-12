@@ -368,8 +368,8 @@ public class PathNormalizationTest
         extractFilesFromTar();
         // when
         // note that normalisation in names here is swapped
-        final Path extractedNfc = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfc").resolve(AGACANTE).toAbsolutePath());
-        final Path extractedNfd = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfd").resolve(AGACANTE).toAbsolutePath());
+        final Path extractedNfc = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfc").resolve(AGACANTE));
+        final Path extractedNfd = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfd").resolve(AGACANTE));
         // then
         assertThat(extractedNfc.toFile().exists(), is(true));
         assertThat(Files.exists(extractedNfc), is(true));
@@ -445,6 +445,7 @@ public class PathNormalizationTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
+    @Nonnull
     private static String toHex (final @Nonnull String string)
       {
         return string.chars().mapToObj(c -> String.format("%04x", c)).collect(Collectors.joining(" "));

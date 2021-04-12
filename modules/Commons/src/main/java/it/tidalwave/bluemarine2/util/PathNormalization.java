@@ -80,8 +80,9 @@ public class PathNormalization
 
     /*******************************************************************************************************************
      *
-     * Takes a path, and in case it can't be resolved, it tries to replace with an equivalent representation of an
-     * existing path, with the native form of character encoding (i.e. the one used by the file system).
+     * Takes a path that maps to an existing file, and in case it can't be resolved, it tries to replace with an
+     * equivalent representation of an existing path, with the native form of character encoding (i.e. the one used
+     * by the file system).
      * If there is no normalized path to replace with, the original path is returned.
      * Note that this method is I/O heavy, as it must access the file system.
      * FIXME: what about using a cache?
@@ -98,14 +99,14 @@ public class PathNormalization
       {
 //        log.trace("normalizedPath({})", path);
 
-        if (Files.exists(path))
+        if (Files.exists(path)) // can be normally found, no need to process it
           {
             return path;
           }
 
         Path pathSoFar = Paths.get("/");
 
-        for (final Path segment : path)
+        for (final Path segment : path.toAbsolutePath())
           {
 //            log.trace(">>>> pathSoFar: {} segment: {}", pathSoFar, segment);
             final Path resolved = pathSoFar.resolve(segment);
@@ -123,7 +124,7 @@ public class PathNormalization
                                                        .findFirst();
                     if (child.isEmpty())
                       {
-                        log.warn(">>>> normalization failed - did you pass an absolute path? At {}", pathSoFar);
+                        log.warn(">>>> normalization failed at: {}", pathSoFar);
                         return path;
                       }
 
