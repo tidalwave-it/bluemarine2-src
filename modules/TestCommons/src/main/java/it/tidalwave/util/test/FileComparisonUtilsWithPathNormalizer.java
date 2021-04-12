@@ -52,7 +52,7 @@ public class FileComparisonUtilsWithPathNormalizer
     public static void assertSameContents (@Nonnull final Path expectedPath, @Nonnull final Path actualPath)
       throws IOException
       {
-        FileComparisonUtils.assertSameContents(normalizedPath(expectedPath), normalizedPath(actualPath));
+        FileComparisonUtils.assertSameContents(fixedPath(expectedPath), fixedPath(actualPath));
       }
 
     public static void rewriteN3 (@Nonnull final Path file)
@@ -78,7 +78,7 @@ public class FileComparisonUtilsWithPathNormalizer
         log.warn("Rewriting {} ... (original file is preserved with .orig suffix)", file);
         assert file.toString().contains("target") : "You must not call rewriteN3() on a file in sources";
 
-        final Path normalizedFile = normalizedPath(file);
+        final Path normalizedFile = fixedPath(file);
         final Path originalFile = normalizedFile.getParent().resolve(file.getFileName() + ".orig");
         Files.createDirectories(originalFile.getParent());
         Files.copy(normalizedFile, originalFile, REPLACE_EXISTING);

@@ -348,15 +348,15 @@ public class PathNormalizationTest
      *
      ******************************************************************************************************************/
     @Test(dependsOnMethods = "test_probe_and_open2")
-    public void test_normalizedPath()
+    public void test_fixedPath()
             throws IOException, InterruptedException
       {
         // given
         extractFilesFromTar();
         // when
         // note that normalisation in names here is swapped
-        final Path extractedNfc = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfc").resolve(AGACANTE));
-        final Path extractedNfd = PathNormalization.normalizedPath(TAR_FOLDER.resolve("nfd").resolve(AGACANTE));
+        final Path extractedNfc = PathNormalization.fixedPath(TAR_FOLDER.resolve("nfc").resolve(AGACANTE));
+        final Path extractedNfd = PathNormalization.fixedPath(TAR_FOLDER.resolve("nfd").resolve(AGACANTE));
         // then
         assertThat(extractedNfc.toFile().exists(), is(true));
         assertThat(Files.exists(extractedNfc), is(true));

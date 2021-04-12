@@ -94,10 +94,10 @@ public class PathNormalization
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Path normalizedPath (@Nonnull final Path path)
+    public static Path fixedPath (@Nonnull final Path path)
       throws IOException
       {
-//        log.trace("normalizedPath({})", path);
+//        log.trace("fixedPath({})", path);
 
         if (Files.exists(path)) // can be normally found, no need to process it
           {
@@ -124,12 +124,12 @@ public class PathNormalization
                                                        .findFirst();
                     if (child.isEmpty())
                       {
-                        log.warn(">>>> normalization failed at: {}", pathSoFar);
+                        log.warn(">>>> fixing failed at: {}", pathSoFar);
                         return path;
                       }
 
                     pathSoFar = pathSoFar.resolve(child.get());
-                    assert Files.exists(pathSoFar) : "Normalization failed at: " + pathSoFar;
+                    assert Files.exists(pathSoFar) : "Fixing failed at: " + pathSoFar;
                   }
               }
           }
