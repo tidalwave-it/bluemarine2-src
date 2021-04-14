@@ -57,7 +57,9 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
 Deliverables
 ------------
 
-+ A desktop application (full-screen style) for macOS and Linux (including the Raspbian PI)
++ A desktop application (full-screen style) for
+  [macOS](https://search.maven.org/search?q=g:it.tidalwave.bluemarine2%20AND%20a:bluemarine2-application-javafx-macos%20AND%20l:executable) and
+  [Linux](https://search.maven.org/search?q=g:it.tidalwave.bluemarine2%20AND%20a:bluemarine2-application-javafx-linux%20AND%20l:bin) (including the Raspbian PI)
 + A headless service serving resources by means of DLNA and REST for any operating system
 
 

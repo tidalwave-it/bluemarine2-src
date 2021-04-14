@@ -17,9 +17,11 @@ The project website is at [http://bluemarine.tidalwave.it](http://bluemarine.tid
 Deliverables
 ------------
 
-+ A desktop application (full-screen style) for macOS and Linux (including the Raspberry PI)
++ A desktop application (full-screen style) for
+  [macOS](https://search.maven.org/search?q=g:it.tidalwave.bluemarine2%20AND%20a:bluemarine2-application-javafx-macos%20AND%20l:executable) and
+  [Linux](https://search.maven.org/search?q=g:it.tidalwave.bluemarine2%20AND%20a:bluemarine2-application-javafx-linux%20AND%20l:bin) (including the Raspbian PI)
 + A headless service serving resources by means of DLNA and REST for any operating system
-        
+
 
 Architecture
 ------------
@@ -38,15 +40,15 @@ Technologies
 
 + [OpenJDK11](https://openjdk.java.net/projects/jdk/11) as language and runtime
 + [JavaFX](https://openjfx.io) for the destkop UI
-+ [JAXB](https://javaee.github.io/jaxb-v2) for XML marshalling from XSD
++ [Jakarta XML Binding (JAXB)](https://eclipse-ee4j.github.io/jaxb-ri/) for XML marshalling from XSD
 + [Spring 5](https://spring.io/projects/spring-framework) for Dependency Injection and REST
 + [RDF4J](https://rdf4j.org/) for the semantic store
-+ [jaudiotagger](https://bitbucket.org/ijabz/jaudiotagger) and [mp3agic](https://github.com/mpatric/mp3agic) for audio file metadata
 + [Cling](https://github.com/4thline/cling) for DLNA
-+ [SLF4J](http://slf4j.org)/[Logback](http://logback.qos.ch) for logging
++ [SLF4J](slf4j.org)/[Logback](http://logback.qos.ch) for logging
 + [Lombok](https://projectlombok.org) for language enhancement
-+ [TestNG](https://testng.org) and [Mockito](https://site.mockito.org) for testing
 + [Maven](https://maven.apache.org) as the build tool
++ [jaudiotagger](https://bitbucket.org/ijabz/jaudiotagger) and [mp3agic](https://github.com/mpatric/mp3agic) for audio file metadata
++ [TestNG](https://testng.org) and [Mockito](https://site.mockito.org) for testing
 
 
 Bootstrapping
