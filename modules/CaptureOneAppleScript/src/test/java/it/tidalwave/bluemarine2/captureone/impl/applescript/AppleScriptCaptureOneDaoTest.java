@@ -33,7 +33,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import javax.script.ScriptException;
 import it.tidalwave.bluemarine2.captureone.impl.C1Collection;
 import it.tidalwave.bluemarine2.captureone.impl.C1Document;

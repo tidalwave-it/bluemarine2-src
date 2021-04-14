@@ -55,31 +55,18 @@
         <tft.checkstyle.skip>true</tft.checkstyle.skip>
         <tft.findbugs.skip>true</tft.findbugs.skip>
         <tft.pmd.skip>true</tft.pmd.skip>
-
-        <!--        <tft.jaxb2-maven-plugin.version>2.0</tft.jaxb2-maven-plugin.version> FIXME -->
-        <tft.jaxb2-maven-plugin.version>1.3.1</tft.jaxb2-maven-plugin.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
 
         <!-- RUNTIME DEPENDENCIES -->
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
@@ -95,10 +82,10 @@
                             <goal>xjc</goal>
                         </goals>
                         <configuration>
-                            <schemaFiles>musicbrainz_mmd-2.0.xsd</schemaFiles>
-                            <schemaFiles>local.xsd</schemaFiles>
-                            <removeOldOutput>true</removeOldOutput>
-                            <verbose>true</verbose>
+                            <sources>
+                                <source>src/main/xsd/musicbrainz_mmd-2.0.xsd</source>
+                                <source>src/main/xsd/local.xsd</source>
+                            </sources>
                         </configuration>
                     </execution>
                 </executions>
