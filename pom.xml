@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.superpom</groupId>
         <artifactId>superpom</artifactId>
-        <version>5.0-ALPHA-12</version>
+        <version>5.0-ALPHA-13</version>
         <relativePath />
     </parent>
 
@@ -78,7 +78,7 @@ Technologies
 
 + [OpenJDK11](https://openjdk.java.net/projects/jdk/11) as language and runtime
 + [JavaFX](https://openjfx.io) for the destkop UI
-+ [JAXB](https://javaee.github.io/jaxb-v2) for XML marshalling from XSD
++ [Jakarta XML Binding (JAXB)](https://eclipse-ee4j.github.io/jaxb-ri/) for XML marshalling from XSD
 + [Spring 5](https://spring.io/projects/spring-framework) for Dependency Injection and REST
 + [RDF4J](https://rdf4j.org/) for the semantic store
 + [Cling](https://github.com/4thline/cling) for DLNA
