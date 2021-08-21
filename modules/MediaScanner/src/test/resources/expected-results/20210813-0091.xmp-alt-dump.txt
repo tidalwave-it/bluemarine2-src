@@ -1,0 +1,4 @@
+Content-Type=application/xml
+dc:creator=Fabrizio Giudici
+dc:subject=backgrounds
+dc:title=Cicoria comune (Cichorium inthybus)
