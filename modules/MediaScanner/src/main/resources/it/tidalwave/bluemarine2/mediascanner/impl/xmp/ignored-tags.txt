@@ -968,10 +968,6 @@
 /x:xmpmeta/rdf:RDF/rdf:Description/tiff:Copyright/rdf:Alt/rdf:li/@xml:lang
 /x:xmpmeta/rdf:RDF/rdf:Description/tiff:ImageDescription/rdf:Alt/rdf:li/@xml:lang
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/@rdf:about
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:documentID
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:instanceID
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:originalDocumentID
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DocumentID
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/@rdf:parseType
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/@stEvt:action
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/@stEvt:changed
@@ -990,6 +986,4 @@
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/stEvt:instanceID
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/stEvt:softwareAgent
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:History/rdf:Seq/rdf:li/stEvt:when
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:InstanceID
-/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:OriginalDocumentID
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpRights:UsageTerms/rdf:Alt/rdf:li/@xml:lang

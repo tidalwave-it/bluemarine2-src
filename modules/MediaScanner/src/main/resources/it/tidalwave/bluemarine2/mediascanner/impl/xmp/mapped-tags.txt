@@ -255,3 +255,10 @@
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpRights:Marked = xmpRights:Marked
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpRights:UsageTerms/rdf:Alt/rdf:li = xmpRights:UsageTerms
 /x:xmpmeta/rdf:RDF/rdf:Description/xmpRights:WebStatement = xmpRights:WebStatement
+
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:documentID = xmpMM:DerivedFrom.documentID
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:instanceID = xmpMM:DerivedFrom.instanceID
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DerivedFrom/rdf:Description/stRef:originalDocumentID = xmpMM:DerivedFrom.originalDocumentID
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:DocumentID = xmpMM:DocumentID
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:InstanceID = xmpMM:InstanceID
+/x:xmpmeta/rdf:RDF/rdf:Description/xmpMM:OriginalDocumentID = xmpMM:OriginalDocumentID
