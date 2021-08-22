@@ -36,7 +36,7 @@ import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.io.IOException;
 import org.apache.commons.io.IOUtils;
@@ -44,7 +44,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
@@ -58,22 +57,17 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 @RequiredArgsConstructor @Slf4j @NotThreadSafe
 public class XmpMetadataExtractor extends DefaultHandler
   {
+    /** These attributes aren't related to metadata items, but to encoding. */
+    private static final Set<String> IGNORED_ATTRS = Set.of("xml:lang", "rdf:about", "rdf:parseType");
+
     /** A map from XPath expressions to mapped tags. */
-    private static final Map<String, String> XPATH_TO_TAG_MAP;
+    private static final PathMapper PATH_MAPPER;
 
     static
       {
         try
           {
-            // TODO: use regexp to dramatically shrink config files.
-            // E.g.: /x:xmpmeta/rdf:RDF/rdf:Description/exif:([.*]) = exif:$1
-            // Note that : is part of the regexp syntax, it should be escaped.
-            XPATH_TO_TAG_MAP = loadStrings("mapped-tags.txt")
-                    .stream()
-                    .filter(s -> !s.isBlank())
-                    .map(s -> s.split("="))
-                    .collect(toMap(p -> p[0].trim(), p -> p[1].trim()));
-            loadStrings("ignored-tags.txt").forEach(s -> XPATH_TO_TAG_MAP.put(s, ""));
+            PATH_MAPPER = new PathMapper(loadStrings("mapped-tags.txt"));
           }
         catch (IOException e)
           {
@@ -85,6 +79,8 @@ public class XmpMetadataExtractor extends DefaultHandler
     private final BiConsumer<String, String> metadataProcessor;
 
     private final Deque<String> xpathStack = new LinkedList<>();
+
+    private final Deque<Attributes> attrStack = new LinkedList<>();
 
     private final Deque<StringBuilder> textStack = new LinkedList<>();
 
@@ -99,16 +95,20 @@ public class XmpMetadataExtractor extends DefaultHandler
                               @Nonnull final String qName,
                               @Nonnull final Attributes attributes)
       {
+        // FIXME: this assumes QName is using the standard prefix (e.g. 'exif'). More robust code
+        // should instead read the namespace and translate to a prefix.
         xpathStack.push(qName);
+        attrStack.push(attributes);
         textStack.push(new StringBuilder());
 
         for (int i = 0; i < attributes.getLength(); i++)
           {
-            // FIXME: this assumes QName is using the standard prefix (e.g. 'exif'). More robust code
-            // should instead read the namespace and translate to a prefix.
-            final String key = attributes.getQName(i);
-            final String value = attributes.getValue(i);
-            processItem(stackToString(xpathStack) + "/@" + key, value);
+            final String attrName = attributes.getQName(i);
+
+            if (!IGNORED_ATTRS.contains(attrName))
+              {
+                processXpath(stackToXpath(xpathStack) + "/@" + attrName, attributes.getValue(i));
+              }
           }
       }
 
@@ -120,13 +120,14 @@ public class XmpMetadataExtractor extends DefaultHandler
     @Override
     public void endElement (@Nonnull final String uri, @Nonnull final String localName, @Nonnull final String qName)
       {
-        final String value = textStack.pop().toString().replaceAll("\n", " ").trim();
+        final String text = textStack.pop().toString().replaceAll("\n", " ").trim();
 
-        if (!"".equals(value))
+        if (!"".equals(text))
           {
-            processItem(stackToString(xpathStack), value);
+            processXpath(stackToXpath(xpathStack), text);
           }
 
+        attrStack.pop();
         xpathStack.pop();
       }
 
@@ -143,40 +144,52 @@ public class XmpMetadataExtractor extends DefaultHandler
 
     /*******************************************************************************************************************
      *
-     * Processes a metadata item.
+     * Processes an Xpath.
      *
      * @param xpath   the XPath of the metadata item
      * @param value   the metadata item value
      *
      ******************************************************************************************************************/
-    private void processItem (@Nonnull final String xpath, @Nonnull final String value)
+    private void processXpath (@Nonnull final String xpath, @Nonnull final String value)
       {
-        final String key = XPATH_TO_TAG_MAP.get(xpath);
+        // Ignored xpaths helps in reducing these warnings, which could have a dramatic performance hit
+        PATH_MAPPER.getTokenFor(xpath).ifPresentOrElse(token -> addItem(token, value),
+                                                       () -> log.warn("Ignoring {} = *{}*", xpath, value));
+      }
 
-        if (key == null)
-          {
-            // Ignored xpaths helps in reducing these warnings, which could have a dramatic performance hit
-            log.warn("Ignoring {} = *{}*", xpath, value);
-          }
-        else if (!key.equals(""))
+    /*******************************************************************************************************************
+     *
+     * Processes a metadata item.
+     *
+     * @param item    the metadata item
+     * @param value   the metadata item value
+     *
+     ******************************************************************************************************************/
+    private void addItem (@Nonnull final String item, @Nonnull final String value)
+      {
+        if (!item.equals(""))
           {
             try
               {
-                metadataProcessor.accept(key, value);
+                metadataProcessor.accept(item, value);
               }
             catch (Exception e)
               {
-                log.error("{}: {}", e.toString(), key);
+                log.warn("Can't handle {} because of {}", item, e.toString());
               }
           }
       }
 
     /*******************************************************************************************************************
      *
+     * Converts a stack of element names into a Xpath.
+     *
+     * @param stack   the stack
+     * @return        the Xpath
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String stackToString (@Nonnull final Collection<String> stack)
+    private static String stackToXpath (@Nonnull final Collection<String> stack)
       {
         final List<String> tmp = new ArrayList<>(stack);
         Collections.reverse(tmp);
@@ -185,6 +198,11 @@ public class XmpMetadataExtractor extends DefaultHandler
 
     /*******************************************************************************************************************
      *
+     * Loads a list of strings from a resource file.
+     *
+     * @param resourceName    the name of the file
+     * @return                the list of strings
+     * @throws IOException    in case of error
      *
      ******************************************************************************************************************/
     @Nonnull
