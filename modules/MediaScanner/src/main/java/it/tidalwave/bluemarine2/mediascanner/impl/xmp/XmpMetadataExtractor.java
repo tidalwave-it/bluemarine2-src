@@ -56,7 +56,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j @NotThreadSafe
-public class XmpContentHandler extends DefaultHandler
+public class XmpMetadataExtractor extends DefaultHandler
   {
     /** A map from XPath expressions to mapped tags. */
     private static final Map<String, String> XPATH_TO_TAG_MAP;
@@ -180,7 +180,6 @@ public class XmpContentHandler extends DefaultHandler
       {
         final List<String> tmp = new ArrayList<>(stack);
         Collections.reverse(tmp);
-        tmp.remove(0); // FIXME: extra rdf:RDF. why?
         return "/" + String.join("/", tmp);
       }
 
@@ -192,6 +191,6 @@ public class XmpContentHandler extends DefaultHandler
     private static List<String> loadStrings (@Nonnull final String resourceName)
             throws IOException
       {
-        return Arrays.asList(IOUtils.toString(XmpContentHandler.class.getResource(resourceName), UTF_8).split("\n"));
+        return Arrays.asList(IOUtils.toString(XmpMetadataExtractor.class.getResource(resourceName), UTF_8).split("\n"));
       }
   }

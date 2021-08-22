@@ -35,10 +35,10 @@ import org.apache.tika.metadata.Metadata;
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.parser.AbstractParser;
 import org.apache.tika.parser.ParseContext;
-import org.apache.tika.sax.XMPContentHandler;
+import org.apache.tika.sax.SafeContentHandler;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
-import it.tidalwave.bluemarine2.mediascanner.impl.xmp.XmpContentHandler;
+import it.tidalwave.bluemarine2.mediascanner.impl.xmp.XmpMetadataExtractor;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -75,6 +75,6 @@ public class XmpParser extends AbstractParser
             throws IOException, SAXException, TikaException
       {
         metadata.add(Metadata.CONTENT_TYPE, "application/rdf+xml");
-        context.getSAXParser().parse(stream, new XMPContentHandler(new XmpContentHandler(metadata::add)));
+        context.getSAXParser().parse(stream, new SafeContentHandler(new XmpMetadataExtractor(metadata::add)));
       }
   }
