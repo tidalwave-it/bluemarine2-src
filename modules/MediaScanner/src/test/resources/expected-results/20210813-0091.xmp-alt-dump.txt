@@ -1,4 +1,4 @@
 Content-Type=application/xml
 dc:creator=Fabrizio Giudici
-dc:subject=backgrounds
+dc:subject=[backgrounds, edit process 2017-10-21, published, scientific name:Cichorium intybus]
 dc:title=Cicoria comune (Cichorium inthybus)

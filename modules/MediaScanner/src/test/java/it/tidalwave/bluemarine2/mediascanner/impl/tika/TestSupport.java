@@ -27,6 +27,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl.tika;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.io.IOException;
@@ -69,7 +70,10 @@ public class TestSupport
         final List<String> lines = stream(metadata.names())
                 .filter(n -> !itemsToIgnore.contains(n))
                 .sorted()
-                .map(n -> String.format("%s=%s", n, metadata.get(n)))
+                .map(n -> String.format("%s=%s", n,
+                                        metadata.isMultiValued(n)
+                                        ? Arrays.toString(metadata.getValues(n))
+                                        : metadata.get(n)))
                 .collect(toList());
         Files.write(path, lines, UTF_8);
       }
