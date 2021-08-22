@@ -151,7 +151,7 @@
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationCreated/rdf:Bag/rdf:li/rdf:Description/Iptc4xmpExt:CountryName = Iptc4xmpExt:LocationCreated.CountryName
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationCreated/rdf:Bag/rdf:li/rdf:Description/Iptc4xmpExt:ProvinceState = Iptc4xmpExt:LocationCreated.ProvinceState
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationCreated/rdf:Bag/rdf:li/rdf:Description/Iptc4xmpExt:Sublocation = Iptc4xmpExt:LocationCreated.Sublocation
-/x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationCreated/rdf:Bag/rdf:li/rdf:Description/Iptc4xmpExt:WorldRegion = Iptc4xmpExt:LocationCreated.Sublocation
+/x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationCreated/rdf:Bag/rdf:li/rdf:Description/Iptc4xmpExt:WorldRegion = Iptc4xmpExt:LocationCreated.WorldRegion
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationShown/rdf:Bag/rdf:li/Iptc4xmpExt:City = Iptc4xmpExt:LocationShown.City
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationShown/rdf:Bag/rdf:li/Iptc4xmpExt:CountryName = Iptc4xmpExt:LocationShown.CountryName
 /x:xmpmeta/rdf:RDF/rdf:Description/Iptc4xmpExt:LocationShown/rdf:Bag/rdf:li/Iptc4xmpExt:ProvinceState = Iptc4xmpExt:LocationShown.ProvinceState
