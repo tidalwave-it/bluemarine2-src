@@ -118,6 +118,7 @@
                             <goal>unpack</goal>
                         </goals>
                         <configuration>
+                            <skip>${skipTests}</skip>
                             <artifactItems>
                                 <!-- Metadata to read -->
                                 <artifactItem>

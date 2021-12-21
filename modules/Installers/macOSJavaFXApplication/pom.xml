@@ -46,6 +46,7 @@
     <description>This module creates a macOS application bundle.</description>
 
     <properties>
+        <tft.javafx.platform>mac</tft.javafx.platform>
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.mainPackage>it-tidalwave-bluemarine2-application-javafx-${project.version}.jar</tft.mainPackage>
         <tft.appbundle.modules>javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media</tft.appbundle.modules>

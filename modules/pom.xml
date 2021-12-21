@@ -50,14 +50,12 @@
         <tft.javac.target>11</tft.javac.target>
         <tft.javac.release>11</tft.javac.release>
 
-        <activation.version>1.1.1</activation.version>
         <cling.version>2.1.1</cling.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <httpclient.version>4.4</httpclient.version>
         <jaudiotagger.version>2.2.5</jaudiotagger.version>
         <tft.javafx.version>11.0.1</tft.javafx.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
-        <jaxb.version>2.2.11</jaxb.version>
         <jackson.version>2.12.2</jackson.version>
         <jetty.version>10.0.1</jetty.version>
         <mp3agic.version>0.8.3</mp3agic.version>
@@ -111,12 +109,87 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-bom</artifactId>
+                <version>${tft.jaxb.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>net.jthink</groupId>
                 <artifactId>jaudiotagger</artifactId>
                 <version>${jaudiotagger.version}</version>
             </dependency>
 
-            <!-- Should activate by itself with JDK 11+, but it fails with Jenkins Maven integration. -->
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-media</artifactId>
+                <classifier>mac</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-media</artifactId>
+                <classifier>linux</classifier>
+                <version>${tft.javafx.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-base</artifactId>
@@ -174,53 +247,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.datatype</groupId>
-                <artifactId>jackson-datatype-jsr310</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.datatype</groupId>
-                <artifactId>jackson-datatype-jdk8</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.xml.bind</groupId>
-                <artifactId>jaxb-api</artifactId>
-                <version>${jaxb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-core</artifactId>
-                <version>${jaxb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-impl</artifactId>
-                <version>${jaxb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.activation</groupId>
-                <artifactId>activation</artifactId>
-                <version>${activation.version}</version>
             </dependency>
 
             <dependency>
@@ -364,6 +390,7 @@
                                     <goal>unpack</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>${skipTests}</skip>
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>it.tidalwave.bluemarine2</groupId>

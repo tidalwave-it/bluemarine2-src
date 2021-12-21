@@ -32,7 +32,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bluemarine2" target="11" />
+      <module name="bluemarine2" target="1.5" />
       <module name="bluemarine2-modules" target="11" />
       <module name="bluemarine2-plugins-modules" target="11" />
       <module name="bluemarine2-services-modules" target="11" />
