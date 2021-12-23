@@ -119,19 +119,11 @@ Technologies
     </scm>
 
     <repositories>
+        <!-- Required for: http://4thline.org/m2 (Cling), https://dl.bintray.com/ijabz/maven (jaudiotagger), OpenJDK images, waiting for the official ones. -->
         <repository>
-            <id>jaudiotagger-repository</id>
-            <url>https://dl.bintray.com/ijabz/maven</url>
-        </repository>
-        <repository>
-            <id>4thline-repo</id>
-            <url>http://4thline.org/m2</url>
-        </repository>
-        <!-- Required for downloading the OpenJDK images, waiting for the official ones. -->
-        <repository>
-            <id>maven2-release-repository.tidalwave.it</id>
+            <id>maven-proxy.tidalwave.it</id>
             <name>Tidalwave Release Repository</name>
-            <url>http://services.tidalwave.it/nexus/content/repositories/releases</url>
+            <url>https://services.tidalwave.it/nexus/content/groups/public</url>
         </repository>
     </repositories>
 

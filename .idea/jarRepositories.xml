@@ -2,9 +2,34 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="maven2-release-repository.tidalwave.it" />
+      <option name="name" value="Tidalwave Release Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots-oss.sonatype.org" />
+      <option name="name" value="Sonatype Snapshots Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="maven2-thirdparty-repository.tidalwave.it" />
       <option name="name" value="Tidalwave Release Repository" />
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2-thirdparty-repository.tidalwave.it" />
+      <option name="name" value="Tidalwave Release Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="4thline-repo" />
+      <option name="name" value="4thline-repo" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="maven2-release-repository.tidalwave.it" />
@@ -17,11 +42,6 @@
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="releases-oss.sonatype.org" />
-      <option name="name" value="Sonatype Release Repository" />
-      <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
@@ -30,6 +50,16 @@
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="releases-oss.sonatype.org" />
+      <option name="name" value="Sonatype Release Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="releases-oss.sonatype.org" />
+      <option name="name" value="Sonatype Release Repository" />
+      <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jboss.community" />
@@ -45,6 +75,11 @@
       <option name="id" value="jaudiotagger-repository" />
       <option name="name" value="jaudiotagger-repository" />
       <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jaudiotagger-repository" />
+      <option name="name" value="jaudiotagger-repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
   </component>
 </project>
