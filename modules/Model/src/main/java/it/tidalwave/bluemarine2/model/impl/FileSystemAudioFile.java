@@ -39,7 +39,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.spi.FinderSupport;
+import it.tidalwave.util.spi.HierarchicFinderSupport;
 import it.tidalwave.util.spi.PriorityAsSupport;
 import it.tidalwave.bluemarine2.model.audio.AudioFile;
 import it.tidalwave.bluemarine2.model.audio.MusicArtist;
@@ -123,7 +123,8 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor
-    static class ArtistFallbackFinder extends FinderSupport<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
+    static class ArtistFallbackFinder
+            extends HierarchicFinderSupport<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
       {
         private static final long serialVersionUID = 7969726066626602758L;
 

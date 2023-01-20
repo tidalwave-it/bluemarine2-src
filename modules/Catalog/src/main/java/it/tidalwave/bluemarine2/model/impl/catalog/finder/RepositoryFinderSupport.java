@@ -55,7 +55,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.LoggingUtilities;
 import it.tidalwave.util.ReflectionUtils;
 import it.tidalwave.util.Task;
-import it.tidalwave.util.spi.FinderSupport;
+import it.tidalwave.util.spi.HierarchicFinderSupport;
 import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.util.ImmutableTupleQueryResult;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
@@ -87,7 +87,7 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
  **********************************************************************************************************************/
 @Configurable @Slf4j
 public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
-        extends FinderSupport<ENTITY, FINDER>
+        extends HierarchicFinderSupport<ENTITY, FINDER>
         implements SourceAwareFinder<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";

@@ -38,7 +38,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.SupplierBasedFinder;
-import it.tidalwave.util.spi.FinderSupport;
+import it.tidalwave.util.spi.HierarchicFinderSupport;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
@@ -63,7 +63,9 @@ import static lombok.AccessLevel.PRIVATE;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
-public class PathAwareEntityFinderDelegate extends FinderSupport<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
+public class PathAwareEntityFinderDelegate
+        extends HierarchicFinderSupport<PathAwareEntity, PathAwareFinder>
+        implements PathAwareFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 

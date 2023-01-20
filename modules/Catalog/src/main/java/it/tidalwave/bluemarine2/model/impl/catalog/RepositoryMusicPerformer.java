@@ -79,9 +79,9 @@ public class RepositoryMusicPerformer implements MusicPerformer
       }
 
     @Override @Nonnull
-    public <T> T as(@Nonnull Class<T> type, @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
+    public <T> Optional<T> maybeAs (@Nonnull Class<T> type)
       {
-        return musicArtist.as(type, notFoundBehaviour);
+        return asMany(type).stream().findFirst();
       }
 
     @Override @Nonnull

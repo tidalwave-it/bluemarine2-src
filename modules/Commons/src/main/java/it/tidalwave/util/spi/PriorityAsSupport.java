@@ -39,17 +39,15 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * A specialisation of {@link AsSupport} that deals with multiple roles of the same type by prioritising them; they
+ * An implementation of {@link As} that deals with multiple roles of the same type by prioritising them; they
  * are ordered from most relevant to least relevant (where relevance is associated to specialisation, that is most
  * specialised roles, or roles associated via {@code @DciRole} to most specialised datum classes, are most relevant).
- *
- * FIXME: could be seen as a replacement to {@code AsSupport}?
  *
  * @author  Fabrizio Giudici
  *
  **********************************************************************************************************************/
 @Slf4j
-public class PriorityAsSupport extends AsSupport implements As
+public class PriorityAsSupport implements As
   {
     @FunctionalInterface
     public static interface RoleProvider
@@ -62,6 +60,9 @@ public class PriorityAsSupport extends AsSupport implements As
     private final Object owner; // for logging only
 
     @Nonnull
+    private final As delegate;
+
+    @Nonnull
     private final Optional<RoleProvider> additionalRoleProvider;
 
     public PriorityAsSupport (final Object owner)
@@ -71,7 +72,7 @@ public class PriorityAsSupport extends AsSupport implements As
 
     public PriorityAsSupport (@Nonnull final Object owner, @Nonnull final Collection<Object> rolesOrFactories)
       {
-        super(owner, rolesOrFactories);
+        delegate = As.forObject(owner, rolesOrFactories);
         this.owner = owner;
         this.additionalRoleProvider = Optional.empty();
       }
@@ -80,7 +81,7 @@ public class PriorityAsSupport extends AsSupport implements As
                               @Nonnull final RoleProvider additionalRoleProvider,
                               @Nonnull final Collection<Object> rolesOrFactories)
       {
-        super(owner, rolesOrFactories);
+        delegate = As.forObject(owner, rolesOrFactories);
         this.owner = owner;
         this.additionalRoleProvider = Optional.of(additionalRoleProvider);
       }
@@ -98,23 +99,7 @@ public class PriorityAsSupport extends AsSupport implements As
     @Override @Nonnull
     public <T> T as (@Nonnull final Class<T> type)
       {
-        return as(type, As.Defaults.throwAsException(type));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     * Returned roles can be associated both to this type and to the delegate; the one with the higher priority is
-     * returned. See {@link #asMany(java.lang.Class)} for further details.
-     *
-     * @see #asMany(java.lang.Class)
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> T as (@Nonnull final Class<T> type, @Nonnull final NotFoundBehaviour<T> notFoundBehaviour)
-      {
-        return maybeAs(type).orElseGet(() -> notFoundBehaviour.run(new AsException(type)));
+        return maybeAs(type).orElseThrow(() -> new AsException((type)));
       }
 
     /*******************************************************************************************************************
@@ -140,7 +125,7 @@ public class PriorityAsSupport extends AsSupport implements As
      * Returned roles can be associated both to this type and to the delegate; the one with the higher priority is
      * returned. The ones associated to this type come with higher priority (this makes sense, being this class a
      * decorator, specific roles could be associated to it). But given that the default implementation of asMany()
-     * doesn't guarantee ant order (see TFT-192) there's something to take care of. Currently this method contains
+     * doesn't guarantee ant order (see TFT-192) there's something to take care of. Currently, this method contains
      * some hardwired priority logics.
      *
      ******************************************************************************************************************/
@@ -148,7 +133,7 @@ public class PriorityAsSupport extends AsSupport implements As
     public <T> Collection<T> asMany (@Nonnull final Class<T> type)
       {
         log.trace("asMany({}) - {}", type, owner);
-        final List<T> unordered = new ArrayList<>(super.asMany(type));
+        final List<T> unordered = new ArrayList<>(delegate.asMany(type));
         additionalRoleProvider.ifPresent(r -> unordered.addAll(r.findRoles(type)));
         //
         // Need a kind of bubble sort, because:
