@@ -2,13 +2,13 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
-      <option name="id" value="maven2-release-repository.tidalwave.it" />
-      <option name="name" value="Tidalwave Release Repository" />
+      <option name="id" value="snapshots-oss.sonatype.org" />
+      <option name="name" value="Sonatype Snapshots Repository" />
       <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="snapshots-oss.sonatype.org" />
-      <option name="name" value="Sonatype Snapshots Repository" />
+      <option name="id" value="maven2-release-repository.tidalwave.it" />
+      <option name="name" value="Tidalwave Release Repository" />
       <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
@@ -19,12 +19,12 @@
     <remote-repository>
       <option name="id" value="maven2-thirdparty-repository.tidalwave.it" />
       <option name="name" value="Tidalwave Release Repository" />
-      <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="maven2-thirdparty-repository.tidalwave.it" />
       <option name="name" value="Tidalwave Release Repository" />
-      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+      <option name="url" value="http://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="4thline-repo" />
@@ -54,6 +54,11 @@
     <remote-repository>
       <option name="id" value="releases-oss.sonatype.org" />
       <option name="name" value="Sonatype Release Repository" />
+      <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-proxy.tidalwave.it" />
+      <option name="name" value="Tidalwave Release Repository" />
       <option name="url" value="https://services.tidalwave.it/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>

@@ -62,6 +62,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bluemarine2" options="-Xlint:all" />
+      <module name="bluemarine2-modules" options="-Xlint:all" />
+      <module name="bluemarine2-plugins-modules" options="-Xlint:all" />
+      <module name="bluemarine2-services-modules" options="-Xlint:all" />
       <module name="it-tidalwave-bluemarine2-application-javafx" options="-Xlint:all" />
       <module name="it-tidalwave-bluemarine2-catalog" options="-Xlint:all" />
       <module name="it-tidalwave-bluemarine2-cecnavigationadapter" options="-Xlint:all" />
