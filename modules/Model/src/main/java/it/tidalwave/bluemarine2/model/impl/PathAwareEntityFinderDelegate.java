@@ -148,7 +148,7 @@ public class PathAwareEntityFinderDelegate
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends PathAwareEntity> computeResults()
+    protected List<PathAwareEntity> computeResults()
       {
         return new CopyOnWriteArrayList<>(optionalPath.flatMap(path -> filteredByPath(path).map(e -> singletonList(e)))
                                                       .orElse((List)delegate.results()));

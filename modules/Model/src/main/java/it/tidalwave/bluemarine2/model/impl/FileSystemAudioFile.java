@@ -143,9 +143,11 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
           }
 
         @Override @Nonnull
-        protected List<? extends MusicArtist> computeNeededResults()
+        protected List<MusicArtist> computeNeededResults()
           {
-            return metadata.get(metadataKey).map(artistName -> List.of(new ArtistFallback(artistName))).orElse(emptyList());
+            return metadata.get(metadataKey)
+                           .map(artistName -> List.of((MusicArtist)(new ArtistFallback(artistName)))) // FIXME: cast
+                           .orElse(emptyList());
           }
 
         @Override @Nonnull

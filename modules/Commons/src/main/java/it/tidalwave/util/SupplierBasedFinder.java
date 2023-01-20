@@ -62,7 +62,7 @@ public class SupplierBasedFinder<T> extends SimpleFinderSupport<T>
       }
 
     @Override @Nonnull
-    protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
+    protected List<T> computeResults() // FIXME: or computeNeededResults()?
       {
         return new CopyOnWriteArrayList<>(supplier.get());
       }

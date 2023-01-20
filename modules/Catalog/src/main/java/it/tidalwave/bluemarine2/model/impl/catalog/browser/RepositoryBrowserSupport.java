@@ -53,7 +53,8 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
 
     protected RepositoryBrowserSupport (@Nonnull final Function<MediaCatalog, Finder<? extends Entity>> finderFactory)
       {
-        compositeForRootEntity = () -> finderFactory.apply(catalog).withContext(RepositoryBrowserSupport.this);
+        compositeForRootEntity = () -> // FIXME: cast
+                ((Function<MediaCatalog, Finder<Entity>>)(Object)finderFactory).apply(catalog).withContext(RepositoryBrowserSupport.this);
       }
 
     @Override @Nonnull

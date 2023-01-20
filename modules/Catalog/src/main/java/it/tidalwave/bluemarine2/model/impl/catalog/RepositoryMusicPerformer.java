@@ -73,19 +73,19 @@ public class RepositoryMusicPerformer implements MusicPerformer
 
     // FIXME: should delegate first to its own AsDelegate and only as a fallaback to MusicArtist
     @Override @Nonnull
-    public <T> T as(@Nonnull Class<T> type)
+    public <T> T as(@Nonnull Class<? extends T> type)
       {
         return musicArtist.as(type);
       }
 
     @Override @Nonnull
-    public <T> Optional<T> maybeAs (@Nonnull Class<T> type)
+    public <T> Optional<T> maybeAs (@Nonnull Class<? extends T> type)
       {
-        return asMany(type).stream().findFirst();
+        return ((Collection<T>)asMany(type)).stream().findFirst(); // FIXME: cast
       }
 
     @Override @Nonnull
-    public <T> Collection<T> asMany(@Nonnull Class<T> type)
+    public <T> Collection<T> asMany(@Nonnull Class<? extends T> type)
       {
         return musicArtist.asMany(type);
       }

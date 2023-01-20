@@ -244,7 +244,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected final List<? extends ENTITY> computeNeededResults()
+    protected final List<ENTITY> computeNeededResults()
       {
         return query(QueryAndParameters::getSparql,
                      result -> createEntities(repository, entityClass, result),

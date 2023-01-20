@@ -97,7 +97,7 @@ public class PriorityAsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> T as (@Nonnull final Class<T> type)
+    public <T> T as (@Nonnull final Class<? extends T> type)
       {
         return maybeAs(type).orElseThrow(() -> new AsException((type)));
       }
@@ -113,9 +113,9 @@ public class PriorityAsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Optional<T> maybeAs (@Nonnull final Class<T> type)
+    public <T> Optional<T> maybeAs (@Nonnull final Class<? extends T> type)
       {
-        return asMany(type).stream().findFirst();
+        return ((Collection<T>)asMany(type)).stream().findFirst(); // FIXME: cast
       }
 
     /*******************************************************************************************************************
@@ -130,7 +130,7 @@ public class PriorityAsSupport implements As
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public <T> Collection<T> asMany (@Nonnull final Class<T> type)
+    public <T> Collection<T> asMany (@Nonnull final Class<? extends T> type)
       {
         log.trace("asMany({}) - {}", type, owner);
         final List<T> unordered = new ArrayList<>(delegate.asMany(type));

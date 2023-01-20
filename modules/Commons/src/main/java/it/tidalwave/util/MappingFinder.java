@@ -61,7 +61,7 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder<TYPE>
       }
 
     @Override @Nonnull
-    protected List<? extends TYPE> computeResults()
+    protected List<TYPE> computeResults()
       {
         return super.computeResults().stream().map(mapper).collect(toList());
       }

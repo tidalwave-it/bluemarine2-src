@@ -89,7 +89,7 @@ public class FileSystemMediaFolderFinder
       }
 
     @Override @Nonnull
-    protected List<? extends PathAwareEntity> computeResults()
+    protected List<PathAwareEntity> computeResults()
       {
         return evaluateDirectoryStream(stream -> stream
                                                 .filter(fileFilter)
