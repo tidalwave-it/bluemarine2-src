@@ -31,7 +31,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.MappingFinder;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.Entity;
@@ -111,7 +110,6 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
             return (PathAwareFinder)finder;
           }
 
-        return new PathAwareEntityFinderDelegate(parent,
-                             new MappingFinder<>((Finder)finder, child -> wrappedEntity(parent, (Entity)child)));
+        return new PathAwareEntityFinderDelegate(parent, Finder.mapping(finder, child -> wrappedEntity(parent, child)));
       }
   }

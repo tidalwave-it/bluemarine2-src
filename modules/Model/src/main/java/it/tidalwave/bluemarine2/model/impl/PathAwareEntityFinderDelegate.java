@@ -37,7 +37,6 @@ import java.util.function.Function;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.SupplierBasedFinder;
 import it.tidalwave.util.spi.HierarchicFinderSupport;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.bluemarine2.model.MediaFolder;
@@ -113,7 +112,7 @@ public class PathAwareEntityFinderDelegate
     public PathAwareEntityFinderDelegate (@Nonnull final MediaFolder mediaFolder,
                                           @Nonnull final Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
-        this(mediaFolder, new SupplierBasedFinder<>(() -> function.apply(mediaFolder)), Optional.empty());
+        this(mediaFolder, Finder.ofSupplier(() -> function.apply(mediaFolder)), Optional.empty());
       }
 
     /*******************************************************************************************************************
