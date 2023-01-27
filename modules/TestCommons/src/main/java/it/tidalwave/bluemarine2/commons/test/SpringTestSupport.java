@@ -29,7 +29,7 @@ package it.tidalwave.bluemarine2.commons.test;
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import it.tidalwave.role.ContextManager;
+import it.tidalwave.util.ContextManager;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -115,6 +115,6 @@ public class SpringTestSupport
         log.info("Closing Spring context...");
         context.close();
         context = null; // don't keep in memory useless stuff
-        ContextManager.Locator.set(null);
+        ContextManager.set(null);
       }
   }

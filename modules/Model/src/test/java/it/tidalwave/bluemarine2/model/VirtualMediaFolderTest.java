@@ -37,7 +37,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.util.spi.AsDelegateProvider;
+import it.tidalwave.role.spi.SystemRoleFactory;
 import it.tidalwave.bluemarine2.model.spi.PathAwareEntity;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -136,7 +136,7 @@ public class VirtualMediaFolderTest extends SpringTestSupport
     @BeforeMethod
     public void setup()
       {
-        AsDelegateProvider.Locator.set(AsDelegateProvider.empty());
+        SystemRoleFactory.reset();
         underTest = new TestCaseBuilder().getFolderMap().get(Paths.get("/"));
       }
 
